@@ -1,0 +1,375 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f2e94a1c-1a2f-422a-be55-829ecc0a11e6" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim APD Budget</ID>
+  <Name>Dim APD Budget</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1501" scrolltop="-3653" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="7064" y="13653" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="V_Production_APD_Budget" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4022" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b60f000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_V_Production_APD_Budget" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1501</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-3653</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="82605b1e-4028-480f-bab8-228ed880fd49">
+    <DataSourceViewID>LWTProductionView</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="d06cbc3a-248a-418a-859c-59ae52d81805">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="212d6b5a-fa8c-4513-b41e-6325f47e55d7">
+      <ID>Budget Key</ID>
+      <Name>Budget Key</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ecb643ac-c837-4dc1-a93a-b2312eb85cf4">
+          <DataType>WChar</DataType>
+          <DataSize>57</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="370f7d10-4894-4b45-b473-28d9c77c9603">
+            <TableID>dbo_V_Production_APD_Budget</TableID>
+            <ColumnID>BudgetKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="c86a1800-6b50-4b2c-9440-986262f7a2e5">
+          <AttributeID>AE Production</AttributeID>
+          <Name>AE Production</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8d2a724d-843b-4741-ad0d-e16f55750e7a">
+          <AttributeID>AE Group Name</AttributeID>
+          <Name>AE Group Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5b7d7798-f591-4237-ae79-edff2f3ea063">
+          <AttributeID>AE Group Running</AttributeID>
+          <Name>AE Group Running</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ed58e767-31c6-4abd-be1b-b1b268471d65">
+          <AttributeID>AE Name</AttributeID>
+          <Name>AE Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ca05e8b8-1f06-4c95-98e4-315589c0b14b">
+          <AttributeID>AES Group Name</AttributeID>
+          <Name>AES Group Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7f5f6352-dc1d-4dca-8808-8386efe997c7">
+          <AttributeID>AES Group Running</AttributeID>
+          <Name>AES Group Running</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9802e949-5a3d-4f76-b715-1e5094b31ee7">
+          <AttributeID>Business Group</AttributeID>
+          <Name>Business Group</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="533838aa-fd01-4705-a1c3-84bfe5836394">
+          <AttributeID>Class Group</AttributeID>
+          <Name>Class Group</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="47e7e350-1b07-4904-baf6-df98934c4ce5">
+          <AttributeID>Owner</AttributeID>
+          <Name>Owner</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="aa66f023-df65-47e1-9bf8-10c13a3265be">
+          <AttributeID>Fiscal Year</AttributeID>
+          <Name>Fiscal Year</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="95086cec-4b63-4579-a3fd-6aa6cbc54e6c">
+          <AttributeID>Fiscal Period</AttributeID>
+          <Name>Fiscal Period</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6d7411ea-38f8-4e6e-9e0c-ef2e19d6ea19">
+          <AttributeID>Fiscal Eng Month</AttributeID>
+          <Name>Fiscal Eng Month</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d13dd93f-e854-4d76-8819-f624a2905301">
+          <AttributeID>Fiscal Thai Month</AttributeID>
+          <Name>Fiscal Thai Month</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="37c97e9a-78ea-4e07-aace-5b9f6d03f2d1">
+          <AttributeID>Division</AttributeID>
+          <Name>Division</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0230a667-6579-4e77-aaea-40875cb2a7eb">
+      <ID>AE Production</ID>
+      <Name>AE Production</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="34afa768-fc87-4ffb-b489-ce60ffaf720a">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="82df26af-6cd9-4e8d-aabf-26f10304d07c">
+            <TableID>dbo_V_Production_APD_Budget</TableID>
+            <ColumnID>AEProduction</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a5176bab-3f0d-4dcf-9535-38097b917754">
+      <ID>AE Group Name</ID>
+      <Name>AE Group Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="859f1ba5-4b4d-45f2-b293-cf842eb3bc7d">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3db0c33e-0f4d-4e55-8c6e-e505c2622c57">
+            <TableID>dbo_V_Production_APD_Budget</TableID>
+            <ColumnID>AEGroupName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d7d0a8bc-53f6-402e-a8c8-a4042719d0a0">
+      <ID>AE Group Running</ID>
+      <Name>AE Group Running</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d3814e10-98b1-469d-9c63-63fa38e991b5">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4d7764ce-0ef7-47b2-a86c-0daa7a2300de">
+            <TableID>dbo_V_Production_APD_Budget</TableID>
+            <ColumnID>AEGroupRunning</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1c8b871e-34a2-4009-b5a6-264a1918efae">
+      <ID>AE Name</ID>
+      <Name>AE Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cda87541-ea07-40bf-bfa3-4f13e3ba1f8e">
+          <DataType>WChar</DataType>
+          <DataSize>60</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0b407cc6-3d2f-4c5b-b8cb-7ba3b0411bc5">
+            <TableID>dbo_V_Production_APD_Budget</TableID>
+            <ColumnID>AEName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8cf59cbe-9062-4360-91bd-a9b65c12f8ed">
+      <ID>AES Group Name</ID>
+      <Name>AES Group Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a2c2ccbd-f850-422a-aa0a-06ab350bd01c">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e42be7d2-0cf7-4ae4-8243-5f8f8ff991a1">
+            <TableID>dbo_V_Production_APD_Budget</TableID>
+            <ColumnID>AESGroupName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8505b3fc-bb66-4618-bd45-c5a33195fb5b">
+      <ID>AES Group Running</ID>
+      <Name>AES Group Running</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="48ffeda3-83b7-4cf3-ac91-9a6f9ab76679">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c4751411-8f12-4620-91d4-511ae1961f32">
+            <TableID>dbo_V_Production_APD_Budget</TableID>
+            <ColumnID>AESGroupRunning</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="922605a4-5f14-4158-88eb-c0763ad9e936">
+      <ID>Business Group</ID>
+      <Name>Business Group</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7698a033-bea1-45f9-af1c-d997a4bf324d">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1fdf07ad-3379-4fbf-8f12-132a6a9fa531">
+            <TableID>dbo_V_Production_APD_Budget</TableID>
+            <ColumnID>BusinessGroup</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="fee5aaee-3cdf-4921-b179-a6769b758ad9">
+      <ID>Class Group</ID>
+      <Name>Class Group</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8b0711eb-1c9a-4b46-b0fb-bd38a98062b8">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="96662f52-396b-4b84-a1a4-0c741010b869">
+            <TableID>dbo_V_Production_APD_Budget</TableID>
+            <ColumnID>ClassGroup</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9a704ae8-5296-4bb7-930e-26b354a830bf">
+      <ID>Owner</ID>
+      <Name>Owner</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="21687056-61c1-4c8e-a742-7fc6fa387fb0">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e09135ac-f652-4397-b6a7-380f0996f1d8">
+            <TableID>dbo_V_Production_APD_Budget</TableID>
+            <ColumnID>Owner</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="dac5ba0e-5f58-4af6-a05b-aa46b41e1727">
+      <ID>Fiscal Year</ID>
+      <Name>Fiscal Year</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="48074e60-18a8-48d2-8285-52e8502156c6">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ec05906e-caae-486f-93fd-72368e7a81f6">
+            <TableID>dbo_V_Production_APD_Budget</TableID>
+            <ColumnID>FiscalYear</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2fe9219c-c3af-447b-a290-0306efd0b739">
+      <ID>Fiscal Period</ID>
+      <Name>Fiscal Period</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c8e57611-563d-439d-af07-e9955f53d408">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c1cf07a1-704a-40ff-af3c-3a1a760c30ce">
+            <TableID>dbo_V_Production_APD_Budget</TableID>
+            <ColumnID>FiscalPeriod</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="816cd337-da29-439d-a1c5-394c1e784071">
+      <ID>Fiscal Eng Month</ID>
+      <Name>Fiscal Eng Month</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="79a35f0b-227a-4e33-b483-2bb9befed7ed">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f615cae4-7478-4be0-8fc6-4f1395e2d97a">
+            <TableID>dbo_V_Production_APD_Budget</TableID>
+            <ColumnID>FiscalEngMonth</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="70ded110-90c3-4059-bd88-20358afd9bb2">
+      <ID>Fiscal Thai Month</ID>
+      <Name>Fiscal Thai Month</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c50b4978-398b-4146-8d70-02d66fc3f1af">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b82471ee-5e11-41f6-9e26-83d75587f754">
+            <TableID>dbo_V_Production_APD_Budget</TableID>
+            <ColumnID>FiscalThaiMonth</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="43e6250d-a447-4493-b48b-756ffb14641f">
+      <ID>Division</ID>
+      <Name>Division</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ff380d3c-4344-4818-827e-51a9a6cfaf49">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="fd82e71f-9a58-4e11-b999-330aaa40e4c8">
+            <TableID>dbo_V_Production_APD_Budget</TableID>
+            <ColumnID>Division</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+  </Attributes>
+</Dimension>

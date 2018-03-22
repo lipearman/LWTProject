@@ -1,0 +1,18 @@
+/* Header Fix */
+div.header {
+	position: relative;
+}
+/* no-printz */
+div.navigation, .copyright a, #sidenav-sticky-wrapper, .sidebar, .back_button, .social, .btn, .blogs {display:none !important;}
+/* web-to-print straightener */
+* {color:black !important} 
+body.insights .holder .page_content .articles, .page_header, .articles {float:left !important;} 
+.articles .interior {padding-left:30px !important;}
+body.interior .holder .block .container, body.interior .holder .related_insights .container, body.interior .holder .read_more .container {padding-left: 30px;}
+/* a tags de-uglifier */
+a[href]:after { display:none;content: " (" attr(href) ")"; }
+abbr[title]:after { content: " (" attr(title) ")"; }
+a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+/* page margins */
+@page :left{ margin: 1cm; }
+@page :right{ margin: 1cm; } 

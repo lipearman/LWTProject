@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="th-TH">
+  <Title Text="Dashboard" />
+  <DataSources>
+    <SqlDataSource ComponentName="dashboardSqlDataSource1">
+      <Name>SQL Data Source 1</Name>
+      <Connection Name="localhost_LWTReports_Connection" ProviderKey="MSSqlServer">
+        <Parameters>
+          <Parameter Name="server" Value="localhost" />
+          <Parameter Name="database" Value="LWTReports" />
+          <Parameter Name="useIntegratedSecurity" Value="False" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="userid" Value="sa" />
+          <Parameter Name="password" Value="rsa" />
+        </Parameters>
+      </Connection>
+      <Query Type="TableQuery" Name="WH_NLTHWorkFlow">
+        <Table Name="WH_NLTHWorkFlow">
+          <Column Name="RN No" />
+          <Column Name="UserRec" />
+          <Column Name="User RN " />
+          <Column Name="ContractNo" />
+          <Column Name="ProductGroupType" />
+          <Column Name="ProductGroup" />
+          <Column Name="YearGroupType" />
+          <Column Name="RegisterYearGroup" />
+          <Column Name="MT Code" />
+          <Column Name="ClientCode" />
+          <Column Name="ClientName" />
+          <Column Name="ClientProvinceArea" />
+          <Column Name="ClientAddress" />
+          <Column Name="Brand" />
+          <Column Name="Model" />
+          <Column Name="Model Group" />
+          <Column Name="Chassis" />
+          <Column Name="CarID" />
+          <Column Name="RegisterYear" />
+          <Column Name="Car Type" />
+          <Column Name="Sum Insured" />
+          <Column Name="ProductCode" />
+          <Column Name="ProductType" />
+          <Column Name="Effective Date" />
+          <Column Name="Expiry Date" />
+          <Column Name="CoverDays" />
+          <Column Name="Type of policie" />
+          <Column Name="1stRecordDate" />
+          <Column Name="Aging (Days)" />
+          <Column Name="Aging Group" />
+          <Column Name="User Contact" />
+          <Column Name="Closing Date" />
+          <Column Name="User Closing" />
+          <Column Name="Status" />
+          <Column Name="Status Group" />
+          <Column Name="Status All" />
+          <Column Name="Lapse date" />
+          <Column Name="Confirm Date" />
+          <Column Name="User Confirm" />
+          <Column Name="Cancel Policy Date" />
+          <Column Name="User Cancel Policy" />
+          <Column Name="User Collection" />
+          <Column Name="Contact Collection" />
+          <Column Name="PaidCompleteDatetxt" />
+          <Column Name="Paid Date" />
+          <Column Name="PaidAging" />
+          <Column Name="Aging Group Paid Date" />
+          <Column Name="1st Collection date" />
+          <Column Name="1st Collection over Eff Date" />
+          <Column Name="Aging Group 1st Collection" />
+          <Column Name="VMI Gross Premium" />
+          <Column Name="VMI Total Premium" />
+          <Column Name="CMI Gross Premium" />
+          <Column Name="CMI Total Premium" />
+          <Column Name="Discount %" />
+          <Column Name="Discount Amount " />
+          <Column Name="TotalPremiumAfterDisc" />
+          <Column Name="Paid Amount" />
+          <Column Name="%  Paid Amount" />
+          <Column Name="Discount Group" />
+          <Column Name="Payment Channal" />
+          <Column Name="Balance / ยอดเบี้ยค้าง" />
+          <Column Name="CreditCardInstalment " />
+          <Column Name="Status Collection" />
+          <Column Name="Old Insurer" />
+          <Column Name="New Insurer" />
+          <Column Name="InsuranceType" />
+          <Column Name="Beneficiary" />
+          <Column Name="Paid Remark" />
+          <Column Name="SpecialNote1" />
+          <Column Name="SpecialNote2" />
+          <Column Name="SpecialNote3" />
+          <Column Name="Lapse/CP/CE Reason Group" />
+          <Column Name="L/CP/CE Reason" />
+          <Column Name="L/CP/CE Reason Description" />
+          <Column Name="ShowroomCode" />
+          <Column Name="ShowRoomName" />
+          <Column Name="DealerCode" />
+          <Column Name="DealerType" />
+          <Column Name="SubAgent2Code" />
+          <Column Name="SubAgent2Name" />
+          <Column Name="Previous PolicyNo" />
+          <Column Name="Last Record date" />
+          <Column Name="User Record" />
+          <Column Name="InsurerCode" />
+          <Column Name="CompanyCode" />
+          <Column Name="DataRenewID" />
+          <Column Name="ExpireLot" />
+          <Column Name="InForm" />
+          <Column Name="CodeData" />
+          <Column Name="IDCodeData" />
+          <Column Name="RN" />
+          <Column Name="QT" />
+          <Column Name="MT" />
+        </Table>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 1">
+          <View Name="WH_NLTHWorkFlow">
+            <Field Name="RN No" Type="String" />
+            <Field Name="UserRec" Type="String" />
+            <Field Name="User RN " Type="String" />
+            <Field Name="ContractNo" Type="String" />
+            <Field Name="ProductGroupType" Type="String" />
+            <Field Name="ProductGroup" Type="String" />
+            <Field Name="YearGroupType" Type="Int32" />
+            <Field Name="RegisterYearGroup" Type="String" />
+            <Field Name="MT Code" Type="String" />
+            <Field Name="ClientCode" Type="String" />
+            <Field Name="ClientName" Type="String" />
+            <Field Name="ClientProvinceArea" Type="String" />
+            <Field Name="ClientAddress" Type="String" />
+            <Field Name="Brand" Type="String" />
+            <Field Name="Model" Type="String" />
+            <Field Name="Model Group" Type="Int32" />
+            <Field Name="Chassis" Type="String" />
+            <Field Name="CarID" Type="String" />
+            <Field Name="RegisterYear" Type="String" />
+            <Field Name="Car Type" Type="String" />
+            <Field Name="Sum Insured" Type="String" />
+            <Field Name="ProductCode" Type="String" />
+            <Field Name="ProductType" Type="String" />
+            <Field Name="Effective Date" Type="DateTime" />
+            <Field Name="Expiry Date" Type="DateTime" />
+            <Field Name="CoverDays" Type="Int32" />
+            <Field Name="Type of policie" Type="String" />
+            <Field Name="1stRecordDate" Type="DateTime" />
+            <Field Name="Aging (Days)" Type="Int32" />
+            <Field Name="Aging Group" Type="String" />
+            <Field Name="User Contact" Type="String" />
+            <Field Name="Closing Date" Type="DateTime" />
+            <Field Name="User Closing" Type="String" />
+            <Field Name="Status" Type="String" />
+            <Field Name="Status Group" Type="String" />
+            <Field Name="Status All" Type="String" />
+            <Field Name="Lapse date" Type="DateTime" />
+            <Field Name="Confirm Date" Type="DateTime" />
+            <Field Name="User Confirm" Type="String" />
+            <Field Name="Cancel Policy Date" Type="DateTime" />
+            <Field Name="User Cancel Policy" Type="String" />
+            <Field Name="User Collection" Type="String" />
+            <Field Name="Contact Collection" Type="String" />
+            <Field Name="PaidCompleteDatetxt" Type="String" />
+            <Field Name="Paid Date" Type="DateTime" />
+            <Field Name="PaidAging" Type="Int32" />
+            <Field Name="Aging Group Paid Date" Type="String" />
+            <Field Name="1st Collection date" Type="DateTime" />
+            <Field Name="1st Collection over Eff Date" Type="Int32" />
+            <Field Name="Aging Group 1st Collection" Type="String" />
+            <Field Name="VMI Gross Premium" Type="Decimal" />
+            <Field Name="VMI Total Premium" Type="Decimal" />
+            <Field Name="CMI Gross Premium" Type="Decimal" />
+            <Field Name="CMI Total Premium" Type="Decimal" />
+            <Field Name="Discount %" Type="Decimal" />
+            <Field Name="Discount Amount " Type="Decimal" />
+            <Field Name="TotalPremiumAfterDisc" Type="Decimal" />
+            <Field Name="Paid Amount" Type="Decimal" />
+            <Field Name="%  Paid Amount" Type="Decimal" />
+            <Field Name="Discount Group" Type="String" />
+            <Field Name="Payment Channal" Type="String" />
+            <Field Name="Balance / ยอดเบี้ยค้าง" Type="Decimal" />
+            <Field Name="CreditCardInstalment " Type="String" />
+            <Field Name="Status Collection" Type="String" />
+            <Field Name="Old Insurer" Type="String" />
+            <Field Name="New Insurer" Type="String" />
+            <Field Name="InsuranceType" Type="String" />
+            <Field Name="Beneficiary" Type="String" />
+            <Field Name="Paid Remark" Type="String" />
+            <Field Name="SpecialNote1" Type="String" />
+            <Field Name="SpecialNote2" Type="String" />
+            <Field Name="SpecialNote3" Type="String" />
+            <Field Name="Lapse/CP/CE Reason Group" Type="String" />
+            <Field Name="L/CP/CE Reason" Type="String" />
+            <Field Name="L/CP/CE Reason Description" Type="String" />
+            <Field Name="ShowroomCode" Type="String" />
+            <Field Name="ShowRoomName" Type="String" />
+            <Field Name="DealerCode" Type="String" />
+            <Field Name="DealerType" Type="Int32" />
+            <Field Name="SubAgent2Code" Type="String" />
+            <Field Name="SubAgent2Name" Type="String" />
+            <Field Name="Previous PolicyNo" Type="String" />
+            <Field Name="Last Record date" Type="DateTime" />
+            <Field Name="User Record" Type="String" />
+            <Field Name="InsurerCode" Type="String" />
+            <Field Name="CompanyCode" Type="String" />
+            <Field Name="DataRenewID" Type="Int32" />
+            <Field Name="ExpireLot" Type="String" />
+            <Field Name="InForm" Type="String" />
+            <Field Name="CodeData" Type="String" />
+            <Field Name="IDCodeData" Type="String" />
+            <Field Name="RN" Type="Int32" />
+            <Field Name="QT" Type="Int32" />
+            <Field Name="MT" Type="Int32" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Pie ComponentName="pieDashboardItem5" Name="Status" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="WH_NLTHWorkFlow">
+      <InteractivityOptions MasterFilterMode="Multiple" />
+      <DataItems>
+        <Dimension DataMember="Status" UniqueName="DataItem0" />
+        <Measure DataMember="CodeData" Name=" " SummaryType="Count" UniqueName="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem0" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem1" />
+      </Values>
+    </Pie>
+    <ListBox ComponentName="listBoxDashboardItem1" Name="Filter" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="WH_NLTHWorkFlow">
+      <DataItems>
+        <Dimension DataMember="CodeData" UniqueName="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension UniqueName="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+    <Pie ComponentName="pieDashboardItem2" Name="RegisterYearGroup" DataSource="dashboardSqlDataSource1" DataMember="WH_NLTHWorkFlow">
+      <InteractivityOptions MasterFilterMode="Multiple" />
+      <DataItems>
+        <Dimension DataMember="RegisterYearGroup" UniqueName="DataItem1" />
+        <Measure DataMember="CodeData" Name="1Y/SY" SummaryType="Count" UniqueName="DataItem2" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem1" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem2" />
+      </Values>
+    </Pie>
+    <Pie ComponentName="pieDashboardItem1" Name="Product" DataSource="dashboardSqlDataSource1" DataMember="WH_NLTHWorkFlow">
+      <DataItems>
+        <Dimension DataMember="ProductGroup" UniqueName="DataItem0" />
+        <Measure DataMember="CodeData" Name=" " SummaryType="Count" UniqueName="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem0" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem1" />
+      </Values>
+    </Pie>
+    <Pie ComponentName="pieDashboardItem3" Name="Aging" DataSource="dashboardSqlDataSource1" DataMember="WH_NLTHWorkFlow">
+      <DataItems>
+        <Dimension DataMember="Aging Group" UniqueName="DataItem0" />
+        <Measure DataMember="CodeData" Name=" " SummaryType="Count" UniqueName="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem0" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem1" />
+      </Values>
+    </Pie>
+    <Pie ComponentName="pieDashboardItem4" Name="Collection" DataSource="dashboardSqlDataSource1" DataMember="WH_NLTHWorkFlow">
+      <DataItems>
+        <Dimension DataMember="Status Collection" UniqueName="DataItem0" />
+        <Measure DataMember="CodeData" Name=" " SummaryType="Count" UniqueName="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem0" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem1" />
+      </Values>
+    </Pie>
+    <Grid ComponentName="gridDashboardItem1" Name="Insurer" DataSource="dashboardSqlDataSource1" DataMember="WH_NLTHWorkFlow">
+      <DataItems>
+        <Dimension DataMember="New Insurer" TopNEnabled="true" TopNCount="10" TopNMeasure="DataItem1" UniqueName="DataItem0" />
+        <Measure DataMember="Status" SummaryType="Count" UniqueName="DataItem1" />
+      </DataItems>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 1" DataItem="DataItem1">
+          <FormatConditionRangeGradient ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="GradientGreen" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="10" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="20" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="30" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="40" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="50" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="60" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="70" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="80" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="90" />
+                  <AppearanceSettings AppearanceType="GradientBlue" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeGradient>
+        </GridItemFormatRule>
+      </FormatRules>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension UniqueName="DataItem0" />
+        </GridDimensionColumn>
+        <GridMeasureColumn>
+          <Measure UniqueName="DataItem1" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <GridOptions />
+    </Grid>
+  </Items>
+  <Groups>
+    <Group ComponentName="dashboardItemGroup1" Name="Status">
+      <InteractivityOptions IsMasterFilter="true" />
+    </Group>
+  </Groups>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical">
+      <LayoutGroup Weight="40.037950664136623">
+        <LayoutGroup DashboardItem="dashboardItemGroup1" Weight="50.053475935828878">
+          <LayoutItem DashboardItem="listBoxDashboardItem1" Weight="21.875" />
+          <LayoutItem DashboardItem="pieDashboardItem5" Weight="78.125" />
+        </LayoutGroup>
+        <LayoutItem DashboardItem="pieDashboardItem2" Weight="49.946524064171122" />
+      </LayoutGroup>
+      <LayoutGroup Weight="30.740037950664135">
+        <LayoutItem DashboardItem="pieDashboardItem1" Weight="50.053475935828878" />
+        <LayoutItem DashboardItem="pieDashboardItem3" Weight="49.946524064171122" />
+      </LayoutGroup>
+      <LayoutGroup Weight="29.222011385199242">
+        <LayoutItem DashboardItem="pieDashboardItem4" Weight="50.053475935828878" />
+        <LayoutItem DashboardItem="gridDashboardItem1" Weight="49.946524064171122" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

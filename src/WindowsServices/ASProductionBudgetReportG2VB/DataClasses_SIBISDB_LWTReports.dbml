@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LWTReports" Class="DataClasses_SIBISDB_LWTReportsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LOCKTHBNKMGC01\SIBISSQL;Initial Catalog=LWTReports;User ID=sa" SettingsObjectName="ASProductionBudgetReportG2VB.My.MySettings" SettingsPropertyName="LWTReportsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.V_Production_APD_Budget_Monthly_Report" Member="V_Production_APD_Budget_Monthly_Reports">
+    <Type Name="V_Production_APD_Budget_Monthly_Report">
+      <Column Name="AEGroupName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AESGroupName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AEName" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="Owner" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NetIncome" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DNCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CNCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BudgetAmount" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="DataDateFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataDateTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

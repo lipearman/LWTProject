@@ -1,0 +1,180 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="5431ebaa-9255-4e9d-8d14-e9584bccb416" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>eGlobal</ID>
+  <Name>eGlobal</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-5325" scrolltop="-1733" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="15610" y="13653" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="RawData" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4921" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000800003913000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_RawData" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-5325</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-1733</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="aed58ac1-7e64-45ed-aa91-ea63c357ad01">
+      <ID>Raw Data</ID>
+      <Name>Raw Data</Name>
+      <DimensionID>Raw Data</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="15a69ded-fb59-4f6c-8b1f-42a1824bd851">
+          <AttributeID>ID</AttributeID>
+          <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+        </Attribute>
+        <Attribute dwd:design-time-name="f75b0776-a402-419a-83c2-0d0e77edf2e5">
+          <AttributeID>PLY REGION</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="fb750fbe-1eb5-4764-b86b-d8078e31ddc8">
+          <AttributeID>PLY COUNTRY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="97ecb84f-6545-44ca-9374-5cb4083f8904">
+          <AttributeID>PLY COVER NO</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="13eb590b-b15c-4aa1-bb69-7de9acb9dd06">
+          <AttributeID>PLY VER NO</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="750dca6a-98b9-4d5d-a443-58438dfa2e3c">
+          <AttributeID>PLY TRANSACTION TYPE</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="38ce1127-a923-4ac4-9d58-427b7badb85a">
+          <AttributeID>PLY EFF DATE</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="53638a2b-e550-4cdc-81bc-96ee0d390138">
+          <AttributeID>PLY REN DATE</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0963adac-7c51-4bff-b150-551d042da263">
+          <AttributeID>PLY STATUS</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="87e163e1-9c5d-4287-8d22-9b112fe523ac">
+      <ID>Raw Data</ID>
+      <Name>Raw Data</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="a3e8802e-f931-4ffb-970a-55dc80679631">
+          <ID>PLY GROSS PREMIUM LC</ID>
+          <Name>PLY GROSS PREMIUM LC</Name>
+          <Source dwd:design-time-name="78319b9d-096a-4817-9361-ad520211ac1c">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="9aef879d-62e2-46f0-9b4b-fb0114e5fa1c">
+              <TableID>dbo_RawData</TableID>
+              <ColumnID>PLY_GROSS_PREMIUM_LC</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="178fa259-66b1-48b8-be32-19c94118368f">
+          <ID>PLY NET INCOME LC</ID>
+          <Name>PLY NET INCOME LC</Name>
+          <Source dwd:design-time-name="9907863e-198f-4c40-a56e-c161bcf2b3aa">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="9346f751-2a78-4468-a023-daa31bf6eb48">
+              <TableID>dbo_RawData</TableID>
+              <ColumnID>PLY_NET_INCOME_LC</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="38ab71ec-4412-40a4-b559-410e34ee4bdc">
+          <ID>Raw Data Count</ID>
+          <Name>Raw Data Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="298765cb-c577-4d46-94e5-2406515e752a">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="d0f72982-09f1-4f6a-8308-fff294aa74cc">
+              <TableID>dbo_RawData</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="274bc73a-0924-40d0-8cbf-785c1a6dafde">
+          <CubeDimensionID>Raw Data</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="2ca2f8df-e17a-4e85-93ca-420f6283ac7e">
+              <AttributeID>ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="0c042696-5098-469f-b66d-c03e103d45bb">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c76743c2-5b00-49b5-82b3-8de027b01a4d">
+                    <TableID>dbo_RawData</TableID>
+                    <ColumnID>ID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="3eccfbdd-eb8d-489f-b035-36229dafad1d">
+    <DataSourceViewID>DV_eGlobal</DataSourceViewID>
+  </Source>
+</Cube>

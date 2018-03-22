@@ -1,0 +1,619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{7EAAADDB-3C3C-498A-B7F8-B920F2D7C226}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Portal.Web.SingleSignOn</RootNamespace>
+    <AssemblyName>Portal.Web.SingleSignOn</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Portal.Web.SingleSignOn.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Portal.Web.SingleSignOn.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Export, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\Users\dusit\Desktop\SignalR\Sample2\SignalRApp\packages\Newtonsoft.Json.4.5.5\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PokeIn">
+      <HintPath>..\..\..\Users\dusit\Desktop\SignalR\New folder\PokeIn_Free_v2.190\PokeIn Binaries FREE Edition\ASP.NET\NET 2.0, 3.5\PokeIn.dll</HintPath>
+    </Reference>
+    <Reference Include="PokeInMethod">
+      <HintPath>..\..\..\Users\dusit\Desktop\SignalR\New folder\PokeIn_Free_v2.190\PokeIn Binaries FREE Edition\ASP.NET\NET 2.0, 3.5\PokeInMethod.dll</HintPath>
+    </Reference>
+    <Reference Include="SignalR">
+      <HintPath>..\..\..\Users\dusit\Desktop\SignalR\Sample2\SignalRApp\packages\SignalR.Server.0.5.0\lib\net40\SignalR.dll</HintPath>
+    </Reference>
+    <Reference Include="SignalR.Client">
+      <HintPath>..\..\..\Users\dusit\Desktop\SignalR\Sample2\SignalRConsole\packages\SignalR.Client.0.5.0\lib\net40\SignalR.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SignalR.Hosting.AspNet">
+      <HintPath>..\..\..\Users\dusit\Desktop\SignalR\Sample2\SignalRApp\packages\SignalR.Hosting.AspNet.0.5.0\lib\net40\SignalR.Hosting.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SignalR.MessengerHub">
+      <HintPath>..\..\..\Users\dusit\Desktop\SignalR\Sample2\SignalRApp\SignalR.MessengerHub\bin\Debug\SignalR.MessengerHub.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\ForgotPassword.aspx" />
+    <Content Include="Account\ForgotPasswordCompleted.aspx" />
+    <Content Include="Account\Menu.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterCompleted.aspx" />
+    <Content Include="Account\RegisterConfirmation.aspx" />
+    <Content Include="Account\SignIn.aspx" />
+    <Content Include="Account\SignOut.aspx" />
+    <Content Include="Example\api.html" />
+    <Content Include="Example\basic - Copy.html" />
+    <Content Include="Example\basic.html" />
+    <Content Include="Example\cities.html" />
+    <Content Include="Example\confirm.html" />
+    <Content Include="Example\contacts.html" />
+    <Content Include="Example\create-filter.html" />
+    <Content Include="Example\css\normalize.css" />
+    <Content Include="Example\css\stylesheet.css" />
+    <Content Include="Example\customization.html" />
+    <Content Include="Example\dist\css\selectize.bootstrap2.css" />
+    <Content Include="Example\dist\css\selectize.bootstrap3.css" />
+    <Content Include="Example\dist\css\selectize.css" />
+    <Content Include="Example\dist\css\selectize.default.css" />
+    <Content Include="Example\dist\css\selectize.legacy.css" />
+    <Content Include="Example\dist\js\selectize.js" />
+    <Content Include="Example\dist\js\selectize.min.js" />
+    <Content Include="Example\dist\js\standalone\selectize.js" />
+    <Content Include="Example\dist\js\standalone\selectize.min.js" />
+    <Content Include="Example\dynamic.html" />
+    <Content Include="Example\events.html" />
+    <Content Include="Example\github.html" />
+    <Content Include="Example\images\bg.png" />
+    <Content Include="Example\images\check%402x.png" />
+    <Content Include="Example\images\repo-forked.png" />
+    <Content Include="Example\images\repo-source.png" />
+    <Content Include="Example\images\spinner.gif" />
+    <Content Include="Example\js\es5.js" />
+    <Content Include="Example\js\index.js" />
+    <Content Include="Example\js\jquery.min.js" />
+    <Content Include="Example\js\jqueryui.js" />
+    <Content Include="Example\lock.html" />
+    <Content Include="Example\movies.html" />
+    <Content Include="Example\optgroups.html" />
+    <Content Include="Example\performance.html" />
+    <Content Include="Example\plugins.html" />
+    <Content Include="Example\required.html" />
+    <Content Include="Example\rtl.html" />
+    <Content Include="Example\WebForm1.aspx" />
+    <Content Include="Innovation\WebForm1.aspx" />
+    <Content Include="js\guidely\guidely-number.png" />
+    <Content Include="js\guidely\guidely.css" />
+    <Content Include="js\guidely\guidely.min.js" />
+    <Content Include="Innovation\StartPokemon.aspx" />
+    <Content Include="Desktop.aspx" />
+    <Content Include="Innovation\Firework.aspx" />
+    <Content Include="images\cutting_red_ribbon.jpg" />
+    <Content Include="images\DispLogo.gif" />
+    <Content Include="images\displogo.jpg" />
+    <Content Include="images\2.jpg" />
+    <Content Include="images\3.jpg" />
+    <Content Include="images\7.jpg" />
+    <Content Include="images\5.jpg" />
+    <Content Include="images\4.jpg" />
+    <Content Include="images\9.jpg" />
+    <Content Include="images\world-map.jpg" />
+    <Content Include="Innovation\OppsPage.aspx" />
+    <Content Include="Innovation\Pokemon.aspx" />
+    <Content Include="js\notiny\notiny.css" />
+    <Content Include="js\notiny\notiny.js" />
+    <Content Include="js\notiny\notiny.min.css" />
+    <Content Include="js\notiny\notiny.min.js" />
+    <Content Include="res\css\animation-moz.css" />
+    <Content Include="res\css\animation-webkit.css" />
+    <Content Include="res\css\dock.css" />
+    <Content Include="res\css\style.css" />
+    <Content Include="res\css\window.css" />
+    <Content Include="res\img\address.png" />
+    <Content Include="res\img\Alert.png" />
+    <Content Include="res\img\alessio-atzeni-logo.png" />
+    <Content Include="res\img\Andromeda-Galaxy.jpg" />
+    <Content Include="res\img\apple-logo-boot.png" />
+    <Content Include="res\img\apple-logo-login.png" />
+    <Content Include="res\img\apple-logo.png" />
+    <Content Include="res\img\appstore.png" />
+    <Content Include="res\img\background.png" />
+    <Content Include="res\img\buttons-hover.png" />
+    <Content Include="res\img\dock-bg-left.png" />
+    <Content Include="res\img\dock-bg-right.png" />
+    <Content Include="res\img\dock-bg.png" />
+    <Content Include="res\img\expose.png" />
+    <Content Include="res\img\facetime.png" />
+    <Content Include="res\img\FinderIcon.png" />
+    <Content Include="res\img\folder.png" />
+    <Content Include="res\img\gradient.png" />
+    <Content Include="res\img\ichat.png" />
+    <Content Include="res\img\iTunes.png" />
+    <Content Include="res\img\launchPad.png" />
+    <Content Include="res\img\Lion.gif" />
+    <Content Include="res\img\loadinfologin.gif" />
+    <Content Include="res\img\MacOSX.png" />
+    <Content Include="res\img\preferences.png" />
+    <Content Include="res\img\preview.png" />
+    <Content Include="res\img\Safari.png" />
+    <Content Include="res\img\spinnerSmall.gif" />
+    <Content Include="res\img\submit.png" />
+    <Content Include="res\img\trash.png" />
+    <Content Include="res\img\wireless-icon-login.png" />
+    <Content Include="res\img\wireless-icon.png" />
+    <Content Include="res\js\fix-and-clock.js" />
+    <Content Include="res\js\jquery-1.7.1.min.js" />
+    <Content Include="res\js\jquery-ui-1.8.17.custom.min.js" />
+    <Content Include="res\js\modernizr.js" />
+    <Content Include="Innovation\Scripts\audio.js" />
+    <Content Include="Innovation\Scripts\audiojs\audio.min.js" />
+    <Content Include="Innovation\Scripts\audiojs\audiojs.swf" />
+    <Content Include="Innovation\Scripts\audiojs\player-graphics.gif" />
+    <Content Include="Innovation\Scripts\jquery.fireworks.js" />
+    <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery.color.js" />
+    <Content Include="Scripts\jquery.jgrowl.css" />
+    <Content Include="Scripts\jquery.jgrowl.js" />
+    <Content Include="Scripts\jquery.signalR-0.5.0.js" />
+    <Content Include="Scripts\jquery.signalR-0.5.0.min.js" />
+    <Content Include="SignIn.aspx" />
+    <Content Include="SignOff.aspx" />
+    <Content Include="Innovation\StartUp.aspx" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Innovation\Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Innovation\Scripts\jquery-1.4.1.js" />
+    <Content Include="Innovation\Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Theme\index.html" />
+    <Content Include="Theme\res\css\animation-moz.css" />
+    <Content Include="Theme\res\css\animation-webkit.css" />
+    <Content Include="Theme\res\css\dock.css" />
+    <Content Include="Theme\res\css\style.css" />
+    <Content Include="Theme\res\css\window.css" />
+    <Content Include="Theme\res\img\address.png" />
+    <Content Include="Theme\res\img\Alert.png" />
+    <Content Include="Theme\res\img\alessio-atzeni-logo.png" />
+    <Content Include="Theme\res\img\Andromeda-Galaxy.jpg" />
+    <Content Include="Theme\res\img\apple-logo-boot.png" />
+    <Content Include="Theme\res\img\apple-logo-login.png" />
+    <Content Include="Theme\res\img\apple-logo.png" />
+    <Content Include="Theme\res\img\appstore.png" />
+    <Content Include="Theme\res\img\background.png" />
+    <Content Include="Theme\res\img\buttons-hover.png" />
+    <Content Include="Theme\res\img\dock-bg-left.png" />
+    <Content Include="Theme\res\img\dock-bg-right.png" />
+    <Content Include="Theme\res\img\dock-bg.png" />
+    <Content Include="Theme\res\img\expose.png" />
+    <Content Include="Theme\res\img\facetime.png" />
+    <Content Include="Theme\res\img\FinderIcon.png" />
+    <Content Include="Theme\res\img\folder.png" />
+    <Content Include="Theme\res\img\gradient.png" />
+    <Content Include="Theme\res\img\ichat.png" />
+    <Content Include="Theme\res\img\iTunes.png" />
+    <Content Include="Theme\res\img\launchPad.png" />
+    <Content Include="Theme\res\img\Lion.gif" />
+    <Content Include="Theme\res\img\loadinfologin.gif" />
+    <Content Include="Theme\res\img\MacOSX.png" />
+    <Content Include="Theme\res\img\preferences.png" />
+    <Content Include="Theme\res\img\preview.png" />
+    <Content Include="Theme\res\img\Safari.png" />
+    <Content Include="Theme\res\img\spinnerSmall.gif" />
+    <Content Include="Theme\res\img\submit.png" />
+    <Content Include="Theme\res\img\trash.png" />
+    <Content Include="Theme\res\img\wireless-icon-login.png" />
+    <Content Include="Theme\res\img\wireless-icon.png" />
+    <Content Include="Theme\res\js\fix-and-clock.js" />
+    <Content Include="Theme\res\js\jquery-ui-1.8.17.custom.min.js" />
+    <Content Include="Theme\res\js\modernizr.js" />
+    <Content Include="Innovation\TopPlayers.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="index.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.designer.vb">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="About.aspx.vb">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.vb">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.vb">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.vb">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.vb">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Account\ForgotPassword.aspx.designer.vb">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ForgotPassword.aspx.vb">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Account\ForgotPasswordCompleted.aspx.designer.vb">
+      <DependentUpon>ForgotPasswordCompleted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ForgotPasswordCompleted.aspx.vb">
+      <DependentUpon>ForgotPasswordCompleted.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Account\Menu.aspx.designer.vb">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Menu.aspx.vb">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.vb">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.vb">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterCompleted.aspx.designer.vb">
+      <DependentUpon>RegisterCompleted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterCompleted.aspx.vb">
+      <DependentUpon>RegisterCompleted.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterConfirmation.aspx.designer.vb">
+      <DependentUpon>RegisterConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterConfirmation.aspx.vb">
+      <DependentUpon>RegisterConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Account\SignIn.aspx.designer.vb">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\SignIn.aspx.vb">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Account\SignOut.aspx.designer.vb">
+      <DependentUpon>SignOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\SignOut.aspx.vb">
+      <DependentUpon>SignOut.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Example\WebForm1.aspx.designer.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Example\WebForm1.aspx.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Innovation\StartPokemon.aspx.designer.vb">
+      <DependentUpon>StartPokemon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Innovation\StartPokemon.aspx.vb">
+      <DependentUpon>StartPokemon.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DataClasses1.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Desktop.aspx.designer.vb">
+      <DependentUpon>Desktop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Desktop.aspx.vb">
+      <DependentUpon>Desktop.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Innovation\Firework.aspx.designer.vb">
+      <DependentUpon>Firework.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Innovation\Firework.aspx.vb">
+      <DependentUpon>Firework.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Innovation\WebForm1.aspx.designer.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Innovation\WebForm1.aspx.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Innovation\OppsPage.aspx.designer.vb">
+      <DependentUpon>OppsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Innovation\OppsPage.aspx.vb">
+      <DependentUpon>OppsPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Innovation\Pokemon.aspx.designer.vb">
+      <DependentUpon>Pokemon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Innovation\Pokemon.aspx.vb">
+      <DependentUpon>Pokemon.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SignIn.aspx.designer.vb">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignIn.aspx.vb">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SignOff.aspx.designer.vb">
+      <DependentUpon>SignOff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignOff.aspx.vb">
+      <DependentUpon>SignOff.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.vb">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.vb">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Innovation\StartUp.aspx.designer.vb">
+      <DependentUpon>StartUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Innovation\StartUp.aspx.vb">
+      <DependentUpon>StartUp.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Innovation\TopPlayers.aspx.designer.vb">
+      <DependentUpon>TopPlayers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Innovation\TopPlayers.aspx.vb">
+      <DependentUpon>TopPlayers.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appSettings.config" />
+    <None Include="DataClasses1.dbml.layout">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="DataClasses1.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses1.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Example\dist\less\plugins\drag_drop.less" />
+    <Content Include="Example\dist\less\plugins\dropdown_header.less" />
+    <Content Include="Example\dist\less\plugins\optgroup_columns.less" />
+    <Content Include="Example\dist\less\plugins\remove_button.less" />
+    <Content Include="Example\dist\less\selectize.bootstrap2.less" />
+    <Content Include="Example\dist\less\selectize.bootstrap3.less" />
+    <Content Include="Example\dist\less\selectize.default.less" />
+    <Content Include="Example\dist\less\selectize.legacy.less" />
+    <Content Include="Example\dist\less\selectize.less" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="bin\" />
+    <Folder Include="Innovation\js\" />
+    <Folder Include="Innovation\mp3\" />
+    <Folder Include="My Project\MyExtensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Master\Portal.Components\Portal.Components.vbproj">
+      <Project>{23f715da-0df9-4d98-b6cc-42246e5a5db2}</Project>
+      <Name>Portal.Components</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63369</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

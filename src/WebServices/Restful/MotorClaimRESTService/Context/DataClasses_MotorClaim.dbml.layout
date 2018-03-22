@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses_MotorClaim">
+  <DataContextMoniker Name="/DataClasses_MotorClaimDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5c0ca477-5ded-424b-b588-e956edb8a69b" absoluteBounds="3.25, 0.875, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/tblGarage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fb7e4f64-f64c-4c8a-b915-84ca48dfc80a" absoluteBounds="3.2649999999999997, 1.335, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

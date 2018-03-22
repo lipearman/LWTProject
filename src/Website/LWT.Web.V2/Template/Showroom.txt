@@ -1,0 +1,4 @@
+SELECT rtrim([CompanyName]) + ' : ' + convert(varchar,[ShowroomID])
+FROM [nltdb].[dbo].[Showroom]
+where  [CompanyName] is not null and status = 1
+order by [CompanyName]

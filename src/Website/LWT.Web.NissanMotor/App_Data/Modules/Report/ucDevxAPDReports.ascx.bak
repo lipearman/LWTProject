@@ -1,0 +1,167 @@
+﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="ucDevxAPDReports.ascx.vb" Inherits="Modules_ucDevxAPDReports" %>
+<%@ Register Assembly="DevExpress.Web.ASPxTreeList.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxTreeList" TagPrefix="dx" %>
+
+
+<script type="text/javascript">
+
+    function ShowMasterBIPopup(RID) {
+        LoadingPanel.Show();
+        cbPreview.PerformCallback(RID);
+
+    }
+</script>
+
+
+
+<dx:ASPxCallback ID="cbPreview" runat="server" ClientInstanceName="cbPreview">
+    <ClientSideEvents CallbackError="function(s, e) { 
+            //LoadingPanel.Hide(); 
+        }"
+        CallbackComplete="function(s, e) { 
+            //LoadingPanel.Hide(); 
+            clientViewBI.SetContentUrl('applications/BI/Master/Preview.aspx');
+            clientViewBI.Show();            
+        }" />
+</dx:ASPxCallback>
+
+
+
+<dx:ASPxRoundPanel ID="pnMain" EnableAnimation="true" ShowCollapseButton="true" HeaderText="Report" runat="server" Width="100%">
+    <PanelCollection>
+        <dx:PanelContent>
+
+
+            <dx:ASPxTreeList ID="treeList" ClientInstanceName="treeList" runat="server" AutoGenerateColumns="false"
+                DataSourceID="SqlDataSource_Data" Settings-ShowRoot="true"
+                SettingsBehavior-AutoExpandAllNodes="true" SettingsEditing-EditFormColumnCount="1"
+                SettingsEditing-ConfirmDelete="true" SettingsEditing-AllowRecursiveDelete="true"
+                KeyFieldName="RID" SettingsText-ConfirmDelete="Confirm Delete?"
+                ParentFieldName="ParentID">
+                <SettingsEditing Mode="PopupEditForm"  AllowRecursiveDelete="true" ConfirmDelete="true"  />
+                <SettingsPopupEditForm Width="100" Modal="true" HorizontalAlign="WindowCenter" VerticalAlign="WindowCenter" />
+                 
+
+                <SettingsBehavior ColumnResizeMode="NextColumn" AllowEllipsisInText="True" />
+                <Styles>
+                    <AlternatingNode Enabled="true" />
+                </Styles>
+                <Columns>
+
+
+                    <dx:TreeListHyperLinkColumn
+                        FieldName="RID" Caption="Report" Width="400">
+                        <PropertiesHyperLink TextField="TITLE" NavigateUrlFormatString="javascript:ShowMasterBIPopup({0});">
+                        </PropertiesHyperLink>
+                        <EditFormSettings Visible="False" />
+                    </dx:TreeListHyperLinkColumn>
+
+                    <dx:TreeListTextColumn FieldName="TITLE" Visible="false" Caption="Report" Width="400" CellStyle-Wrap="False">
+                        <PropertiesTextEdit Width="400">
+                            <ValidationSettings Display="Dynamic">
+                                <RequiredField IsRequired="true" />
+                            </ValidationSettings>
+                        </PropertiesTextEdit>
+                        <EditFormSettings Visible="True"  />
+                    </dx:TreeListTextColumn>
+
+
+
+
+
+                    <dx:TreeListComboBoxColumn FieldName="VIEW_ID" Visible="True" Caption="Data Source" Width="150" CellStyle-Wrap="False">
+                        <EditFormSettings Visible="True" />
+                        <PropertiesComboBox DataSourceID="SqlDataSource_VIEWs" Width="400" TextField="VIEW_TITLE" ValueField="VIEW_ID" ValueType="System.String">
+                        </PropertiesComboBox>
+
+                    </dx:TreeListComboBoxColumn>
+
+
+
+                    <dx:TreeListSpinEditColumn FieldName="No" Visible="false" Caption="OrderNo" Width="80" CellStyle-HorizontalAlign="Center">
+                        <EditFormSettings Visible="True" />
+                        <PropertiesSpinEdit Width="100">
+                            <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
+                        </PropertiesSpinEdit>
+                    </dx:TreeListSpinEditColumn>
+
+
+                    <dx:TreeListCommandColumn ShowNewButtonInHeader="true" Width="100" >
+                        <NewButton Visible="true" Text=" " Image-ToolTip="New" Image-IconID="edit_new_16x16gray" />
+                        <EditButton Visible="true" Text=" " Image-ToolTip="Edit" Image-IconID="actions_edit_16x16devav" />
+                        <DeleteButton Visible="true" Text=" " Image-ToolTip="Delete" Image-IconID="edit_delete_16x16office2013" />
+                        <UpdateButton Text=" " Image-ToolTip="Save" Image-IconID="actions_save_16x16devav"></UpdateButton>
+                        <CancelButton Text=" " Image-ToolTip="Cancel" Image-IconID="actions_cancel_16x16office2013"></CancelButton>
+                         
+                    </dx:TreeListCommandColumn>
+
+
+
+                </Columns>
+
+            </dx:ASPxTreeList>
+
+
+        </dx:PanelContent>
+    </PanelCollection>
+</dx:ASPxRoundPanel>
+
+<asp:SqlDataSource ID="SqlDataSource_Data" runat="server" ConnectionString="<%$ ConnectionStrings:NissanMotorConnectionString %>"
+    SelectCommand="select * from tblReport where REPORT_TYPE='BI' order by No "
+    UpdateCommand="update tblReport set TITLE=@TITLE,DB_ID=@DB_ID, VIEW_ID=@VIEW_ID,No=@No,ParentID=@ParentID,DESCRIPTION=@DESCRIPTION Where RID=@RID"
+    InsertCommand="Insert into tblReport(TITLE,DB_ID,VIEW_ID,No,ParentID,DESCRIPTION,REPORT_TYPE) values(@TITLE,@DB_ID,@VIEW_ID,@No,@ParentID,@DESCRIPTION,'BI')"
+    DeleteCommand="
+    delete tblReport_Assignment where RID=@RID;
+    delete tblReportMaster_Template where RID=@RID;
+    delete tblReportUser_Template where RID=@RID ;
+    delete from tblReport where RID=@RID">
+    <DeleteParameters>
+        <asp:Parameter Name="RID" DbType="Int32" />
+    </DeleteParameters>
+    <UpdateParameters>
+        <asp:Parameter Name="TITLE" DbType="String" />
+        <asp:Parameter Name="DB_ID" DbType="Int32" />
+        <asp:Parameter Name="VIEW_ID" DbType="Int32" />
+        <asp:Parameter Name="DESCRIPTION" DbType="String" />
+        <asp:Parameter Name="ParentID" DbType="Int32" />
+        <asp:Parameter Name="No" DbType="Int32" />
+        <asp:Parameter Name="RID" DbType="Int32" />
+    </UpdateParameters>
+
+    <InsertParameters>
+        <asp:Parameter Name="TITLE" DbType="String" />
+        <asp:Parameter Name="DB_ID" DbType="Int32" />
+        <asp:Parameter Name="VIEW_ID" DbType="Int32" />
+        <asp:Parameter Name="DESCRIPTION" DbType="String" />
+        <asp:Parameter Name="ParentID" DbType="Int32" />
+        <asp:Parameter Name="No" DbType="Int32" />
+    </InsertParameters>
+</asp:SqlDataSource>
+
+
+<asp:SqlDataSource ID="SqlDataSource_VIEWs" runat="server" ConnectionString="<%$ ConnectionStrings:NissanMotorConnectionString %>"
+    SelectCommand="select null VIEW_ID,null VIEW_TITLE union all select VIEW_ID,VIEW_TITLE from tblReport_VIEWs order by VIEW_TITLE "></asp:SqlDataSource>
+
+<dx:ASPxPopupControl ID="clientViewBI" runat="server" ClientInstanceName="clientViewBI"
+    Modal="True"
+    PopupHorizontalAlign="WindowCenter"
+    PopupVerticalAlign="WindowCenter"
+    HeaderText="Business Intelligent"
+    AllowDragging="true"
+    AllowResize="True"
+    EnableAnimation="true"
+    CloseAction="CloseButton"
+    EnableCallbackAnimation="true"
+    EnableViewState="true"
+    ShowPageScrollbarWhenModal="true"
+    ShowMaximizeButton="true"
+    Width="900"
+    Height="790"
+    FooterText=""
+    ShowFooter="true">
+    <%--   <ClientSideEvents Shown="function(s,e){ window.setTimeout(function() {LoadingPanel.Hide();},2000);}" />--%>
+
+    <ContentCollection>
+        <dx:PopupControlContentControl ID="PopupControlContentControl5" runat="server">
+        </dx:PopupControlContentControl>
+    </ContentCollection>
+</dx:ASPxPopupControl>

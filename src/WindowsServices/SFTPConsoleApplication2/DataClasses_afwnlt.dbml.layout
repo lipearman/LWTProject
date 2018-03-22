@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses_afwnlt">
+  <DataContextMoniker Name="/DataClasses_afwnltDataContext" />
+  <nestedChildShapes>
+    <classShape Id="cba96c10-ca72-48c1-8a1e-ec79d2614fe4" absoluteBounds="2.5, 0.75, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/DataClasses_afwnltDataContext/vw_RetailSalesJP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7337d910-838f-4972-9fb9-4b5865191a47" absoluteBounds="2.5149999999999997, 1.21, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

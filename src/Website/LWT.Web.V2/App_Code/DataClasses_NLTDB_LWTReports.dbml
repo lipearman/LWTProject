@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LWTReports" Class="DataClasses_NLTDB_LWTReportsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=afwnlt;Initial Catalog=LWTReports;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LWTReportsNLTDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.V_M2_Application" Member="V_M2_Applications">
+    <Type Name="V_M2_Application">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REFNO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Motor" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="ClientCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDCARD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ClientName" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PhoneNumber1" Type="System.String" DbType="VarChar(174)" CanBeNull="true" />
+      <Column Name="ConTractName" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PhoneNumber2" Type="System.String" DbType="VarChar(174)" CanBeNull="true" />
+      <Column Name="PolicyNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="RNType" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PolicyType" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Suminsured" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="Benefitialy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CarPlate" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CHASSIS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarEngine" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CMI_PolicyNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CMI_StickerNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CMI_StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CMI_EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Project" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Dealer" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="InsurerCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DriverName1" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DriverOld1" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DriverName2" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DriverOld2" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CarAccessories" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CMI_PaymentBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

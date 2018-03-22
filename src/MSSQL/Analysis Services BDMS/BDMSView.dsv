@@ -1,0 +1,243 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="54916d98-9557-4464-985e-2c3284bb7fc3" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>BDMSView</ID>
+  <Name>BDMSView</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout>
+              <dds>
+                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="4" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2456" scrolltop="2590" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="16325" y="15002" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                  <font>
+                    <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                  </font>
+                  <mouseicon>
+                    <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                  </mouseicon>
+                </diagram>
+                <layoutmanager>
+                  <ddsxmlobj />
+                </layoutmanager>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="tblBDMSRawdata" left="3259" top="7591" logicalid="3" controlid="2" masterid="0" hint1="0" hint2="0" width="4895" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000800001f13000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_tblBDMSRawdata" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+              </dds>
+</DiagramLayout>
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>-2456</DiagramViewPortLeft>
+            <DiagramViewPortTop>2590</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>BDMSDS</DataSourceID>
+  <Schema>
+    <xs:schema id="BDMSView" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="BDMSView" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="e8ee9fc2-6402-4cf9-a7d9-6211b325c436">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_tblBDMSRawdata" msprop:FriendlyName="tblBDMSRawdata" msprop:DbSchemaName="dbo" msprop:DbTableName="tblBDMSRawdata" msprop:design-time-name="c7524831-bc16-4850-9d5f-dcf93ba00c61" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="ID" msprop:DbColumnName="ID" msprop:design-time-name="3d652116-0227-4720-aa10-13edc6d26109" type="xs:int" />
+                  <xs:element name="LotNo" msprop:FriendlyName="LotNo" msprop:DbColumnName="LotNo" msprop:design-time-name="5964a130-3d84-4628-b6b9-570eb7067eb3" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Claim_Circumstance" msprop:FriendlyName="Claim_Circumstance" msprop:DbColumnName="Claim_Circumstance" msprop:design-time-name="0a88be7e-6383-4698-8633-178b4faa8be0" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="LWT_Ref" msprop:FriendlyName="LWT_Ref" msprop:DbColumnName="LWT_Ref" msprop:design-time-name="4dda756b-954f-4bf3-81a9-9e343db72639" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Insured" msprop:FriendlyName="Insured" msprop:DbColumnName="Insured" msprop:design-time-name="dfaa761f-596f-46e0-a055-db89489c81d5" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Policy_Period" msprop:FriendlyName="Policy_Period" msprop:DbColumnName="Policy_Period" msprop:design-time-name="b35af831-f7dc-4b12-a27c-87d1d031fd79" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Location" msprop:FriendlyName="Location" msprop:DbColumnName="Location" msprop:design-time-name="ceaf20f5-de2a-4f29-8936-5dbb5b5f0d1f" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PolicyNo" msprop:FriendlyName="PolicyNo" msprop:DbColumnName="PolicyNo" msprop:design-time-name="b3b101cb-97ef-491e-a196-2f573583a0f5" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Date_Of_incident" msprop:FriendlyName="Date_Of_incident" msprop:DbColumnName="Date_Of_incident" msprop:design-time-name="f0f4f463-1a15-41a6-9350-5da7644f3224" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="Claim_Made_By_TP" msprop:FriendlyName="Claim_Made_By_TP" msprop:DbColumnName="Claim_Made_By_TP" msprop:design-time-name="748719f0-de71-46d4-aea8-5df26bde454f" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="Notify_LWT" msprop:FriendlyName="Notify_LWT" msprop:DbColumnName="Notify_LWT" msprop:design-time-name="ec86eac6-be9e-4de8-bbc5-74691ce7c476" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="Patient_Age" msprop:FriendlyName="Patient_Age" msprop:DbColumnName="Patient_Age" msprop:design-time-name="422c5a02-264f-48b2-88dd-ae2b8b34e6f6" type="xs:double" minOccurs="0" />
+                  <xs:element name="Sex" msprop:FriendlyName="Sex" msprop:DbColumnName="Sex" msprop:design-time-name="66345a07-431d-4f13-b70e-73b1241b7e63" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Nationality" msprop:FriendlyName="Nationality" msprop:DbColumnName="Nationality" msprop:design-time-name="37ca0a8e-753c-454a-9006-4b9483c40d1b" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Loss_Description" msprop:FriendlyName="Loss_Description" msprop:DbColumnName="Loss_Description" msprop:design-time-name="cf28086e-22c6-4d6c-89c0-69764676196e" type="xs:string" minOccurs="0" />
+                  <xs:element name="Cause_Of_Loss" msprop:FriendlyName="Cause_Of_Loss" msprop:DbColumnName="Cause_Of_Loss" msprop:design-time-name="55eec8a9-ba5a-40b8-ac9c-2e2b4ddc1ab9" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Category_Of_Medical_Error" msprop:FriendlyName="Category_Of_Medical_Error" msprop:DbColumnName="Category_Of_Medical_Error" msprop:design-time-name="b54e68db-735d-4d12-8eef-d3beb0202d8c" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Related_Doctors" msprop:FriendlyName="Related_Doctors" msprop:DbColumnName="Related_Doctors" msprop:design-time-name="42e99593-e6b3-414c-8138-e507698db24b" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Medical_Field" msprop:FriendlyName="Medical_Field" msprop:DbColumnName="Medical_Field" msprop:design-time-name="c4b03454-4543-4ee0-946d-d838936c9bbf" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Full_PartTime" msprop:FriendlyName="Full_PartTime" msprop:DbColumnName="Full_PartTime" msprop:design-time-name="f26479d9-f4a1-4564-abb1-fb15ab8530fd" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Comment_On_Policy_Liability" msprop:FriendlyName="Comment_On_Policy_Liability" msprop:DbColumnName="Comment_On_Policy_Liability" msprop:design-time-name="aa84f7ab-c661-4e36-b63e-82625ebce0b2" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Request_Claim_By_Patient" msprop:FriendlyName="Request_Claim_By_Patient" msprop:DbColumnName="Request_Claim_By_Patient" msprop:design-time-name="2aaa379d-98d1-418b-877a-76cbfbe20eb2" type="xs:double" minOccurs="0" />
+                  <xs:element name="Court_Amount" msprop:FriendlyName="Court_Amount" msprop:DbColumnName="Court_Amount" msprop:design-time-name="c18883ff-348c-4ffb-9d40-542aba5dae54" type="xs:double" minOccurs="0" />
+                  <xs:element name="Loss_Reserve" msprop:FriendlyName="Loss_Reserve" msprop:DbColumnName="Loss_Reserve" msprop:design-time-name="99486ba8-daac-4a9e-b5f8-85062c5d4a1b" type="xs:double" minOccurs="0" />
+                  <xs:element name="Total_Claim" msprop:FriendlyName="Total_Claim" msprop:DbColumnName="Total_Claim" msprop:design-time-name="fff691a3-7d37-4268-abdc-90ff56ddfef1" type="xs:double" minOccurs="0" />
+                  <xs:element name="Deductible" msprop:FriendlyName="Deductible" msprop:DbColumnName="Deductible" msprop:design-time-name="e1648254-0619-45c5-b9c7-53bdc90bafc7" type="xs:double" minOccurs="0" />
+                  <xs:element name="Net_Claim" msprop:FriendlyName="Net_Claim" msprop:DbColumnName="Net_Claim" msprop:design-time-name="c7bf941b-9a8b-4dee-8e0b-b9b5aba37d0c" type="xs:double" minOccurs="0" />
+                  <xs:element name="Outstanding" msprop:FriendlyName="Outstanding" msprop:DbColumnName="Outstanding" msprop:design-time-name="160d2287-a41c-4943-b20f-14bd8353e62c" type="xs:double" minOccurs="0" />
+                  <xs:element name="Settled_Paid" msprop:FriendlyName="Settled_Paid" msprop:DbColumnName="Settled_Paid" msprop:design-time-name="8073f3ef-7b71-443a-bc30-edbbbc307fd8" type="xs:double" minOccurs="0" />
+                  <xs:element name="Present_Status" msprop:FriendlyName="Present_Status" msprop:DbColumnName="Present_Status" msprop:design-time-name="1b185724-da47-45bf-b44e-297844a6a76d" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Updated_On" msprop:FriendlyName="Updated_On" msprop:DbColumnName="Updated_On" msprop:design-time-name="24f920d5-6e54-499c-b6a1-34f2b9c1f60f" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Pending_Closed_Status" msprop:FriendlyName="Pending_Closed_Status" msprop:DbColumnName="Pending_Closed_Status" msprop:design-time-name="34a4766b-c72f-4677-87af-0ba9f1295b92" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Remark" msprop:FriendlyName="Remark" msprop:DbColumnName="Remark" msprop:design-time-name="cf07e8f0-86c4-493f-af31-5ec6e3fabc00" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Age" msprop:FriendlyName="Age" msprop:DbColumnName="Age" msprop:design-time-name="ffa876e1-dfb9-4bb0-b630-f5a6acff0462" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_tblBDMSRawdata" />
+          <xs:field xpath="ID" />
+        </xs:unique>
+      </xs:element>
+    </xs:schema>
+    <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1" />
+  </Schema>
+</DataSourceView>

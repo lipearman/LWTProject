@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="th-TH">
+  <Title Text="Dashboard" />
+  <DataSources>
+    <SqlDataSource ComponentName="dashboardSqlDataSource1">
+      <Name>SQL Data Source 1</Name>
+      <Connection Name="localhost_LWTReports_Connection" ProviderKey="MSSqlServer">
+        <Parameters>
+          <Parameter Name="server" Value="localhost" />
+          <Parameter Name="database" Value="LWTReports" />
+          <Parameter Name="useIntegratedSecurity" Value="False" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="userid" Value="sa" />
+          <Parameter Name="password" Value="rsa" />
+        </Parameters>
+      </Connection>
+      <Query Type="TableQuery" Name="V_TbClaimDataV2">
+        <Table Name="V_TbClaimDataV2">
+          <Column Name="ID" />
+          <Column Name="FullCustomerName" />
+          <Column Name="ChassisNo" />
+          <Column Name="PolicyNo" />
+          <Column Name="Insurance_ClaimNo" />
+          <Column Name="GarageProvinceTH" />
+          <Column Name="GarageProvinceEN" />
+          <Column Name="AccidentDate" />
+          <Column Name="Accident_Month" />
+          <Column Name="ClaimGroup" />
+          <Column Name="IndemnityGroup" />
+          <Column Name="No_of_Claim" />
+          <Column Name="ClaimCost" />
+          <Column Name="IndemnityType" />
+          <Column Name="IndemnityType_E" />
+          <Column Name="GarageName" />
+          <Column Name="GarageType1" />
+          <Column Name="GarageType2" />
+          <Column Name="InsurerName" />
+          <Column Name="InsurerCode" />
+          <Column Name="CustType" />
+          <Column Name="App_StartingDate" />
+          <Column Name="Starting_Month" />
+          <Column Name="Starting_Year" />
+          <Column Name="App_EndDate" />
+          <Column Name="App_ShowroomName" />
+          <Column Name="App_Beneficiary" />
+          <Column Name="App_Beneficiary_Group" />
+          <Column Name="App_CarGroup" />
+          <Column Name="App_CarGroup_F" />
+          <Column Name="App_CarRegistryYear" />
+          <Column Name="Claim_Paid_Month" />
+          <Column Name="Claim_Paid_Year" />
+          <Column Name="Accdent_Province" />
+          <Column Name="CarAge" />
+          <Column Name="GarageRegionTH" />
+        </Table>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 1">
+          <View Name="V_TbClaimDataV2">
+            <Field Name="ID" Type="Int32" />
+            <Field Name="FullCustomerName" Type="String" />
+            <Field Name="ChassisNo" Type="String" />
+            <Field Name="PolicyNo" Type="String" />
+            <Field Name="Insurance_ClaimNo" Type="String" />
+            <Field Name="GarageProvinceTH" Type="String" />
+            <Field Name="GarageProvinceEN" Type="String" />
+            <Field Name="AccidentDate" Type="DateTime" />
+            <Field Name="Accident_Month" Type="DateTime" />
+            <Field Name="ClaimGroup" Type="Double" />
+            <Field Name="IndemnityGroup" Type="Double" />
+            <Field Name="No_of_Claim" Type="Double" />
+            <Field Name="ClaimCost" Type="Double" />
+            <Field Name="IndemnityType" Type="String" />
+            <Field Name="IndemnityType_E" Type="String" />
+            <Field Name="GarageName" Type="String" />
+            <Field Name="GarageType1" Type="String" />
+            <Field Name="GarageType2" Type="String" />
+            <Field Name="InsurerName" Type="String" />
+            <Field Name="InsurerCode" Type="String" />
+            <Field Name="CustType" Type="String" />
+            <Field Name="App_StartingDate" Type="DateTime" />
+            <Field Name="Starting_Month" Type="DateTime" />
+            <Field Name="Starting_Year" Type="String" />
+            <Field Name="App_EndDate" Type="DateTime" />
+            <Field Name="App_ShowroomName" Type="String" />
+            <Field Name="App_Beneficiary" Type="String" />
+            <Field Name="App_Beneficiary_Group" Type="String" />
+            <Field Name="App_CarGroup" Type="String" />
+            <Field Name="App_CarGroup_F" Type="String" />
+            <Field Name="App_CarRegistryYear" Type="Double" />
+            <Field Name="Claim_Paid_Month" Type="Double" />
+            <Field Name="Claim_Paid_Year" Type="Double" />
+            <Field Name="Accdent_Province" Type="String" />
+            <Field Name="CarAge" Type="Double" />
+            <Field Name="GarageRegionTH" Type="String" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Chart ComponentName="chartDashboardItem1" Name="Year" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="V_TbClaimDataV2">
+      <InteractivityOptions MasterFilterMode="Multiple" />
+      <DataItems>
+        <Dimension DataMember="AccidentDate" UniqueName="DataItem0" />
+        <Measure DataMember="No_of_Claim" Name="Claim" UniqueName="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem0" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple Name="Year">
+              <Value UniqueName="DataItem1" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Pie ComponentName="pieDashboardItem2" Name="Region" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="V_TbClaimDataV2">
+      <InteractivityOptions MasterFilterMode="Multiple" />
+      <DataItems>
+        <Measure DataMember="No_of_Claim" Name="Claim by Region" UniqueName="DataItem0" />
+        <Dimension DataMember="GarageRegionTH" UniqueName="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem1" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem0" />
+      </Values>
+    </Pie>
+    <ListBox ComponentName="listBoxDashboardItem1" Name="Accident" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="V_TbClaimDataV2">
+      <DataItems>
+        <Dimension DataMember="AccidentDate" UniqueName="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension UniqueName="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+    <Chart ComponentName="chartDashboardItem2" Name="Claim By Insurer" DataSource="dashboardSqlDataSource1" DataMember="V_TbClaimDataV2">
+      <InteractivityOptions MasterFilterMode="Multiple" />
+      <DataItems>
+        <Dimension DataMember="InsurerCode" UniqueName="DataItem0" />
+        <Measure DataMember="No_of_Claim" Name="Claim" UniqueName="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem0" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple>
+              <Value UniqueName="DataItem1" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Chart ComponentName="chartDashboardItem5" Name="Claim by Garage" DataSource="dashboardSqlDataSource1" DataMember="V_TbClaimDataV2">
+      <DataItems>
+        <Measure DataMember="No_of_Claim" Name="Claim" UniqueName="DataItem1" />
+        <Dimension DataMember="GarageType2" UniqueName="DataItem0" />
+        <Dimension DataMember="InsurerCode" UniqueName="DataItem2" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem0" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem2" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple>
+              <Value UniqueName="DataItem1" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Chart ComponentName="chartDashboardItem3" Name="Claim Incured" DataSource="dashboardSqlDataSource1" DataMember="V_TbClaimDataV2">
+      <DataItems>
+        <Measure DataMember="ClaimCost" Name="Cost" UniqueName="DataItem0" />
+        <Dimension DataMember="IndemnityType" UniqueName="DataItem2" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem2" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple>
+              <Value UniqueName="DataItem0" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Grid ComponentName="gridDashboardItem1" Name="Top 10 of Car Model Claim" DataSource="dashboardSqlDataSource1" DataMember="V_TbClaimDataV2">
+      <DataItems>
+        <Dimension DataMember="App_CarGroup_F" Name="Model" SortOrder="Descending" TopNEnabled="true" TopNCount="10" TopNMeasure="DataItem1" UniqueName="DataItem0" />
+        <Measure DataMember="Insurance_ClaimNo" Name="Top Claim" SummaryType="Count" UniqueName="DataItem1" />
+      </DataItems>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 1" ApplyToRow="true" DataItem="DataItem1" DataItemApplyTo="DataItem1">
+          <FormatConditionTopBottom RankType="Number" Rank="10">
+            <AppearanceSettings AppearanceType="PaleRed" />
+          </FormatConditionTopBottom>
+        </GridItemFormatRule>
+      </FormatRules>
+      <GridColumns>
+        <GridDimensionColumn Weight="111.31221719457014">
+          <Dimension UniqueName="DataItem0" />
+        </GridDimensionColumn>
+        <GridMeasureColumn Weight="38.687782805429862">
+          <Measure UniqueName="DataItem1" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <GridOptions ColumnWidthMode="Manual" />
+    </Grid>
+  </Items>
+  <Groups>
+    <Group ComponentName="dashboardItemGroup1" Name="Claim Monthly" ShowCaption="false">
+      <InteractivityOptions IsMasterFilter="true" />
+    </Group>
+  </Groups>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical">
+      <LayoutGroup DashboardItem="dashboardItemGroup1" Weight="41.745730550284627">
+        <LayoutItem DashboardItem="listBoxDashboardItem1" Weight="10.053475935828876" />
+        <LayoutItem DashboardItem="chartDashboardItem1" Weight="40" />
+        <LayoutItem DashboardItem="pieDashboardItem2" Weight="49.946524064171122" />
+      </LayoutGroup>
+      <LayoutGroup Weight="33.206831119544589">
+        <LayoutItem DashboardItem="chartDashboardItem2" Weight="50.053475935828878" />
+        <LayoutItem DashboardItem="chartDashboardItem5" Weight="49.946524064171122" />
+      </LayoutGroup>
+      <LayoutGroup Weight="25.047438330170777">
+        <LayoutItem DashboardItem="chartDashboardItem3" Weight="50.053475935828878" />
+        <LayoutItem DashboardItem="gridDashboardItem1" Weight="49.946524064171122" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

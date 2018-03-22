@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.375, 14.25" name="DataClasses_NissanMotor">
+  <DataContextMoniker Name="/DataClasses_NissanMotorDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ab635052-8daf-4736-bb9c-faab41ccf80e" absoluteBounds="6.25, 3.875, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/DataClasses_NissanMotorDataContext/tblReport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8afd5fe-0530-438e-8f25-ea06f3f2d8ef" absoluteBounds="6.2650000005960464, 4.33500000089407, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2e0cbfe1-6105-437d-a0fb-6a8661b1a0e4" absoluteBounds="6.25, 11.125, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/DataClasses_NissanMotorDataContext/tblReportUser_Template" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fa571d83-eb84-4a30-b56f-baf2ab55e9b6" absoluteBounds="6.2650000005960464, 11.58500000089407, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b9a49a5e-7b22-4b26-9cb8-207eafeaa49d" absoluteBounds="9, 4.5, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DataClasses_NissanMotorDataContext/tblReport_Assignment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="85a67b49-3254-4b91-88f9-fe3763bf0703" absoluteBounds="9.0150000005960464, 4.96000000089407, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="60eca3dc-e49d-42bb-a3d8-e29ac25e407d" absoluteBounds="3.5, 3, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses_NissanMotorDataContext/tblReport_DashBoard" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc16c02b-3ac5-42a3-8ba4-6da8b5525a0e" absoluteBounds="3.5150000005960464, 3.4600000008940697, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="15afec18-d18a-4a91-b97c-4557fc90276c" absoluteBounds="6.75, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses_NissanMotorDataContext/tblReport_MasterData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6bfef260-ef69-4843-8a14-4baf40fc02b1" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="06160200-33d3-400a-b7b7-5ed22d8f42d4" absoluteBounds="0.75, 5.375, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/DataClasses_NissanMotorDataContext/tblReport_VIEW" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d36b6b2c-e754-468e-b61b-32bac4d08ca8" absoluteBounds="0.76500000059604645, 5.83500000089407, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="29a36cae-cf11-406f-8c08-d355a7a23052" absoluteBounds="9, 8.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses_NissanMotorDataContext/tblReportMaster_FilterValue" />
+      <nestedChildShapes>
+        <elementListCompartment Id="32e957bd-3f4a-435b-ad72-c7ae596080f7" absoluteBounds="9.0150000005960464, 9.21000000089407, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5a6339f6-9e5b-45a2-bf42-7f5c23928873" absoluteBounds="6.25, 8.625, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/DataClasses_NissanMotorDataContext/tblReportMaster_Template" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e05b2cd0-b57b-4c36-adbf-1bacc0b16e44" absoluteBounds="6.2650000005960464, 9.08500000089407, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="20c3c428-f632-4727-bc5e-777704e35133" absoluteBounds="9, 11.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses_NissanMotorDataContext/tblReportUser_FilterValue" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d6426ec-1ab4-4db2-bc34-29a221a101ab" absoluteBounds="9.0150000005960464, 11.71000000089407, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 5.19314697265625); (9 : 5.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses_NissanMotorDataContext/tblReport/tblReport_tblReport_Assignment" />
+      <nodes>
+        <classShapeMoniker Id="ab635052-8daf-4736-bb9c-faab41ccf80e" />
+        <classShapeMoniker Id="b9a49a5e-7b22-4b26-9cb8-207eafeaa49d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.22679768864686); (6.25 : 4.22679768864686)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses_NissanMotorDataContext/tblReport_DashBoard/tblReport_DashBoard_tblReport" />
+      <nodes>
+        <classShapeMoniker Id="60eca3dc-e49d-42bb-a3d8-e29ac25e407d" />
+        <classShapeMoniker Id="ab635052-8daf-4736-bb9c-faab41ccf80e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.89505126953125); (6.25 : 5.89505126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses_NissanMotorDataContext/tblReport_VIEW/tblReport_VIEW_tblReport" />
+      <nodes>
+        <classShapeMoniker Id="06160200-33d3-400a-b7b7-5ed22d8f42d4" />
+        <classShapeMoniker Id="ab635052-8daf-4736-bb9c-faab41ccf80e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 5.375); (1.75 : 3.78929768880208); (3.5 : 3.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses_NissanMotorDataContext/tblReport_VIEW/tblReport_VIEW_tblReport_DashBoard" />
+      <nodes>
+        <classShapeMoniker Id="06160200-33d3-400a-b7b7-5ed22d8f42d4" />
+        <classShapeMoniker Id="60eca3dc-e49d-42bb-a3d8-e29ac25e407d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 9.53929768880208); (9 : 9.53929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses_NissanMotorDataContext/tblReportMaster_Template/tblReportMaster_Template_tblReportMaster_FilterValue" />
+      <nodes>
+        <classShapeMoniker Id="5a6339f6-9e5b-45a2-bf42-7f5c23928873" />
+        <classShapeMoniker Id="29a36cae-cf11-406f-8c08-d355a7a23052" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 12.0392976888021); (9 : 12.0392976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses_NissanMotorDataContext/tblReportUser_Template/tblReportUser_Template_tblReportUser_FilterValue" />
+      <nodes>
+        <classShapeMoniker Id="2e0cbfe1-6105-437d-a0fb-6a8661b1a0e4" />
+        <classShapeMoniker Id="20c3c428-f632-4727-bc5e-777704e35133" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="fe3e3c1c-8f47-4224-9393-e6929431dffb" absoluteBounds="9.75, 0.75, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/DataClasses_NissanMotorDataContext/V_REPORT_BI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="591a7f8a-4ba4-4c8e-8956-a99f3146c455" absoluteBounds="9.765, 1.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="838e2e91-df0b-4179-892d-649f3b9b43c3" absoluteBounds="11.75, 4.75, 2, 2.9247054036458309">
+      <DataClassMoniker Name="/DataClasses_NissanMotorDataContext/V_REPORT_ASSIGNMENT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2dd76ae5-71ee-49e3-b589-b2957ef33dc0" absoluteBounds="11.765, 5.2100000000000009, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a1de21ec-ad96-47b2-96f1-8f03b111e08f" absoluteBounds="3.5, 9.25, 2, 3.1170068359374987">
+      <DataClassMoniker Name="/DataClasses_NissanMotorDataContext/tblReport_VIEWs_Field" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bb7097c2-1f86-41f3-8a13-9d448488d200" absoluteBounds="3.5149999999999997, 9.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 11.7460034178384); (6.25 : 11.7460034178384)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses_NissanMotorDataContext/tblReport_VIEWs_Field/tblReport_VIEWs_Field_tblReportUser_Template" />
+      <nodes>
+        <classShapeMoniker Id="a1de21ec-ad96-47b2-96f1-8f03b111e08f" />
+        <classShapeMoniker Id="2e0cbfe1-6105-437d-a0fb-6a8661b1a0e4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 9.82294840476786); (6.25 : 9.82294840476786)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses_NissanMotorDataContext/tblReport_VIEWs_Field/tblReport_VIEWs_Field_tblReportMaster_Template" />
+      <nodes>
+        <classShapeMoniker Id="a1de21ec-ad96-47b2-96f1-8f03b111e08f" />
+        <classShapeMoniker Id="5a6339f6-9e5b-45a2-bf42-7f5c23928873" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 7.3381982421875); (1.75 : 10.8085034179687); (3.5 : 10.8085034179687)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses_NissanMotorDataContext/tblReport_VIEW/tblReport_VIEW_tblReport_VIEWs_Field" />
+      <nodes>
+        <classShapeMoniker Id="06160200-33d3-400a-b7b7-5ed22d8f42d4" />
+        <classShapeMoniker Id="a1de21ec-ad96-47b2-96f1-8f03b111e08f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b5385476-7017-4c6b-94fb-4a82bfa10813" absoluteBounds="12, 8.875, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/DataClasses_NissanMotorDataContext/V_REPORT_MASTER_TEMPLATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7e02a5e6-a419-40fe-aee9-049a3e68851b" absoluteBounds="12.015, 9.335, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f0bfc85c-fb50-4d75-9d53-e7c74da38705" absoluteBounds="15.125, 9.5, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/DataClasses_NissanMotorDataContext/V_REPORT_USER_TEMPLATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7bbae0a5-e687-4672-8da2-7259d8241c5d" absoluteBounds="15.14, 9.96, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

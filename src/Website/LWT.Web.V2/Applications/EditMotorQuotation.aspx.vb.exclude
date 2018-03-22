@@ -1,0 +1,1843 @@
+﻿Imports System.Data
+Imports System.Web.Security
+Imports Portal.Components
+Imports BaseConfig
+Imports DevExpress.Web
+Imports DevExpress.Data
+Imports DevExpress.Data.Linq
+Imports System.Threading
+Imports DevExpress.Web.Data
+Imports Spire.Xls
+
+Partial Class Applications_EditMotorQuotation
+    Inherits System.Web.UI.Page
+    Protected Sub cbPrintQuote_Callback(ByVal source As Object, ByVal e As CallbackEventArgs) Handles cbPrintQuote.Callback
+        Dim _GUID = Guid.NewGuid().ToString()
+
+        Using dc As New DataClasses_CPSExt()
+            Dim _Details = (From c In dc.tblMotorQuotationDetails Where c.QuotationNo.Equals(editQuotationNo.Text)).ToList()
+
+            If _Details.Count = 1 Or _Details.Count = 2 Then
+                PrintQuote1_2(_GUID)
+            ElseIf _Details.Count = 3 Then
+                PrintQuote3(_GUID)
+            ElseIf _Details.Count = 4 Then
+                PrintQuote4(_GUID)
+            ElseIf _Details.Count = 5 Or _Details.Count = 6 Then
+                PrintQuote5_6(_GUID)
+            End If
+
+        End Using
+
+        e.Result = _GUID
+    End Sub
+    Private Sub PrintQuote1_2(ByVal _GUID As String)
+        Dim _FILE = AppDomain.CurrentDomain.BaseDirectory & "\saved_files\" & _GUID & ".pdf"
+        Using workbook As New Workbook()
+            Using dc As New DataClasses_CPSExt()
+                Dim _Details = (From c In dc.tblMotorQuotationDetails Where c.QuotationNo.Equals(editQuotationNo.Text)).ToList()
+                workbook.LoadFromFile(Server.MapPath("~\Template\") & String.Format("Quotation_{0}.xlsx", _Details.Count))
+                Dim sheet As Worksheet = workbook.Worksheets(0)
+                '--QuotationID--
+                sheet.Range("A4").Text = editQuotationNo.Text
+                Dim _Header = (From c In dc.tblMotorQuotations Where c.QuotationNo.Equals(editQuotationNo.Text)).FirstOrDefault()
+                With _Header
+                    '=================== ผู้ติดต่อ ================
+                    '--Name--
+                    sheet.Range("B6").Text = .CustName
+                    '--Address1--
+                    sheet.Range("B7").Text = .CustAddress
+
+                    If Not .CustLocationName Is Nothing Then
+                        'Dim _address = .CustLocationName.Split(",")
+                        ''--Address2--
+                        'sheet.Range("B8").Text = String.Format("{0}, {1}", _address(0).Trim(), _address(1).Trim())
+                        ''--Address3--
+                        'sheet.Range("B9").Text = String.Format("{0}, {1}", _address(2).Trim(), _address(3).Trim())
+                    Else
+                        sheet.Range("B8").Text = ""
+                        sheet.Range("B9").Text = ""
+                    End If
+                    '=================== ผู้เอาประกันภัย ================
+                    Dim InsuredCol As String = "E"
+
+                    '--Name--
+                    sheet.Range(String.Format("{0}4", InsuredCol)).Value = .CustName
+                    '--CarBrand--
+                    sheet.Range(String.Format("{0}5", InsuredCol)).Value = .CarBrandName
+                    '--CarModel--
+                    sheet.Range(String.Format("{0}6", InsuredCol)).Value = .CarModelName
+                    '--CarID--
+                    sheet.Range(String.Format("{0}7", InsuredCol)).Value = .CarId
+                    '--CarRegis--
+                    sheet.Range(String.Format("{0}8", InsuredCol)).Value = .CarRegis
+                    '--CC--
+                    sheet.Range(String.Format("{0}9", InsuredCol)).Value = .CarSize
+                    '--ChassisNo--
+                    sheet.Range(String.Format("{0}10", InsuredCol)).Value = .CarChassisNo
+                    '--EndDate--
+                    'sheet.Range("E11").Text =
+
+                End With
+
+
+                '=================== หมายเหตุ ================
+                Dim _remark = (From c In dc.tblMotorQuotationRemarks Where c.QuotationNo.Equals(editQuotationNo.Text)).Take(5).ToList()
+                For ii As Integer = 0 To _remark.Count - 1
+                    '-- comment1 --
+                    sheet.Range(String.Format("B5{0}", ii.ToString())).Text = _remark(ii).Remark
+                Next
+                '--User--
+                sheet.Range("E54").Text = "ดุสิต ประเสริฐศิลป์" '_Header.UserUpdate
+
+                '=================== ควาทคุ้มครอง ================
+                Dim StartCol As Integer = 3
+
+                For Each _item In _Details
+
+                    With _item
+
+                        '--CompanyName--
+                        sheet.Range(String.Format("{0}16", IndexToColumn(StartCol))).Text = .UWriter
+                        '--PolicyType--	
+                        sheet.Range(String.Format("{0}17", IndexToColumn(StartCol))).Text = .PolicyType
+                        '--GarageType--	
+                        sheet.Range(String.Format("{0}18", IndexToColumn(StartCol))).Text = .GarageType
+                        '--TPBIPerson--	
+                        sheet.Range(String.Format("{0}21", IndexToColumn(StartCol))).Text = .cboTPBIPerson
+                        '--TPBITIme--	
+                        sheet.Range(String.Format("{0}22", IndexToColumn(StartCol))).Text = .cboTPBITime
+                        '--TPPD--	
+                        sheet.Range(String.Format("{0}23", IndexToColumn(StartCol))).Text = .cboTPPD
+                        '--OD--	
+                        sheet.Range(String.Format("{0}25", IndexToColumn(StartCol))).Text = .txtODFund
+                        '--Theft--	
+                        sheet.Range(String.Format("{0}26", IndexToColumn(StartCol))).Text = .txtFnTFund
+                        '--Fire--	
+                        sheet.Range(String.Format("{0}27", IndexToColumn(StartCol))).Text = .txtFnTFund1
+                        '--PA--	
+                        sheet.Range(String.Format("{0}29", IndexToColumn(StartCol))).Text = .ValueInSure
+                        '--Medical--	
+                        sheet.Range(String.Format("{0}30", IndexToColumn(StartCol))).Text = .ValueSumHuman
+                        '--DriverValue--	
+                        sheet.Range(String.Format("{0}31", IndexToColumn(StartCol))).Text = .ValueDriver1
+                        '--Deductable--	
+                        sheet.Range(String.Format("{0}32", IndexToColumn(StartCol))).Text = .ValueFirst1
+                        '--Premium--	
+                        sheet.Range(String.Format("{0}33", IndexToColumn(StartCol))).Text = .NetPremium
+                        '--Stamp--	
+                        sheet.Range(String.Format("{0}34", IndexToColumn(StartCol))).Text = .Stamp
+                        '--Vat--	
+                        sheet.Range(String.Format("{0}35", IndexToColumn(StartCol))).Text = .Vat
+                        '--Netpremium--	
+                        sheet.Range(String.Format("{0}36", IndexToColumn(StartCol))).Text = .GrossPremium
+                        '--NetCMI--	
+                        sheet.Range(String.Format("{0}37", IndexToColumn(StartCol))).Text = .CMIGrossPremium
+                        '--TotalPremium--	
+                        sheet.Range(String.Format("{0}38", IndexToColumn(StartCol))).Text = .GrossPremium + .CMIGrossPremium
+                        '--LWTDiscount--	
+                        sheet.Range(String.Format("{0}39", IndexToColumn(StartCol))).Text = .Discountspacial
+                        '--CMIDiscount--	
+                        sheet.Range(String.Format("{0}40", IndexToColumn(StartCol))).Text = .DiscountCMI
+                        '--SumPremium--	
+                        sheet.Range(String.Format("{0}41", IndexToColumn(StartCol))).Text = .GrossPremium + .CMIGrossPremium
+
+                    End With
+
+                    StartCol += 1
+                Next
+            End Using
+
+            workbook.SaveToFile(_FILE, FileFormat.PDF)
+
+        End Using
+
+
+    End Sub
+    Private Sub PrintQuote3(ByVal _GUID As String)
+        Dim _FILE = AppDomain.CurrentDomain.BaseDirectory & "\saved_files\" & _GUID & ".pdf"
+        Using workbook As New Workbook()
+            Using dc As New DataClasses_CPSExt()
+                Dim _Details = (From c In dc.tblMotorQuotationDetails Where c.QuotationNo.Equals(editQuotationNo.Text)).ToList()
+                workbook.LoadFromFile(Server.MapPath("~\Template\") & String.Format("Quotation_{0}.xlsx", _Details.Count))
+                Dim sheet As Worksheet = workbook.Worksheets(0)
+                '--QuotationID--
+                sheet.Range("A4").Text = editQuotationNo.Text
+                Dim _Header = (From c In dc.tblMotorQuotations Where c.QuotationNo.Equals(editQuotationNo.Text)).FirstOrDefault()
+                With _Header
+                    '=================== ผู้ติดต่อ ================
+                    '--Name--
+                    sheet.Range("B6").Text = .CustName
+                    '--Address1--
+                    sheet.Range("B7").Text = .CustAddress
+
+                    If Not .CustLocationName Is Nothing Then
+                        'Dim _address = .CustLocationName.Split(",")
+                        ''--Address2--
+                        'sheet.Range("B8").Text = String.Format("{0}, {1}", _address(0).Trim(), _address(1).Trim())
+                        ''--Address3--
+                        'sheet.Range("B9").Text = String.Format("{0}, {1}", _address(2).Trim(), _address(3).Trim())
+                    Else
+                        sheet.Range("B8").Text = ""
+                        sheet.Range("B9").Text = ""
+                    End If
+                    Dim InsuredCol As String = "E"
+
+                    '--Name--
+                    sheet.Range(String.Format("{0}4", InsuredCol)).Value = .CustName
+                    '--CarBrand--
+                    sheet.Range(String.Format("{0}5", InsuredCol)).Value = .CarBrandName
+                    '--CarModel--
+                    sheet.Range(String.Format("{0}6", InsuredCol)).Value = .CarModelName
+                    '--CarID--
+                    sheet.Range(String.Format("{0}7", InsuredCol)).Value = .CarId
+                    '--CarRegis--
+                    sheet.Range(String.Format("{0}8", InsuredCol)).Value = .CarRegis
+                    '--CC--
+                    sheet.Range(String.Format("{0}9", InsuredCol)).Value = .CarSize
+                    '--ChassisNo--
+                    sheet.Range(String.Format("{0}10", InsuredCol)).Value = .CarChassisNo
+                    '--EndDate--
+                    'sheet.Range("E11").Text =
+
+                End With
+
+
+                '=================== หมายเหตุ ================
+                Dim _remark = (From c In dc.tblMotorQuotationRemarks Where c.QuotationNo.Equals(editQuotationNo.Text)).Take(5).ToList()
+                For ii As Integer = 0 To _remark.Count - 1
+                    '-- comment1 --
+                    sheet.Range(String.Format("B5{0}", ii.ToString())).Text = _remark(ii).Remark
+                Next
+                '--User--
+                sheet.Range("E54").Text = "ดุสิต ประเสริฐศิลป์" '_Header.UserUpdate
+
+                '=================== ควาทคุ้มครอง ================
+                Dim StartCol As Integer = 2
+                For Each _item In _Details
+
+                    With _item
+
+                        '--CompanyName--
+                        sheet.Range(String.Format("{0}16", IndexToColumn(StartCol))).Text = .UWriter
+                        '--PolicyType--	
+                        sheet.Range(String.Format("{0}17", IndexToColumn(StartCol))).Text = .PolicyType
+                        '--GarageType--	
+                        sheet.Range(String.Format("{0}18", IndexToColumn(StartCol))).Text = .GarageType
+                        '--TPBIPerson--	
+                        sheet.Range(String.Format("{0}21", IndexToColumn(StartCol))).Text = .cboTPBIPerson
+                        '--TPBITIme--	
+                        sheet.Range(String.Format("{0}22", IndexToColumn(StartCol))).Text = .cboTPBITime
+                        '--TPPD--	
+                        sheet.Range(String.Format("{0}23", IndexToColumn(StartCol))).Text = .cboTPPD
+                        '--OD--	
+                        sheet.Range(String.Format("{0}25", IndexToColumn(StartCol))).Text = .txtODFund
+                        '--Theft--	
+                        sheet.Range(String.Format("{0}26", IndexToColumn(StartCol))).Text = .txtFnTFund
+                        '--Fire--	
+                        sheet.Range(String.Format("{0}27", IndexToColumn(StartCol))).Text = .txtFnTFund1
+                        '--PA--	
+                        sheet.Range(String.Format("{0}29", IndexToColumn(StartCol))).Text = .ValueInSure
+                        '--Medical--	
+                        sheet.Range(String.Format("{0}30", IndexToColumn(StartCol))).Text = .ValueSumHuman
+                        '--DriverValue--	
+                        sheet.Range(String.Format("{0}31", IndexToColumn(StartCol))).Text = .ValueDriver1
+                        '--Deductable--	
+                        sheet.Range(String.Format("{0}32", IndexToColumn(StartCol))).Text = .ValueFirst1
+                        '--Premium--	
+                        sheet.Range(String.Format("{0}33", IndexToColumn(StartCol))).Text = .NetPremium
+                        '--Stamp--	
+                        sheet.Range(String.Format("{0}34", IndexToColumn(StartCol))).Text = .Stamp
+                        '--Vat--	
+                        sheet.Range(String.Format("{0}35", IndexToColumn(StartCol))).Text = .Vat
+                        '--Netpremium--	
+                        sheet.Range(String.Format("{0}36", IndexToColumn(StartCol))).Text = .GrossPremium
+                        '--NetCMI--	
+                        sheet.Range(String.Format("{0}37", IndexToColumn(StartCol))).Text = .CMIGrossPremium
+                        '--TotalPremium--	
+                        sheet.Range(String.Format("{0}38", IndexToColumn(StartCol))).Text = .GrossPremium + .CMIGrossPremium
+                        '--LWTDiscount--	
+                        sheet.Range(String.Format("{0}39", IndexToColumn(StartCol))).Text = .Discountspacial
+                        '--CMIDiscount--	
+                        sheet.Range(String.Format("{0}40", IndexToColumn(StartCol))).Text = .DiscountCMI
+                        '--SumPremium--	
+                        sheet.Range(String.Format("{0}41", IndexToColumn(StartCol))).Text = .GrossPremium + .CMIGrossPremium
+
+                    End With
+
+                    StartCol += 1
+                Next
+            End Using
+
+
+
+            workbook.SaveToFile(_FILE, FileFormat.PDF)
+
+        End Using
+
+
+    End Sub
+    Private Sub PrintQuote4(ByVal _GUID As String)
+        Dim _FILE = AppDomain.CurrentDomain.BaseDirectory & "\saved_files\" & _GUID & ".pdf"
+        Using workbook As New Workbook()
+            Using dc As New DataClasses_CPSExt()
+                Dim _Details = (From c In dc.tblMotorQuotationDetails Where c.QuotationNo.Equals(editQuotationNo.Text)).ToList()
+                workbook.LoadFromFile(Server.MapPath("~\Template\") & String.Format("Quotation_{0}.xlsx", _Details.Count))
+                Dim sheet As Worksheet = workbook.Worksheets(0)
+                '--QuotationID--
+                sheet.Range("A3").Text = editQuotationNo.Text
+                Dim _Header = (From c In dc.tblMotorQuotations Where c.QuotationNo.Equals(editQuotationNo.Text)).FirstOrDefault()
+                With _Header
+                    '=================== ผู้ติดต่อ ================
+                    '--Name--
+                    sheet.Range("B5").Text = .CustName
+                    '--Address1--
+                    sheet.Range("B6").Text = .CustAddress
+
+                    If Not .CustLocationName Is Nothing Then
+                        'Dim _address = .CustLocationName.Split(",")
+                        ''--Address2--
+                        'sheet.Range("B7").Text = String.Format("{0}, {1}", _address(0).Trim(), _address(1).Trim())
+                        ''--Address3--
+                        'sheet.Range("B8").Text = String.Format("{0}, {1}", _address(2).Trim(), _address(3).Trim())
+                    Else
+                        sheet.Range("B7").Text = ""
+                        sheet.Range("B8").Text = ""
+                    End If
+                    Dim InsuredCol As String = "G"
+
+                    '--Name--
+                    sheet.Range(String.Format("{0}3", InsuredCol)).Value = .CustName
+                    '--CarBrand--
+                    sheet.Range(String.Format("{0}4", InsuredCol)).Value = .CarBrandName
+                    '--CarModel--
+                    sheet.Range(String.Format("{0}5", InsuredCol)).Value = .CarModelName
+                    '--CarID--
+                    sheet.Range(String.Format("{0}6", InsuredCol)).Value = .CarId
+                    '--CarRegis--
+                    sheet.Range(String.Format("{0}7", InsuredCol)).Value = .CarRegis
+                    '--CC--
+                    sheet.Range(String.Format("{0}8", InsuredCol)).Value = .CarSize
+                    '--ChassisNo--
+                    sheet.Range(String.Format("{0}9", InsuredCol)).Value = .CarChassisNo
+                    '--EndDate--
+                    'sheet.Range("E11").Text =
+
+                End With
+
+
+                '=================== หมายเหตุ ================
+                Dim _remark = (From c In dc.tblMotorQuotationRemarks Where c.QuotationNo.Equals(editQuotationNo.Text)).Take(5).ToList()
+                Dim StartRemark As Integer = 43
+                For i As Integer = 0 To _remark.Count - 1
+                    '-- comment1 --
+                    sheet.Range(String.Format("B{0}", StartRemark.ToString())).Text = _remark(i).Remark
+                    StartRemark += 1
+                Next
+                '--User--
+                sheet.Range("G46").Text = "ดุสิต ประเสริฐศิลป์" '_Header.UserUpdate
+
+                '=================== ควาทคุ้มครอง ================
+                Dim StartCol As Integer = 2
+                For Each _item In _Details
+
+                    With _item
+                        If StartCol = 5 Then StartCol += 1
+                        '--CompanyName--
+                        sheet.Range(String.Format("{0}14", IndexToColumn(StartCol))).Text = .UWriter
+                        '--PolicyType--	
+                        sheet.Range(String.Format("{0}15", IndexToColumn(StartCol))).Text = .PolicyType
+                        '--GarageType--	
+                        sheet.Range(String.Format("{0}16", IndexToColumn(StartCol))).Text = .GarageType
+                        '--TPBIPerson--	
+                        sheet.Range(String.Format("{0}17", IndexToColumn(StartCol))).Text = .cboTPBIPerson
+                        '--TPBITIme--	
+                        sheet.Range(String.Format("{0}18", IndexToColumn(StartCol))).Text = .cboTPBITime
+                        '--TPPD--	
+                        sheet.Range(String.Format("{0}19", IndexToColumn(StartCol))).Text = .cboTPPD
+                        '--OD--	
+                        sheet.Range(String.Format("{0}20", IndexToColumn(StartCol))).Text = .txtODFund
+                        '--Theft--	
+                        sheet.Range(String.Format("{0}21", IndexToColumn(StartCol))).Text = .txtFnTFund
+                        '--Fire--	
+                        sheet.Range(String.Format("{0}22", IndexToColumn(StartCol))).Text = .txtFnTFund1
+                        '--PA--	
+                        sheet.Range(String.Format("{0}23", IndexToColumn(StartCol))).Text = .ValueInSure
+                        '--Medical--	
+                        sheet.Range(String.Format("{0}24", IndexToColumn(StartCol))).Text = .ValueSumHuman
+                        '--DriverValue--	
+                        sheet.Range(String.Format("{0}25", IndexToColumn(StartCol))).Text = .ValueDriver1
+                        '--Deductable--	
+                        sheet.Range(String.Format("{0}26", IndexToColumn(StartCol))).Text = .ValueFirst1
+                        '--Premium--	
+                        sheet.Range(String.Format("{0}27", IndexToColumn(StartCol))).Text = .NetPremium
+                        '--Stamp--	
+                        sheet.Range(String.Format("{0}28", IndexToColumn(StartCol))).Text = .Stamp
+                        '--Vat--	
+                        sheet.Range(String.Format("{0}29", IndexToColumn(StartCol))).Text = .Vat
+                        '--Netpremium--	
+                        sheet.Range(String.Format("{0}30", IndexToColumn(StartCol))).Text = .GrossPremium
+                        '--NetCMI--	
+                        sheet.Range(String.Format("{0}31", IndexToColumn(StartCol))).Text = .CMIGrossPremium
+                        '--TotalPremium--	
+                        sheet.Range(String.Format("{0}32", IndexToColumn(StartCol))).Text = .GrossPremium + .CMIGrossPremium
+                        '--LWTDiscount--	
+                        sheet.Range(String.Format("{0}33", IndexToColumn(StartCol))).Text = .Discountspacial
+                        '--CMIDiscount--	
+                        sheet.Range(String.Format("{0}34", IndexToColumn(StartCol))).Text = .DiscountCMI
+                        '--SumPremium--	
+                        sheet.Range(String.Format("{0}35", IndexToColumn(StartCol))).Text = .GrossPremium + .CMIGrossPremium
+
+                    End With
+
+                    StartCol += 1
+                Next
+            End Using
+
+
+
+            workbook.SaveToFile(_FILE, FileFormat.PDF)
+
+        End Using
+
+
+    End Sub
+    Private Sub PrintQuote5_6(ByVal _GUID As String)
+        Dim _FILE = AppDomain.CurrentDomain.BaseDirectory & "\saved_files\" & _GUID & ".pdf"
+        Using workbook As New Workbook()
+            Using dc As New DataClasses_CPSExt()
+                Dim _Details = (From c In dc.tblMotorQuotationDetails Where c.QuotationNo.Equals(editQuotationNo.Text)).ToList()
+                workbook.LoadFromFile(Server.MapPath("~\Template\") & String.Format("Quotation_{0}.xlsx", _Details.Count))
+                Dim sheet As Worksheet = workbook.Worksheets(0)
+                '--QuotationID--
+                sheet.Range("A3").Text = editQuotationNo.Text
+                Dim _Header = (From c In dc.tblMotorQuotations Where c.QuotationNo.Equals(editQuotationNo.Text)).FirstOrDefault()
+                With _Header
+                    '=================== ผู้ติดต่อ ================
+                    '--Name--
+                    sheet.Range("B5").Text = .CustName
+                    '--Address1--
+                    sheet.Range("B6").Text = .CustAddress
+
+                    If Not .CustLocationName Is Nothing Then
+                        'Dim _address = .CustLocationName.Split(",")
+                        ''--Address2--
+                        'sheet.Range("B7").Text = String.Format("{0}, {1}", _address(0).Trim(), _address(1).Trim())
+                        ''--Address3--
+                        'sheet.Range("B8").Text = String.Format("{0}, {1}", _address(2).Trim(), _address(3).Trim())
+                    Else
+                        sheet.Range("B7").Text = ""
+                        sheet.Range("B8").Text = ""
+                    End If
+                    Dim InsuredCol As String = "G"
+
+                    '--Name--
+                    sheet.Range(String.Format("{0}3", InsuredCol)).Value = .CustName
+                    '--CarBrand--
+                    sheet.Range(String.Format("{0}4", InsuredCol)).Value = .CarBrandName
+                    '--CarModel--
+                    sheet.Range(String.Format("{0}5", InsuredCol)).Value = .CarModelName
+                    '--CarID--
+                    sheet.Range(String.Format("{0}6", InsuredCol)).Value = .CarId
+                    '--CarRegis--
+                    sheet.Range(String.Format("{0}7", InsuredCol)).Value = .CarRegis
+                    '--CC--
+                    sheet.Range(String.Format("{0}8", InsuredCol)).Value = .CarSize
+                    '--ChassisNo--
+                    sheet.Range(String.Format("{0}9", InsuredCol)).Value = .CarChassisNo
+                    '--EndDate--
+                    'sheet.Range("E11").Text =
+
+                End With
+
+
+                '=================== หมายเหตุ ================
+                Dim _remark = (From c In dc.tblMotorQuotationRemarks Where c.QuotationNo.Equals(editQuotationNo.Text)).Take(5).ToList()
+                Dim StartRemark As Integer = 43
+                For i As Integer = 0 To _remark.Count - 1
+                    '-- comment1 --
+                    sheet.Range(String.Format("B{0}", StartRemark.ToString())).Text = _remark(i).Remark
+                    StartRemark += 1
+                Next
+                '--User--
+                If _Details.Count = 5 Then
+                    sheet.Range("G46").Text = "ดุสิต ประเสริฐศิลป์" '_Header.UserUpdate
+                Else
+                    sheet.Range("H46").Text = "ดุสิต ประเสริฐศิลป์" '_Header.UserUpdate
+                End If
+
+
+                '=================== ควาทคุ้มครอง ================
+                Dim StartCol As Integer = 2
+                For Each _item In _Details
+
+                    With _item
+
+                        '--CompanyName--
+                        sheet.Range(String.Format("{0}14", IndexToColumn(StartCol))).Text = .UWriter
+                        '--PolicyType--	
+                        sheet.Range(String.Format("{0}15", IndexToColumn(StartCol))).Text = .PolicyType
+                        '--GarageType--	
+                        sheet.Range(String.Format("{0}16", IndexToColumn(StartCol))).Text = .GarageType
+                        '--TPBIPerson--	
+                        sheet.Range(String.Format("{0}17", IndexToColumn(StartCol))).Text = .cboTPBIPerson
+                        '--TPBITIme--	
+                        sheet.Range(String.Format("{0}18", IndexToColumn(StartCol))).Text = .cboTPBITime
+                        '--TPPD--	
+                        sheet.Range(String.Format("{0}19", IndexToColumn(StartCol))).Text = .cboTPPD
+                        '--OD--	
+                        sheet.Range(String.Format("{0}20", IndexToColumn(StartCol))).Text = .txtODFund
+                        '--Theft--	
+                        sheet.Range(String.Format("{0}21", IndexToColumn(StartCol))).Text = .txtFnTFund
+                        '--Fire--	
+                        sheet.Range(String.Format("{0}22", IndexToColumn(StartCol))).Text = .txtFnTFund1
+                        '--PA--	
+                        sheet.Range(String.Format("{0}23", IndexToColumn(StartCol))).Text = .ValueInSure
+                        '--Medical--	
+                        sheet.Range(String.Format("{0}24", IndexToColumn(StartCol))).Text = .ValueSumHuman
+                        '--DriverValue--	
+                        sheet.Range(String.Format("{0}25", IndexToColumn(StartCol))).Text = .ValueDriver1
+                        '--Deductable--	
+                        sheet.Range(String.Format("{0}26", IndexToColumn(StartCol))).Text = .ValueFirst1
+                        '--Premium--	
+                        sheet.Range(String.Format("{0}27", IndexToColumn(StartCol))).Text = .NetPremium
+                        '--Stamp--	
+                        sheet.Range(String.Format("{0}28", IndexToColumn(StartCol))).Text = .Stamp
+                        '--Vat--	
+                        sheet.Range(String.Format("{0}29", IndexToColumn(StartCol))).Text = .Vat
+                        '--Netpremium--	
+                        sheet.Range(String.Format("{0}30", IndexToColumn(StartCol))).Text = .GrossPremium
+                        '--NetCMI--	
+                        sheet.Range(String.Format("{0}31", IndexToColumn(StartCol))).Text = .CMIGrossPremium
+                        '--TotalPremium--	
+                        sheet.Range(String.Format("{0}32", IndexToColumn(StartCol))).Text = .GrossPremium + .CMIGrossPremium
+                        '--LWTDiscount--	
+                        sheet.Range(String.Format("{0}33", IndexToColumn(StartCol))).Text = .Discountspacial
+                        '--CMIDiscount--	
+                        sheet.Range(String.Format("{0}34", IndexToColumn(StartCol))).Text = .DiscountCMI
+                        '--SumPremium--	
+                        sheet.Range(String.Format("{0}35", IndexToColumn(StartCol))).Text = .GrossPremium + .CMIGrossPremium
+
+                    End With
+
+                    StartCol += 1
+                Next
+            End Using
+
+
+
+            workbook.SaveToFile(_FILE, FileFormat.PDF)
+
+        End Using
+
+
+    End Sub
+
+
+    Private Function IndexToColumn(index As Integer) As String
+        Dim Columns As String() = {"A", "B", "C", "D", "E", "F", _
+                                    "G", "H", "I", "J", "K", "L", _
+                                    "M", "N", "O", "P", "Q", "R", _
+                                    "S", "T", "U", "V", "W", "X", _
+                                    "Y", "Z", "AA", "AB", "AC", "AD", _
+                                    "AE", "AF", "AG", "AH", "AI", "AJ", _
+                                    "AK", "AL", "AM", "AN", "AO", "AP", _
+                                    "AQ", "AR", "AS", "AT", "AU", "AV", _
+                                    "AW", "AX", "AY", "AZ", "BA", "BB", _
+                                    "BC", "BD", "BE", "BF", "BG", "BH"}
+        If index <= 0 Then
+            Throw New IndexOutOfRangeException("index must be a positive number")
+        End If
+
+        Return Columns(index)
+    End Function
+    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'SqlDataSource_V_MotorCampaignPublish.SelectParameters("UserName").DefaultValue = HttpContext.Current.User.Identity.Name
+
+
+        If Page.IsPostBack = False Then
+            editLOCATION_CODE.DataBind()
+            editCarBrand.DataBind()
+            newBlank_CarType.DataBind()
+            'newBlank_CarType.SelectedIndex = 0
+            'newBlank_CarUse.DataBind()
+            Session("ProjectID") = Request("ProjectID")
+
+            ViewState("PreviousPageUrl") = Request.UrlReferrer.ToString()
+            editQuotationNo.Text = Request("QuotationNo")
+            BindData(editQuotationNo.Text)
+
+            Dim MQDetails = New DataClasses_CPSExt().tblMotorQuotationDetails
+            Dim a = MQDetails.Where(Function(p) p.QuotationNo.Equals(editQuotationNo.Text)).FirstOrDefault()
+            If Not a Is Nothing Then
+                newBlank_CarType.ClientEnabled = False
+                newBlank_CarUse.ClientEnabled = False
+            End If
+
+
+            btnSaveQuotation.AutoPostBack = False
+            'btnSaveQuotation.ClientSideEvents.Click = "function(s, e) {if(ASPxClientEdit.AreEditorsValid()) {LoadingPanel.Show();cbSaveQuotation.PerformCallback('" & editQuotationNo.Text & "');}}"
+            btnSaveQuotation.ClientSideEvents.Click = "function(s, e) {if(ASPxClientEdit.AreEditorsValid()) {frmEditQuotation_CallBack.PerformCallback('Save');}}"
+            btnSaveNewBlank.AutoPostBack = False
+            btnSaveNewBlank.ClientSideEvents.Click = "function(s, e) {if(ASPxClientEdit.AreEditorsValid()) {LoadingPanel.Show();cbSaveNewBlank.PerformCallback('" & editQuotationNo.Text & "');}}"
+            'btnSaveNewBlank.ClientSideEvents.Click = "function(s, e) {if(ASPxClientEdit.AreEditorsValid()) {LoadingPanel.Show();frmNewBlank_CallBack.PerformCallback('" & editQuotationNo.Text & "');}}"
+
+            'ASPxButton2.AutoPostBack = False
+            'ASPxButton2.ClientSideEvents.Click = "function(s, e) {  LoadingPanel.Show();popupCoverage.Hide(); cbSelectedCoverage.PerformCallback('');}"
+
+            'ASPxButton3.AutoPostBack = False
+            'ASPxButton3.ClientSideEvents.Click = "function(s, e) {  LoadingPanel.Show();popupCoverage.Hide(); cbSelectedCampaign.PerformCallback('');}"
+
+        End If
+
+        'If QDIDDelete.IsCallback Then
+
+        '    'Dim data = SqlDataSource_SP_CompareQuote
+        '    '    data.DataBind()
+        '    '    SubQuoteGrid.DataSource = data
+        '    SubQuoteGrid.DataBind()
+
+        '    '    SubQuoteGrid.Visible = False
+
+        'End If
+
+    End Sub
+    Protected Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click, btnCancel.Click
+        Select Case DirectCast(sender, DevExpress.Web.ASPxButton).Text
+            Case "กลับไปหน้าเสนอราคา"
+                Response.Redirect(ViewState("PreviousPageUrl"))
+            Case "Re-Quote"
+            Case "ยกเลิกรายการ"
+            Case "พิมพ์ใบแจ้งงาน"
+            Case "พิมพ์บันทึกการสนทนา"
+                'Case "บันทึกข้อมูลลูกค้า"
+                '    SaveQuotation()
+
+        End Select
+
+
+    End Sub
+
+    Protected Sub ASPxMenuCompareQuote_ItemClick(ByVal source As Object, ByVal e As MenuItemEventArgs) Handles ASPxMenuCompareQuote.ItemClick
+
+        Select Case e.Item.Text
+            Case "เพิ่มข้อเสนอแบบ New Blank"
+                popupNewBlank.ShowOnPageLoad = True
+            Case "เพิ่มข้อเสนอตามความคุ้มครอง"
+            Case "เพิ่มข้อเสนอตามแผน(มีเบี้ย)"
+        End Select
+
+    End Sub
+
+    Private Sub SaveQuotation()
+        Dim _dc = New DataClasses_CPSExt().tblMotorQuotations
+        Dim data = _dc.Where(Function(c) c.QuotationNo.Equals(editQuotationNo.Text)).FirstOrDefault()
+
+        With data
+            .UserUpdate = HttpContext.Current.User.Identity.Name
+            .DateUpdate = DateTime.Now
+
+            .CustTitleName = editCustTitleName.Text
+            .CustName = editCustName.Text
+            If Not editCustIDCardsType.SelectedItem Is Nothing Then
+                .CustIDCardType = Convert.ToInt32(editCustIDCardsType.SelectedItem.Value)
+            Else
+                .CustIDCardType = Nothing
+            End If
+
+            .CustIDCards = editCustIDCards.Text
+            .CustAddress = editCustAddress.Text
+
+            .CustLocationName = editLOCATION_CODE.Text
+            If Not editLOCATION_CODE.SelectedItem Is Nothing Then
+                .CustLocationCode = editLOCATION_CODE.SelectedItem.Value
+            Else
+                .CustLocationCode = Nothing
+            End If
+
+            .CustTelNo = editCustTelNo.Text
+            .CustEmail = editCustEmail.Text
+            .CustFaxNo = editCustFaxNo.Text
+
+
+            .CarBrandName = editCarBrand.Text
+            .CarModelName = editCarModel.Text
+            .CarBrandlID = Nothing
+            .CarModelID = Nothing
+            If Not editCarBrand.SelectedItem Is Nothing Then
+                .CarBrandlID = Convert.ToInt32(editCarBrand.SelectedItem.Value)
+                If Not String.IsNullOrEmpty(.CarModelName) Then
+                    BindData_CarModel(.CarBrandlID)
+                    Dim cid = editCarModel.Items.FindByText(.CarModelName).Value
+                    If Not cid Is Nothing Then
+                        .CarModelID = Convert.ToInt32(cid)
+                    End If
+                End If
+            End If
+
+
+            'If Not editCarModel.SelectedItem Is Nothing Then
+            '    .CarModelID = Convert.ToInt32(editCarModel.SelectedItem.Value)
+            'Else
+            '    .CarModelID = Nothing
+            'End If
+
+
+            .CarSubModelName = editCarSubModelName.Text
+
+            '.CarBrandModelName = newCarBrandModelID.Text
+            '.CarBrandModelID = newCarBrandModelID.SelectedItem.Value
+            '.CarSeriesName = newCarSeriesName.Text
+
+            If Not editCarSuminsured.Value Is Nothing Then
+                .CarSuminsured = CInt(editCarSuminsured.Value)
+            Else
+                .CarSuminsured = Nothing
+            End If
+
+            If Not editCarReg.Value Is Nothing Then
+                .CarRegis = CInt(editCarReg.Value)
+            Else
+                .CarRegis = Nothing
+            End If
+
+            .CarId = editCarId.Text
+            .CarEngineNo = editCarEngineNo.Text
+            .CarChassisNo = editCarChassisNo.Text
+            .CarSize = editCarSize.Text
+
+            'Dim _carusetxt = editCarUse.Text
+            '.CarType = Nothing
+            '.CarUse = Nothing
+
+            'If Not editCarType.SelectedItem Is Nothing Then
+            '    .CarType = editCarType.SelectedItem.Value
+            '    BindData_CarUse(.CarType)
+            '    Dim cuid = editCarUse.Items.FindByText(_carusetxt).Value
+            '    If Not cuid Is Nothing Then
+            '        .CarUse = Convert.ToInt32(cuid)
+            '    End If           
+            'End If
+
+
+        End With
+        _dc.Context.SubmitChanges()
+
+
+
+    End Sub
+
+    Private Sub BindData(ByVal QuotationNo As String)
+
+
+
+        Dim _dc = New DataClasses_CPSExt().tblMotorQuotations
+        Dim data = _dc.Where(Function(c) c.QuotationNo.Equals(QuotationNo)).FirstOrDefault()
+
+
+
+
+        'ASPxMenuCompareQuote.Items(0).Visible = (data_QDetails > 0)
+
+
+        With data
+            editConfirmCode.Text = .ConfirmCode
+            editReferenceNo.Text = .ReferenceNo
+            editQuotationStatus.Text = .QuotationStatus
+
+            editCustTitleName.Text = .CustTitleName
+            editCustName.Text = .CustName
+            If .CustIDCardType.HasValue Then
+                editCustIDCardsType.SelectedItem = editCustIDCardsType.Items.FindByValue(.CustIDCardType.ToString())
+            End If
+
+            editCustIDCards.Text = .CustIDCards
+            editCustAddress.Text = .CustAddress
+            If Not .CustLocationCode Is Nothing Then
+                editLOCATION_CODE.SelectedItem = editLOCATION_CODE.Items.FindByValue(.CustLocationCode.ToString())
+            End If
+            editLOCATION_CODE.Text = .CustLocationName
+
+            editCustTelNo.Text = .CustTelNo
+            editCustEmail.Text = .CustEmail
+            editCustFaxNo.Text = .CustFaxNo
+
+            If .CarBrandlID.HasValue Then
+                editCarBrand.SelectedItem = editCarBrand.Items.FindByValue(.CarBrandlID.ToString())
+                BindData_CarModel(.CarBrandlID.ToString())
+            End If
+            'editCarBrand.Text = .CarBrandName
+
+            If .CarModelID.HasValue Then
+                editCarModel.SelectedItem = editCarModel.Items.FindByValue(.CarModelID.ToString())
+            End If
+            'editCarModel.Text = .CarModelName
+            editCarSubModelName.Text = .CarSubModelName
+
+            editCarSuminsured.Value = .CarSuminsured
+            editCarReg.Value = .CarRegis
+
+            editCarId.Text = .CarId
+            editCarEngineNo.Text = .CarEngineNo
+            editCarChassisNo.Text = .CarChassisNo
+            editCarSize.Text = .CarSize
+
+            editUserRec.Text = .UserRec
+            editDateRec.Text = .DateRec
+            editUserUpdate.Text = .UserUpdate
+            If .DateUpdate.HasValue Then editDateUpdate.Text = .DateUpdate
+
+
+            DiscGroupID.Text = .DiscGroupId
+            If .QDID_Selected.HasValue Then QDID_Selected.Text = .QDID_Selected
+
+
+
+            'If Not .CarType Is Nothing Then
+            '    'editCarType.SelectedItem = editCarType.Items.FindByValue(.CarType)
+            '    'BindData_CarUse(.CarType)
+
+            'End If
+            'If Not .CarUse Is Nothing Then
+            '    'editCarUse.SelectedItem = editCarUse.Items.FindByValue(.CarUse.ToString())
+
+            'End If
+
+            Dim _dc_Qdetails = New DataClasses_CPSExt().tblMotorQuotationDetails
+            Dim data_QDetails = _dc_Qdetails.Where(Function(c) c.QuotationNo.Equals(QuotationNo)).FirstOrDefault()
+            If Not data_QDetails Is Nothing Then
+                newBlank_CarType.SelectedItem = newBlank_CarType.Items.FindByValue(data_QDetails.CarType.ToString())
+
+                SqlDataSource_CarUse.SelectParameters(0).DefaultValue = data_QDetails.CarType
+                newBlank_CarUse.DataBind()
+                newBlank_CarUse.SelectedItem = newBlank_CarUse.Items.FindByValue(data_QDetails.CarUse.ToString())
+
+                SqlDataSource_CMI.SelectParameters(0).DefaultValue = newBlank_CarUse.SelectedItem.Value
+                newBlank_CMI.DataBind()
+                newBlank_CMI.SelectedItem = newBlank_CMI.Items.FindByValue(data_QDetails.CMIPremiumCode.ToString())
+            Else
+                SqlDataSource_CarUse.SelectParameters(0).DefaultValue = newBlank_CarType.SelectedItem.Value
+                newBlank_CarUse.DataBind()
+                'newBlank_CarUse.SelectedItem = newBlank_CarUse.Items.FindByValue(data_QDetails.CarUse.ToString())
+
+                SqlDataSource_CMI.SelectParameters(0).DefaultValue = newBlank_CarUse.SelectedItem.Value
+                newBlank_CMI.DataBind()
+            End If
+
+
+
+
+
+
+
+            If Not .QuotationStatus.Equals("NQ") Then
+                ASPxMenuCompareQuote.Visible = False
+                btnCancel.Visible = False
+                SubQuoteGrid.SettingsPager.PageSize = 31
+                btnSaveQuotation.Visible = False
+                frmEditQuotation_CallBack.Enabled = False
+            End If
+
+        End With
+
+        SubQuoteGrid.DataBind()
+    End Sub
+
+    Private Sub BindData_CarModel(ByVal CarBrandlID As String)
+        SqlDataSource_CarModel.SelectCommand = "SELECT ID, Name FROM tblCarBrandModel where ParentID is not null and ParentID=@ParentID  order by Name "
+        SqlDataSource_CarModel.SelectParameters.Clear()
+        SqlDataSource_CarModel.SelectParameters.Add("ParentID", TypeCode.Int32, CarBrandlID)
+        editCarModel.DataSource = SqlDataSource_CarModel
+        editCarModel.DataBind()
+        editCarModel.SelectedIndex = 0
+    End Sub
+    'Protected Sub BindData_CarUse(ByVal carType As String)
+    '    If String.IsNullOrEmpty(carType) Then
+    '        Return
+    '    End If
+
+    '    SqlDataSource_CarUse.SelectParameters(0).DefaultValue = carType
+    '    editCarUse.DataBind()
+    'End Sub
+
+    Protected Sub newCarModel_Callback(ByVal source As Object, ByVal e As CallbackEventArgsBase)
+        If Page.IsCallback = True Then
+            SqlDataSource_CarModel.SelectCommand = "SELECT ID, Name FROM tblCarBrandModel where ParentID is not null and ParentID=@ParentID  order by Name "
+            SqlDataSource_CarModel.SelectParameters.Clear()
+            SqlDataSource_CarModel.SelectParameters.Add("ParentID", TypeCode.Int32, e.Parameter)
+            editCarModel.DataSource = SqlDataSource_CarModel
+            editCarModel.DataBind()
+        End If
+    End Sub
+
+    '==================== SubQuoteGrid ===================
+
+    Protected Sub SubQuoteGrid_HtmlDataCellPrepared(ByVal sender As Object, ByVal e As ASPxGridViewTableDataCellEventArgs) Handles SubQuoteGrid.HtmlDataCellPrepared
+        If (e.DataColumn.FieldName = "Title") Then
+            e.Cell.BackColor = Drawing.Color.AliceBlue
+            e.Cell.ForeColor = Drawing.Color.Blue
+            'e.Cell.Font.Bold = True
+            'QDID_Selected
+        ElseIf (e.DataColumn.FieldName = QDID_Selected.Text) Then 'select plan             
+            e.Cell.BackColor = Drawing.Color.LightBlue
+
+
+
+            'e.DataColumn.CellStyle.BackColor = Drawing.Color.LightGreen
+            'e.DataColumn.HeaderStyle.BackColor = Drawing.Color.LightGreen
+        End If
+    End Sub
+    'Protected Sub SubQuoteGrid_tblMotorQuotations_Selecting(sender As Object, e As LinqServerModeDataSourceSelectEventArgs)
+    '    Dim MotorQuotation = New DataClasses_CPSExt().tblMotorQuotations
+    '    ' this code selects products with CategoryID = 1
+    '    e.QueryableSource = MotorQuotation.Where(Function(p) p.UserRec.Equals("preeyaporn"))
+    'End Sub
+
+    Protected Sub SubQuoteGrid_DataBound(ByVal sender As Object, ByVal e As EventArgs)
+        Dim gv = (TryCast(sender, ASPxGridView))
+
+
+        Dim cols = gv.AllColumns
+        If cols.Count > 0 Then
+            gv.Visible = True
+
+
+            cols(0).Caption = "ความคุ้มครอง"
+            cols(0).HeaderStyle.Font.Bold = True
+            cols(0).HeaderStyle.BackColor = Drawing.Color.AliceBlue
+            cols(0).Width = Unit.Pixel(300)
+
+
+            For i = 1 To cols.Count - 1
+
+                'If DirectCast(cols(i), DevExpress.Web.GridViewDataTextColumn).FieldName = Session("QDID_Selected").ToString() Then  'select plan 
+                '    cols(i).HeaderStyle.BackColor = Drawing.Color.LightGreen
+                'End If
+
+                cols(i).HeaderStyle.BackColor = Drawing.Color.AliceBlue
+                cols(i).HeaderStyle.Font.Bold = True
+                cols(i).Caption = String.Format("ข้อเสนอที่ {0}", i)
+
+            Next
+        Else
+            gv.Visible = False
+        End If
+        TryCast(sender, ASPxGridView).SettingsPager.Visible = False
+    End Sub
+
+    Protected Sub SubQuoteGrid_HtmlRowCreated(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxGridViewTableRowEventArgs)
+        'If QDIDDelete.IsCallback Then
+        '    Return
+        'End If
+
+        If e.RowType <> DevExpress.Web.GridViewRowType.Data Then
+            Return
+        End If
+
+        If e.Row.Cells.Count <= 1 Then
+            If e.Row.Cells.Count = 1 Then
+                If e.Row.Cells(0).Controls.Count = 1 Then
+                    Dim _cell = DirectCast(e.Row.Cells(0).Controls(0), System.Web.UI.LiteralControl)
+                    If _cell.Text = "QDIDSHOW" Then
+                        _cell.Visible = False
+                    End If
+                End If
+                Return
+            End If
+        End If
+
+
+
+
+        Dim _cell0 = DirectCast(e.Row.Cells(0).Controls(0), System.Web.UI.LiteralControl)
+        'บริษัทประกันภัย
+        If _cell0.Text.Equals("บริษัทประกันภัย") Then 'Or _cell0.Text.Equals("ส่วนลดLWT") Or _cell0.Text.Equals("ส่วนลด พรบ.") Then
+            For i = 1 To e.Row.Cells.Count - 1
+
+                Dim _cell1 = DirectCast(e.Row.Cells(i).Controls(0), System.Web.UI.LiteralControl)
+                Dim _inrurer = New DataClasses_CPSExt().V_InsuredCodes
+                Dim a = _inrurer.Where(Function(p) p.ShortName.Equals(_cell1.Text)).FirstOrDefault()
+                If Not a Is Nothing Then
+                    _cell1.Text = String.Format("<img src='../images/InsurerLogo/" & a.Underwriter.Trim() & ".jpg' title='" & a.AccountContact.Trim() & "' style='border:hidden;width:50px' />{0}", "")
+                End If
+
+            Next
+
+
+        End If
+
+
+        If _cell0.Text.Equals("เบี้ยสุทธิ") Then 'Or _cell0.Text.Equals("ส่วนลดLWT") Or _cell0.Text.Equals("ส่วนลด พรบ.") Then
+            For i = 1 To e.Row.Cells.Count - 1
+                Dim _cell1 = DirectCast(e.Row.Cells(i).Controls(0), System.Web.UI.LiteralControl)
+                _cell1.Text = String.Format("<b>{0}</b>", _cell1.Text)
+            Next
+        End If
+        If _cell0.Text.Equals("เบี้ยสุทธิรวมภาษี(ส่วนลดLWT/พรบ.)") Then
+            For i = 1 To e.Row.Cells.Count - 1
+                Dim _cell1 = DirectCast(e.Row.Cells(i).Controls(0), System.Web.UI.LiteralControl)
+                _cell1.Text = String.Format("<h2><b>{0}</b></h2>", _cell1.Text)
+            Next
+        End If
+
+        If _cell0.Text = "QDIDSHOW" Then
+            _cell0.Visible = False
+            Dim _QDID = DirectCast(e.Row.Cells(1).Controls(0), System.Web.UI.LiteralControl)
+            _QDID.Visible = False
+            For i = 1 To e.Row.Cells.Count - 1
+                Dim _cell1 = DirectCast(e.Row.Cells(i).Controls(0), System.Web.UI.LiteralControl)
+                _cell1.Visible = False
+
+
+                Dim obj_cell_select As New ASPxButton
+                obj_cell_select.AutoPostBack = False
+                obj_cell_select.ID = "QDID_Selecte_" & Guid.NewGuid().ToString()
+                obj_cell_select.ClientInstanceName = obj_cell_select.ID
+                obj_cell_select.Text = "เลือก"
+                obj_cell_select.RenderMode = ButtonRenderMode.Button
+                obj_cell_select.Image.IconID = "actions_add_16x16"
+                obj_cell_select.CommandArgument = _cell1.Text
+                obj_cell_select.ClientSideEvents.Click = "function(s, e) { e.processOnServer = false;if (confirm ('ยืนยันเลือก?')) { LoadingPanel.Show();  cbQDIDSelected.PerformCallback('" & _cell1.Text & "');}    }"
+                obj_cell_select.CausesValidation = False
+                'AddHandler obj_cell_select.Click, AddressOf SubQuoteGrid_Select_click
+
+                e.Row.Cells(i).Controls.Add(obj_cell_select)
+
+                Dim obj_cell_delete As New ASPxButton
+                obj_cell_delete.AutoPostBack = True
+                obj_cell_delete.ID = "QDID_Delete" & Guid.NewGuid().ToString()
+                obj_cell_select.ClientInstanceName = obj_cell_delete.ID
+                obj_cell_delete.Text = "ลบออก"
+                obj_cell_delete.RenderMode = ButtonRenderMode.Button
+                obj_cell_delete.Image.IconID = "actions_cancel_16x16"
+                obj_cell_delete.CommandArgument = _cell1.Text
+                obj_cell_delete.ClientSideEvents.Click = "function(s, e) {e.processOnServer = false;if (confirm ('ยืนยันการลบ?')) {cbQDIDDelete.PerformCallback('" & _cell1.Text & "');}}"
+                obj_cell_delete.CausesValidation = False
+
+                e.Row.Cells(i).Controls.Add(obj_cell_delete)
+
+
+            Next
+        End If
+
+
+        If Not _cell0.Text.Equals("บริษัทประกันภัย") _
+    And Not _cell0.Text.Equals("การซ่อม") _
+    And Not _cell0.Text.Equals("ประเภทความคุ้มครอง") _
+    And Not _cell0.Text.Equals("เบี้ยสุทธิรวมภาษี(ส่วนลดLWT/พรบ.)") Then
+            For i = 1 To e.Row.Cells.Count - 1
+                e.Row.Cells(i).HorizontalAlign = HorizontalAlign.Right
+                e.Row.Cells(i).VerticalAlign = VerticalAlign.Middle
+            Next
+        Else
+            For i = 1 To e.Row.Cells.Count - 1
+                e.Row.Cells(i).HorizontalAlign = HorizontalAlign.Center
+                e.Row.Cells(i).VerticalAlign = VerticalAlign.Middle
+            Next
+        End If
+
+    End Sub
+
+    Protected Sub SubQuoteGrid_Select_click(ByVal sender As Object, ByVal e As CallbackEventArgs)
+        'Dim QDID_Selected = TryCast(sender, ASPxButton).CommandArgument.ToString()
+
+        'Dim _QuotationNo = editQuotationNo.Text
+        'Dim _dc = New DataClasses_CPSExt().tblMotorQuotations
+        'Dim data = _dc.Where(Function(c) c.QuotationNo.Equals(_QuotationNo)).FirstOrDefault()
+        'data.QDID_Selected = QDID_Selected
+        '_dc.Context.SubmitChanges()
+        'Me.QDID_Selected.Text = QDID_Selected
+        'Session("QDID_Selected") = QDID_Selected
+
+        Dim QDID = e.Parameter
+        If Not String.IsNullOrEmpty(QDID) Then
+            '1. gen MT Code
+            Dim _year = DateTime.Today().Year
+            If _year > 25000 Then
+                _year = _year - 543
+            End If
+            Dim _prefix_quote = String.Format("MT{0}", Right(_year.ToString(), 2))
+            Dim _dc = New DataClasses_CPSExt().tblMotorQuotations
+            Dim _newApplicationNo = ""
+
+            Dim data = _dc.Where(Function(c) c.QuotationNo.StartsWith(_prefix_quote)).OrderByDescending(Function(c) c.QuotationNo).FirstOrDefault()
+            If data Is Nothing Then
+                _newApplicationNo = _prefix_quote & "00000001"
+            Else
+                Dim _maxno = Convert.ToInt32(Right(data.QuotationNo, 8)) + 1
+                _newApplicationNo = _prefix_quote & Right("00000000" & _maxno.ToString(), 8)
+            End If
+            e.Result = _newApplicationNo
+
+            '2. select QT data
+            Dim _QTData = _dc.Where(Function(p) p.QuotationNo.Equals(editQuotationNo.Text)).FirstOrDefault()
+
+            '3. insert MT data
+            With _QTData
+
+            End With
+
+            '4. update QT Status
+            With _QTData
+                .QDID_Selected = QDID
+                .ConfirmCode = _newApplicationNo
+                .QuotationStatus = "RV"
+                .DateConFirm = DateTime.Now
+                .UserConfirm = HttpContext.Current.User.Identity.Name
+            End With
+
+            _dc.Context.SubmitChanges()
+
+            '5. redirect to MT Page
+            ASPxWebControl.RedirectOnCallback(ViewState("PreviousPageUrl"))
+        End If
+    End Sub
+
+    Protected Sub SubQuoteGrid_Delete_click(ByVal sender As Object, ByVal e As CallbackEventArgs)
+
+
+        Dim QDID = e.Parameter
+        If Not String.IsNullOrEmpty(QDID) Then
+            e.Result = QDID
+            Dim _dc = New DataClasses_CPSExt().tblMotorQuotationDetails
+            Dim data = _dc.Where(Function(c) c.QDID.Equals(QDID)).FirstOrDefault()
+            If Not data Is Nothing Then
+                _dc.DeleteOnSubmit(data)
+                _dc.Context.SubmitChanges()
+            End If
+
+        End If
+
+        SubQuoteGrid.DataBind()
+    End Sub
+
+    '==================== SubNoteGrid ===================
+    Protected Sub SubNoteGrid_RowInserting(ByVal sender As Object, ByVal e As ASPxDataInsertingEventArgs)
+
+        Dim _QuotationNo = editQuotationNo.Text
+        Dim _dc = New DataClasses_CPSExt().tblMotorQuotations
+        Dim data = _dc.Where(Function(c) c.QuotationNo.Equals(_QuotationNo)).FirstOrDefault()
+        Dim vDiscGroupID As String = ""
+        If data.DiscGroupId Is Nothing Then
+            Dim _dc_G = New DataClasses_CPSExt().tblDiscussionGroups
+            Dim _DiscGroupID = (From c In _dc_G Order By c.DiscGroupID Descending Select c.DiscGroupID).Take(1).FirstOrDefault()
+            vDiscGroupID = _DiscGroupID.ToString()
+            Dim new_DiscGroup As New tblDiscussionGroup()
+            new_DiscGroup.SourceFrom = "Quotation"
+            new_DiscGroup.UserRec = HttpContext.Current.User.Identity.Name.ToString()
+            new_DiscGroup.DiscGroupID = "DS" & (Convert.ToInt32(vDiscGroupID.Replace("DS", "")) + 1).ToString()
+            _dc_G.InsertOnSubmit(new_DiscGroup)
+            _dc_G.Context.SubmitChanges()
+            vDiscGroupID = new_DiscGroup.DiscGroupID
+            data.DiscGroupId = new_DiscGroup.DiscGroupID
+            _dc.Context.SubmitChanges()
+        Else
+            vDiscGroupID = data.DiscGroupId
+        End If
+
+        Dim memo As ASPxMemo = CType(SubNoteGrid.FindEditFormTemplateControl("DiscNote"), ASPxMemo)
+
+        e.NewValues("DiscGroupID") = vDiscGroupID
+        e.NewValues("IDCodeData") = _QuotationNo
+        e.NewValues("DiscNote") = memo.Text
+        e.NewValues("UserRec") = HttpContext.Current.User.Identity.Name
+        e.NewValues("DateRec") = DateTime.Now()
+
+        DiscGroupID.Text = vDiscGroupID
+    End Sub
+
+    Protected Sub SubNoteGrid_DataSelect(ByVal sender As Object, ByVal e As EventArgs)
+
+        Dim _QuotationNo = editQuotationNo.Text
+        Dim _dc = New DataClasses_CPSExt().tblMotorQuotations
+        Dim data = _dc.Where(Function(c) c.QuotationNo.Equals(_QuotationNo)).FirstOrDefault()
+
+        If Not data Is Nothing Then
+            If data.DiscGroupId Is Nothing Then
+                DiscGroupID.Text = ""
+            Else
+                DiscGroupID.Text = data.DiscGroupId
+            End If
+
+        Else
+            DiscGroupID.Text = ""
+        End If
+
+    End Sub
+
+    '==================== Callback ===================
+    'Protected Sub cbSaveQuotation_Callback(ByVal source As Object, ByVal e As CallbackEventArgsBase) Handles cbSaveQuotation.Callback
+    '    If Page.IsCallback = True Then            
+    '        SaveQuotation()
+    '    End If
+    'End Sub
+
+    Protected Sub cbSaveNewBlank_Callback(ByVal source As Object, ByVal e As CallbackEventArgsBase) Handles cbSaveNewBlank.Callback
+        If Page.IsCallback = True Then
+            SqlDataSource_CarUse.SelectParameters(0).DefaultValue = e.Parameter
+            'newBlank_CarUse.DataSource = SqlDataSource_CarUse
+            newBlank_CarUse.DataBind()
+
+            'BindData_CarUse(e.Parameter)
+
+            Dim _dc = New DataClasses_CPSExt().tblMotorQuotationDetails
+            Dim newdata As New tblMotorQuotationDetail
+            With newdata
+                .QuotationNo = editQuotationNo.Text
+
+                '.CarNo = ""
+                .UWriter = newBlank_Insurer.Value
+                '.PlanCode = ""
+                .GarageType = newBlank_Garage.Value
+                .PolicyType = newBlank_PolicyType.Value
+                .ValueFirst1 = CInt(newBlank_ValueFirst1.Value)
+                .cboTPBIPerson = CInt(newBlank_TPBI.Value)
+                .cboTPBITime = CInt(newBlank_TPBITime.Value)
+                .cboTPPD = CInt(newBlank_TPPD.Value)
+                .txtODFund = CInt(newBlank_OD.Value)
+                .txtFnTFund = CInt(newBlank_FnT1.Value)
+                .txtFnTFund1 = CInt(newBlank_FnT2.Value)
+                .Flood = CInt(newBlank_Flood.Value)
+
+                .ValueInSure = CInt(newBlank_ValueInSure.Value)
+                '.BpremiumS = 
+                .ValueDriver1 = CInt(newBlank_ValueDriver1.Value)
+                .NumHuman1 = CInt(newBlank_NumHuman1.Value)
+                .ValueSumHuman1 = CInt(newBlank_ValueSumHuman1.Value)
+                .NumSumHuman = CInt(newBlank_NumSumHuman.Value)
+                .ValueSumHuman = CInt(newBlank_ValueSumHuman.Value)
+                '.Accessory = 
+                '.ValueFirst2 =  
+                '.ValueDriver2 =
+                '.NumHuman2 =
+                '.ValueSumHuman2 = ""
+                .DiscountGroup = newBlank_DiscountGroup.Value
+                .DiscountGroupFlag = newBlank_DiscountGroupFlag.Value
+                .DiscountHistory = newBlank_DiscountHistory.Value
+                .DiscountHistoryFlag = newBlank_DiscountHistoryFlag.Value
+                .DiscountOther = newBlank_DiscountOther.Value
+                .DiscountOtherFlag = newBlank_DiscountOtherFlag.Value
+                .AddHistory = newBlank_AddHistory.Value
+                .AddHistoryFlag = newBlank_AddHistoryFlag.Value
+
+                '.VMIClassOfRisk = ""
+                .NetPremium = newBlank_NetPremium.Value
+                .Stamp = Math.Ceiling((Convert.ToDouble(.NetPremium) * 0.004))
+                .Vat = (.Stamp + Convert.ToDouble(.NetPremium)) * 0.07
+
+                .GrossPremium = .NetPremium + .Stamp + .Vat
+                '.DiscountPre = ""
+                .Discountspacial = newBlank_DiscountspacialC.Value
+                '.DiscountspacialFlag = ""
+                .Discountspacial_P = newBlank_DiscountspacialP.Value
+
+                '.CMIClassOfRisk = ""
+                '.stickCarType = ""
+                .CMIPremiumCode = newBlank_CMI.Value
+                .CMINetPremium = newBlank_CMINetPremium.Value
+                .CMIStamp = Math.Ceiling((Convert.ToDouble(.CMINetPremium) * 0.004))
+                .CMIVat = (.CMIStamp + Convert.ToDouble(.CMINetPremium)) * 0.07
+
+                .CMIGrossPremium = .CMINetPremium + .CMIStamp + .CMIVat
+                .DiscountCMI = newBlank_DiscountCMIC.Value
+                .DiscountCMI_P = newBlank_DiscountCMIP.Value
+
+                .TotalPremium = (.GrossPremium - .Discountspacial) + (.CMIGrossPremium - .DiscountCMI)
+
+                .Driver = newBlank_Driver.Value
+                '.DriverName1 = ""
+                '.txtOldDriver1 = ""
+                '.DriverName2 = ""
+                '.txtOldDriver2 = ""
+
+                .CarType = newBlank_CarType.Value
+                .CarUse = newBlank_CarUse.Value
+
+
+                Dim _SELECTED_ID = SELECTED_ID.Get("hidden_value").ToString()
+                If _SELECTED_ID.StartsWith("CID") Then
+                    .CoverageID = CInt(_SELECTED_ID.Replace("CID", ""))
+                End If
+                If _SELECTED_ID.StartsWith("PID") Then
+                    .PremiumID = CInt(_SELECTED_ID.Replace("PID", ""))
+                End If
+
+
+            End With
+
+
+            _dc.InsertOnSubmit(newdata)
+            _dc.Context.SubmitChanges()
+
+        End If
+    End Sub
+
+    'Protected Sub editCarModel_Callback(ByVal source As Object, ByVal e As CallbackEventArgsBase) Handles editCarModel.Callback
+    '    If Page.IsCallback = True Then
+    '        BindData_CarModel(e.Parameter)
+    '    End If
+    'End Sub
+
+    Protected Sub newBlank_CarUse_Callback(ByVal source As Object, ByVal e As CallbackEventArgsBase) Handles newBlank_CarUse.Callback
+        If Page.IsCallback = True Then
+            'BindData_CarUse(e.Parameter)
+            newBlank_CarUse.Items.Clear()
+            SqlDataSource_CarUse.SelectParameters(0).DefaultValue = e.Parameter
+            newBlank_CarUse.SelectedIndex = 0
+            newBlank_CarUse.DataBind()
+
+            'newBlank_CMI.Items.Clear()
+            'SqlDataSource_CMI.SelectParameters(0).DefaultValue = newBlank_CarUse.SelectedItem.Value 'e.Parameter
+            'newBlank_CMI.DataBind()
+        End If
+    End Sub
+
+
+    Protected Sub newBlank_CMI_Callback(ByVal source As Object, ByVal e As CallbackEventArgsBase) Handles newBlank_CMI.Callback
+        If Page.IsCallback = True Then
+            'BindData_CarUse(e.Parameter)
+            newBlank_CMI.Items.Clear()
+            SqlDataSource_CMI.SelectParameters(0).DefaultValue = e.Parameter
+            newBlank_CMI.DataBind()
+            newBlank_CMI.SelectedIndex = 0
+
+
+        End If
+    End Sub
+
+    'cbNewBlank_CarUse
+
+    'Protected Sub NewBlank_CarUse_Callback(ByVal source As Object, ByVal e As CallbackEventArgs) Handles cbNewBlank_CarUse.Callback
+    '    If Page.IsCallback = True Then
+    '        ''BindData_CarUse(e.Parameter)
+    '        'newBlank_CMI.Items.Clear()
+    '        'SqlDataSource_CMI.SelectParameters(0).DefaultValue = e.Parameter
+    '        'newBlank_CMI.DataBind()
+    '        'newBlank_CMI.SelectedIndex = 0
+    '        'e.Result = e.Parameter
+
+
+    '        newBlank_CarUse.Items.Clear()
+    '        SqlDataSource_CarUse.SelectParameters(0).DefaultValue = e.Parameter
+    '        newBlank_CarUse.SelectedIndex = 0
+    '        newBlank_CarUse.DataBind()
+    '    End If
+    'End Sub
+
+    Protected Sub cbNewBlank_CMI_Callback(ByVal source As Object, ByVal e As CallbackEventArgs) Handles cbNewBlank_CMI.Callback
+        If Page.IsCallback = True Then
+            ''BindData_CarUse(e.Parameter)
+            'newBlank_CMI.Items.Clear()
+            'If Not newBlank_CarUse.SelectedItem Is Nothing Then
+            '    SqlDataSource_CMI.SelectParameters(0).DefaultValue = newBlank_CarUse.SelectedItem.Value
+            'End If
+            'newBlank_CMI.DataBind()            
+
+
+            If Not String.IsNullOrEmpty(e.Parameter.Trim()) Then
+                Dim _dc = New DataClasses_CPSExt().tblCMIPremiums
+                Dim data = _dc.Where(Function(c) c.CMI_PremiumCode.Equals(e.Parameter.ToString().Trim())).FirstOrDefault()
+
+                e.Result = data.CMINetPremium.Value.ToString()
+
+            Else
+                e.Result = "0.00"
+
+            End If
+        End If
+    End Sub
+
+    Protected Sub cbSelectedCoverage_Callback(ByVal source As Object, ByVal e As CallbackEventArgs) Handles cbSelectedCoverage.Callback
+        If Page.IsCallback = True Then
+            e.Result = "cbSelectedCoverage_Callback"
+        End If
+    End Sub
+
+    Protected Sub cbSelectedPremium_Callback(ByVal source As Object, ByVal e As CallbackEventArgs) Handles cbSelectedPremium.Callback
+        If Page.IsCallback = True Then
+            e.Result = "cbSelectedPremium_Callback"
+        End If
+    End Sub
+
+    Protected Sub frmEditQuotationPanel_CallBack(ByVal source As Object, ByVal e As DevExpress.Web.CallbackEventArgsBase) Handles frmEditQuotation_CallBack.Callback
+        Select Case e.Parameter
+            Case "Save"
+                SaveQuotation()
+            Case "selected_carbrand"
+                BindData_CarModel(editCarBrand.Value)
+        End Select
+
+
+    End Sub
+
+    Private Sub init_newblank()
+        SELECTED_ID.Set("hidden_value", "")
+
+        newBlank_Insurer.SelectedIndex = 0
+        newBlank_PolicyType.SelectedIndex = 0
+        newBlank_Garage.SelectedIndex = 0
+        newBlank_Driver.SelectedIndex = 0
+
+        'newBlank_CarType.SelectedIndex = 0
+        'newBlank_CarUse.SelectedIndex = 0
+
+        newBlank_CMI.SelectedIndex = 0
+
+        newBlank_TPBI.Value = 0
+        newBlank_TPBITime.Value = 0
+        newBlank_TPPD.Value = 0
+
+        newBlank_OD.Value = 0
+        newBlank_FnT1.Value = 0
+        newBlank_FnT2.Value = 0
+        newBlank_Flood.Value = 0
+
+        newBlank_ValueDriver1.Value = 0
+        newBlank_NumHuman1.Value = 0
+        newBlank_ValueSumHuman1.Value = 0
+
+        newBlank_NumSumHuman.Value = 0
+        newBlank_ValueSumHuman.Value = 0
+
+        newBlank_ValueInSure.Value = 0
+
+        newBlank_ValueFirst1.Value = 0
+
+        newBlank_DiscountGroup.Value = 0
+        newBlank_DiscountGroupFlag.SelectedIndex = 0
+
+        newBlank_DiscountHistory.Value = 0
+        newBlank_DiscountHistoryFlag.SelectedIndex = 0
+
+        newBlank_DiscountOther.Value = 0
+        newBlank_DiscountOtherFlag.SelectedIndex = 0
+
+        newBlank_AddHistory.Value = 0
+        newBlank_AddHistoryFlag.SelectedIndex = 0
+
+
+        'newBlank_NetPremium.Text = "0.00"
+        newBlank_NetPremium.Value = 0
+        'newBlank_txtNetPremium.Text = "0.00"
+        newBlank_txtStamp.Text = "0.00"
+        newBlank_txtVat.Text = "0.00"
+        newBlank_txtGrossPremium.Text = "0.00"
+
+        newBlank_DiscountspacialC.Value = 0
+        newBlank_DiscountspacialP.Value = 0
+
+        newBlank_txtTotalPremium1.Text = "0.00"
+
+        'newBlank_txtCMINetPremium.Text = "0.00"
+        'newBlank_CMINetPremium.Text = "0.00"
+        newBlank_CMINetPremium.Value = 0
+        newBlank_CMINetPremium.ClientEnabled = False
+
+        newBlank_txtCMIStamp.Text = "0.00"
+        newBlank_txtCMIVat.Text = "0.00"
+
+        newBlank_txtCMIGrossPremium.Text = "0.00"
+        newBlank_DiscountCMIC.Value = 0
+        newBlank_DiscountCMIC.ClientEnabled = False
+        newBlank_DiscountCMIP.Value = 0
+        newBlank_DiscountCMIP.ClientEnabled = False
+
+        newBlank_txtCMITotalPremium1.Text = "0.00"
+
+        newBlank_txtTotalPremium.Text = "0.00"
+
+
+        ReadOnly_newblank_coverage(False)
+
+
+    End Sub
+
+    Private Sub ReadOnly_newblank_coverage(ByVal IsReadOnly As Boolean)
+        'newBlank_Insurer.ReadOnly = IsReadOnly
+        newBlank_Insurer.ClientEnabled = Not IsReadOnly
+
+        'newBlank_PolicyType.ReadOnly = IsReadOnly
+        newBlank_PolicyType.ClientEnabled = Not IsReadOnly
+
+        newBlank_Garage.ReadOnly = IsReadOnly
+        newBlank_Driver.ReadOnly = IsReadOnly
+        'newBlank_CarType.ClientEnabled = Not IsReadOnly
+        'newBlank_CarUse.ClientEnabled = Not IsReadOnly
+        'newBlank_CMI.ClientEnabled = Not IsReadOnly
+        newBlank_TPBI.ClientEnabled = Not IsReadOnly
+        newBlank_TPBITime.ClientEnabled = Not IsReadOnly
+        newBlank_TPPD.ClientEnabled = Not IsReadOnly
+
+        newBlank_OD.ReadOnly = IsReadOnly
+        newBlank_FnT1.ReadOnly = IsReadOnly
+        newBlank_FnT2.ReadOnly = IsReadOnly
+        newBlank_Flood.ReadOnly = IsReadOnly
+
+        newBlank_ValueDriver1.ReadOnly = IsReadOnly
+        newBlank_NumHuman1.ReadOnly = IsReadOnly
+        newBlank_ValueSumHuman1.ReadOnly = IsReadOnly
+        newBlank_NumSumHuman.ReadOnly = IsReadOnly
+        newBlank_ValueSumHuman.ClientEnabled = Not IsReadOnly
+        newBlank_ValueInSure.ReadOnly = IsReadOnly
+        newBlank_ValueFirst1.ReadOnly = IsReadOnly
+        newBlank_DiscountGroup.ReadOnly = IsReadOnly
+        newBlank_DiscountGroupFlag.ReadOnly = IsReadOnly
+        newBlank_DiscountHistory.ReadOnly = IsReadOnly
+        newBlank_DiscountHistoryFlag.ReadOnly = IsReadOnly
+        newBlank_DiscountOther.ReadOnly = IsReadOnly
+        newBlank_DiscountOtherFlag.ReadOnly = IsReadOnly
+        newBlank_AddHistory.ReadOnly = IsReadOnly
+        newBlank_AddHistoryFlag.ReadOnly = IsReadOnly
+    End Sub
+
+    Private Sub selected_coverage(ByVal CID As String)
+        Dim _dc = New DataClasses_CPSExt().tblCoverages
+        Dim data = _dc.Where(Function(c) c.CoverageID.Equals(Convert.ToInt32(CID))).FirstOrDefault()
+        With data
+
+            'newBlank_Insurer.SelectedItem = newBlank_Insurer.Items.FindByValue(IIf(String.IsNullOrEmpty(.Underwriter), "", .Underwriter))
+            newBlank_PolicyType.SelectedItem = newBlank_PolicyType.Items.FindByValue(CInt(.Coverage2).ToString())
+            newBlank_Garage.SelectedItem = newBlank_Garage.Items.FindByValue(.Coverage3.ToString())
+            'newBlank_Driver.SelectedItem = newBlank_Driver.Items.FindByValue(1)
+
+            newBlank_CarType.SelectedItem = newBlank_CarType.Items.FindByValue(Left(.Coverage1, 1))
+
+            SqlDataSource_CarUse.SelectParameters(0).DefaultValue = newBlank_CarType.SelectedItem.Value
+            newBlank_CarUse.DataBind()
+
+            'If String.IsNullOrEmpty(.CarUse) Or .CarUse.Equals("0") Then
+            '    newBlank_CarUse.SelectedIndex = 0
+            'Else
+            newBlank_CarUse.SelectedItem = newBlank_CarUse.Items.FindByValue(.Coverage1)
+            'End If
+
+            SqlDataSource_CMI.SelectParameters(0).DefaultValue = newBlank_CarUse.SelectedItem.Value
+            newBlank_CMI.DataBind()
+            'Dim _CMIPremiumCode As String = IIf(Not String.IsNullOrEmpty(.CMIPremiumCode), .CMIPremiumCode, "0")
+            'If _CMIPremiumCode.Equals("0") Then
+            '    newBlank_CMI.SelectedIndex = 0
+            'Else
+            '    newBlank_CMI.SelectedItem = newBlank_CMI.Items.FindByValue(_CMIPremiumCode)
+            'End If
+
+            newBlank_TPPD.Value = .Coverage4.Replace(",", "")
+            newBlank_TPBI.Value = .Coverage5.Replace(",", "")
+            newBlank_TPBITime.Value = .Coverage6.Replace(",", "")
+
+
+            'newBlank_OD.Value = IIf(.txtODFund.HasValue, .txtODFund, 0)
+            'newBlank_FnT1.Value = IIf(.txtFnTFund.HasValue, .txtFnTFund, 0)
+            'newBlank_FnT2.Value = IIf(.txtFnTFund1.HasValue, .txtFnTFund1, 0)
+            'newBlank_Flood.Value = IIf(.Flood.HasValue, .Flood, 0)
+
+
+
+            newBlank_ValueDriver1.Value = .Coverage10.Replace(",", "")
+            newBlank_NumHuman1.Value = .Coverage11.Replace(",", "")
+            newBlank_ValueSumHuman1.Value = .Coverage10.Replace(",", "")
+
+            newBlank_NumSumHuman.Value = .Coverage12.Replace(",", "")
+
+            newBlank_ValueSumHuman.Value = .Coverage13.Replace(",", "")
+
+            newBlank_ValueInSure.Value = .Coverage14.Replace(",", "")
+
+            newBlank_ValueFirst1.Value = .Coverage15.Replace(",", "")
+
+            'newBlank_DiscountGroup.Value = IIf(.DiscountGroup.HasValue, .DiscountGroup, 0)
+            'newBlank_DiscountGroupFlag.SelectedItem.Value = IIf(.DiscountGroupFlag = "+", "C", "P")
+
+            'newBlank_DiscountHistory.Value = IIf(.DiscountHistory.HasValue, .DiscountHistory, 0)
+            'newBlank_DiscountHistoryFlag.SelectedItem.Value = IIf(.DiscountHistoryFlag = "+", "C", "P")
+
+            'newBlank_DiscountOther.Value = IIf(.DiscountOther.HasValue, .DiscountOther, 0)
+            'newBlank_DiscountOtherFlag.SelectedItem.Value = IIf(.DiscountOtherFlag = "+", "C", "P")
+
+            'newBlank_AddHistory.Value = IIf(.AddHistory.HasValue, .AddHistory, 0)
+            'newBlank_AddHistoryFlag.SelectedItem.Value = IIf(.AddHistoryFlag = "+", "C", "P")
+
+
+
+        End With
+
+
+        'ReadOnly_newblank_coverage(True)
+
+
+    End Sub
+
+    Private Sub selected_premium(ByVal PID As String)
+        Dim _dc_Premium = New DataClasses_CPSExt().V_MotorCampaignPublishes
+        Dim data_premium = _dc_Premium.Where(Function(c) c.PremiumID.Equals(PID)).FirstOrDefault()
+
+        selected_coverage(data_premium.CoverageID)
+
+        With data_premium
+
+            'newBlank_Insurer.SelectedItem = newBlank_Insurer.Items.FindByValue(IIf(String.IsNullOrEmpty(.Underwriter), "", .Underwriter))
+            newBlank_Insurer.Value = .Underwriter.Trim()
+            newBlank_NetPremium.Value = .NetPremium.Value
+            newBlank_NetPremium.ClientEnabled = False
+            'newBlank_txtStamp.Value = .Stamp.Value
+            'newBlank_txtVat.Value = .vat.Value
+            'newBlank_txtGrossPremium.Value = .GrossPremium.Value
+            'newBlank_DiscountspacialC.Value
+            'newBlank_DiscountspacialFlag
+
+
+
+
+            Select Case .Coverage2
+                Case 1
+                    newBlank_OD.Value = editCarSuminsured.Value
+                    newBlank_FnT1.Value = editCarSuminsured.Value
+                    newBlank_FnT2.Value = editCarSuminsured.Value
+                    newBlank_Flood.Value = editCarSuminsured.Value
+                Case 2
+                    newBlank_OD.Value = 0
+                    newBlank_FnT1.Value = editCarSuminsured.Value
+                    newBlank_FnT2.Value = editCarSuminsured.Value
+                    newBlank_Flood.Value = 0
+
+                Case 4
+                    newBlank_OD.Value = editCarSuminsured.Value
+                    newBlank_FnT1.Value = 0
+                    newBlank_FnT2.Value = 0
+                    newBlank_Flood.Value = 0
+                Case 5
+                    newBlank_OD.Value = editCarSuminsured.Value
+                    newBlank_FnT1.Value = editCarSuminsured.Value
+                    newBlank_FnT2.Value = editCarSuminsured.Value
+                    newBlank_Flood.Value = 0
+                Case Else
+                    newBlank_OD.Value = 0
+                    newBlank_FnT1.Value = 0
+                    newBlank_FnT2.Value = 0
+                    newBlank_Flood.Value = 0
+
+
+            End Select
+
+
+            newBlank_OD.Value = editCarSuminsured.Value
+            newBlank_FnT1.Value = editCarSuminsured.Value
+            newBlank_FnT2.Value = editCarSuminsured.Value
+            newBlank_Flood.Value = editCarSuminsured.Value
+
+
+
+
+
+
+
+
+
+            ReadOnly_newblank_coverage(True)
+
+
+
+            'newBlank_txtTotalPremium1
+            'newBlank_txtTotalPremium2
+            'newBlank_txtCMINetPremium
+            'newBlank_txtCMIStamp
+            'newBlank_txtCMIVat
+            'newBlank_txtCMIGrossPremium
+            'newBlank_DiscountCMI
+            'newBlank_DiscountCMIFlag
+            'newBlank_txtCMIDiscount
+            'newBlank_txtCMITotalPremium1
+            'newBlank_txtCMITotalPremium2
+            'newBlank_txtTotalPremium
+        End With
+
+    End Sub
+
+    Protected Sub frmNewBlankPanel_Callback(ByVal source As Object, ByVal e As DevExpress.Web.CallbackEventArgsBase) Handles frmNewBlank_CallBack.Callback
+
+        Try
+            frmNewBlank_CallBack.JSProperties("cpError") = ""
+            frmNewBlank_CallBack.JSProperties("cpCarUse") = ""
+
+            init_newblank()
+
+            Dim MQDetails = New DataClasses_CPSExt().tblMotorQuotationDetails
+            Dim a = MQDetails.Where(Function(p) p.QuotationNo.Equals(editQuotationNo.Text)).FirstOrDefault()
+            If Not a Is Nothing Then
+                frmNewBlank_CallBack.JSProperties("cpCarUse") = "cpCarUse"
+            End If
+
+            If String.IsNullOrEmpty(e.Parameter) Then
+
+
+            Else
+
+                If e.Parameter.StartsWith("CID") Then 'selected coverage
+                    SELECTED_ID.Set("hidden_value", e.Parameter)
+                    Dim CID = e.Parameter.Replace("CID", "")
+                    'ReadOnly_newblank_coverage(True)
+                    selected_coverage(CID)
+
+                    newBlank_OD.ReadOnly = False
+                    newBlank_FnT1.ReadOnly = False
+                    newBlank_FnT2.ReadOnly = False
+                    newBlank_Flood.ReadOnly = False
+
+
+                ElseIf e.Parameter.StartsWith("PID") Then 'selected premium
+                    SELECTED_ID.Set("hidden_value", e.Parameter)
+                    Dim PID = e.Parameter.Replace("PID", "")
+                    selected_premium(PID)
+
+                ElseIf e.Parameter.StartsWith("selected_newblank_cartype") Then
+
+                    newBlank_CarUse.Items.Clear()
+                    SqlDataSource_CarUse.SelectParameters(0).DefaultValue = newBlank_CarType.SelectedItem.Value
+                    newBlank_CarUse.DataBind()
+                    newBlank_CarUse.SelectedIndex = 0
+
+                    newBlank_CMI.Items.Clear()
+                    SqlDataSource_CMI.SelectParameters(0).DefaultValue = newBlank_CarUse.SelectedItem.Value
+                    newBlank_CMI.DataBind()
+                    newBlank_CMI.SelectedIndex = 0
+
+                ElseIf e.Parameter.StartsWith("selected_newblank_caruse") Then
+
+                    newBlank_CMI.Items.Clear()
+                    SqlDataSource_CMI.SelectParameters(0).DefaultValue = newBlank_CarUse.Value
+                    newBlank_CMI.DataBind()
+                    newBlank_CMI.SelectedIndex = 0
+
+                ElseIf e.Parameter.StartsWith("selected_newblank_cmi") Then
+                    If Not String.IsNullOrEmpty(e.Parameter.Trim()) Then
+                        Dim _dc = New DataClasses_CPSExt().tblCMIPremiums
+                        Dim data = _dc.Where(Function(c) c.CMI_PremiumCode.Equals(newBlank_CMI.Value.ToString().Trim())).FirstOrDefault()
+
+                        newBlank_CMINetPremium.Value = data.CMINetPremium
+
+                    Else
+                        newBlank_CMINetPremium.Text = 0
+                        newBlank_CMINetPremium.Value = 0
+                    End If
+                End If
+
+
+
+
+
+            End If
+
+            'moreReferenceNo.Text = ""
+            'moreCarBrandName.Text = ""
+            'moreCarModelName.Text = ""
+
+
+            'Dim _QuotationNo As String = e.Parameter.ToString()
+
+            'Dim _dc = New DataClasses_CPSExt().V_MotorQuotations
+            'Dim data = _dc.Where(Function(c) c.QuotationNo.Equals(_QuotationNo)).FirstOrDefault()
+
+            'If Not data Is Nothing Then
+            '    moreReferenceNo.Text = data.ReferenceNo
+            '    moreCarBrandName.Text = data.CarBrandName
+            '    moreCarModelName.Text = data.CarModelName
+
+            'End If
+
+
+        Catch ex As Exception
+            frmNewBlank_CallBack.JSProperties("cpError") = "Error text"
+
+        End Try
+    End Sub
+
+
+    'Protected Sub LinqServerModeDataSource_V_Product_Coverage_Premiums_Selecting(sender As Object, e As LinqServerModeDataSourceSelectEventArgs) Handles LinqServerModeDataSource_V_Product_Coverage_Premiums.Selecting
+    '    Dim data = New DataClasses_CPSExt().V_Product_Coverage_Premiums
+    '    Dim MQDetails = New DataClasses_CPSExt().tblMotorQuotationDetails
+
+    '    Dim a = MQDetails.Where(Function(p) p.QuotationNo.Equals(editQuotationNo.Text)).FirstOrDefault()
+    '    If a Is Nothing Then
+    '        e.QueryableSource = data.Where(Function(p) p.CoverageType.Equals(1))
+    '    Else
+    '        e.QueryableSource = data.Where(Function(p) p.CoverageType.Equals(1) And p.CarUse.Equals(a.CarUse) And p.CarType.Equals(a.CarType))
+    '    End If
+
+    'End Sub
+
+
+
+    Protected Sub btnDuplicate_Click(sender As Object, e As EventArgs) Handles btnDuplicate.Click
+        DuplicateQuote(editQuotationNo.Text)
+    End Sub
+
+    Private Sub DuplicateQuote(ByVal _ReferenceNo As String)
+        Dim _dc_dup = New DataClasses_CPSExt().tblMotorQuotations
+        Dim data_dup = _dc_dup.Where(Function(c) c.QuotationNo.Equals(_ReferenceNo)).FirstOrDefault()
+
+
+        Dim _year = DateTime.Today().Year
+        If _year > 25000 Then
+            _year = _year - 543
+        End If
+        Dim _prefix_quote = String.Format("QT{0}", Right(_year.ToString(), 2))
+        Dim _dc = New DataClasses_CPSExt().tblMotorQuotations
+        Dim _newQuotationNo = ""
+
+        Dim data = _dc.Where(Function(c) c.QuotationNo.StartsWith(_prefix_quote)).OrderByDescending(Function(c) c.QuotationNo).FirstOrDefault()
+        If data Is Nothing Then
+            _newQuotationNo = _prefix_quote & "00000001"
+        Else
+            Dim _maxno = Convert.ToInt32(Right(data.QuotationNo, 8)) + 1
+            _newQuotationNo = _prefix_quote & Right("00000000" & _maxno.ToString(), 8)
+        End If
+
+
+        Dim newdata = New tblMotorQuotation
+        With newdata
+            .TypeOfClient = "NEW"
+            .UserRec = HttpContext.Current.User.Identity.Name
+            .DateRec = DateTime.Now
+            .QuotationStatus = "NQ"
+            .QuotationNo = _newQuotationNo
+            .ReferenceNo = _ReferenceNo
+
+            .CustTitleName = IIf(String.IsNullOrEmpty(data_dup.CustTitleName), "", data_dup.CustTitleName)
+            .CustName = data_dup.CustName
+            .CustIDCardType = data_dup.CustIDCardType
+            .CustIDCards = data_dup.CustIDCards
+            .CustAddress = data_dup.CustAddress
+
+            .CustLocationName = data_dup.CustLocationName
+            .CustLocationCode = data_dup.CustLocationCode
+
+            .CustTelNo = data_dup.CustTelNo
+            .CustEmail = data_dup.CustEmail
+            .CustFaxNo = data_dup.CustFaxNo
+
+            .CarBrandName = data_dup.CarBrandName
+            .CarModelName = data_dup.CarModelName
+            .CarBrandlID = data_dup.CarBrandlID
+            .CarModelID = data_dup.CarModelID
+
+            .CarSubModelName = data_dup.CarSubModelName
+
+
+            .CarSuminsured = data_dup.CarSuminsured
+            .CarRegis = data_dup.CarRegis
+            .CarId = data_dup.CarId
+            .CarEngineNo = data_dup.CarEngineNo
+            .CarChassisNo = data_dup.CarChassisNo
+            .CarSize = data_dup.CarSize
+
+        End With
+
+
+        _dc.InsertOnSubmit(newdata)
+        _dc.Context.SubmitChanges()
+
+        Response.Redirect(GetQuotationUrl(_newQuotationNo))
+    End Sub
+    Public Function GetQuotationUrl(ByVal quotationno As String) As String
+        Return String.Format("~/applications/editmotorquotation.aspx?quotationno={0}", quotationno)
+    End Function
+End Class

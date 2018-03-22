@@ -1,0 +1,414 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f66e3dd6-a60b-4321-9ce4-b373b2b972e0" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>BancAssCube</ID>
+  <Name>BancAssCube</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-7044" scrolltop="-4339" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="16378" y="13679" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Actual" left="-5721" top="-3122" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4260" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000a410000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Actual" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-7044</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-4339</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-5721</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-3122</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="1c8f3429-a538-48c3-b29f-d2bdf01fd43b">
+      <ID>Actual</ID>
+      <Name>Actual</Name>
+      <DimensionID>Actual</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="fa3b11e9-f35c-4776-bdac-704bbe38f4ab">
+          <AttributeID>ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d03873d1-0487-4bc2-8cc6-4ef87f88141c">
+          <AttributeID>Insurer</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7bf4d8a8-5c5c-4d3a-b6aa-979e70270048">
+          <AttributeID>Product</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="32ed5f2b-a9eb-4539-8494-dc7c0168625a">
+          <AttributeID>Type</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d77257c8-2fa8-4fcc-8892-14b2285e9c50">
+          <AttributeID>Insurance Product</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="12a4bd1a-8c94-4f53-a172-11024833e4ac">
+          <AttributeID>Merchant No</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="acc96029-1b67-433f-b850-7107067e9a41">
+          <AttributeID>Mode</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="594eb32e-dae3-4510-af45-633f7c4ff59b">
+          <AttributeID>Period</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9eb8a8f4-92e4-4aae-8b94-0b8831061d56">
+          <AttributeID>Service</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="403bca81-8d6f-4494-8ddc-749493c88434">
+          <AttributeID>Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="eb53bce1-f1a4-4864-8d20-7a1ee1c5637a">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="71b656b2-d8da-4b52-b8cf-673bee75e1c7">
+          <AttributeID>No</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5594fe59-b17e-420c-a010-6a1fb145120b">
+          <AttributeID>Typeof SF</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0f9c65fd-2365-4cd5-983f-df2db4fa8453">
+          <AttributeID>CTB</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="0424a9d9-8fff-4164-ba33-21326219161d">
+      <ID>Actual</ID>
+      <Name>Actual</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="0a1f463c-f2b1-4ded-b3bb-a563bdecffe2">
+          <ID>Service Fee Percentage</ID>
+          <Name>Service Fee Percentage</Name>
+          <Source dwd:design-time-name="c9f6e3af-1501-4d86-aa56-3491e55f0b42">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="af963aeb-653e-48e9-9a59-79af8aa2a3c9">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>ServiceFeePercentage</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="ed86809b-fae5-46bf-8adb-d524f03e9501">
+          <ID>No Of Policy</ID>
+          <Name>No Of Policy</Name>
+          <Source dwd:design-time-name="527cab21-41ea-4e8e-a87f-123dcf39f59f">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="3d72e1ed-e715-458a-8174-f94a495bf1de">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>NoOfPolicy</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b1da9124-9168-47d0-800b-8a24f6fb7dfc">
+          <ID>Gross Premium</ID>
+          <Name>Gross Premium</Name>
+          <Source dwd:design-time-name="308e6bb1-1637-4530-a430-a6cfb31515f0">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b783a3ef-6861-4f24-b363-8be2d59b1a3c">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>GrossPremium</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="9976768d-7238-4492-89e0-bd136efd31f6">
+          <ID>NET Premium</ID>
+          <Name>NET Premium</Name>
+          <Source dwd:design-time-name="798606b1-79b0-4bb0-9eba-1000175b222b">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="8b14bb4f-358f-4269-b0db-322a754ae85b">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>NETPremium</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="ae53db12-6010-4b63-bece-68a00491cf41">
+          <ID>Netto Insurance</ID>
+          <Name>Netto Insurance</Name>
+          <Source dwd:design-time-name="42aad394-1ca1-4209-a14f-078766233b4d">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="bbff41cf-305e-4b64-a61f-e3d29c80cc36">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>NettoInsurance</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="06ea5f29-d132-4ca1-a270-bf9b074d2dd2">
+          <ID>Service Fee</ID>
+          <Name>Service Fee</Name>
+          <Source dwd:design-time-name="8dc6332f-3d65-4747-8cbc-abbb6963b040">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="a48ce92a-57e0-4a92-9635-b05a2032f64a">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>ServiceFee</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="ca9d2efe-8804-4fcf-9e37-1edb47006a89">
+          <ID>Vat</ID>
+          <Name>Vat</Name>
+          <Source dwd:design-time-name="e04fd3e2-10ad-499a-a40b-b7a621bfb9c5">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="6139722b-78e6-4ac4-9226-4bcea7524ec8">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>Vat</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="2b0313af-cb5f-4445-9b1a-1bf6d07387e7">
+          <ID>Net</ID>
+          <Name>Net</Name>
+          <Source dwd:design-time-name="29c70d08-adfc-4fba-901f-56482b8fbe75">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="9fb82a2d-8be6-4c30-863c-9612b5064944">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>Net</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="fd1f1049-69df-44b4-b231-3f0c719c1917">
+          <ID>LWT</ID>
+          <Name>LWT</Name>
+          <Source dwd:design-time-name="323de937-67b8-4dde-a796-29d559c59a96">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="74efacfa-71ff-4620-8f61-795e215632d7">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>LWT</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="655fc64d-8c9a-451d-9fea-b6633054e8b0">
+          <ID>CTB Act</ID>
+          <Name>CTB Act</Name>
+          <Source dwd:design-time-name="f0e40075-1993-481c-845a-f6a512671a07">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="13b801a1-f306-45f4-a245-f364e5ce9916">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>CTB_Act</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="83df84d6-9b54-456c-8025-fdd33a9212ee">
+          <ID>Service Fee Percentage2</ID>
+          <Name>Service Fee Percentage2</Name>
+          <Source dwd:design-time-name="376b0449-28f1-45e5-8ac5-88b1dd68b514">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="82111648-93dd-4697-96f9-7fd0c83fa92f">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>ServiceFeePercentage2</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="d9e9d869-4f29-4114-b0ed-b47909d81c49">
+          <ID>LWT Share</ID>
+          <Name>LWT Share</Name>
+          <Source dwd:design-time-name="a1758a4c-be22-483b-8190-caead207f8f7">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="8b7e76f0-d328-4353-9db0-17a9ff678d8e">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>LWT_Share</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="064753f2-d7ba-458d-a854-4b28d2424188">
+          <ID>REJ Ac</ID>
+          <Name>REJ Ac</Name>
+          <Source dwd:design-time-name="b871b26a-6c53-48be-ba5c-d8c055af8e28">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="d4510f99-7aa7-44dc-abaf-91e79669553a">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>REJ_ac</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="4deff9f0-16b4-4a91-ba2a-68ae08e6144a">
+          <ID>REJ Amt</ID>
+          <Name>REJ Amt</Name>
+          <Source dwd:design-time-name="f5a596ce-184c-4274-9c7a-955715c5f1c7">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="816f6c13-1083-4896-8100-17852e343edd">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>REJ_amt</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="e3479d01-decd-4e5d-b383-892a5948842d">
+          <ID>Pol Of CB</ID>
+          <Name>Pol Of CB</Name>
+          <Source dwd:design-time-name="3ce37b39-37c5-4ddc-a757-7744493e8d47">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="a876126b-aa85-4c19-9a5c-9366221a9761">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>Pol_of_CB</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="0c4b0eb9-0e43-4045-b9d5-b8fb61925313">
+          <ID>CB</ID>
+          <Name>CB</Name>
+          <Source dwd:design-time-name="8cafaa07-e1b9-4a9f-a4d0-3589e93193ca">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="fc33dc7f-c436-401e-a097-1080a0c403ed">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>CB</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="dc8e321e-4c25-40ad-9e73-b0552c21b84d">
+          <ID>Accrue</ID>
+          <Name>Accrue</Name>
+          <Source dwd:design-time-name="f1ba58cf-1fae-49e6-9036-68a6c9066cd9">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ebe249a0-7c4e-4734-9feb-ba52abab2728">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>Accrue</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="aa89fdb8-a83e-4ac8-b3db-0dc820101069">
+          <ID>CTB Acc</ID>
+          <Name>CTB Acc</Name>
+          <Source dwd:design-time-name="502cd1c2-d10b-4edb-a397-20d81a811c1f">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="07e55b86-d20d-4cb9-93a7-8213809d0370">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>CTB_Acc</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b4a094ef-4c2c-4195-bc9f-97e91abd0e1a">
+          <ID>SF Reject</ID>
+          <Name>SF Reject</Name>
+          <Source dwd:design-time-name="71169173-87ff-47b0-abc5-0f1da023dd28">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="33121f7b-2f4d-4fd8-b661-e72ca0e80505">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>SFReject</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="1d16f991-e4bb-46f2-b8e9-a21dc9eb08f2">
+          <ID>SFCB</ID>
+          <Name>SFCB</Name>
+          <Source dwd:design-time-name="51497dc6-25cf-45b6-9e77-4dcdb7394f9a">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="67293ff1-549b-475c-986f-011bcd1c54e9">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>SFCB</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="722bb921-daf8-4203-9168-781e19db7909">
+          <ID>Percentage Rej</ID>
+          <Name>Percentage Rej</Name>
+          <Source dwd:design-time-name="f8fb8a72-edd3-48cd-8f6b-b527ff9a21b6">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="db88a2c9-d518-465c-b863-daa1bfca2a77">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>PercentageRej</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="37c60ac5-5e7e-4fd8-9620-0d758d83d4f0">
+          <ID>Percentage CB</ID>
+          <Name>Percentage CB</Name>
+          <Source dwd:design-time-name="86dc9800-daa2-4647-88bd-5136d978c1a6">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="9801aca8-2b7e-4ca7-9d19-57dc9e2d305e">
+              <TableID>dbo_Actual</TableID>
+              <ColumnID>PercentageCB</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c88cacfc-705c-433d-95b6-b24bf4b9bf94">
+          <ID>Actual Count</ID>
+          <Name>Actual Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="f4ed0d5d-35cc-4d1c-922b-8dc93a6f5168">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="f9823b29-2aa0-4566-86a6-ab032cc671e6">
+              <TableID>dbo_Actual</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="c961ad69-450c-4b48-8d80-24d2cd9a7ed2">
+          <CubeDimensionID>Actual</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="4a459d30-8e75-481d-948e-d24f54bc839f">
+              <AttributeID>ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="15956209-35cf-4ca2-ba9d-4233bc6becb9">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a68913a7-8170-4522-9ae5-4ee884ce290f">
+                    <TableID>dbo_Actual</TableID>
+                    <ColumnID>ID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="527aa39d-44e9-4684-b644-60e7ba4f2af2">
+    <DataSourceViewID>BancAssView</DataSourceViewID>
+  </Source>
+</Cube>

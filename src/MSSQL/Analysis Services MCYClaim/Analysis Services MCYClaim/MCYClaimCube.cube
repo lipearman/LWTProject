@@ -1,0 +1,233 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="deda281a-615a-4d83-b14a-0b22c6202bed" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>MCYClaimView</ID>
+  <Name>MCYClaimCube</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-6740" scrolltop="-4035" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="18389" y="8493" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="ClaimMCYRawdata" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4868" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000800000413000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_ClaimMCYRawdata" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-6740</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-4035</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="012cbb4d-8463-497e-a733-e7edd8b2eacd">
+      <ID>Claim MCY Rawdata</ID>
+      <Name>Dim Claim MCY Rawdata</Name>
+      <DimensionID>Claim MCY Rawdata</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="591e03d6-3f79-4139-aa91-75912f6e7ecf">
+          <AttributeID>Claim ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9ec54197-2bfb-4e89-a247-33a2465c5a11">
+          <AttributeID>Project Code</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e43fa03a-5f71-426e-9380-e7613f30bb40">
+          <AttributeID>Dealer Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1fa56cd4-6447-4d94-97af-2d6f9481f5c4">
+          <AttributeID>Branch Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="dc9ace12-866e-49df-956a-60b29d9c8efc">
+          <AttributeID>Plan Code</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c8169e6b-e771-4ea3-ad18-e597a6e0ce76">
+          <AttributeID>Plan Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="65b5479d-837a-475a-b762-1870ae10ec67">
+          <AttributeID>Cancel Type</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5fefb1d1-ab59-406d-a114-c7de5dfb9d06">
+          <AttributeID>Project Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7f33080a-7925-4674-bee7-9b7141bf23e0">
+          <AttributeID>Brand Code</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d0779f39-73db-4470-aa51-ac68a49e7608">
+          <AttributeID>Claim Type Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4f4a8b54-05e9-4105-a4ee-689dd72ae2b3">
+          <AttributeID>Category Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="dae14092-1cd2-44f8-961a-a3f8baa8f2d2">
+          <AttributeID>Province</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="ef75f5cb-98e3-460e-a08a-5fc8ca523eeb">
+      <ID>Claim MCY Rawdata</ID>
+      <Name>Claim MCY Rawdata</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="17ffb3b2-638f-42ee-a514-c616df2e3c84">
+          <ID>Claim MCY Rawdata Count</ID>
+          <Name>Claim MCY Rawdata Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="951c95e4-fcc3-44da-ac64-3a46a58730fe">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="c2b68bdf-00e6-465c-a4d0-41f855e4aa1e">
+              <TableID>dbo_ClaimMCYRawdata</TableID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="0281a182-d1ad-4e01-b107-853aa9aa12bc">
+          <ID>Claim Suminsure</ID>
+          <Name>Claim Suminsure</Name>
+          <Source dwd:design-time-name="53fd84c3-df2d-48eb-a446-79832c865382">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="6ef7c3e0-13c4-40f9-a45e-0b673ca3249c">
+              <TableID>dbo_ClaimMCYRawdata</TableID>
+              <ColumnID>ClaimSuminsure</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="65e90934-5acc-418f-b662-9b0d33d91b3f">
+          <ID>Amount</ID>
+          <Name>Amount</Name>
+          <Source dwd:design-time-name="1ae9f937-0614-4512-ab19-0e3c034d6102">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="7879b15f-c66a-44fa-bceb-42d590e48efa">
+              <TableID>dbo_ClaimMCYRawdata</TableID>
+              <ColumnID>Amount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6c58dc52-26a8-4bf7-849c-ccdc0c0d3ebf">
+          <ID>Suminsure1</ID>
+          <Name>Suminsure1</Name>
+          <Source dwd:design-time-name="c9efeb5b-db7d-4883-b5c1-9fd088d5b30d">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="78c8800a-2614-4d2c-862a-fd5404949955">
+              <TableID>dbo_ClaimMCYRawdata</TableID>
+              <ColumnID>Suminsure1</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="0ed211a3-ecad-4d01-bec3-88284df88775">
+          <ID>Suminsure2</ID>
+          <Name>Suminsure2</Name>
+          <Source dwd:design-time-name="7ca859c5-da9a-4088-9ba7-46a691ae56b4">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="5ddd51c9-f0d7-4dd5-a845-256096989f5e">
+              <TableID>dbo_ClaimMCYRawdata</TableID>
+              <ColumnID>Suminsure2</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="48c82fa8-5fb0-4c7f-9855-bb5ecafc040a">
+          <ID>Suminsure3</ID>
+          <Name>Suminsure3</Name>
+          <Source dwd:design-time-name="51f0b787-0c1a-4c19-9c62-0b6154f18fc4">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="9f3269f0-d8c2-4098-b0f1-fca695d97dec">
+              <TableID>dbo_ClaimMCYRawdata</TableID>
+              <ColumnID>Suminsure3</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6c8db551-b7ab-4d8a-9d8c-4f73664d0ed5">
+          <ID>Claim MCY Rawdata Count 1</ID>
+          <Name>CountNo</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="8bb492e3-e825-4bb8-9f36-6825474b7d28">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="73af9d5a-354c-4b23-973c-cf8bfa19997c">
+              <TableID>dbo_ClaimMCYRawdata</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="a9acedf8-2009-4e2a-8f10-a23666433372">
+          <CubeDimensionID>Claim MCY Rawdata</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="7914f8c5-4b42-4f05-b80a-5dfb073e146e">
+              <AttributeID>Claim ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="516c2934-9fb6-444a-8ee8-830f167a8615">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1a430e89-b810-46da-8f69-87a021a9d9e9">
+                    <TableID>dbo_ClaimMCYRawdata</TableID>
+                    <ColumnID>ClaimID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="5c76b922-75e6-4438-95d9-514b31af4663">
+    <DataSourceViewID>MCYClaimView</DataSourceViewID>
+  </Source>
+</Cube>

@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="nltdb" Class="DataClasses_NLTDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=afwnlt;Initial Catalog=nltdb;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="nltdbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Application" Member="Applications">
+    <Type Name="Application">
+      <Column Name="AID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QuotationNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PlanID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SchemeCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SurName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IDCardClient" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LoanContractNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Address3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OfficePhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HomePhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InsurerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TypeOfInsurance" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TypeOfCar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModelID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="YearOfCar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Seat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EngineNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="VIN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Colour" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RegistrationBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ObjectToCarUse" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SumInsurance" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="StartingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GrossPremium" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PremiumIncludeVATDutyStamp" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CompulsoryPremium" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PaymentBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PaymentOther" Type="System.String" DbType="NVarChar(2500)" CanBeNull="true" />
+      <Column Name="NameSendTo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AddressSendTo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NotifigationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DealerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShowroomCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AFWUserCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AFWMakeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PolicyNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PolicyNoDateIn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ConfirmationStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClosingStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatmentStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AssuranceStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CarUsageType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PremiumID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ApplicationNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ContractDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ShowroomContactName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Province" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Zipcode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ClientCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CRID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DBNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CMIBuyStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Benefit" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="leasingID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClosingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClosingUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PolicyDateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PolicyDateOut" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndorseDateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AgentCode" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="ReciveApp" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="projID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InterfaceStatus" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="CMIID" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="TempIDOld" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OtherSendMailStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PolicyDateTimeIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SendMailDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="tmpOtherPayment" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Garage" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CoverageType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RemarkCancel" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Collective" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CollectiveRemark" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="IM_Refference" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IM_BatchNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DiscountNote" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CarAccessories" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PolicyIssueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UWReceiptNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UWInvoiceNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsExtend" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ExtendID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EasyPay" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CMI_EmailSending" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CarTypeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ApplicationChannel" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="NLT_EasyPay" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NLT_CampaignName" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="NLT_Term" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddedByUserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NotifyName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NotifyTel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AssuTitle" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="AssuIDCardType" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="AssuEmail" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="GarageId" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="WarrantyClass" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="LevelEditing" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="CategoryCarId" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="UsabilityId" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CMI_PolicyNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CMI_StickerNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CMI_CarTypeCode" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CMI_UsabilityTypeId" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CMI_PremiumCode" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CMI_NetPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CMI_Stamp" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CMI_Vat" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CMI_TotalPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CMI_PaymentBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Voluntary_NetPremium" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Voluntary_Stamp" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Voluntary_Vat" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Voluntary_TotalPremium" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ClosingNote" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="FirstStartingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Cancel" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CancelType" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="CancelDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CancelBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NLT_BookingType" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="NLT_BookingId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CMI_EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CMI_ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="VMI_ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ITRemark" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="ClassOfRiskVMI" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="ClassOfRiskCMI" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="AECode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Showroom" Member="Showrooms">
+    <Type Name="Showroom">
+      <Column Name="ShowroomID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ShowroomCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CompanyName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Fax" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Contactperson" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DealerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HeadID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyNameEN" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Province" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ProvinceCode" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="RegionCodeNMT" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="NonNLTH_RenewBy" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BPShop" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BranchNameEN" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ITRemark" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="NissanShowroomType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HeadOffice" Member="HeadOffices">
+    <Type Name="HeadOffice">
+      <Column Name="HeadID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DealerCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DealerName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Province" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ContactPerson1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Phone1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Fax1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ContactPerson2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Phone2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Fax2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BillingName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="BillingAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BillingStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DealerEmail1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="DealerEmail2" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ProvinceCode" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="DealerNameEN" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BPShop" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NLTDealerCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NLTDealerNameTH" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="NLTDealerNameEN" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="NLTArea" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AECodeX" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InsurerUnique" Member="InsurerUniques">
+    <Type Name="InsurerUnique">
+      <Column Name="InsurerCode" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="InsurerNameThai" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="InsurerNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Code1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Code2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodeMotor1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodeSibis" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Phone1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phone2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Fax1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Fax2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContactPerson1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Email1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContactPerson2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Email2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CMIPrintFormName" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Insurer" Member="Insurers">
+    <Type Name="Insurer">
+      <Column Name="InsurerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InsurerNameThai" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="InsurerNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="InsurerCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InsurerPrefix" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarcareCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Phone1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phone2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Fax1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Fax2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContactPerson1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Email1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContactPerson2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Email2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CMIPolicyStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CMIStickerStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TempolicyStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CMIUsing" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CMI_InsurerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ITRemark" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="LeasingCompany" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_Model" Member="V_Models">
+    <Type Name="V_Model">
+      <Column Name="Rank" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="TypeName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModelName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ModelCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CarPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GroupCodeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="NVarChar(566)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

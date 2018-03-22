@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LWTReports" Class="DataClasses_NLTDB_LWTReportsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=afwnlt;Initial Catalog=LWTReports;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LWTReportsConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.V_NLT_Closing" Member="V_NLT_Closings">
+    <Type Name="V_NLT_Closing">
+      <Column Name="AID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="clientCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ClientName" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+      <Column Name="ClosingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Effective" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Project" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CoverageType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Code1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarGroupName" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="GroupName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Chassis" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Voluntary_TotalPremium" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="CMI_TotalPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TempID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Benefit" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DealerCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DealerName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NLTDealerCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NLTArea" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RegionName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="LeasingName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ModelName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HeadID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CarGroupId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,76 @@
+﻿.pie-chart {
+    height: 440px;
+}
+
+.state-tooltip {
+    height: 95px;
+    font-size: 12px;
+}
+
+.state-tooltip > img {
+    width: 60px;
+    height: 40px;
+    display: block;
+    margin: 0 5px 0 0;
+    float: left;
+}
+
+.state-tooltip > h4 {
+    line-height: 40px;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.state-tooltip sup {
+    font-size: 0.8em;
+    vertical-align: middle;
+    line-height: 0;
+}
+
+.chart-legend {
+    fill: #ffffff;
+    stroke-width: 1px;
+    stroke: #767676; 
+}
+
+.btn.more-info {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.grid-custom-header-button th > div {
+    display: table;
+    width: 100%;
+}
+
+.grid-custom-header-button th > div > a {
+    display: table-cell;
+}
+
+.grid-custom-header-button th > div > div {
+    display: table-cell;
+    text-align: right;
+}
+
+.grid-custom-header-button th > div > div > button {
+    opacity: 1 !important;
+}
+
+.grid-centered-header .panel-heading {
+    text-align: center;
+}
+
+.hide-editbuttons .dxbs-editform div.row > div:last-child {
+    display: none;
+}
+
+.item-pointers .media {
+    cursor: pointer;
+}
+
+.item-pointers .media:hover,
+.item-pointers .media:hover .media-heading,
+.item-pointers li.active .media,
+.item-pointers li.active .media-heading {
+    font-weight: bold;
+}

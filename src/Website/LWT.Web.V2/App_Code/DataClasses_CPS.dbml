@@ -1,0 +1,1834 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CPS" Class="DataClasses_CPSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LOCKTHBNK-DB07\NEWMOTOR;Initial Catalog=CPS;User ID=locksql" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CPSConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[Register.Unwriter]" Member="Register_Unwriters">
+    <Type Name="Register_Unwriter">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Underwriter" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CrossReference" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PostCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneBusiness" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneHome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Facsimile" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AccountContact" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="Addressee" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="Salutation" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="DaysCredit" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TrueUnderwriter" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EntryBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FinanceContact" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="GeneralClaimContact" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="InsuranceLine" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VATPayType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneFinance" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneClaims" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FaxFinance" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FaxClaims" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InsurerCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="ShortName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Register_Unwriter_Register_RiskUwriter" Member="Register_RiskUwriters" ThisKey="Underwriter" OtherKey="Uwriter" Type="Register_RiskUwriter" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Register.AccountExecutive]" Member="Register_AccountExecutives">
+    <Type Name="Register_AccountExecutive">
+      <Column Name="AccountExecutive" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address3" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PostCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneBusiness" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneHome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EntryBy" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Unit" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Internet_Address" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Register_AccountExecutive_tblProject" Member="tblProjects" ThisKey="AccountExecutive" OtherKey="AECode" Type="tblProject" />
+      <Association Name="Register_AccountExecutive_tblProjectUserAssignment" Member="tblProjectUserAssignments" ThisKey="AccountExecutive" OtherKey="AECode" Type="tblProjectUserAssignment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Register.Agent]" Member="Register_Agents">
+    <Type Name="Register_Agent">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Agent" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PostCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneBusiness" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneHome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ContactPerson" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Addressee" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Salutation" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Occupation" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EntryBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsSubAgent" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InternetAddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BPShop" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BillingName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="BillingAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="Register_Agent_Register_AgentRiskComm" Member="Register_AgentRiskComms" ThisKey="Agent" OtherKey="Agent" Type="Register_AgentRiskComm" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Register.AgentRiskComm]" Member="Register_AgentRiskComms">
+    <Type Name="Register_AgentRiskComm">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Agent" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CommissionOut" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="OROut" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="OROutCalFrom" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="AdminOut1" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="AdminOut1Cal" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="AdminOut2" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="AdminOut2Cal" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="EntryBy" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CommOutCal" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="OROutCal" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Register_Agent_Register_AgentRiskComm" Member="Register_Agent" ThisKey="Agent" OtherKey="Agent" Type="Register_Agent" IsForeignKey="true" />
+      <Association Name="Register_ClassOfRisk_Register_AgentRiskComm" Member="Register_ClassOfRisk" ThisKey="Risk" OtherKey="Risk" Type="Register_ClassOfRisk" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Register.ClassOfRisk]" Member="Register_ClassOfRisks">
+    <Type Name="Register_ClassOfRisk">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupII" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskShortDesc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGovernment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RiskYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="IsGeneralCode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsuranceLine" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Prefix" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Association Name="Register_ClassOfRisk_Register_AgentRiskComm" Member="Register_AgentRiskComms" ThisKey="Risk" OtherKey="Risk" Type="Register_AgentRiskComm" />
+      <Association Name="Register_ClassOfRisk_Register_RiskUwriter" Member="Register_RiskUwriters" ThisKey="Risk" OtherKey="Risk" Type="Register_RiskUwriter" />
+      <Association Name="Register_ClassOfRisk_tblClassOfRisk" Member="tblClassOfRisk" ThisKey="Risk" OtherKey="Risk" Type="tblClassOfRisk" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Register.RiskUwriter]" Member="Register_RiskUwriters">
+    <Type Name="Register_RiskUwriter">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Uwriter" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Brokerage" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="AgentCommission" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="PremiumWarantydays" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NewRenewaldays" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NewNewBusdays" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RenRenewaldays" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RenNewBusdays" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AutoCalculation" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ORCommissionPercent" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="OROutRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminFeeIn1" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="AdminFeeIn1Cal" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="AdminFeeIn2" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="AdminFeeIn2Cal" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="ORCalFrom" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="OffsetORFlag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="OffsetAdm1Flag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="OffsetAdm2Flag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BrokerageCal" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="ORInCal" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Register_ClassOfRisk_Register_RiskUwriter" Member="Register_ClassOfRisk" ThisKey="Risk" OtherKey="Risk" Type="Register_ClassOfRisk" IsForeignKey="true" />
+      <Association Name="Register_Unwriter_Register_RiskUwriter" Member="Register_Unwriter" ThisKey="Uwriter" OtherKey="Underwriter" Type="Register_Unwriter" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCampaign" Member="tblCampaigns">
+    <Type Name="tblCampaign">
+      <Column Name="CampaignID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CampaignName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CampaignCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CampaignType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HasPremium" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreateBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrefixClientCode" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CampaignDescription" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="tblCampaign_tblCarPremium" Member="tblCarPremiums" ThisKey="CampaignID" OtherKey="CampaignID" Type="tblCarPremium" />
+      <Association Name="tblCampaign_tblProjectCampaign" Member="tblProjectCampaigns" ThisKey="CampaignID" OtherKey="CampaignID" Type="tblProjectCampaign" />
+      <Association Name="tblCampaign_tblCampaign_CommIn" Member="tblCampaign_CommIns" ThisKey="CampaignID" OtherKey="CampaignID" Type="tblCampaign_CommIn" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCarBrandModel" Member="tblCarBrandModels">
+    <Type Name="tblCarBrandModel">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CarGroup" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CarBodyType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCarPremium" Member="tblCarPremiums">
+    <Type Name="tblCarPremium">
+      <Column Name="PremiumID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CampaignID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Underwriter" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ModelCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CarPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SumInsuredFrom" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SumInsuredTo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="NetPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Stamp" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Vat" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="GrossPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="WHT_Rate1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WHT_Rate2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WHT_Rate3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SinglePrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CarAge" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CoverageID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreateBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tblCampaign_tblCarPremium" Member="tblCampaign" ThisKey="CampaignID" OtherKey="CampaignID" Type="tblCampaign" IsForeignKey="true" />
+      <Association Name="tblCoverage_tblCarPremium" Member="tblCoverage" ThisKey="CoverageID" OtherKey="CoverageID" Type="tblCoverage" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCarProp" Member="tblCarProps">
+    <Type Name="tblCarProp">
+      <Column Name="CarProp" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="txtCarProp" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCarType" Member="tblCarTypes">
+    <Type Name="tblCarType">
+      <Column Name="CarType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CarTypeName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCarUse" Member="tblCarUses">
+    <Type Name="tblCarUse">
+      <Column Name="CarUse" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="txtCarUse" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblClassOfRisk" Member="tblClassOfRisks">
+    <Type Name="tblClassOfRisk">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RiskGroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpireDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblClassOfRisk_tblCampaign_CommIn" Member="tblCampaign_CommIns" ThisKey="Risk" OtherKey="Risk" Type="tblCampaign_CommIn" />
+      <Association Name="Register_ClassOfRisk_tblClassOfRisk" Member="Register_ClassOfRisk" ThisKey="Risk" OtherKey="Risk" Type="Register_ClassOfRisk" IsForeignKey="true" />
+      <Association Name="tblRiskGroup_tblClassOfRisk" Member="tblRiskGroup" ThisKey="RiskGroupID" OtherKey="RiskGroupID" Type="tblRiskGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCMIPremium" Member="tblCMIPremiums">
+    <Type Name="tblCMIPremium">
+      <Column Name="CarUse" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CMI_PremiumCode" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CMI_Description" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="StickCarType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CMINetPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CMIVat" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CMIStamp" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CMIGrossPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCoverage" Member="tblCoverages">
+    <Type Name="tblCoverage">
+      <Column Name="CoverageID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RiskGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Coverage1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage6" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage7" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage8" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage9" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage10" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage11" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage12" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage13" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage14" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage15" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage16" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage17" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage18" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage19" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage20" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage21" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage22" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage23" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage24" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage25" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage26" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage27" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage28" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage29" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage30" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblCoverage_tblCarPremium" Member="tblCarPremiums" ThisKey="CoverageID" OtherKey="CoverageID" Type="tblCarPremium" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCoverListMaster" Member="tblCoverListMasters">
+    <Type Name="tblCoverListMaster">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CoverType" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Coverage" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDiscussionGroup" Member="tblDiscussionGroups">
+    <Type Name="tblDiscussionGroup">
+      <Column Name="DiscGroupID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SourceFrom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserRec" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateRec" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDiscussionTrans" Member="tblDiscussionTrans">
+    <Type Name="tblDiscussionTran">
+      <Column Name="TransID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DiscGroupID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IDCodeData" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="DiscNote" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="UserRec" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateRec" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblGarageType" Member="tblGarageTypes">
+    <Type Name="tblGarageType">
+      <Column Name="GarageID" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="GarageName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowID" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblLeasing" Member="tblLeasings">
+    <Type Name="tblLeasing">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BillingName" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="BillingAddress" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblProject" Member="tblProjects">
+    <Type Name="tblProject">
+      <Column Name="ProjectID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProjectCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AECode" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CLIENTCODE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="RiskGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblProject_tblProjectCampaign" Member="tblProjectCampaigns" ThisKey="ProjectID" OtherKey="ProjectID" Type="tblProjectCampaign" />
+      <Association Name="Register_AccountExecutive_tblProject" Member="Register_AccountExecutive" ThisKey="AECode" OtherKey="AccountExecutive" Type="Register_AccountExecutive" IsForeignKey="true" />
+      <Association Name="tblRiskGroup_tblProject" Member="tblRiskGroup" ThisKey="RiskGroupID" OtherKey="RiskGroupID" Type="tblRiskGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblProjectCampaign" Member="tblProjectCampaigns">
+    <Type Name="tblProjectCampaign">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CampaignID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProjectID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tblCampaign_tblProjectCampaign" Member="tblCampaign" ThisKey="CampaignID" OtherKey="CampaignID" Type="tblCampaign" IsForeignKey="true" />
+      <Association Name="tblProject_tblProjectCampaign" Member="tblProject" ThisKey="ProjectID" OtherKey="ProjectID" Type="tblProject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblProjectRisk" Member="tblProjectRisks">
+    <Type Name="tblProjectRisk">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProjectID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RenewalYear" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpireDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblProjectUserAssignment" Member="tblProjectUserAssignments">
+    <Type Name="tblProjectUserAssignment">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AECode" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Register_AccountExecutive_tblProjectUserAssignment" Member="Register_AccountExecutive" ThisKey="AECode" OtherKey="AccountExecutive" Type="Register_AccountExecutive" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRiskGroup" Member="tblRiskGroups">
+    <Type Name="tblRiskGroup">
+      <Column Name="RiskGroupID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RiskGroupCode" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="RiskGroupName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="InsuranceLine" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblRiskGroup_tblClassOfRisk" Member="tblClassOfRisks" ThisKey="RiskGroupID" OtherKey="RiskGroupID" Type="tblClassOfRisk" />
+      <Association Name="tblRiskGroup_tblProject" Member="tblProjects" ThisKey="RiskGroupID" OtherKey="RiskGroupID" Type="tblProject" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_ClassOfRisk_Approved" Member="V_ClassOfRisk_Approveds">
+    <Type Name="V_ClassOfRisk_Approved">
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupII" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskShortDesc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGovernment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Prefix" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="InsuranceLine" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Owner" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Underwriter" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Underwriter_Name" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="CommIn_Display" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="Agent" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="AgentName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CommissionOut_Display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="OROut_Display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="AdminOut1_Display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="AdminOut2_Display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AgentGroup" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HasOverComm" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_ClassOfRisk_Publish" Member="V_ClassOfRisk_Publishes">
+    <Type Name="V_ClassOfRisk_Publish">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="RiskGroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpireDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InsuranceLine" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Owner" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CommOut" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Uwriter" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="UWName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CommIn_Display" Type="System.String" DbType="VarChar(158)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_ClassOfRisk_Request" Member="V_ClassOfRisk_Requests">
+    <Type Name="V_ClassOfRisk_Request">
+      <Column Name="ProjectCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="AECode" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClassOfRisk" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Commission" Type="System.String" DbType="VarChar(34)" CanBeNull="true" />
+      <Column Name="OverComm" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CommissionCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ORCommission" Type="System.String" DbType="VarChar(34)" CanBeNull="true" />
+      <Column Name="OverOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ORCommissionCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Admin1" Type="System.String" DbType="VarChar(34)" CanBeNull="true" />
+      <Column Name="OverAdmin1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Admin1Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Admin2" Type="System.String" DbType="VarChar(34)" CanBeNull="true" />
+      <Column Name="OverAdmin2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Admin2Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CalFrom" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProjectMasterCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UACode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Editable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mastercode" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="OffsetORFlag" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="OffsetAdm1Flag" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="OffsetAdm2Flag" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_Register_Unwriter" Member="V_Register_Unwriters">
+    <Type Name="V_Register_Unwriter">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Underwriter" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="CrossReference" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="Char(35)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="Char(35)" CanBeNull="true" />
+      <Column Name="Address3" Type="System.String" DbType="Char(35)" CanBeNull="true" />
+      <Column Name="PostCode" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="PhoneBusiness" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="PhoneHome" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="Facsimile" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="AccountContact" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="Addressee" Type="System.String" DbType="Char(70)" CanBeNull="true" />
+      <Column Name="Salutation" Type="System.String" DbType="Char(70)" CanBeNull="true" />
+      <Column Name="DaysCredit" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TrueUnderwriter" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EntryBy" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FinanceContact" Type="System.String" DbType="Char(70)" CanBeNull="true" />
+      <Column Name="GeneralClaimContact" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="InsuranceLine" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="VATPayType" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneFinance" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="PhoneClaims" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="FaxFinance" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="FaxClaims" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InsurerCode" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ShortName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Editable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblMotorQuotation" Member="tblMotorQuotations">
+    <Type Name="tblMotorQuotation">
+      <Column Name="QID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QuotationNo" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="QuotationStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="QDID_Selected" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustomerID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CustTitleName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CustName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CustIDCardType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustIDCards" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CustAddress" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CustLocationName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CustLocationCode" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="CustTelNo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CustEmail" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CustFaxNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarSize" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarSuminsured" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CarRegis" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CarId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarChassisNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarEngineNo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ClientCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InsuredTitleName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="InsuredName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ReferenceNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DataFrom" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="TypeOfClient" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AddressTemp" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ContactName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContactTelExt" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserRec" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DateRec" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserUpdate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserConfirm" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateConFirm" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ConfirmCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarBrandlID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CarBrandName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CarModelID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CarModelName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CarSubModelName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DiscGroupId" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="txtOther" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblMotorQuotationDetails" Member="tblMotorQuotationDetails">
+    <Type Name="tblMotorQuotationDetail">
+      <Column Name="QDID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QuotationNo" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CarNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UWriter" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PlanCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GarageType" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PolicyType" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ValueFirst1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cboTPBIPerson" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cboTPBITime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cboTPPD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="txtODFund" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="txtFnTFund" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="txtFnTFund1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ValueInSure" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BpremiumS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ValueDriver1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumHuman1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ValueSumHuman1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumSumHuman" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ValueSumHuman" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Accessory" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ValueFirst2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ValueDriver2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumHuman2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ValueSumHuman2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiscountGroup" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DiscountGroupFlag" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="DiscountHistory" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DiscountHistoryFlag" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="DiscountOther" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DiscountOtherFlag" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="AddHistory" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="AddHistoryFlag" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Discountspacial" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DiscountspacialFlag" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="DiscountPre" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="VMIClassOfRisk" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NetPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Vat" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Stamp" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="GrossPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CMIClassOfRisk" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="stickCarType" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CMINetPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CMIVat" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CMIStamp" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CMIGrossPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Flood" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Driver" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DriverName1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="txtOldDriver1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DriverName2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="txtOldDriver2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CMIPremiumCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarUse" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DiscountCMI" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DiscountCMI_P" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Discountspacial_P" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="CoverageID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PremiumID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_UserProject" Member="V_UserProjects">
+    <Type Name="V_UserProject">
+      <Column Name="ProjectID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CLIENTCODE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="AECode" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblMotorQuotationRemark" Member="tblMotorQuotationRemarks">
+    <Type Name="tblMotorQuotationRemark">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QuotationNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_MotorCampaignPublish" Member="V_MotorCampaignPublishes">
+    <Type Name="V_MotorCampaignPublish">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="AECode" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CampaignID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CampaignName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Underwriter" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ModelCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CarPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SumInsuredFrom" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SumInsuredTo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="NetPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Stamp" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Vat" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="GrossPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SinglePrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CarAge" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CoverageID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Coverage1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage6" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage7" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage8" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage9" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage10" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage11" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage12" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage13" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage14" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Coverage15" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PremiumID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_InsuredCode" Member="V_InsuredCodes">
+    <Type Name="V_InsuredCode">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InsurerCode" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Underwriter" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="CrossReference" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="Char(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Address1" Type="System.String" DbType="Char(35) NOT NULL" CanBeNull="false" />
+      <Column Name="Address2" Type="System.String" DbType="Char(35) NOT NULL" CanBeNull="false" />
+      <Column Name="Address3" Type="System.String" DbType="Char(35) NOT NULL" CanBeNull="false" />
+      <Column Name="PostCode" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="Char(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneBusiness" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneHome" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Facsimile" Type="System.String" DbType="Char(30) NOT NULL" CanBeNull="false" />
+      <Column Name="AccountContact" Type="System.String" DbType="Char(70) NOT NULL" CanBeNull="false" />
+      <Column Name="Addressee" Type="System.String" DbType="Char(70) NOT NULL" CanBeNull="false" />
+      <Column Name="Salutation" Type="System.String" DbType="Char(70) NOT NULL" CanBeNull="false" />
+      <Column Name="DaysCredit" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="TrueUnderwriter" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EntryBy" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FinanceContact" Type="System.String" DbType="Char(70) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneralClaimContact" Type="System.String" DbType="Char(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="InsuranceLine" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="VATPayType" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneFinance" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneClaims" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="FaxFinance" Type="System.String" DbType="Char(30) NOT NULL" CanBeNull="false" />
+      <Column Name="FaxClaims" Type="System.String" DbType="Char(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_ClassOfRisk" Member="V_ClassOfRisks">
+    <Type Name="V_ClassOfRisk">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupII" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskShortDesc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGovernment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Prefix" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="InsuranceLine" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsGeneralCode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CommIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommIn_Request" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommOut" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommOut_Request" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_RiskUwriter" Member="V_RiskUwriters">
+    <Type Name="V_RiskUwriter">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Owner" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Underwriter" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="AccountContact" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Brokerage" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="BrokerageCal" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="ORCommissionPercent" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ORInCal" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="AdminFeeIn1" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="AdminFeeIn1Cal" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="AdminFeeIn2" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="AdminFeeIn2Cal" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="ORCalFrom" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="InsuranceLine" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Brokerage_display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="ORCommissionPercent_display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="AdminFeeIn1_display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="AdminFeeIn2_display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OffsetORFlag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="OffsetAdm1Flag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="OffsetAdm2Flag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[tblCampaign.CommIn]" Member="tblCampaign_CommIns">
+    <Type Name="tblCampaign_CommIn">
+      <Column Name="CommInID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CampaignID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Uwriter" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Commission" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CommissionCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ORCommission" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ORCommissionCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Admin1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Admin1Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Admin2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Admin2Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DupFromID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblCampaign_CommIn_tblCampaign_CommOut" Member="tblCampaign_CommOuts" ThisKey="CommInID" OtherKey="CommInID" Type="tblCampaign_CommOut" />
+      <Association Name="tblCampaign_tblCampaign_CommIn" Member="tblCampaign" ThisKey="CampaignID" OtherKey="CampaignID" Type="tblCampaign" IsForeignKey="true" />
+      <Association Name="tblClassOfRisk_tblCampaign_CommIn" Member="tblClassOfRisk" ThisKey="Risk" OtherKey="Risk" Type="tblClassOfRisk" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[tblCampaign.CommOut]" Member="tblCampaign_CommOuts">
+    <Type Name="tblCampaign_CommOut">
+      <Column Name="CommOutID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CampaignID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommInID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Uwriter" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Agent" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Commission" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CommissionCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ORCommission" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ORCommissionCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Admin1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Admin1Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Admin2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Admin2Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblCampaign_CommIn_tblCampaign_CommOut" Member="tblCampaign_CommIn" ThisKey="CommInID" OtherKey="CommInID" Type="tblCampaign_CommIn" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_ClassOfRisk_NonPublish" Member="V_ClassOfRisk_NonPublishes">
+    <Type Name="V_ClassOfRisk_NonPublish">
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupII" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskShortDesc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGovernment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InsuranceLine" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Owner" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CommIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommOut" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_CarBrandModel" Member="V_CarBrandModels">
+    <Type Name="V_CarBrandModel">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModelName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="BrandName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[tblCampaign.CommInLog]" Member="tblCampaign_CommInLogs">
+    <Type Name="tblCampaign_CommInLog">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CommInID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CampaignID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Uwriter" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Commission" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CommissionCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ORCommission" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ORCommissionCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Admin1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Admin1Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Admin2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Admin2Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DupFromID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[tblCampaign.CommOutLog]" Member="tblCampaign_CommOutLogs">
+    <Type Name="tblCampaign_CommOutLog">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CommOutID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CampaignID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommInID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Uwriter" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Agent" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Commission" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CommissionCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ORCommission" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ORCommissionCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Admin1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Admin1Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Admin2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Admin2Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_Campaign_CommissionLog" Member="V_Campaign_CommissionLogs">
+    <Type Name="V_Campaign_CommissionLog">
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CampaignID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Commission" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CommissionCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ORCommission" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ORCommissionCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Admin1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Admin1Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Admin2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Admin2Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_MotorPremium" Member="V_MotorPremiums">
+    <Type Name="V_MotorPremium">
+      <Column Name="PremiumID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CampaignID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Underwriter" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CoverageID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ModelCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CarPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SumInsuredFrom" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SumInsuredTo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="NetPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Stamp" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Vat" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="GrossPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="WHT_Rate1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WHT_Rate2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WHT_Rate3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SinglePrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CarAge" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CampaignName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CampaignCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CampaignType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HasPremium" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PrefixClientCode" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="coverage1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="coverage2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="coverage3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="coverage4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="coverage5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="coverage6" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="coverage7" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="coverage8" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="coverage9" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="coverage10" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="coverage11" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="coverage12" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="coverage13" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="coverage14" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="coverage15" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_MotorQuotation" Member="V_MotorQuotations">
+    <Type Name="V_MotorQuotation">
+      <Column Name="QID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QuotationNo" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="QuotationStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="QDID_Selected" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustomerID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CustTitleName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CustName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CustIDCardType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustIDCardTypeName" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="CustIDCards" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CustAddress" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CustLocationName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CustLocationCode" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="CustTelNo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CustEmail" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CustFaxNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarSize" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarSuminsured" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CarRegis" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CarId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarChassisNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarEngineNo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ClientCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InsuredTitleName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="InsuredName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ReferenceNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DataFrom" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="TypeOfClient" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AddressTemp" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ContactName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContactTelExt" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserRec" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DateRec" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserUpdate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserConfirm" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateConFirm" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ConfirmCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarBrandlID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CarBrandName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CarModelID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CarModelName" Type="System.String" DbType="VarChar(356) NOT NULL" CanBeNull="false" />
+      <Column Name="DiscGroupId" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="txtOther" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Register.AgentRiskComm.Amend]" Member="Register_AgentRiskComm_Amends">
+    <Type Name="Register_AgentRiskComm_Amend">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Agent" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CommissionOut" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OROut" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OROutCalFrom" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="AdminOut1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminOut1Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="AdminOut2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminOut2Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="EntryBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CommOutCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="OROutCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AmendRiskID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Register_ClassOfRisk_Amend_Register_AgentRiskComm_Amend" Member="Register_ClassOfRisk_Amend" ThisKey="AmendRiskID" OtherKey="AmendRiskID" Type="Register_ClassOfRisk_Amend" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Register.ClassOfRisk.Amend]" Member="Register_ClassOfRisk_Amends">
+    <Type Name="Register_ClassOfRisk_Amend">
+      <Column Name="AmendRiskID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupII" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskShortDesc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGovernment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RiskYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="IsGeneralCode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsuranceLine" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Prefix" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Association Name="Register_ClassOfRisk_Amend_Register_AgentRiskComm_Amend" Member="Register_AgentRiskComm_Amends" ThisKey="AmendRiskID" OtherKey="AmendRiskID" Type="Register_AgentRiskComm_Amend" />
+      <Association Name="Register_ClassOfRisk_Amend_Register_RiskUwriter_Amend" Member="Register_RiskUwriter_Amends" ThisKey="AmendRiskID" OtherKey="AmendRiskID" Type="Register_RiskUwriter_Amend" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Register.RiskUwriter.Amend]" Member="Register_RiskUwriter_Amends">
+    <Type Name="Register_RiskUwriter_Amend">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Uwriter" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Brokerage" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="AgentCommission" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="PremiumWarantydays" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NewRenewaldays" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NewNewBusdays" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RenRenewaldays" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RenNewBusdays" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AutoCalculation" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ORCommissionPercent" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OROutRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminFeeIn1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminFeeIn1Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="AdminFeeIn2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminFeeIn2Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ORCalFrom" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="OffsetORFlag" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OffsetAdm1Flag" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OffsetAdm2Flag" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BrokerageCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ORInCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AmendRiskID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Register_ClassOfRisk_Amend_Register_RiskUwriter_Amend" Member="Register_ClassOfRisk_Amend" ThisKey="AmendRiskID" OtherKey="AmendRiskID" Type="Register_ClassOfRisk_Amend" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_AgentRiskComm" Member="V_AgentRiskComms">
+    <Type Name="V_AgentRiskComm">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Agent" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CommOutCal" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="CommissionOut" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="OROutCal" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="OROut" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="AdminOut1Cal" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="AdminOut1" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="AdminOut2Cal" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="AdminOut2" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="CommissionOut_Display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="OROut_Display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="AdminOut1_Display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="AdminOut2_Display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="OROutCalFrom" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AgentGroup" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="InsuranceLine" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Owner" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HasOverComm" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_RiskUwriter_Amend" Member="V_RiskUwriter_Amends">
+    <Type Name="V_RiskUwriter_Amend">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AmendRiskID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Owner" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Underwriter" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="AccountContact" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Brokerage" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="BrokerageCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ORCommissionPercent" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ORInCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="AdminFeeIn1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminFeeIn1Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="AdminFeeIn2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminFeeIn2Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ORCalFrom" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="InsuranceLine" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Brokerage_display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="ORCommissionPercent_display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="AdminFeeIn1_display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="AdminFeeIn2_display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="CommIn_Display" Type="System.String" DbType="VarChar(158)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OffsetORFlag" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OffsetAdm1Flag" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OffsetAdm2Flag" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_ClassOfRisk_Amend" Member="V_ClassOfRisk_Amends">
+    <Type Name="V_ClassOfRisk_Amend">
+      <Column Name="AmendRiskID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupII" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskShortDesc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGovernment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Prefix" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="InsuranceLine" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsGeneralCode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CommIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommOut" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Register.AgentRiskComm.Log]" Member="Register_AgentRiskComm_Logs">
+    <Type Name="Register_AgentRiskComm_Log">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Agent" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CommissionOut" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OROut" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OROutCalFrom" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="AdminOut1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminOut1Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="AdminOut2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminOut2Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="EntryBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CommOutCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="OROutCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AmendRiskID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Register.ClassOfRisk.Log]" Member="Register_ClassOfRisk_Logs">
+    <Type Name="Register_ClassOfRisk_Log">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupII" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskShortDesc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGovernment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RiskYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="IsGeneralCode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsuranceLine" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Prefix" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="AmendRiskID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Register.RiskUwriter.Log]" Member="Register_RiskUwriter_Logs">
+    <Type Name="Register_RiskUwriter_Log">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Uwriter" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Brokerage" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="AgentCommission" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="PremiumWarantydays" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NewRenewaldays" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NewNewBusdays" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RenRenewaldays" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RenNewBusdays" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AutoCalculation" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ORCommissionPercent" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OROutRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminFeeIn1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminFeeIn1Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="AdminFeeIn2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminFeeIn2Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ORCalFrom" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="OffsetORFlag" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OffsetAdm1Flag" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OffsetAdm2Flag" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BrokerageCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ORInCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AmendRiskID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_AgentRiskComm_Log" Member="V_AgentRiskComm_Logs">
+    <Type Name="V_AgentRiskComm_Log">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AmendRiskID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Agent" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CommOutCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CommissionOut" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OROutCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="OROut" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminOut1Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="AdminOut1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminOut2Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="AdminOut2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CommissionOut_Display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="OROut_Display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="AdminOut1_Display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="AdminOut2_Display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="OROutCalFrom" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AgentGroup" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="InsuranceLine" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Owner" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Underwriter" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Underwriter_Name" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="CommIn_Display" Type="System.String" DbType="VarChar(158)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_ClassOfRisk_Log" Member="V_ClassOfRisk_Logs">
+    <Type Name="V_ClassOfRisk_Log">
+      <Column Name="AmendRiskID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupII" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskShortDesc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGovernment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Prefix" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="InsuranceLine" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsGeneralCode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CommIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommOut" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_RiskUwriter_Log" Member="V_RiskUwriter_Logs">
+    <Type Name="V_RiskUwriter_Log">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AmendRiskID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Owner" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Underwriter" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="AccountContact" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Brokerage" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="BrokerageCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ORCommissionPercent" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ORInCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="AdminFeeIn1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminFeeIn1Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="AdminFeeIn2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminFeeIn2Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ORCalFrom" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="InsuranceLine" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Brokerage_display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="ORCommissionPercent_display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="AdminFeeIn1_display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="AdminFeeIn2_display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="CommIn_Display" Type="System.String" DbType="VarChar(158)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OffsetORFlag" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OffsetAdm1Flag" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OffsetAdm2Flag" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_AgentRiskComm_Amend" Member="V_AgentRiskComm_Amends">
+    <Type Name="V_AgentRiskComm_Amend">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AmendRiskID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Agent" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CommOutCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CommissionOut" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OROutCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="OROut" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminOut1Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="AdminOut1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminOut2Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="AdminOut2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CommissionOut_Display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="OROut_Display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="AdminOut1_Display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="AdminOut2_Display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="OROutCalFrom" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AgentGroup" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="InsuranceLine" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Owner" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OverComm" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OverOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OverFee1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OverFee2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HasOverComm" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblNoticeDetail" Member="tblNoticeDetails">
+    <Type Name="tblNoticeDetail">
+      <Column Name="NoticeDataID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NoticeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="SendDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="f01" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f02" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f03" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f04" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f05" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f06" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f07" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f08" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f09" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f10" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f11" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f12" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f13" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f14" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f15" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f16" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f17" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f18" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f19" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f20" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="tblNoticeHeader_tblNoticeDetail" Member="tblNoticeHeader" ThisKey="NoticeID" OtherKey="NoticeID" Type="tblNoticeHeader" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblNoticeHeader" Member="tblNoticeHeaders">
+    <Type Name="tblNoticeHeader">
+      <Column Name="NoticeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NoticeTitle" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="NoticeCode" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="NoticeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SendBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SendDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReSendBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ReSendDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblNoticeHeader_tblNoticeDetail" Member="tblNoticeDetails" ThisKey="NoticeID" OtherKey="NoticeID" Type="tblNoticeDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_NoticeDetail" Member="V_NoticeDetails">
+    <Type Name="V_NoticeDetail">
+      <Column Name="NoticeDataID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NoticeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NoticeCode" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="SendDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="f01" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f02" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f03" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f04" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f05" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f06" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f07" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f08" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f09" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f10" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f11" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f12" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f13" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f14" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f15" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f16" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f17" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f18" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f19" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f20" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_Campaign_CommIn" Member="V_Campaign_CommIns">
+    <Type Name="V_Campaign_CommIn">
+      <Column Name="CommInID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Owner" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Underwriter" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="AccountContact" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Commission" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CommissionCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ORCommission" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ORCommissionCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Admin1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Admin1Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Admin2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Admin2Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="InsuranceLine" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Commission_display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="ORCommission_display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="Admin1_display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="Admin2_display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="CommIn_Display" Type="System.String" DbType="VarChar(161)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DupFromID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CampaignID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_Campaign_CommOut" Member="V_Campaign_CommOuts">
+    <Type Name="V_Campaign_CommOut">
+      <Column Name="CommOutID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CommInID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CampaignID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Agent" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Commission" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CommissionCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ORCommission" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ORCommissionCal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Admin1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Admin1Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Admin2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Admin2Cal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Commission_Display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="ORCommission_Display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="Admin1_Display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="Admin2_Display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AgentGroup" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OverComm" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OverOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OverFee1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OverFee2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HasOverComm" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_Campaign_Commission" Member="V_Campaign_Commissions">
+    <Type Name="V_Campaign_Commission">
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Risk" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CampaignID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Commission_display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="ORCommission_display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="Admin1_display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="Admin2_display" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HasOverComm" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_BillingD500Notification" Member="V_BillingD500Notifications">
+    <Type Name="V_BillingD500Notification">
+      <Column Name="NotificationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AgentCode" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="AgentName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="AccountNo" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="Mailto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f01" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f02" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f03" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f04" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f05" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f06" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f07" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f08" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f09" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f10" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f11" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="New" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Renew" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_BillingNMTNotification" Member="V_BillingNMTNotifications">
+    <Type Name="V_BillingNMTNotification">
+      <Column Name="NotificationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AgentCode" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="AgentName" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AccountNo" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="Mailto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Records" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblNoticeMailContact" Member="tblNoticeMailContacts">
+    <Type Name="tblNoticeMailContact">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NoticeCode" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="MailTo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MailCC" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AccountNo" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="ContactName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ContactAddress" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ContactTel" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ContactFax" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="M1Code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_WeeklyClaimDealerNotification" Member="V_WeeklyClaimDealerNotifications">
+    <Type Name="V_WeeklyClaimDealerNotification">
+      <Column Name="NotificationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AgentCode" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="AgentName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="AccountNo" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="Mailto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Records" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_BillingDealerNotification" Member="V_BillingDealerNotifications">
+    <Type Name="V_BillingDealerNotification">
+      <Column Name="NotificationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AgentCode" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="AgentName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="AccountNo" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="Mailto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Records" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_BillingCBCNotification" Member="V_BillingCBCNotifications">
+    <Type Name="V_BillingCBCNotification">
+      <Column Name="NotificationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AgentCode" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="AgentName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="AccountNo" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="Mailto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Records" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_BillingCBCNotification2" Member="V_BillingCBCNotification2s">
+    <Type Name="V_BillingCBCNotification2">
+      <Column Name="NotificationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AgentCode" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="AgentName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="AccountNo" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="Mailto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Records" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SP_CompareQuote" Method="SP_CompareQuote">
+    <Parameter Name="QuotationNo" Parameter="quotationNo" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

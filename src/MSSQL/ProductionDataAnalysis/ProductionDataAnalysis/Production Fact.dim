@@ -1,0 +1,303 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="19db00ab-6c7d-41f9-bbcf-ebc9a18aaaed" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Production Fact</ID>
+  <Name>Production Fact</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2321" scrolltop="-3070" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8387" y="13070" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Production_Fact" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3704" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000780e000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Production_Fact" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-2321</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-3070</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="3e5a48d0-c595-4d6d-9590-8776f225ca90">
+    <DataSourceViewID>ProductionDW DSV</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="d70ec1f9-b125-486f-80da-36b6817abc0f">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="ad94ce1b-1a67-45b0-aa48-cd13ec2db5ea">
+      <ID>Fac ID</ID>
+      <Name>Fac ID</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e7b5d37e-bac4-4d32-89bc-37964465368c">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f9efb2d7-4321-4b80-8422-d638b6984b23">
+            <TableID>dbo_Production_Fact</TableID>
+            <ColumnID>FacID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="687819d0-0abd-494f-8328-4d42f3640e51">
+          <AttributeID>A Exec</AttributeID>
+          <Name>A Exec</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a2e34673-7840-4db9-b841-c6393058a78d">
+          <AttributeID>Trans Type</AttributeID>
+          <Name>Trans Type</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="defaae03-fa38-4876-b714-41f8ceff17d2">
+          <AttributeID>Effective</AttributeID>
+          <Name>Effective</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="33588eeb-4e55-4181-91ae-91d6f221bd9f">
+          <AttributeID>Period From</AttributeID>
+          <Name>Period From</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="817bdf4e-ff59-4d74-a081-eae4fa1529df">
+          <AttributeID>Period To</AttributeID>
+          <Name>Period To</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="bc5c79bd-11b0-4c1d-8ade-746e473440d5">
+          <AttributeID>Currency</AttributeID>
+          <Name>Currency</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c33ba3e2-ed41-4475-8ead-be93700cb5c8">
+          <AttributeID>Exchange Rate</AttributeID>
+          <Name>Exchange Rate</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="67818d09-3f39-428c-ad07-9b237748d3ef">
+          <AttributeID>Co Insurance No</AttributeID>
+          <Name>Co Insurance No</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0153f760-7aed-48ef-9a7f-84770b0b2ed0">
+          <AttributeID>Renew Flag</AttributeID>
+          <Name>Renew Flag</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f51310f4-157d-4569-b4b6-2bda87a0f55e">
+          <AttributeID>Error Flag</AttributeID>
+          <Name>Error Flag</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="125343e4-3e13-4aa9-94a8-1214c6c63499">
+          <AttributeID>Upfront Flag</AttributeID>
+          <Name>Upfront Flag</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1520d9e9-cc61-4c7f-aa98-b9ba4f8bda55">
+      <ID>A Exec</ID>
+      <Name>A Exec</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="131cdd26-9a40-4e6e-9f25-a21839e92965">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="36d79e1b-2c46-44b4-9721-3e7c3b5c6209">
+            <TableID>dbo_Production_Fact</TableID>
+            <ColumnID>AExec</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0812b2d4-6739-4ff1-8e94-6965b575ca6b">
+      <ID>Trans Type</ID>
+      <Name>Trans Type</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="73f312db-1301-4c79-8859-29c002e3866c">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ac6f4b25-903f-4f54-80fc-8d17b20fdc94">
+            <TableID>dbo_Production_Fact</TableID>
+            <ColumnID>TransType</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="901e267e-b767-43c2-a8ee-f2bd2e5aaa2b">
+      <ID>Effective</ID>
+      <Name>Effective</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="95ed1a0e-ac31-4be1-899f-e697fe16f112">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4f213209-07e0-4f87-938e-bae45b95f469">
+            <TableID>dbo_Production_Fact</TableID>
+            <ColumnID>Effective</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bb64fc8a-9911-486c-943f-8b19cdd32995">
+      <ID>Period From</ID>
+      <Name>Period From</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e7f9df25-645a-4197-9389-3e426efca643">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c95dbed4-343b-4b6e-9fa0-dee6156d0bf4">
+            <TableID>dbo_Production_Fact</TableID>
+            <ColumnID>PeriodFrom</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="45a6fbb9-b666-49c1-b3ed-dafc365c3616">
+      <ID>Period To</ID>
+      <Name>Period To</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d10732a0-a087-49ba-b0bc-9ecf276c1d83">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="79c363a6-8629-48b8-9600-31c596a04627">
+            <TableID>dbo_Production_Fact</TableID>
+            <ColumnID>PeriodTo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="856e1acd-b5c5-4120-9760-8076590aa4df">
+      <ID>Currency</ID>
+      <Name>Currency</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0d787682-87e6-4de7-b600-08e3cbdf7bc9">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a74bcb93-80ff-4d67-9386-e0b790209798">
+            <TableID>dbo_Production_Fact</TableID>
+            <ColumnID>Currency</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="dfc31686-6667-453d-bce4-d00081ef57b9">
+      <ID>Exchange Rate</ID>
+      <Name>Exchange Rate</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5db10743-6f77-47d2-8d31-669291407a31">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0c343632-30fc-476c-a2ea-f56c201a4d61">
+            <TableID>dbo_Production_Fact</TableID>
+            <ColumnID>ExchangeRate</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9e73efb2-11f2-428c-869c-90efaa4011a0">
+      <ID>Co Insurance No</ID>
+      <Name>Co Insurance No</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cf025f51-607a-48b2-adcf-bce2bea43164">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ae5e1f7b-f02c-49fd-b785-1ed3c98a6640">
+            <TableID>dbo_Production_Fact</TableID>
+            <ColumnID>CoInsuranceNo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2e4c96d8-9b5c-493e-bb39-6f5df73d19c7">
+      <ID>Renew Flag</ID>
+      <Name>Renew Flag</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8bb2ce96-1d9b-4e78-b558-b9bc4e423dab">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="62012149-4c17-4e6a-bcb2-e2ffd1f9b6c9">
+            <TableID>dbo_Production_Fact</TableID>
+            <ColumnID>RenewFlag</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b1387955-15bc-4bc7-9c1e-4d8b21674379">
+      <ID>Error Flag</ID>
+      <Name>Error Flag</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="115dd1c5-4904-44a6-bc88-a58578a04cbf">
+          <DataType>WChar</DataType>
+          <DataSize>6</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c76df4d5-56a6-4170-866e-0f007e05ada2">
+            <TableID>dbo_Production_Fact</TableID>
+            <ColumnID>ErrorFlag</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="6f1018cd-dbb9-408b-9808-fd78a5baccd7">
+      <ID>Upfront Flag</ID>
+      <Name>Upfront Flag</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6f39e700-76ac-4dbe-9118-81153f9029bc">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a173487b-b210-441f-a6f5-fae4a50eb6c2">
+            <TableID>dbo_Production_Fact</TableID>
+            <ColumnID>UpfrontFlag</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+  </Attributes>
+</Dimension>

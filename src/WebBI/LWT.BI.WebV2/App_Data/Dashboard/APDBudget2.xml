@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="th-TH">
+  <Title Text="Dashboard" />
+  <DataConnections>
+    <DataConnection Name="FinanceDemoConnection" ConnectionString="Data Source=localhost;Initial Catalog=LWTReports;User ID=sa;Password=Password123" />
+  </DataConnections>
+  <DataSources>
+    <SqlDataSource ComponentName="dashboardSqlDataSource1">
+      <Name>SQL Data Source 1</Name>
+      <Connection Name="localhost_LWTReports_Connection" ProviderKey="MSSqlServer">
+		<Parameters>
+         <Parameter Name="server" Value="localhost" />
+          <Parameter Name="database" Value="LWTReports" />
+          <Parameter Name="useIntegratedSecurity" Value="False" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="userid" Value="sa" />
+          <Parameter Name="password" Value="Password123" />
+        </Parameters>
+      </Connection>
+      <Query Type="CustomSqlQuery" Name="tblAPDBudget_Report">
+        <Parameter Name="ASATFROM" Type="DevExpress.DataAccess.Expression">(System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)([Parameters.vFrom])</Parameter>
+        <Parameter Name="ASATTO" Type="DevExpress.DataAccess.Expression">(System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)([Parameters.vTo])</Parameter>
+        <Sql>select "tblAPDBudget_Report"."Division",
+       "tblAPDBudget_Report"."Report",
+       "tblAPDBudget_Report"."Description",
+       "tblAPDBudget_Report"."ACTUAL",
+       "tblAPDBudget_Report"."ACTUAL_P",
+       "tblAPDBudget_Report"."TARGET",
+       "tblAPDBudget_Report"."TARGET_P",
+       "tblAPDBudget_Report"."CHANGE",
+       "tblAPDBudget_Report"."CHANGE_P"
+, "tblAPDBudget_Report"."ASAT"
+  from "dbo"."tblAPDBudget_Report" "tblAPDBudget_Report"
+</Sql>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 1">
+          <View Name="tblAPDBudget_Report">
+            <Field Name="Division" Type="String" />
+            <Field Name="Report" Type="String" />
+            <Field Name="Description" Type="String" />
+            <Field Name="ACTUAL" Type="Decimal" />
+            <Field Name="ACTUAL_P" Type="Decimal" />
+            <Field Name="TARGET" Type="Decimal" />
+            <Field Name="TARGET_P" Type="Decimal" />
+            <Field Name="CHANGE" Type="Decimal" />
+            <Field Name="CHANGE_P" Type="Decimal" />
+            <Field Name="ASAT" Type="DateTime" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <CalculatedFields>
+        <CalculatedField Name="ACT_P" Expression="[ACTUAL_P] / 100" DataType="Decimal" DataMember="tblAPDBudget_Report" />
+        <CalculatedField Name="CHG_P" Expression="[CHANGE_P] / 100" DataType="Decimal" DataMember="tblAPDBudget_Report" />
+        <CalculatedField Name="TARG_P" Expression="[TARGET_P] / 100" DataType="Decimal" DataMember="tblAPDBudget_Report" />
+      </CalculatedFields>
+    </SqlDataSource>
+  </DataSources>
+  <Parameters>
+    <Parameter Name="vFrom" Type="System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Value="2013-01-01T00:00:00" Description="From" />
+    <Parameter Name="vTo" Type="System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Value="2016-12-31T00:00:00" Description="To" />
+  </Parameters>
+  <Items>
+    <Chart ComponentName="chartDashboardItem1" Name="Report By Business Unit" DataSource="dashboardSqlDataSource1" DataMember="tblAPDBudget_Report" FilterString="[DataItem3] = 'By Business Unit' And [DataItem4] Between(?vFrom, ?vTo)">
+      <DataItems>
+        <Measure DataMember="ACTUAL" UniqueName="DataItem1" />
+        <Dimension DataMember="Report" UniqueName="DataItem3" />
+        <Dimension DataMember="Division" UniqueName="DataItem0" />
+        <Dimension DataMember="Description" SortOrder="Descending" UniqueName="DataItem2" />
+        <Dimension DataMember="ASAT" DateTimeGroupInterval="None" UniqueName="DataItem4" />
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension UniqueName="DataItem3" />
+        <Dimension UniqueName="DataItem4" />
+      </HiddenDimensions>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem2" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem0" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple>
+              <Value UniqueName="DataItem1" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Card ComponentName="cardDashboardItem1" Name="Report By Financial" DataSource="dashboardSqlDataSource1" DataMember="tblAPDBudget_Report" FilterString="[DataItem0] = 'AVG PROFIT' And [DataItem4] Between(?vFrom, ?vTo)" ContentLineCount="2">
+      <DataItems>
+        <Dimension DataMember="Report" UniqueName="DataItem0" />
+        <Measure DataMember="ACTUAL" UniqueName="DataItem1" />
+        <Measure DataMember="TARGET" UniqueName="DataItem2" />
+        <Dimension DataMember="Description" SortOrder="Descending" UniqueName="DataItem3" />
+        <Dimension DataMember="ASAT" DateTimeGroupInterval="None" UniqueName="DataItem4" />
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension UniqueName="DataItem0" />
+        <Dimension UniqueName="DataItem4" />
+      </HiddenDimensions>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem3" />
+      </SeriesDimensions>
+      <Card>
+        <ActualValue UniqueName="DataItem1" />
+        <TargetValue UniqueName="DataItem2" />
+      </Card>
+    </Card>
+    <Grid ComponentName="gridDashboardItem1" Name="Report By List Of Business Expense" DataSource="dashboardSqlDataSource1" DataMember="tblAPDBudget_Report" FilterString="[DataItem4] = 'List Of Business Expense' And [DataItem5] Between(?vFrom, ?vTo)">
+      <DataItems>
+        <Dimension DataMember="Description" UniqueName="DataItem0" />
+        <Dimension DataMember="Report" UniqueName="DataItem4" />
+        <Measure DataMember="ACTUAL" Name="Amount" UniqueName="DataItem1" />
+        <Measure DataMember="TARG_P" Name="Change to budget" UniqueName="DataItem2">
+          <NumericFormat FormatType="Percent" />
+        </Measure>
+        <Measure DataMember="CHG_P" Name="Change to Prior" UniqueName="DataItem3">
+          <NumericFormat FormatType="Percent" />
+        </Measure>
+        <Dimension DataMember="ASAT" DateTimeGroupInterval="None" UniqueName="DataItem5" />
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension UniqueName="DataItem4" />
+        <Dimension UniqueName="DataItem5" />
+      </HiddenDimensions>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 1" Enabled="false">
+          <FormatConditionRangeSet ValueType="Number">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="-Infinity" />
+                  <IconSettings IconType="DirectionalRedDownArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Decimal" Value="0" />
+                  <IconSettings IconType="DirectionalGreenArrowUp" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="FormatRule 2" Enabled="false">
+          <FormatConditionRangeSet ValueType="Number">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="-Infinity" />
+                  <IconSettings IconType="DirectionalRedDownArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Decimal" Value="0" />
+                  <IconSettings IconType="DirectionalGreenArrowUp" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="FormatRule 3" DataItem="DataItem2">
+          <FormatConditionRangeSet ValueType="Number">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="-Infinity" />
+                  <IconSettings IconType="DirectionalRedDownArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Decimal" Value="0" />
+                  <IconSettings IconType="DirectionalGreenArrowUp" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="FormatRule 4" DataItem="DataItem3">
+          <FormatConditionRangeSet ValueType="Number">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="-Infinity" />
+                  <IconSettings IconType="DirectionalRedDownArrow" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Decimal" Value="0" />
+                  <IconSettings IconType="DirectionalGreenArrowUp" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+      </FormatRules>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension UniqueName="DataItem0" />
+        </GridDimensionColumn>
+        <GridMeasureColumn>
+          <Measure UniqueName="DataItem1" />
+        </GridMeasureColumn>
+        <GridMeasureColumn>
+          <Measure UniqueName="DataItem2" />
+        </GridMeasureColumn>
+        <GridMeasureColumn>
+          <Measure UniqueName="DataItem3" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <GridOptions />
+    </Grid>
+    <Pie ComponentName="pieDashboardItem1" Name="Report By Profit &amp; Loss" DataSource="dashboardSqlDataSource1" DataMember="tblAPDBudget_Report" FilterString="[DataItem3] = 'Profit &amp; Loss' And [DataItem4] Between(?vFrom, ?vTo)" PieType="Donut" LabelContentType="ArgumentAndValue" ContentArrangementMode="FixedColumnCount" ContentLineCount="2">
+      <DataItems>
+        <Dimension DataMember="Description" UniqueName="DataItem2" />
+        <Dimension DataMember="Report" UniqueName="DataItem3" />
+        <Dimension DataMember="ASAT" DateTimeGroupInterval="None" UniqueName="DataItem4" />
+        <Measure DataMember="TARG_P" Name="TARGET" UniqueName="DataItem0">
+          <NumericFormat FormatType="Percent" Precision="0" />
+        </Measure>
+        <Measure DataMember="ACT_P" Name="ACTUAL" UniqueName="DataItem1">
+          <NumericFormat FormatType="Percent" Precision="0" />
+        </Measure>
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension UniqueName="DataItem3" />
+        <Dimension UniqueName="DataItem4" />
+      </HiddenDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem2" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem0" />
+        <Value UniqueName="DataItem1" />
+      </Values>
+    </Pie>
+  </Items>
+  <ColorScheme>
+    <Entry DataSource="dashboardSqlDataSource1" DataMember="tblAPDBudget_Report" Color="-4567727">
+      <DimensionKeys>
+        <DimensionKey>
+          <Definition DataMember="Description" />
+          <Value Type="System.String" Value="Loss" />
+        </DimensionKey>
+      </DimensionKeys>
+    </Entry>
+    <Entry DataSource="dashboardSqlDataSource1" DataMember="tblAPDBudget_Report" Color="-11886166">
+      <DimensionKeys>
+        <DimensionKey>
+          <Definition DataMember="Description" />
+          <Value Type="System.String" Value="Profit" />
+        </DimensionKey>
+      </DimensionKeys>
+    </Entry>
+  </ColorScheme>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical">
+      <LayoutGroup Weight="52.071005917159766">
+        <LayoutItem DashboardItem="chartDashboardItem1" Weight="46.951871657754012" />
+        <LayoutItem DashboardItem="cardDashboardItem1" Weight="53.048128342245988" />
+      </LayoutGroup>
+      <LayoutGroup Weight="47.928994082840234">
+        <LayoutItem DashboardItem="gridDashboardItem1" Weight="46.951871657754012" />
+        <LayoutItem DashboardItem="pieDashboardItem1" Weight="53.048128342245988" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

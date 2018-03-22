@@ -1,0 +1,201 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="PivotExcel.aspx.vb" Inherits="PivotExcel" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script>
+        function OnCustomCommand(s, e) {
+            switch (e.commandName) {
+                case "ChangeView-Thumbnails":
+                    //FileManager.PerformCallback("Thumbnails");
+                    break;
+                case "ChangeView-Details":
+                    //FileManager.PerformCallback("Details");
+                    break;
+                case "Properties":
+                    PopupControl.PerformCallback(FileManager.GetActiveAreaName());
+                    //alert(FileManager.GetActiveAreaName());
+                    break;
+            }
+        }
+        function OnToolbarUpdating(s, e) {
+            var enabled = (e.activeAreaName == "Files" && FileManager.GetSelectedItems().length > 0) && e.activeAreaName != "None";
+            FileManager.GetToolbarItemByCommandName("Properties").SetEnabled(enabled);
+            FileManager.GetContextMenuItemByCommandName("Properties").SetEnabled(enabled);
+        }
+        function OnPopupEndCallback(s, e) {
+            PopupControl.SetHeaderText(PopupControl.cpHeaderText);
+            PopupControl.ShowAtElement(FileManager.GetMainElement());
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+
+        <dx:ASPxFileManager ID="fileManager" ClientInstanceName="FileManager" runat="server">
+
+            <ClientSideEvents CustomCommand="OnCustomCommand" ToolbarUpdating="OnToolbarUpdating" />
+
+
+            <Settings RootFolder="~/App_Data/Modules/eGlobal/RawData"
+                ThumbnailFolder="~/App_Data/Modules/eGlobal/RawData/Thumbnails"
+                AllowedFileExtensions=".xls,.xlsx" InitialFolder="RawData" />
+            <SettingsUpload Enabled="false"></SettingsUpload>
+
+
+
+            <SettingsToolbar>
+                <Items>
+                    <dx:FileManagerToolbarCustomButton CommandName="Properties">
+                        <Image IconID="setup_properties_16x16" />
+                    </dx:FileManagerToolbarCustomButton>
+
+                    <dx:FileManagerToolbarRefreshButton BeginGroup="false" />
+
+
+                </Items>
+            </SettingsToolbar>
+
+
+            <SettingsContextMenu Enabled="true">
+                <Items>
+                    <dx:FileManagerToolbarMoveButton />
+                    <dx:FileManagerToolbarCopyButton />
+                    <dx:FileManagerToolbarRenameButton BeginGroup="true" />
+                    <dx:FileManagerToolbarDeleteButton />
+                    <dx:FileManagerToolbarRefreshButton BeginGroup="false" />
+                    <dx:FileManagerToolbarCustomButton Text="Properties" CommandName="Properties" BeginGroup="true">
+                        <Image IconID="setup_properties_16x16" />
+                    </dx:FileManagerToolbarCustomButton>
+                </Items>
+            </SettingsContextMenu>
+
+
+
+
+        </dx:ASPxFileManager>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <dx:ASPxPopupControl ID="PopupControl" runat="server"
+            ClientInstanceName="PopupControl"
+            Width="430"
+            ShowHeader="true" ShowFooter="false"
+            PopupHorizontalAlign="Center"
+            PopupVerticalAlign="Middle"
+            AllowDragging="true"
+            DragElement="Header"
+            CssClass="DetailsPopup"
+            CloseOnEscape="true">
+            <ClientSideEvents EndCallback="OnPopupEndCallback" />
+            <ContentCollection>
+                <dx:PopupControlContentControl>
+                    <dx:ASPxFormLayout ID="FormLayout" runat="server" AlignItemCaptionsInAllGroups="True">
+                        <Items>
+                            <dx:LayoutGroup Caption=" " GroupBoxDecoration="None">
+                                <Items>
+                                    <dx:LayoutItem Caption="Name">
+                                        <LayoutItemNestedControlCollection>
+                                            <dx:LayoutItemNestedControlContainer>
+                                                <dx:ASPxLabel ID="Name" runat="server" />
+                                            </dx:LayoutItemNestedControlContainer>
+                                        </LayoutItemNestedControlCollection>
+                                    </dx:LayoutItem>
+                                    <dx:LayoutItem Caption="Type">
+                                        <LayoutItemNestedControlCollection>
+                                            <dx:LayoutItemNestedControlContainer>
+                                                <dx:ASPxLabel ID="Type" runat="server" />
+                                            </dx:LayoutItemNestedControlContainer>
+                                        </LayoutItemNestedControlCollection>
+                                    </dx:LayoutItem>
+                                </Items>
+                            </dx:LayoutGroup>
+                            <dx:LayoutGroup Caption=" " GroupBoxDecoration="None">
+                                <Items>
+                                    <dx:LayoutItem Caption="Location">
+                                        <LayoutItemNestedControlCollection>
+                                            <dx:LayoutItemNestedControlContainer>
+                                                <dx:ASPxLabel ID="Location" runat="server" />
+                                            </dx:LayoutItemNestedControlContainer>
+                                        </LayoutItemNestedControlCollection>
+                                    </dx:LayoutItem>
+                                    <dx:LayoutItem Caption="Relative Location">
+                                        <LayoutItemNestedControlCollection>
+                                            <dx:LayoutItemNestedControlContainer>
+                                                <dx:ASPxLabel ID="RelativeLocation" runat="server" />
+                                            </dx:LayoutItemNestedControlContainer>
+                                        </LayoutItemNestedControlCollection>
+                                    </dx:LayoutItem>
+                                    <dx:LayoutItem Caption="Size">
+                                        <LayoutItemNestedControlCollection>
+                                            <dx:LayoutItemNestedControlContainer>
+                                                <dx:ASPxLabel ID="Size" runat="server" />
+                                            </dx:LayoutItemNestedControlContainer>
+                                        </LayoutItemNestedControlCollection>
+                                    </dx:LayoutItem>
+                                    <dx:LayoutItem Caption="Contains" Name="Contains">
+                                        <LayoutItemNestedControlCollection>
+                                            <dx:LayoutItemNestedControlContainer>
+                                                <dx:ASPxLabel ID="Contains" runat="server" />
+                                            </dx:LayoutItemNestedControlContainer>
+                                        </LayoutItemNestedControlCollection>
+                                    </dx:LayoutItem>
+                                </Items>
+                            </dx:LayoutGroup>
+                            <dx:LayoutGroup Caption=" " GroupBoxDecoration="None">
+                                <Items>
+                                    <dx:LayoutItem Caption="Created">
+                                        <LayoutItemNestedControlCollection>
+                                            <dx:LayoutItemNestedControlContainer>
+                                                <dx:ASPxLabel ID="Created" runat="server" />
+                                            </dx:LayoutItemNestedControlContainer>
+                                        </LayoutItemNestedControlCollection>
+                                    </dx:LayoutItem>
+                                    <dx:LayoutItem Caption="Modified" Name="Modified">
+                                        <LayoutItemNestedControlCollection>
+                                            <dx:LayoutItemNestedControlContainer>
+                                                <dx:ASPxLabel ID="Modified" runat="server" />
+                                            </dx:LayoutItemNestedControlContainer>
+                                        </LayoutItemNestedControlCollection>
+                                    </dx:LayoutItem>
+                                    <dx:LayoutItem Caption="Accessed" Name="Accessed">
+                                        <LayoutItemNestedControlCollection>
+                                            <dx:LayoutItemNestedControlContainer>
+                                                <dx:ASPxLabel ID="Accessed" runat="server" />
+                                            </dx:LayoutItemNestedControlContainer>
+                                        </LayoutItemNestedControlCollection>
+                                    </dx:LayoutItem>
+                                </Items>
+                            </dx:LayoutGroup>
+                        </Items>
+                    </dx:ASPxFormLayout>
+                </dx:PopupControlContentControl>
+            </ContentCollection>
+        </dx:ASPxPopupControl>
+
+
+
+
+
+
+    </form>
+</body>
+</html>

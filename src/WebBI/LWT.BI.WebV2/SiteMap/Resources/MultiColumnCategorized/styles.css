@@ -1,0 +1,230 @@
+﻿/* -- ASPxSiteMapControl -- */
+.dxsmControl_MultiColumn a:hover
+{
+    text-decoration:none!important;
+    color: #FF6622!important;
+}
+.dxsmControl_MultiColumn a:visited
+{
+    color: #1473D2!important;
+}
+.dxsmControl_MultiColumn 
+{	
+	background-color: white;
+	color: #1E3695;
+	/*font-family: Verdana, Tahoma, Arial;*/
+	/*font-size: 11px;*/
+}
+/* - Category Level - */
+.dxsmCategoryLevel_MultiColumn,
+.dxsmCategoryLevel_MultiColumn a
+{
+    color: #000000;    
+    font-weight: normal;
+    font-size: 18px;
+    /*font-family: Verdana;*/
+    text-decoration: none;
+}
+.dxsmCategoryLevel_MultiColumn
+{
+    white-space: nowrap;
+    padding: 0px 0px 5px 0px;
+}
+.dxsmCategoryLevel_MultiColumn
+{
+    border-bottom-style: none;    
+}
+ /*flow layout*/
+.dxsmLevelCategoryFlow_MultiColumn,
+.dxsmLevelCategoryFlow_MultiColumn a
+{
+    color: #1E3695;    
+    font-weight: bold;
+    /*font-size: 13.5pt;*/
+    /*font-family: Tahoma, Verdana, Arial;*/	
+	text-decoration: underline;
+}
+/* - Level 0 - */
+.dxsmLevel0_MultiColumn,
+.dxsmLevel0_MultiColumn a,
+.dxsmLevel0Categorized_MultiColumn a,
+.dxsmLevel0Categorized_MultiColumn
+{
+    color: #313031;
+    font-weight: bold;
+    /*font-size: 12px;*/
+    /*font-family: Verdana;*/
+    text-decoration: none;
+}
+.dxsmLevel0_MultiColumn
+{
+    border-bottom:solid 1px #B8B8B8;
+    padding: 0px 0px 5px 0px;
+}
+.dxsmLevel0Categorized_MultiColumn
+{
+    border-top: Solid 3px #34A3DB;
+    padding: 5px 0px 2px 0px;
+}
+ /*flow layout*/
+.dxsmLevel0Flow_MultiColumn,
+.dxsmLevel0Flow_MultiColumn a,
+.dxsmLevel0CategorizedFlow_MultiColumn a,
+.dxsmLevel0CategorizedFlow_MultiColumn
+{
+    color: #313031;    
+    /*font-family: Tahoma, Verdana, Arial;*/	
+    font-weight: bold;
+    /*font-size: 12px;*/
+	text-decoration: none;
+}
+.dxsmLevel0Flow_MultiColumn
+{
+    padding: 0px 0px 0px 0px;    
+}
+.dxsmLevel0Flow_MultiColumn
+{
+    text-decoration: none;    
+}
+
+/* - Level 1 - */
+.dxsmLevel1_MultiColumn,
+.dxsmLevel1_MultiColumn a,
+.dxsmLevel1Categorized_MultiColumn a,
+.dxsmLevel1Categorized_MultiColumn
+{    
+    /*font-family: Tahoma, Arial;*/
+    color: #1473D2;  
+    /*font-size: 8pt;*/
+    text-decoration: none;    
+}
+.dxsmLevel1_MultiColumn,
+.dxsmLevel1Categorized_MultiColumn
+{
+    padding: 0px 0px 0px 0px;
+}
+/*flow layout*/
+.dxsmLevel1Flow_MultiColumn,
+.dxsmLevel1Flow_MultiColumn a,
+.dxsmLevel1CategorizedFlow_MultiColumn,
+.dxsmLevel1CategorizedFlow_MultiColumn a
+{    
+    color: #1473D2;    
+    /*font-family: Tahoma, Arial;*/
+    /*font-size: 8pt;*/
+	text-decoration: underline;
+}
+.dxsmLevel1Flow_MultiColumn
+{
+    text-decoration: none;
+    padding: 0px 0px 0px 0px;
+}
+
+/* - Level 2 - */
+
+.dxsmLevel2_MultiColumn,
+.dxsmLevel2_MultiColumn a,
+.dxsmLevel2Categorized_MultiColumn a,
+.dxsmLevel2Categorized_MultiColumn
+{    
+    /*font-size: 10px;
+    font-family: Tahoma, Arial;*/
+    color: #999999;
+    text-decoration: none;    
+}
+.dxsmLevel2_MultiColumn,
+.dxsmLevel2Categorized_MultiColumn
+{
+    padding: 0px 0px 0px 0px;    
+}
+/*flow layout*/
+.dxsmLevel2Flow_MultiColumn,
+.dxsmLevel2Flow_MultiColumn a
+{
+    color: #999999;
+    /*font-size: 10px;    
+    font-family: Tahoma, Arial;*/
+	text-decoration:underline;    
+}
+.dxsmLevel2Flow_MultiColumn
+{
+    padding: 0px 0px 0px 0px;
+}
+/* - Level 3 - */
+.dxsmLevel3_MultiColumn,
+.dxsmLevel3_MultiColumn a
+{    
+    /*font-size: 9px;
+    font-family: Tahoma, Arial;*/
+    color: #A8A8A8;
+    text-decoration: none;
+}
+.dxsmLevel3_MultiColumn
+{
+    white-space: nowrap;        
+    padding: 0px 0px 0px 0px;    
+}
+/*flow layout*/
+.dxsmLevel3Flow_MultiColumn,
+.dxsmLevel3Flow_MultiColumn a
+{    
+    color: #A8A8A8;
+    /*font-size: 9px;
+    font-family: Tahoma, Arial;*/
+	text-decoration: underline;    
+}
+/* - Level 4 - */
+.dxsmLevel4_MultiColumn,
+.dxsmLevel4_MultiColumn a
+{    
+    /*font-size: 9px;
+    font-family: Tahoma, Arial;*/
+    color: #A8A8A8;
+    text-decoration: none;
+}
+.dxsmLevel4_MultiColumn
+{
+    white-space: nowrap;
+    padding: 0px 0px 0px 0px;    
+}
+/*flow layout*/
+.dxsmLevel4Flow_MultiColumn,
+.dxsmLevel4Flow_MultiColumn a
+{
+    color: #A8A8A8;
+    /*font-family: Tahoma, Arial;
+    font-size: 9px;*/
+	text-decoration: underline;        
+}
+.dxsmLevel4Flow_MultiColumn
+{
+    padding: 0px 0px 0px 0px;        
+}
+/* - Other Levels - */
+.dxsmLevelOther_MultiColumn
+{    
+    /*font-size: 9px;
+    font-family: Tahoma, Arial;*/
+    color: #A8A8A8;
+    text-decoration: none;
+}
+.dxsmLevelOther_MultiColumn
+{
+    white-space:nowrap;
+    padding: 0px 0px 0px 0px;            
+}
+/*flow layout*/
+.dxsmLevelOtherFlow_MultiColumn,
+.dxsmLevelOtherFlow_MultiColumn a
+{
+    color: #A8A8A8;
+    /*font-family: Tahoma, Arial;
+    font-size: 9pt;*/
+	text-decoration: underline;            
+}
+/* Disabled */
+.dxsmDisabled_MultiColumn
+{
+	color: #808080;
+	cursor: default;
+}

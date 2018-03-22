@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.25" name="DataClasses_TIDMotor_LWTReports">
+  <DataContextMoniker Name="/DataClasses_TIDMotor_LWTReportsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="0525e467-3744-4691-9045-51ffedfbb7c7" absoluteBounds="1.5, 1.25, 2, 7.7322412109375005">
+      <DataClassMoniker Name="/DataClasses_TIDMotor_LWTReportsDataContext/V_M1_Application" />
+      <nestedChildShapes>
+        <elementListCompartment Id="552c72e1-20c8-48bb-9026-a01ceb888541" absoluteBounds="1.5149999999999997, 1.71, 1.9700000000000002, 7.1722412109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

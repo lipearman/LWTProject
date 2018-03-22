@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="NissanMotor" Class="DataClasses_NissanMotorDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=localhost;Initial Catalog=NissanMotor;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="NissanMotorConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblReport" Member="tblReports">
+    <Type Name="tblReport">
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VIEW_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DB_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REPORT_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tblReport_tblReport_Assignment" Member="tblReport_Assignments" ThisKey="RID" OtherKey="RID" Type="tblReport_Assignment" />
+      <Association Name="tblReport_DashBoard_tblReport" Member="tblReport_DashBoard" ThisKey="DB_ID" OtherKey="DB_ID" Type="tblReport_DashBoard" IsForeignKey="true" />
+      <Association Name="tblReport_VIEW_tblReport" Member="tblReport_VIEW" ThisKey="VIEW_ID" OtherKey="VIEW_ID" Type="tblReport_VIEW" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReportUser_Template" Member="tblReportUser_Templates">
+    <Type Name="tblReportUser_Template">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FIELD_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AREA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OWNER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ORDERBY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblReportUser_Template_tblReportUser_FilterValue" Member="tblReportUser_FilterValues" ThisKey="ID" OtherKey="ID" Type="tblReportUser_FilterValue" />
+      <Association Name="tblReport_VIEWs_Field_tblReportUser_Template" Member="tblReport_VIEWs_Field" ThisKey="FIELD_ID" OtherKey="FIELD_ID" Type="tblReport_VIEWs_Field" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReport_Assignment" Member="tblReport_Assignments">
+    <Type Name="tblReport_Assignment">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tblReport_tblReport_Assignment" Member="tblReport" ThisKey="RID" OtherKey="RID" Type="tblReport" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReport_DashBoard" Member="tblReport_DashBoards">
+    <Type Name="tblReport_DashBoard">
+      <Column Name="DB_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DB_TITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DB_XML" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="VIEW_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblReport_DashBoard_tblReport" Member="tblReports" ThisKey="DB_ID" OtherKey="DB_ID" Type="tblReport" />
+      <Association Name="tblReport_VIEW_tblReport_DashBoard" Member="tblReport_VIEW" ThisKey="VIEW_ID" OtherKey="VIEW_ID" Type="tblReport_VIEW" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReport_MasterData" Member="tblReport_MasterDatas">
+    <Type Name="tblReport_MasterData">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Value" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GroupName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReport_VIEWs" Member="tblReport_VIEWs">
+    <Type Name="tblReport_VIEW">
+      <Column Name="VIEW_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VIEW_TITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="VIEW_QUERY" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="VIEW_CONNECTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BIFile" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="tblReport_VIEW_tblReport" Member="tblReports" ThisKey="VIEW_ID" OtherKey="VIEW_ID" Type="tblReport" />
+      <Association Name="tblReport_VIEW_tblReport_DashBoard" Member="tblReport_DashBoards" ThisKey="VIEW_ID" OtherKey="VIEW_ID" Type="tblReport_DashBoard" />
+      <Association Name="tblReport_VIEW_tblReport_VIEWs_Field" Member="tblReport_VIEWs_Fields" ThisKey="VIEW_ID" OtherKey="VIEW_ID" Type="tblReport_VIEWs_Field" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReportMaster_FilterValues" Member="tblReportMaster_FilterValues">
+    <Type Name="tblReportMaster_FilterValue">
+      <Column Name="FILTER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FILTER_VALUE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FILTER_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MASTER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblReportMaster_Template_tblReportMaster_FilterValue" Member="tblReportMaster_Template" ThisKey="MASTER_ID" OtherKey="MASTER_ID" Type="tblReportMaster_Template" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReportMaster_Template" Member="tblReportMaster_Templates">
+    <Type Name="tblReportMaster_Template">
+      <Column Name="MASTER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FIELD_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AREA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORDERBY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblReportMaster_Template_tblReportMaster_FilterValue" Member="tblReportMaster_FilterValues" ThisKey="MASTER_ID" OtherKey="MASTER_ID" Type="tblReportMaster_FilterValue" />
+      <Association Name="tblReport_VIEWs_Field_tblReportMaster_Template" Member="tblReport_VIEWs_Field" ThisKey="FIELD_ID" OtherKey="FIELD_ID" Type="tblReport_VIEWs_Field" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReportUser_FilterValues" Member="tblReportUser_FilterValues">
+    <Type Name="tblReportUser_FilterValue">
+      <Column Name="FILTER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FILTER_VALUE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FILTER_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblReportUser_Template_tblReportUser_FilterValue" Member="tblReportUser_Template" ThisKey="ID" OtherKey="ID" Type="tblReportUser_Template" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_REPORT_BI" Member="V_REPORT_BIs">
+    <Type Name="V_REPORT_BI">
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REPORT_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VIEW_TITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="VIEW_QUERY" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="VIEW_CONNECTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="BIFile" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_REPORT_ASSIGNMENT" Member="V_REPORT_ASSIGNMENTs">
+    <Type Name="V_REPORT_ASSIGNMENT">
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VIEW_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DB_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REPORT_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SelectNode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReport_VIEWs_Field" Member="tblReport_VIEWs_Fields">
+    <Type Name="tblReport_VIEWs_Field">
+      <Column Name="FIELD_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FIELD_CAPTION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FIELD_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SummaryType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CellFormat_FormatType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CellFormat_FormatString" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="GroupInterval" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VIEW_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UnboundExpressionMode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnboundExpression" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="UnboundColumnType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PivotSummaryDisplayType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblReport_VIEWs_Field_tblReportUser_Template" Member="tblReportUser_Templates" ThisKey="FIELD_ID" OtherKey="FIELD_ID" Type="tblReportUser_Template" />
+      <Association Name="tblReport_VIEWs_Field_tblReportMaster_Template" Member="tblReportMaster_Templates" ThisKey="FIELD_ID" OtherKey="FIELD_ID" Type="tblReportMaster_Template" />
+      <Association Name="tblReport_VIEW_tblReport_VIEWs_Field" Member="tblReport_VIEW" ThisKey="VIEW_ID" OtherKey="VIEW_ID" Type="tblReport_VIEW" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_REPORT_MASTER_TEMPLATE" Member="V_REPORT_MASTER_TEMPLATEs">
+    <Type Name="V_REPORT_MASTER_TEMPLATE">
+      <Column Name="FIELD_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FIELD_CAPTION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FIELD_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SummaryType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PivotSummaryDisplayType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CellFormat_FormatType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CellFormat_FormatString" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="UnboundExpressionMode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnboundExpression" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="UnboundColumnType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GroupInterval" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MASTER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AREA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORDERBY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_REPORT_USER_TEMPLATE" Member="V_REPORT_USER_TEMPLATEs">
+    <Type Name="V_REPORT_USER_TEMPLATE">
+      <Column Name="FIELD_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TEMPLATE_CAPTION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TEMPLATE_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SummaryType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PivotSummaryDisplayType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CellFormat_FormatType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CellFormat_FormatString" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="UnboundExpressionMode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnboundExpression" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="UnboundColumnType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GroupInterval" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MASTER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TEMPLATE_AREA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TEMPLATE_ORDERBY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OWNER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AREA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ORDERBY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

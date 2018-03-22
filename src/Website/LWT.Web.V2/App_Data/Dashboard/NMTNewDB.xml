@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="th-TH">
+  <Title Text="Dashboard" />
+  <DataConnections>
+    <DataConnection Name="FinanceDemoConnection" ConnectionString="Data Source=localhost;Initial Catalog=FinancialDemo;User ID=sa;Password=rsa" />
+  </DataConnections>
+  <DataSources>
+    <SqlDataSource ComponentName="dashboardSqlDataSource1">
+      <Name>SQL Data Source 1</Name>
+      <Connection Name="localhost_LWTReports_Connection" ProviderKey="MSSqlServer">
+        <Parameters>
+          <Parameter Name="server" Value="localhost" />
+          <Parameter Name="database" Value="LWTReports" />
+          <Parameter Name="useIntegratedSecurity" Value="False" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="userid" Value="sa" />
+          <Parameter Name="password" Value="rsa" />
+        </Parameters>
+      </Connection>
+      <Query Type="TableQuery" Name="NewFY13FY15NoCN">
+        <Table Name="NewFY13FY15NoCN">
+          <Column Name="ID" />
+          <Column Name="No" />
+          <Column Name="ClientCode" />
+          <Column Name="ClientName" />
+          <Column Name="TempID" />
+          <Column Name="InsuranceType" />
+          <Column Name="SchemeCode" />
+          <Column Name="EFFECTIVEDATE" />
+          <Column Name="INSURER" />
+          <Column Name="CHASSISNO" />
+          <Column Name="ENGINENO" />
+          <Column Name="Model" />
+          <Column Name="SumInsure" />
+          <Column Name="NetVoluntaryPremium" />
+          <Column Name="VMI" />
+          <Column Name="CMI" />
+          <Column Name="ContractNo" />
+          <Column Name="AppID" />
+          <Column Name="Status" />
+          <Column Name="Remark" />
+          <Column Name="VMIPolicyNo" />
+          <Column Name="CMIPolicyNo" />
+          <Column Name="Showroom" />
+          <Column Name="Beneficiary" />
+          <Column Name="ContactPerson" />
+          <Column Name="NotifigationDate" />
+          <Column Name="Mobile" />
+          <Column Name="OfficeTelephone" />
+          <Column Name="HomeTelephone" />
+          <Column Name="ClassOfRiskVMI" />
+          <Column Name="ClassOfRiskCMI" />
+          <Column Name="IDCard" />
+          <Column Name="HDCode" />
+          <Column Name="ClosingDate" />
+          <Column Name="DealerName" />
+          <Column Name="ModelGroup" />
+          <Column Name="BenefitGroup" />
+          <Column Name="CarRegisterYear" />
+          <Column Name="BNFGroup" />
+          <Column Name="ContractNo1" />
+          <Column Name="CMIGross" />
+          <Column Name="ProductCode" />
+          <Column Name="UserClosing" />
+          <Column Name="ClosingDate1" />
+          <Column Name="DealerEn" />
+          <Column Name="ShowroomType" />
+          <Column Name="Province" />
+          <Column Name="ProvinceEng" />
+          <Column Name="Region" />
+          <Column Name="FYTD" />
+          <Column Name="INSURERENG" />
+          <Column Name="InsurerEngGroup" />
+          <Column Name="VehicleType" />
+          <Column Name="BillingChannel" />
+          <Column Name="FolioVMI" />
+          <Column Name="FolioCMI" />
+          <Column Name="VMIOriginalAmount" />
+          <Column Name="VMICCWCollectAmt" />
+          <Column Name="VMIBalanceAmount" />
+          <Column Name="CMIOriginalAmount" />
+          <Column Name="CMICCWCollectAmt" />
+          <Column Name="CMIBalanceAmount" />
+          <Column Name="TRVMI_NETTOTAL" />
+          <Column Name="TRVMI_PAIDAMOUNT" />
+          <Column Name="TRVMI_BalanceAmount" />
+          <Column Name="TRCMI_NETTOTAL" />
+          <Column Name="TRCMI_PAIDAMOUNT" />
+          <Column Name="TRCMI_BalanceAmount" />
+          <Column Name="NetIncomeVMI" />
+          <Column Name="NetIncomeCMI" />
+          <Column Name="NetTotal" />
+          <Column Name="ASAT" />
+        </Table>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 1">
+          <View Name="NewFY13FY15NoCN">
+            <Field Name="ID" Type="Int32" />
+            <Field Name="No" Type="Int32" />
+            <Field Name="ClientCode" Type="String" />
+            <Field Name="ClientName" Type="String" />
+            <Field Name="TempID" Type="String" />
+            <Field Name="InsuranceType" Type="String" />
+            <Field Name="SchemeCode" Type="String" />
+            <Field Name="EFFECTIVEDATE" Type="DateTime" />
+            <Field Name="INSURER" Type="String" />
+            <Field Name="CHASSISNO" Type="String" />
+            <Field Name="ENGINENO" Type="String" />
+            <Field Name="Model" Type="String" />
+            <Field Name="SumInsure" Type="Int32" />
+            <Field Name="NetVoluntaryPremium" Type="Double" />
+            <Field Name="VMI" Type="Double" />
+            <Field Name="CMI" Type="Double" />
+            <Field Name="ContractNo" Type="String" />
+            <Field Name="AppID" Type="Int32" />
+            <Field Name="Status" Type="String" />
+            <Field Name="Remark" Type="String" />
+            <Field Name="VMIPolicyNo" Type="String" />
+            <Field Name="CMIPolicyNo" Type="String" />
+            <Field Name="Showroom" Type="String" />
+            <Field Name="Beneficiary" Type="String" />
+            <Field Name="ContactPerson" Type="String" />
+            <Field Name="NotifigationDate" Type="DateTime" />
+            <Field Name="Mobile" Type="String" />
+            <Field Name="OfficeTelephone" Type="String" />
+            <Field Name="HomeTelephone" Type="String" />
+            <Field Name="ClassOfRiskVMI" Type="String" />
+            <Field Name="ClassOfRiskCMI" Type="String" />
+            <Field Name="IDCard" Type="String" />
+            <Field Name="HDCode" Type="String" />
+            <Field Name="ClosingDate" Type="DateTime" />
+            <Field Name="DealerName" Type="String" />
+            <Field Name="ModelGroup" Type="String" />
+            <Field Name="BenefitGroup" Type="String" />
+            <Field Name="CarRegisterYear" Type="Int32" />
+            <Field Name="BNFGroup" Type="String" />
+            <Field Name="ContractNo1" Type="String" />
+            <Field Name="CMIGross" Type="Double" />
+            <Field Name="ProductCode" Type="String" />
+            <Field Name="UserClosing" Type="String" />
+            <Field Name="ClosingDate1" Type="DateTime" />
+            <Field Name="DealerEn" Type="String" />
+            <Field Name="ShowroomType" Type="String" />
+            <Field Name="Province" Type="String" />
+            <Field Name="ProvinceEng" Type="String" />
+            <Field Name="Region" Type="String" />
+            <Field Name="FYTD" Type="Int32" />
+            <Field Name="INSURERENG" Type="String" />
+            <Field Name="InsurerEngGroup" Type="String" />
+            <Field Name="VehicleType" Type="String" />
+            <Field Name="BillingChannel" Type="String" />
+            <Field Name="FolioVMI" Type="Int32" />
+            <Field Name="FolioCMI" Type="Int32" />
+            <Field Name="VMIOriginalAmount" Type="Double" />
+            <Field Name="VMICCWCollectAmt" Type="Double" />
+            <Field Name="VMIBalanceAmount" Type="Double" />
+            <Field Name="CMIOriginalAmount" Type="Double" />
+            <Field Name="CMICCWCollectAmt" Type="Double" />
+            <Field Name="CMIBalanceAmount" Type="Double" />
+            <Field Name="TRVMI_NETTOTAL" Type="Double" />
+            <Field Name="TRVMI_PAIDAMOUNT" Type="Double" />
+            <Field Name="TRVMI_BalanceAmount" Type="Double" />
+            <Field Name="TRCMI_NETTOTAL" Type="Double" />
+            <Field Name="TRCMI_PAIDAMOUNT" Type="Double" />
+            <Field Name="TRCMI_BalanceAmount" Type="Double" />
+            <Field Name="NetIncomeVMI" Type="Double" />
+            <Field Name="NetIncomeCMI" Type="Double" />
+            <Field Name="NetTotal" Type="Double" />
+            <Field Name="ASAT" Type="DateTime" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <CalculatedFields>
+        <CalculatedField Name="FY" Expression="GetYear([EFFECTIVEDATE])" DataType="Integer" DataMember="NewFY13FY15NoCN" />
+        <CalculatedField Name="FM" Expression="GetMonth([EFFECTIVEDATE])" DataType="Integer" DataMember="NewFY13FY15NoCN" />
+      </CalculatedFields>
+    </SqlDataSource>
+  </DataSources>
+  <Parameters>
+    <Parameter Name="vFrom" Type="System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Value="2013-01-01T00:00:00" Description="From" />
+    <Parameter Name="vTo" Type="System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Value="2016-12-31T00:00:00" Description="To" />
+  </Parameters>
+  <Items>
+    <Chart ComponentName="chartDashboardItem1" Name="G1 New Red Plate" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="NewFY13FY15NoCN" FilterString="[DataItem4] Between(?vFrom, ?vTo)">
+      <InteractivityOptions TargetDimensions="Series" />
+      <DataItems>
+        <Measure DataMember="CHASSISNO" Name="Count No." SummaryType="Count" UniqueName="DataItem1">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" />
+        </Measure>
+        <Dimension DataMember="FYTD" UniqueName="DataItem0">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" />
+        </Dimension>
+        <Dimension DataMember="EFFECTIVEDATE" DateTimeGroupInterval="Month" UniqueName="DataItem2" />
+        <Dimension DataMember="EFFECTIVEDATE" DateTimeGroupInterval="None" UniqueName="DataItem4" />
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension UniqueName="DataItem4" />
+      </HiddenDimensions>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem0" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem2" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple SeriesType="Line">
+              <Value UniqueName="DataItem1" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Pie ComponentName="pieDashboardItem2" Name="G2 Panel Insurers" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="NewFY13FY15NoCN" ContentArrangementMode="FixedColumnCount" ContentLineCount="2">
+      <DataItems>
+        <Dimension DataMember="EFFECTIVEDATE" UniqueName="DataItem0" />
+        <Dimension DataMember="InsurerEngGroup" UniqueName="DataItem1" />
+        <Measure DataMember="CHASSISNO" SummaryType="Count" UniqueName="DataItem2" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem0" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem1" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem2" />
+      </Values>
+    </Pie>
+    <ListBox ComponentName="listBoxDashboardItem1" Name="Filter by FYTD" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="NewFY13FY15NoCN" FilterString="[DataItem0] Between(?vFrom, ?vTo)">
+      <DataItems>
+        <Dimension DataMember="EFFECTIVEDATE" UniqueName="DataItem1" />
+        <Dimension DataMember="EFFECTIVEDATE" DateTimeGroupInterval="None" UniqueName="DataItem0" />
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension UniqueName="DataItem0" />
+      </HiddenDimensions>
+      <FilterDimensions>
+        <Dimension UniqueName="DataItem1" />
+      </FilterDimensions>
+    </ListBox>
+    <ListBox ComponentName="listBoxDashboardItem2" Name="Filter By Insurers" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="NewFY13FY15NoCN" FilterString="[DataItem1] Between(?vFrom, ?vTo)">
+      <DataItems>
+        <Dimension DataMember="InsurerEngGroup" UniqueName="DataItem0" />
+        <Dimension DataMember="EFFECTIVEDATE" DateTimeGroupInterval="None" UniqueName="DataItem1" />
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension UniqueName="DataItem1" />
+      </HiddenDimensions>
+      <FilterDimensions>
+        <Dimension UniqueName="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+    <Pie ComponentName="pieDashboardItem1" Name="G3.1 Model" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="NewFY13FY15NoCN" ContentArrangementMode="FixedColumnCount" ContentLineCount="2">
+      <DataItems>
+        <Measure DataMember="CHASSISNO" SummaryType="Count" UniqueName="DataItem0" />
+        <Dimension DataMember="EFFECTIVEDATE" UniqueName="DataItem1" />
+        <Dimension DataMember="ModelGroup" UniqueName="DataItem2" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem1" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem2" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem0" />
+      </Values>
+    </Pie>
+    <ListBox ComponentName="listBoxDashboardItem3" Name="Filter By Model" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="NewFY13FY15NoCN">
+      <DataItems>
+        <Dimension DataMember="ModelGroup" UniqueName="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension UniqueName="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+    <Chart ComponentName="chartDashboardItem2" Name="G3.2 Model" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="NewFY13FY15NoCN">
+      <DataItems>
+        <Measure DataMember="CHASSISNO" SummaryType="Count" UniqueName="DataItem0" />
+        <Dimension DataMember="EFFECTIVEDATE" UniqueName="DataItem1" />
+        <Dimension DataMember="ModelGroup" UniqueName="DataItem2" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem1" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem2" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple>
+              <Value UniqueName="DataItem0" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <ListBox ComponentName="listBoxDashboardItem4" Name="Filter By Benefits" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="NewFY13FY15NoCN">
+      <DataItems>
+        <Dimension DataMember="BNFGroup" UniqueName="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension UniqueName="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+    <Pie ComponentName="pieDashboardItem3" Name="G4.1 Benefits" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="NewFY13FY15NoCN" ContentArrangementMode="FixedColumnCount" ContentLineCount="2">
+      <DataItems>
+        <Measure DataMember="CHASSISNO" SummaryType="Count" UniqueName="DataItem0" />
+        <Dimension DataMember="EFFECTIVEDATE" UniqueName="DataItem1" />
+        <Dimension DataMember="BNFGroup" UniqueName="DataItem2" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem1" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem2" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem0" />
+      </Values>
+    </Pie>
+    <Chart ComponentName="chartDashboardItem3" Name="G4.2 Top 10 Dealer" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="NewFY13FY15NoCN">
+      <DataItems>
+        <Dimension DataMember="DealerEn" TopNEnabled="true" TopNCount="10" TopNMeasure="DataItem2" UniqueName="DataItem0" />
+        <Dimension DataMember="BNFGroup" UniqueName="DataItem1" />
+        <Measure DataMember="CHASSISNO" SummaryType="Count" UniqueName="DataItem2" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem1" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem0" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple SeriesType="StackedBar">
+              <Value UniqueName="DataItem2" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <ListBox ComponentName="listBoxDashboardItem5" Name="Filter By Region" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="NewFY13FY15NoCN">
+      <DataItems>
+        <Dimension DataMember="Region" UniqueName="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension UniqueName="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+    <Pie ComponentName="pieDashboardItem4" Name="G5 Region" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="NewFY13FY15NoCN" ContentArrangementMode="FixedColumnCount" ContentLineCount="2">
+      <DataItems>
+        <Measure DataMember="CHASSISNO" SummaryType="Count" UniqueName="DataItem0" />
+        <Dimension DataMember="Region" UniqueName="DataItem1" />
+        <Dimension DataMember="EFFECTIVEDATE" UniqueName="DataItem2" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem2" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem1" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem0" />
+      </Values>
+    </Pie>
+    <Chart ComponentName="chartDashboardItem4" Name="G6 Premium &amp; Income" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="NewFY13FY15NoCN">
+      <DataItems>
+        <Dimension DataMember="EFFECTIVEDATE" UniqueName="DataItem2" />
+        <Measure DataMember="NetVoluntaryPremium" UniqueName="DataItem1" />
+        <Measure DataMember="NetIncomeVMI" UniqueName="DataItem0" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem2" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple PlotOnSecondaryAxis="true">
+              <Value UniqueName="DataItem1" />
+            </Simple>
+            <Simple SeriesType="Line">
+              <Value UniqueName="DataItem0" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <ListBox ComponentName="listBoxDashboardItem6" Name="Filter By Effective" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="NewFY13FY15NoCN">
+      <DataItems>
+        <Dimension DataMember="EFFECTIVEDATE" DateTimeGroupInterval="MonthYear" UniqueName="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension UniqueName="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+  </Items>
+  <Groups>
+    <Group ComponentName="dashboardItemGroup1" Name="Group 1" ShowCaption="false" />
+  </Groups>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical">
+      <LayoutGroup Orientation="Vertical" DashboardItem="dashboardItemGroup1" Weight="100">
+        <LayoutGroup Weight="23.908918406072107">
+          <LayoutGroup Orientation="Vertical" Weight="14.973262032085561">
+            <LayoutItem DashboardItem="listBoxDashboardItem1" Weight="49.206349206349209" />
+            <LayoutItem DashboardItem="listBoxDashboardItem6" Weight="50.793650793650791" />
+          </LayoutGroup>
+          <LayoutItem DashboardItem="chartDashboardItem1" Weight="85.026737967914443" />
+        </LayoutGroup>
+        <LayoutGroup Orientation="Vertical" Weight="76.0910815939279">
+          <LayoutGroup Weight="21.197007481296758">
+            <LayoutItem DashboardItem="listBoxDashboardItem2" Weight="14.973262032085561" />
+            <LayoutItem DashboardItem="pieDashboardItem2" Weight="85.026737967914443" />
+          </LayoutGroup>
+          <LayoutGroup Orientation="Vertical" Weight="53.366583541147129">
+            <LayoutGroup Weight="63.084112149532707">
+              <LayoutItem DashboardItem="listBoxDashboardItem3" Weight="14.973262032085561" />
+              <LayoutItem DashboardItem="pieDashboardItem1" Weight="38.074866310160431" />
+              <LayoutItem DashboardItem="chartDashboardItem2" Weight="46.951871657754012" />
+            </LayoutGroup>
+            <LayoutGroup Weight="36.915887850467293">
+              <LayoutItem DashboardItem="listBoxDashboardItem4" Weight="14.973262032085561" />
+              <LayoutItem DashboardItem="pieDashboardItem3" Weight="38.074866310160431" />
+              <LayoutItem DashboardItem="chartDashboardItem3" Weight="46.951871657754012" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Weight="25.436408977556109">
+            <LayoutItem DashboardItem="listBoxDashboardItem5" Weight="14.973262032085561" />
+            <LayoutItem DashboardItem="pieDashboardItem4" Weight="38.074866310160431" />
+            <LayoutItem DashboardItem="chartDashboardItem4" Weight="46.951871657754012" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

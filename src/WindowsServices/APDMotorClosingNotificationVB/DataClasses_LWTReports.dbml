@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LWTReports" Class="DataClasses_LWTReportsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LOCKTHBNK-DB07\NEWMOTOR;Initial Catalog=LWTReports;User ID=locksql" SettingsObjectName="APDMotorClosingNotificationVB.My.MySettings" SettingsPropertyName="LWTReportsConnectionString3" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Rawdata_M1_Closing_Daily" Member="Rawdata_M1_Closing_Dailies">
+    <Type Name="Rawdata_M1_Closing_Daily">
+      <Column Name="RefNo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DateClosing" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ClientName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ClientCode" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ClientAddress" Type="System.String" DbType="VarChar(767)" CanBeNull="true" />
+      <Column Name="[Brand/Model]" Member="Brand_Model" Type="System.String" DbType="VarChar(511)" CanBeNull="true" />
+      <Column Name="CarID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="RegisterYear" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ChassisNo" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="EngineNo" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="CC" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Beneficiary" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="OldPolicyNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CMIStickerNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CMIPolicyNo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Garage" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="InsureType" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Driver1" Type="System.String" DbType="VarChar(511)" CanBeNull="true" />
+      <Column Name="Driver2" Type="System.String" DbType="VarChar(511)" CanBeNull="true" />
+      <Column Name="VMIStartDate" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="VMIEndDate" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CMIStartDate" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CMIEndDate" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="SumInsured" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="VMITotalPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CMITotalPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalPremium" Type="System.Decimal" DbType="Decimal(19,2)" CanBeNull="true" />
+      <Column Name="FirstOD" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="FirstTPPD" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TPBIPerson" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TPBITime" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TPPD" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="OD" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="FT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RY01" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RY02" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RY03" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DiscountGroup" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DiscountHistory" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DiscountOther" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Seat" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RemarkInsurer1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="RemarkInsurer2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="RemarkInsurer3" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ContractNo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="UserClosing" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="PolicyNo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="TempPolicyNo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Campaign" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ClientIDCards" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="InsurerName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ClosingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CompanyCode" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="InsurerCode" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rawdata_M2_Closing_Daily" Member="Rawdata_M2_Closing_Dailies">
+    <Type Name="Rawdata_M2_Closing_Daily">
+      <Column Name="เลขรับแจ้ง" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="บริษัทประกันภัย" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GroupOfInsurer" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="วันที่แจ้งประกันภัย" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="คำนำหน้า" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="ชื่อผู้เอาประกันภัย" Type="System.String" DbType="VarChar(294)" CanBeNull="true" />
+      <Column Name="รหัสลูกค้า" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ที่อยู่ผู้เอาประกันภัย" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[ยี่ห้อ / รุ่น]" Member="ยี่ห้อ___รุ่น" Type="System.String" DbType="NVarChar(566)" CanBeNull="true" />
+      <Column Name="ทะเบียนรถ" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ปีจดทะเบียน" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="เลขตัวถัง" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="เลขเครื่องยนต์" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="ขนาดเครื่องยนต์" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ผู้รับผลประโยชน์" Type="System.String" DbType="NVarChar(294)" CanBeNull="true" />
+      <Column Name="ShowroomID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ชื่อผู้จำหน่ายรถยนต์นิสสัน" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="[เครื่องหมาย พรบ]" Member="เครื่องหมาย_พรบ" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[กรมธรรม์ พรบ]" Member="กรมธรรม์_พรบ" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ประเภทอู่ซ่อมรถ" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="ประเภทความคุ้มครอง" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="วันที่เริ่มคุ้มครอง" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ทุนประกันภัย" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="เบี้ยประกันภัยภาคสมัครใจ" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="[เบี้ยประกันภัยรวม พรบ]" Member="เบี้ยประกันภัยรวม_พรบ" Type="System.Decimal" DbType="Decimal(19,2)" CanBeNull="true" />
+      <Column Name="ความเสียหายส่วนแรก" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="[ความรับผิดต่อบุคคลภายนอก (บาดเจ็บหรือเสียชีวิต ต่อคน)]" Member="ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อคน_" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[ความรับผิดต่อบุคคลภายนอก (บาดเจ็บหรือเสียชีวิต ต่อครั้ง)]" Member="ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อครั้ง_" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[ความรับผิดต่อบุคคลภายนอก (ทรัพย์สิน ต่อครั้ง)]" Member="ความรับผิดต่อบุคคลภายนอก__ทรัพย์สิน_ต่อครั้ง_" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[ความเสียหายต่อรถยนต์ที่เอาประกันภัย(ความเสียหายต่อตัวรถ)]" Member="ความเสียหายต่อรถยนต์ที่เอาประกันภัย_ความเสียหายต่อตัวรถ_" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[ความเสียหายต่อรถยนต์ที่เอาประกันภัย(การสูญหายและไฟไหม้)]" Member="ความเสียหายต่อรถยนต์ที่เอาประกันภัย_การสูญหายและไฟไหม้_" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[ขยายความคุ้มครอง(การประกันอุบัติเหตุส่วนบุคคล คนละ)]" Member="ขยายความคุ้มครอง_การประกันอุบัติเหตุส่วนบุคคล_คนละ_" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[ขยายความคุ้มครอง(การประกันค่ารักษาพยาบาล คนละ)]" Member="ขยายความคุ้มครอง_การประกันค่ารักษาพยาบาล_คนละ_" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[ขยายความคุ้มครอง(การประกันตัวผู้ขับขี่คดีอาญา)]" Member="ขยายความคุ้มครอง_การประกันตัวผู้ขับขี่คดีอาญา_" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ส่วนลดกลุ่ม" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ส่วนลดประวัติดี" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[ส่วนลดอื่น ๆ]" Member="ส่วนลดอื่น_ๆ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="จำนวนที่นั่ง" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="หมายเหตุ" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ออกใบเสร็จในนาม1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ที่อยู่ในใบเสร็จ1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ออกใบเสร็จในนาม2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ที่อยู่ในใบเสร็จ2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Campaign" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="อุปกรณ์เสริม" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="รหัสรถ" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="IDCard" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InsurerName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="InsurerCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ClosingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rawdata_TATA_Closing_Daily" Member="Rawdata_TATA_Closing_Dailies">
+    <Type Name="Rawdata_TATA_Closing_Daily">
+      <Column Name="TN#" Member="TN_" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="วันที่แจ้งประกันภัย" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ชื่อผู้เอาประกันภัย" Type="System.String" DbType="VarChar(301)" CanBeNull="true" />
+      <Column Name="รหัสลูกค้า" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="ที่อยู่ผู้เอาประกันภัย" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="[ยี่ห้อ/รุ่น]" Member="ยี่ห้อ_รุ่น" Type="System.String" DbType="VarChar(151)" CanBeNull="true" />
+      <Column Name="ทะเบียนรถ" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ปีจดทะเบียน" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="เลขตัวถัง" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="เลขเครื่องยนต์" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="ขนาดเครื่องยนต์" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ผู้รับผลประโยชน์" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="โชว์รูม" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="[เครื่องหมาย พรบ]" Member="เครื่องหมาย_พรบ" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="[กรมธรรม์ พรบ]" Member="กรมธรรม์_พรบ" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ศูนย์ซ่อมรถ" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ประเภทความคุ้มครอง" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="วันที่เริ่มคุ้มครอง" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ทุนประกันภัย" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="เบี้ยประกันภัยภาคสมัครใจ" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[เบี้ยประกันภัยรวม พรบ]" Member="เบี้ยประกันภัยรวม_พรบ" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ความเสียหายส่วนแรก" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="[ความรับผิดต่อบุคคลภายนอก (บาดเจ็บหรือเสียชีวิต ต่อคน)]" Member="ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อคน_" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[ความรับผิดต่อบุคคลภายนอก (บาดเจ็บหรือเสียชีวิต ต่อครั้ง)]" Member="ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อครั้ง_" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[ความรับผิดต่อบุคคลภายนอก (ทรัพย์สิน ต่อครั้ง)]" Member="ความรับผิดต่อบุคคลภายนอก__ทรัพย์สิน_ต่อครั้ง_" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[ความเสียหายต่อรถยนต์ที่เอาประกันภัย(ความเสียหายต่อตัวรถ)]" Member="ความเสียหายต่อรถยนต์ที่เอาประกันภัย_ความเสียหายต่อตัวรถ_" Type="System.String" DbType="VarChar(21)" CanBeNull="true" />
+      <Column Name="[ความเสียหายต่อรถยนต์ที่เอาประกันภัย(การสูญหายและไฟไหม้)]" Member="ความเสียหายต่อรถยนต์ที่เอาประกันภัย_การสูญหายและไฟไหม้_" Type="System.String" DbType="VarChar(21)" CanBeNull="true" />
+      <Column Name="[ขยายความคุ้มครอง(การประกันอุบัติเหตุส่วนบุคคล คนละ)]" Member="ขยายความคุ้มครอง_การประกันอุบัติเหตุส่วนบุคคล_คนละ_" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[ขยายความคุ้มครอง(การประกันค่ารักษาพยาบาล คนละ)]" Member="ขยายความคุ้มครอง_การประกันค่ารักษาพยาบาล_คนละ_" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[ขยายความคุ้มครอง(การประกันตัวผู้ขับขี่คดีอาญา)]" Member="ขยายความคุ้มครอง_การประกันตัวผู้ขับขี่คดีอาญา_" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ส่วนลดกลุ่ม" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ส่วนลดประวัติดี" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[ส่วนลดอื่น ๆ]" Member="ส่วนลดอื่น_ๆ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="จำนวนที่นั่ง" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="หมายเหตุ" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="ออกใบเสร็จในนาม" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ที่อยู่ในใบเสร็จ" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="ContractNo" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="UserClosing" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Campaign" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="IDCard" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CarAccessories" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="InsurerName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="InsurerCode" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ClosingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

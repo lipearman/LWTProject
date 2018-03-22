@@ -1,0 +1,26 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="ProductionReports.aspx.vb" Inherits="ProductionReports" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+ 
+</head>
+<body>
+    <form id="form1" runat="server">
+        <dx:ASPxPivotGrid ID="pivotGrid" runat="server" ClientIDMode="AutoID" OLAPConnectionString="provider=MSOLAP.6;data source=http://Lockhkhub-dmsdb/OLAP/msmdpump.dll;initial catalog=eGlobal;cube name=eGlobal" OLAPDataProvider="OleDb">
+            <Fields>
+                <dx:PivotGridField ID="fieldRawDataCount" Area="DataArea" AreaIndex="0" Caption="Raw Data Count" DisplayFolder="Raw Data" FieldName="[Measures].[Raw Data Count]">
+                </dx:PivotGridField>
+                <dx:PivotGridField ID="fieldPLYGROSSPREMIUMLC" Area="DataArea" AreaIndex="1" Caption="PLY GROSS PREMIUM LC" DisplayFolder="Raw Data" FieldName="[Measures].[PLY GROSS PREMIUM LC]">
+                </dx:PivotGridField>
+                <dx:PivotGridField ID="fieldPLYCOUNTRY" Area="RowArea" AreaIndex="0" Caption="PLY COUNTRY" FieldName="[Raw Data].[PLY COUNTRY].[PLY COUNTRY]">
+                </dx:PivotGridField>
+            </Fields>
+            <OptionsData DataProcessingEngine="LegacyOptimized" />
+        </dx:ASPxPivotGrid>
+    </form>
+</body>
+</html>
+

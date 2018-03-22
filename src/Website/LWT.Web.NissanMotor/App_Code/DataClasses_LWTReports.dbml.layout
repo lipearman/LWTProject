@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 15.75" name="DataClasses_LWTReports">
+  <DataContextMoniker Name="/DataClasses_LWTReportsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="908d9387-d350-446f-81a0-932bf59c1dd5" absoluteBounds="4.5, 0.625, 2, 14.847394205729165">
+      <DataClassMoniker Name="/DataClasses_LWTReportsDataContext/V_Nissan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6d8d9fba-79a7-4553-a5fa-146bf983cdd4" absoluteBounds="4.515, 1.085, 1.9700000000000002, 14.287394205729166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

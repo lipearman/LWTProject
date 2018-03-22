@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Portal.BI.RawData" Class="DataClasses_RawdataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LOCKTHBNK-DB07\NEWMOTOR;Initial Catalog=Portal.BI.RawData;User ID=locksql" SettingsObjectName="ASRenewalListReportVB.My.MySettings" SettingsPropertyName="Portal_BI_RawDataConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblAPDRenewalList_SUMMARY" Member="tblAPDRenewalList_SUMMARies">
+    <Type Name="tblAPDRenewalList_SUMMARY">
+      <Column Name="FiscalYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LotNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Officer" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[AE Group Running]" Member="AE_Group_Running" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[AES Group Running]" Member="AES_Group_Running" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[AE Group Name II]" Member="AE_Group_Name_II" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[AE Name]" Member="AE_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MTD_TotalNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MTD_TotalPremium" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="MTD_RenewedNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MTD_RenewedPremium" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="MTD_CASE_P" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="MTD_AMOUNT_P" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="YTD_TotalNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="YTD_TotalPremium" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="YTD_RenewedNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="YTD_RenewedPremium" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="YTD_CASE_P" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="YTD_AMOUNT_P" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

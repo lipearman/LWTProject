@@ -1,0 +1,459 @@
+﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="ucDevxReportsFields.ascx.vb" Inherits="Modules_ucDevxReportsFields" %>
+<%@ Register Assembly="DevExpress.Web.ASPxTreeList.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxTreeList" TagPrefix="dx" %>
+
+
+<script>
+    function view(RID) {
+        popupwindow.Show();
+        callbackPanel_view.PerformCallback(RID);
+    }
+</script>
+
+<dx:ASPxRoundPanel ID="pnMain" EnableAnimation="true" ShowCollapseButton="true" HeaderText="Report" runat="server" Width="100%">
+    <PanelCollection>
+        <dx:PanelContent>
+            <dx:ASPxTreeList ID="treeList" runat="server" AutoGenerateColumns="false" Width="300"
+                DataSourceID="SqlDataSource_Data"
+                SettingsBehavior-AutoExpandAllNodes="true"
+                KeyFieldName="RID"
+                ParentFieldName="ParentID">
+
+                <%--   <ClientSideEvents
+                                        Init="function(s, e){
+                                            var key = s.GetFocusedNodeKey();
+                                            callbackPanel_view.PerformCallback(key);                                       
+                                        }"
+                                        FocusedNodeChanged="function(s, e){
+                                            popupwindow.Show();
+                                            var key = s.GetFocusedNodeKey();
+                                            callbackPanel_view.PerformCallback(key);                                       
+                                        }" />--%>
+                <Border BorderStyle="Solid" />
+                <Settings ShowTreeLines="False" SuppressOuterGridLines="true" />
+                <Columns>
+                    <dx:TreeListTextColumn FieldName="TITLE" Caption="Report" Width="100" CellStyle-Wrap="False">
+                        <EditFormSettings Visible="False" />
+                    </dx:TreeListTextColumn>
+
+                    <dx:TreeListComboBoxColumn FieldName="VIEW_ID" Caption="Data Source" CellStyle-HorizontalAlign="Left" Width="200" CellStyle-Wrap="False">
+                        <PropertiesComboBox DataSourceID="SqlDataSource_VIEWs" TextField="VIEW_TITLE" ValueField="VIEW_ID" ValueType="System.String">
+                            <ValidationSettings Display="Dynamic">
+                                <RequiredField IsRequired="true" />
+                            </ValidationSettings>
+                        </PropertiesComboBox>
+                    </dx:TreeListComboBoxColumn>
+        <%--            <dx:TreeListTextColumn FieldName="VIEW_QUERY" Width="200" Visible="false" CellStyle-Wrap="False">
+                        <PropertiesTextEdit>
+                            <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
+                        </PropertiesTextEdit>
+                        <EditFormSettings Visible="True" ColumnSpan="2" />
+                    </dx:TreeListTextColumn>
+                    <dx:TreeListTextColumn FieldName="VIEW_CONNECTION" Width="200" Visible="false" CellStyle-Wrap="False">
+                        <PropertiesTextEdit>
+                            <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
+                        </PropertiesTextEdit>
+                        <EditFormSettings Visible="True" ColumnSpan="2" />
+                    </dx:TreeListTextColumn>--%>
+
+                    <dx:TreeListHyperLinkColumn Width="100" FieldName="RID" Caption="#" >
+                        <PropertiesHyperLink Text="Field" NavigateUrlFormatString="javascript:view({0});"
+                         >
+                        </PropertiesHyperLink>
+                         
+                    </dx:TreeListHyperLinkColumn>
+
+                </Columns>
+
+            </dx:ASPxTreeList>
+
+
+
+
+
+
+        </dx:PanelContent>
+    </PanelCollection>
+</dx:ASPxRoundPanel>
+
+
+
+
+
+
+
+<dx:ASPxPopupControl ID="popupwindow" ClientInstanceName="popupwindow" runat="server" CloseOnEscape="true" Modal="True"
+    PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter"  
+     ScrollBars="Auto"
+     AllowDragging="true"
+    AllowResize="True"
+    EnableAnimation="true"
+    CloseAction="CloseButton"
+    EnableCallbackAnimation="true"
+    EnableViewState="true"
+    ShowPageScrollbarWhenModal="true"
+    ShowMaximizeButton="true"
+
+    HeaderText="Fields" PopupAnimationType="None">
+
+    <ContentCollection>
+        <dx:PopupControlContentControl ID="PopupControlContentControl1" runat="server">
+            <dx:ASPxPanel ID="Panel1" runat="server" DefaultButton="btOK">
+                <PanelCollection>
+                    <dx:PanelContent ID="PanelContent2" runat="server">
+
+                        <dx:ASPxCallbackPanel runat="server" ID="callbackPanel_view"
+                            ClientInstanceName="callbackPanel_view"
+                            Height="100%" Width="100%">
+                            <PanelCollection>
+                                <dx:PanelContent ID="PanelContent1">
+                                    <dx:ASPxFormLayout ID="formLayout" runat="server" Width="100%" RequiredMarkDisplayMode="RequiredOnly" EnableViewState="false" EncodeHtml="false">
+                                        <Items>
+                                            <dx:LayoutGroup Caption="Fields" ColCount="1">
+                                                <Items>
+                                                    <dx:LayoutItem ShowCaption="False">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer2" runat="server">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+
+
+                                                                            <dx:ASPxTokenBox Caption="Fields" ID="ASPxTokenFields" AllowCustomTokens="false" ClientInstanceName="ASPxTokenFields" NullText="Select Fields" runat="server" Width="100%">
+                                                                                <ValidationSettings>
+                                                                                    <RequiredField IsRequired="true" />
+                                                                                </ValidationSettings>
+                                                                            </dx:ASPxTokenBox>
+
+                                                                        </td>
+                                                                        <td>
+
+
+                                                                            <dx:ASPxButton ID="btnAddFields"
+                                                                                ClientInstanceName="btnAddFields"
+                                                                                runat="server" Text="Add Field"
+                                                                                AutoPostBack="false">
+                                                                                <ClientSideEvents Click="function(s,e) {
+                                                                                 if(ASPxClientEdit.AreEditorsValid()) {
+                                                                                   LoadingPanel.Show();
+                                                                                   cbAddFields.PerformCallback(ASPxTokenFields.GetValue());                                                                                  
+                                                                                 }
+                                                                        }" />
+                                                                            </dx:ASPxButton>
+
+                                                                            <dx:ASPxCallback ID="cbAddFields" runat="server" ClientInstanceName="cbAddFields">
+                                                                                <ClientSideEvents
+                                                                                    CallbackComplete="function(s, e) {                                                                                    
+                                                                                             LoadingPanel.Hide(); 
+                                                                                             gridFields.Refresh();  
+                                                                                            ASPxTokenFields.SetText('');                                                                                                                                                                                                                                  
+                                                                                }" />
+                                                                            </dx:ASPxCallback>
+
+
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+
+
+
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+
+
+
+                                                    <%--                                                            <dx:LayoutItem ShowCaption="False">
+                                                                <LayoutItemNestedControlCollection>
+                                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer3" runat="server">
+                                                                      
+                                                                    </dx:LayoutItemNestedControlContainer>
+                                                                </LayoutItemNestedControlCollection>
+                                                            </dx:LayoutItem>--%>
+
+
+                                                    <dx:LayoutItem ShowCaption="False">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer1" runat="server">
+
+
+
+
+
+
+                                                                <dx:ASPxGridView ID="gridFields" ClientInstanceName="gridFields" runat="server"
+                                                                    DataSourceID="SqlDataSource_Fields"
+                                                                    KeyFieldName="FIELD_ID"
+                                                                    SettingsPager-PageSizeItemSettings-ShowAllItem="true"
+                                                                    AutoGenerateColumns="False"
+                                                                    Width="100%">
+                                                                    <SettingsPager Mode="ShowAllRecords" />
+                                                                    <SettingsEditing Mode="Batch" EditFormColumnCount="2" />
+
+
+                                                                    <SettingsPopup>
+                                                                        <EditForm Modal="true" Width="300" HorizontalAlign="Center" VerticalAlign="Middle" />
+                                                                    </SettingsPopup>
+
+
+                                                                    <Columns>
+
+                                                                        <dx:GridViewCommandColumn Width="100" CellStyle-Wrap="False" ShowDeleteButton="true" ShowEditButton="true" />
+
+                                                                        <dx:GridViewDataTextColumn FieldName="FIELD_NAME" Caption="Name">
+                                                                            <PropertiesTextEdit>
+                                                                                <ValidationSettings Display="Dynamic">
+                                                                                    <RequiredField IsRequired="true" />
+                                                                                </ValidationSettings>
+
+                                                                            </PropertiesTextEdit>
+                                                                            <EditFormSettings Visible="False" />
+                                                                        </dx:GridViewDataTextColumn>
+
+                                                                        <dx:GridViewDataTextColumn FieldName="FIELD_CAPTION" Caption="Caption">
+                                                                            <PropertiesTextEdit>
+                                                                                <ValidationSettings Display="Dynamic">
+                                                                                    <RequiredField IsRequired="true" />
+                                                                                </ValidationSettings>
+                                                                            </PropertiesTextEdit>
+                                                                        </dx:GridViewDataTextColumn>
+
+
+
+
+
+                                                                        <dx:GridViewDataComboBoxColumn FieldName="SummaryType" Caption="SumType">
+                                                                            <PropertiesComboBox ValueField="Value" TextField="Name" Width="100" DataSourceID="SqlDataSource_PivotSummaryType">
+
+                                                                                <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
+                                                                            </PropertiesComboBox>
+                                                                        </dx:GridViewDataComboBoxColumn>
+
+
+                                                                        <dx:GridViewDataComboBoxColumn FieldName="CellFormat_FormatType" Caption="CellType">
+                                                                            <PropertiesComboBox ValueField="Value" TextField="Name" Width="100" DataSourceID="SqlDataSource_FormatType">
+
+                                                                                <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
+                                                                            </PropertiesComboBox>
+                                                                        </dx:GridViewDataComboBoxColumn>
+                                             
+                                                                        <dx:GridViewDataComboBoxColumn FieldName="CellFormat_FormatString" Caption="CellFormat">
+                                                                            <PropertiesComboBox Width="100">
+                                                                                <Items>
+                                                                                    <dx:ListEditItem Text="{0:N0}" Value="{0:N0}" />
+                                                                                    <dx:ListEditItem Text="{0:N1}" Value="{0:N1}" />
+                                                                                    <dx:ListEditItem Text="{0:N2}" Value="{0:N2}" />
+
+                                                                                    <dx:ListEditItem Text="{0:P0}" Value="{0:P0}" />
+                                                                                    <dx:ListEditItem Text="{0:P1}" Value="{0:P1}" />
+                                                                                    <dx:ListEditItem Text="{0:P2}" Value="{0:P2}" />
+
+                                                                                </Items>
+                                                                                <ValidationSettings Display="Dynamic">
+                                                                                    <RequiredField IsRequired="true" />
+                                                                                </ValidationSettings>
+                                                                            </PropertiesComboBox>
+
+                                                                        </dx:GridViewDataComboBoxColumn>
+
+
+  <dx:GridViewDataComboBoxColumn FieldName="UnboundExpressionMode" Caption="UnboundExpressionMode">
+    <PropertiesComboBox ValueField="Value" TextField="Name" Width="100" DataSourceID="SqlDataSource_UnboundExpressionMode">
+        <Items>
+            <dx:ListEditItem Text="Name" Value="Value" />
+        </Items>
+        <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
+    </PropertiesComboBox>
+</dx:GridViewDataComboBoxColumn>
+
+<dx:GridViewDataTextColumn FieldName="UnboundExpression" Caption="UnboundExpression" CellStyle-Wrap="False">
+<PropertiesTextEdit>
+     
+</PropertiesTextEdit>
+
+</dx:GridViewDataTextColumn>
+
+  <dx:GridViewDataComboBoxColumn FieldName="UnboundColumnType" Caption="UnboundColumnType">
+    <PropertiesComboBox ValueField="Value" TextField="Name" Width="100" DataSourceID="SqlDataSource_UnboundColumnType">
+        <Items>
+            <dx:ListEditItem Text="Name" Value="Value" />
+        </Items>
+        <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
+    </PropertiesComboBox>
+</dx:GridViewDataComboBoxColumn>
+
+<%--
+
+UnboundFieldName	varchar(50)	Checked
+UnboundExpressionMode	int	Checked
+UnboundExpression	varchar(50)	Checked
+UnboundType	int	Checked
+    
+    --%>
+
+
+<%--                                                                        <dx:GridViewDataComboBoxColumn FieldName="CellFormat_FormatType" Caption="CellType">
+                                                                            <PropertiesComboBox ValueField="Value" TextField="Name" Width="100" DataSourceID="SqlDataSource_FormatType">
+
+                                                                                <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
+                                                                            </PropertiesComboBox>
+                                                                        </dx:GridViewDataComboBoxColumn>
+
+                                                               
+
+                                                                        <dx:GridViewDataComboBoxColumn FieldName="CellFormat_FormatString" Caption="CellFormat">
+                                                                            <PropertiesComboBox Width="100">
+                                                                                <Items>
+                                                                                    <dx:ListEditItem Text="{0:N0}" Value="{0:N0}" />
+                                                                                    <dx:ListEditItem Text="{0:N1}" Value="{0:N1}" />
+                                                                                    <dx:ListEditItem Text="{0:N2}" Value="{0:N2}" />
+
+                                                                                    <dx:ListEditItem Text="{0:P0}" Value="{0:P0}" />
+                                                                                    <dx:ListEditItem Text="{0:P1}" Value="{0:P1}" />
+                                                                                    <dx:ListEditItem Text="{0:P2}" Value="{0:P2}" />
+
+                                                                                </Items>
+                                                                                <ValidationSettings Display="Dynamic">
+                                                                                    <RequiredField IsRequired="true" />
+                                                                                </ValidationSettings>
+                                                                            </PropertiesComboBox>
+
+                                                                        </dx:GridViewDataComboBoxColumn>
+
+                                                                        <dx:GridViewDataComboBoxColumn FieldName="GrandTotalCellFormat_FormatType" Caption="GrandType">
+                                                                            <PropertiesComboBox ValueField="Value" TextField="Name" Width="100" DataSourceID="SqlDataSource_FormatType">
+
+                                                                                <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
+                                                                            </PropertiesComboBox>
+                                                                        </dx:GridViewDataComboBoxColumn>
+
+
+                                                                        <dx:GridViewDataComboBoxColumn FieldName="GrandTotalCellFormat_FormatString" Caption="GrandFormat">
+                                                                            <PropertiesComboBox Width="100">
+                                                                                <Items>
+                                                                                    <dx:ListEditItem Text="{0:N0}" Value="{0:N0}" />
+                                                                                    <dx:ListEditItem Text="{0:N1}" Value="{0:N1}" />
+                                                                                    <dx:ListEditItem Text="{0:N2}" Value="{0:N2}" />
+
+                                                                                    <dx:ListEditItem Text="{0:P0}" Value="{0:P0}" />
+                                                                                    <dx:ListEditItem Text="{0:P1}" Value="{0:P1}" />
+                                                                                    <dx:ListEditItem Text="{0:P2}" Value="{0:P2}" />
+                                                                                </Items>
+                                                                                <ValidationSettings Display="Dynamic">
+                                                                                    <RequiredField IsRequired="true" />
+                                                                                </ValidationSettings>
+                                                                            </PropertiesComboBox>
+
+                                                                        </dx:GridViewDataComboBoxColumn>--%>
+
+                                                                        <dx:GridViewDataComboBoxColumn FieldName="GroupInterval" Caption="GroupInterval">
+                                                                            <PropertiesComboBox ValueField="Value" TextField="Name" Width="100" DataSourceID="SqlDataSource_PivotGroupInterval">
+                                                                                <Items>
+                                                                                    <dx:ListEditItem Text="Name" Value="Value" />
+                                                                                </Items>
+                                                                                <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
+                                                                            </PropertiesComboBox>
+                                                                        </dx:GridViewDataComboBoxColumn>
+
+                                                                    </Columns>
+                                                                </dx:ASPxGridView>
+
+
+
+
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                </Items>
+                                            </dx:LayoutGroup>
+                                        </Items>
+                                    </dx:ASPxFormLayout>
+
+                                </dx:PanelContent>
+                            </PanelCollection>
+                        </dx:ASPxCallbackPanel>
+
+                    </dx:PanelContent>
+                </PanelCollection>
+            </dx:ASPxPanel>
+        </dx:PopupControlContentControl>
+    </ContentCollection>
+</dx:ASPxPopupControl>
+
+<asp:SqlDataSource ID="SqlDataSource_Data" runat="server" ConnectionString="<%$ ConnectionStrings:LWTReportsConnectionString %>"
+    SelectCommand="select * from tblReport Where REPORT_TYPE='BI' order by No "
+
+    UpdateCommand="update tblReport 
+    set VIEW_QUERY=@VIEW_QUERY, VIEW_CONNECTION=@VIEW_CONNECTION 
+    Where RID=@RID">
+
+    <UpdateParameters>
+        <asp:Parameter Name="VIEW_QUERY" DbType="String" />
+        <asp:Parameter Name="VIEW_CONNECTION" DbType="String" />
+        <asp:Parameter Name="RID" DbType="Int32" />
+    </UpdateParameters>
+
+</asp:SqlDataSource>
+
+
+<asp:SqlDataSource ID="SqlDataSource_Fields" runat="server" ConnectionString="<%$ ConnectionStrings:LWTReportsConnectionString %>"
+    SelectCommand="select * from tblReport_Field Where RID=@RID order by FIELD_NAME"
+    UpdateCommand="update tblReport_Field 
+    set      FIELD_CAPTION=@FIELD_CAPTION
+            ,SummaryType=@SummaryType
+            ,CellFormat_FormatType=@CellFormat_FormatType
+            ,CellFormat_FormatString=@CellFormat_FormatString
+
+            ,UnboundExpressionMode=@UnboundExpressionMode
+            ,UnboundExpression=@UnboundExpression
+            ,UnboundColumnType=@UnboundColumnType
+
+            ,GroupInterval=@GroupInterval    
+    Where FIELD_ID=@FIELD_ID"
+    DeleteCommand="delete from tblReport_Field where FIELD_ID=@FIELD_ID">
+
+    <UpdateParameters>
+        <asp:Parameter Name="FIELD_CAPTION" Type="String" />
+        <asp:Parameter Name="SummaryType" Type="Int32" />
+        <asp:Parameter Name="CellFormat_FormatType" Type="String" />
+        <asp:Parameter Name="CellFormat_FormatString" Type="String" />
+
+        <asp:Parameter Name="UnboundExpressionMode" Type="Int32" />
+        <asp:Parameter Name="UnboundExpression" Type="String" />
+        <asp:Parameter Name="UnboundColumnType" Type="Int32" />
+
+        <asp:Parameter Name="GroupInterval" Type="Int32" />
+        <asp:Parameter Name="FIELD_ID" Type="Int32" />
+
+    </UpdateParameters>
+    <SelectParameters>
+        <asp:SessionParameter Name="RID" SessionField="RID" />
+    </SelectParameters>
+    <DeleteParameters>
+        <asp:Parameter Name="FIELD_ID" Type="Int32" />
+    </DeleteParameters>
+
+</asp:SqlDataSource>
+
+
+
+<asp:SqlDataSource ID="SqlDataSource_VIEWs" runat="server" ConnectionString="<%$ ConnectionStrings:LWTReportsConnectionString %>"
+    SelectCommand="select * from tblReport_VIEWs order by VIEW_TITLE "></asp:SqlDataSource>
+
+<asp:SqlDataSource ID="SqlDataSource_PivotSummaryType" runat="server" ConnectionString="<%$ ConnectionStrings:LWTReportsConnectionString %>"
+    SelectCommand="select Value SummaryType,* from tblReport_MasterData where GroupName = 'PivotSummaryType' order by Name "></asp:SqlDataSource>
+
+<asp:SqlDataSource ID="SqlDataSource_FilterArea" runat="server" ConnectionString="<%$ ConnectionStrings:LWTReportsConnectionString %>"
+    SelectCommand="select * from tblReport_MasterData where GroupName = 'FilterArea' order by Name "></asp:SqlDataSource>
+
+<asp:SqlDataSource ID="SqlDataSource_FormatType" runat="server" ConnectionString="<%$ ConnectionStrings:LWTReportsConnectionString %>"
+    SelectCommand="select * from tblReport_MasterData where GroupName = 'FormatType' order by Name "></asp:SqlDataSource>
+
+<asp:SqlDataSource ID="SqlDataSource_PivotGroupInterval" runat="server" ConnectionString="<%$ ConnectionStrings:LWTReportsConnectionString %>"
+    SelectCommand="select * from tblReport_MasterData where GroupName = 'PivotGroupInterval' order by Name "></asp:SqlDataSource>
+
+
+<asp:SqlDataSource ID="SqlDataSource_UnboundExpressionMode" runat="server" ConnectionString="<%$ ConnectionStrings:LWTReportsConnectionString %>"
+    SelectCommand="select * from tblReport_MasterData where GroupName = 'UnboundExpressionMode' order by Name "></asp:SqlDataSource>
+
+<asp:SqlDataSource ID="SqlDataSource_UnboundColumnType" runat="server" ConnectionString="<%$ ConnectionStrings:LWTReportsConnectionString %>"
+    SelectCommand="select * from tblReport_MasterData where GroupName = 'UnboundColumnType' order by Name "></asp:SqlDataSource>

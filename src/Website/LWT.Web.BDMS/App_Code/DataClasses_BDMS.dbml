@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BDMS" Class="DataClasses_BDMSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=localhost;Initial Catalog=BDMS;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BDMSConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblClaim" Member="tblClaims">
+    <Type Name="tblClaim">
+      <Column Name="REFNO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CLAIMTYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LWTREF" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="INSURED" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="POLICYNO" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DateOfIncident" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CLAIMMADEBY_TP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NOTIFY_DATE_LWT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PATIENT_AGE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Nationality" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LOSSDESCRIPTION" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CauseOfLoss" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CategoryOfMedicalError" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Related_Doctors" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Medical_Field" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FULLORPARTTIME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CommentOnPolicyLiability" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="RequestClaimByPatient" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CourtAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LossReserve" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalClaim" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Deductible" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NetClaim" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Outstanding" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SettledPaid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Presentstatus" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="UpdatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PendingCostingStatus" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CLAIMYEAR" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="HOSPITALGROUP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HospitalRegion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="HospitalPolicyName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CauseOfLossDescription" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_ClaimDetails" Member="V_ClaimDetails">
+    <Type Name="V_ClaimDetail">
+      <Column Name="REFNO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CLAIMTYPE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="LWTREF" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="INSURED" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="POLICYNO" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DateOfIncident" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CLAIMMADEBY_TP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NOTIFY_DATE_LWT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PATIENT_AGE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Nationality" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="LOSSDESCRIPTION" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CauseOfLoss" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CategoryOfMedicalError" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Related_Doctors" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Medical_Field" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FULLORPARTTIME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CommentOnPolicyLiability" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="RequestClaimByPatient" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CourtAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LossReserve" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalClaim" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Deductible" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NetClaim" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Outstanding" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SettledPaid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Presentstatus" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="UpdatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PendingCostingStatus" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CLAIMYEAR" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="HOSPITALGROUP" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="HospitalRegion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="HospitalPolicyName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CauseOfLossDescription" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>

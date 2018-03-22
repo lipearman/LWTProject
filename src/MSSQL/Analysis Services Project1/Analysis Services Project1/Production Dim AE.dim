@@ -1,0 +1,253 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="5508b3d5-c4b5-4577-90c5-be85e98ae20d" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Production Dim AE</ID>
+  <Name>Production Dim AE</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2374" scrolltop="-4114" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8387" y="13070" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Production_Dim_AE" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3598" height="4842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000800000e0e0000ea120000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Production_Dim_AE" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-2374</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-4114</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="cb682267-d2e0-47f0-a8de-5950ebce5545">
+    <DataSourceViewID>ProductionDW DSV</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="a0782cf3-4d09-4626-a480-f02de9468dca">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="e6c76056-9390-4eae-ba78-3398fecca07a">
+      <ID>AE Production</ID>
+      <Name>AE Production</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="900deb0a-920b-4a38-aad4-f1e6458063b6">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2c009c63-82cc-4afb-930f-eec1c2ef8c22">
+            <TableID>dbo_Production_Dim_AE</TableID>
+            <ColumnID>AEProduction</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="02727a8d-2682-47ca-a592-93319f895daf">
+          <AttributeID>AE Group Name</AttributeID>
+          <Name>AE Group Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6a69bff3-73bb-46c6-a3d5-389233213a02">
+          <AttributeID>AE Group Running</AttributeID>
+          <Name>AE Group Running</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="dc8b2fc4-3eb4-4d73-abd7-14d08cd964ec">
+          <AttributeID>AE Name</AttributeID>
+          <Name>AE Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0f0df87c-4411-438c-9acf-4e0e953ba782">
+          <AttributeID>AES Group Name</AttributeID>
+          <Name>AES Group Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5e462107-2bb9-4a06-975e-b9139f61a698">
+          <AttributeID>AES Group Running</AttributeID>
+          <Name>AES Group Running</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="48b0b01c-6733-48ca-adfa-a887e60d4ca6">
+          <AttributeID>Business Group</AttributeID>
+          <Name>Business Group</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d7bdc8c3-221c-422c-8632-dd1709441afa">
+          <AttributeID>Class Group</AttributeID>
+          <Name>Class Group</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="bf58a04d-5114-4502-8451-ae59dbdc6e23">
+          <AttributeID>Owner</AttributeID>
+          <Name>Owner</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c10e12e3-d755-4e5a-bfd7-ed0c695a20c4">
+      <ID>AE Group Name</ID>
+      <Name>AE Group Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e9b06a78-dac8-4fef-91e8-0eaa82b44e4b">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2b8a5926-2ba4-409d-b040-287e74d9cbd1">
+            <TableID>dbo_Production_Dim_AE</TableID>
+            <ColumnID>AEGroupName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="434db7e4-ddf3-4dc4-83f5-c6dffa43ea08">
+      <ID>AE Group Running</ID>
+      <Name>AE Group Running</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="aa25dfd0-9b8d-456a-b098-98778fb23f9f">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2afecf0c-6036-4cef-a6e5-6d93af8f7706">
+            <TableID>dbo_Production_Dim_AE</TableID>
+            <ColumnID>AEGroupRunning</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ad1d692e-bf4a-45be-bdba-9c705e2b7f48">
+      <ID>AE Name</ID>
+      <Name>AE Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b3589050-cf8b-4ca4-bfa3-39d00c0cf066">
+          <DataType>WChar</DataType>
+          <DataSize>60</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="493e7337-c002-46cc-bb25-a9af1694a855">
+            <TableID>dbo_Production_Dim_AE</TableID>
+            <ColumnID>AEName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d526cf53-823f-4677-99ba-65a23b43520d">
+      <ID>AES Group Name</ID>
+      <Name>AES Group Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2ae7b51b-0cdb-4f6c-a322-154479909d3f">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ad9d752d-601c-46ea-bb85-c70d7e93f6e2">
+            <TableID>dbo_Production_Dim_AE</TableID>
+            <ColumnID>AESGroupName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0dde2111-720b-4607-8f2c-dabfa8c3360f">
+      <ID>AES Group Running</ID>
+      <Name>AES Group Running</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="79e25f73-c515-40b7-8af5-94a787ce655c">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="53129b95-c2bb-4a6a-a2b9-7502fa70997a">
+            <TableID>dbo_Production_Dim_AE</TableID>
+            <ColumnID>AESGroupRunning</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="26e40099-ed36-4a20-a1b0-4928dd2c405b">
+      <ID>Business Group</ID>
+      <Name>Business Group</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="655a2e4b-ddda-4862-8d9b-6e8081e7140d">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="dfbcaded-3340-4150-b318-e6f290dc42b5">
+            <TableID>dbo_Production_Dim_AE</TableID>
+            <ColumnID>BusinessGroup</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9cf4f296-982d-47eb-8bba-0a9838bf5940">
+      <ID>Class Group</ID>
+      <Name>Class Group</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0e357d83-7269-4996-8914-d65106835dcf">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a832fd25-c692-48d1-a4ff-c0e93d9e676e">
+            <TableID>dbo_Production_Dim_AE</TableID>
+            <ColumnID>ClassGroup</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8711dcd1-52e1-404b-b850-d118e2bec4ba">
+      <ID>Owner</ID>
+      <Name>Owner</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="25c9c2e3-da84-4913-882a-c9ad8e08a749">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f5ae0def-337c-49d9-bef1-3b034205c169">
+            <TableID>dbo_Production_Dim_AE</TableID>
+            <ColumnID>Owner</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+  </Attributes>
+</Dimension>

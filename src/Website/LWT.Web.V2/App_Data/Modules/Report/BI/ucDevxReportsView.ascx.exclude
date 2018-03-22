@@ -1,0 +1,309 @@
+﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="ucDevxReportsView.ascx.vb" Inherits="Modules_ucDevxReportsView" %>
+<%@ Register Assembly="DevExpress.Web.ASPxTreeList.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxTreeList" TagPrefix="dx" %>
+<dx:ASPxRoundPanel ID="pnMain" EnableAnimation="true" ShowCollapseButton="true" HeaderText="Report" runat="server" Width="100%">
+    <PanelCollection>
+        <dx:PanelContent>
+
+            <dx:ASPxSplitter runat="server" ID="ASPxSplitter1" Width="1400" ResizingMode="Live">
+                <Panes>
+                    <dx:SplitterPane AutoHeight="True" Size="30%" MinSize="110px">
+                        <ContentCollection>
+                            <dx:SplitterContentControl ID="SplitterContentControl1" runat="server"
+                                SupportsDisabledAttribute="True">
+
+                                <dx:ASPxTreeList ID="treeList" runat="server" AutoGenerateColumns="false" Width="100%"
+                                    DataSourceID="SqlDataSource_Data"
+                                    SettingsBehavior-AutoExpandAllNodes="true"
+                                    KeyFieldName="RID"
+                                    ParentFieldName="ParentID">
+
+                                    <ClientSideEvents
+                                        FocusedNodeChanged="function(s, e){
+                                            var key = s.GetFocusedNodeKey();
+                                            callbackPanel_view.PerformCallback(key);                                       
+                                        }" />
+                                    <Border BorderStyle="Solid" />
+                                    <Settings ShowTreeLines="False" SuppressOuterGridLines="true" />
+                                    <SettingsBehavior AllowFocusedNode="True" ExpandCollapseAction="NodeDblClick" />
+                                    <Columns>
+
+                                        <dx:TreeListSpinEditColumn FieldName="No" Width="20" CellStyle-HorizontalAlign="Left">
+                                            <EditFormSettings Visible="False" />
+                                        </dx:TreeListSpinEditColumn>
+
+                                        <dx:TreeListTextColumn FieldName="TITLE" Caption="Report" Width="200" CellStyle-Wrap="False">
+                                            <EditFormSettings Visible="False" />
+                                        </dx:TreeListTextColumn>
+
+                                        <dx:TreeListTextColumn FieldName="DEPARTMENT" Caption="DEP" CellStyle-Wrap="False">
+                                            <EditFormSettings Visible="False" />
+                                        </dx:TreeListTextColumn>
+
+                                        <dx:TreeListTextColumn FieldName="VIEW_QUERY" Width="200" Visible="false" CellStyle-Wrap="False">
+                                            <PropertiesTextEdit>
+                                                <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
+                                            </PropertiesTextEdit>
+                                            <EditFormSettings Visible="True" ColumnSpan="2" />
+                                        </dx:TreeListTextColumn>
+                                        <dx:TreeListTextColumn FieldName="VIEW_CONNECTION" Width="200" Visible="false" CellStyle-Wrap="False">
+                                            <PropertiesTextEdit>
+                                                <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
+                                            </PropertiesTextEdit>
+                                            <EditFormSettings Visible="True" ColumnSpan="2" />
+                                        </dx:TreeListTextColumn>
+                                    </Columns>
+
+                                </dx:ASPxTreeList>
+                            </dx:SplitterContentControl>
+                        </ContentCollection>
+                    </dx:SplitterPane>
+                    <dx:SplitterPane AutoHeight="True" Size="70%" MinSize="280px">
+                        <ContentCollection>
+                            <dx:SplitterContentControl ID="SplitterContentControl2" runat="server"
+                                SupportsDisabledAttribute="True">
+                                <dx:ASPxCallbackPanel runat="server" ID="callbackPanel_view"
+                                    ClientInstanceName="callbackPanel_view"
+                                    Height="100%" Width="100%">
+                                    <PanelCollection>
+                                        <dx:PanelContent ID="PanelContent1">
+                                            <dx:ASPxFormLayout ID="formLayout" runat="server" Width="100%" RequiredMarkDisplayMode="RequiredOnly" EnableViewState="false" EncodeHtml="false">
+                                                <Items>
+                                                    <dx:LayoutGroup ShowCaption="False" GroupBoxDecoration="None" ColCount="1">
+                                                        <Items>
+                                                            <dx:LayoutItem ShowCaption="False">
+                                                                <LayoutItemNestedControlCollection>
+                                                                    <dx:LayoutItemNestedControlContainer>
+                                                                        <dx:ASPxTextBox ID="VIEW_QUERY" runat="server" Caption="VIEW_QUERY"
+                                                                            Width="100%" MaxLength="255">
+                                                                            <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
+                                                                        </dx:ASPxTextBox>
+                                                                    </dx:LayoutItemNestedControlContainer>
+                                                                </LayoutItemNestedControlCollection>
+                                                            </dx:LayoutItem>
+                                                            <dx:LayoutItem ShowCaption="False">
+                                                                <LayoutItemNestedControlCollection>
+                                                                    <dx:LayoutItemNestedControlContainer>
+                                                                        <dx:ASPxTextBox ID="VIEW_CONNECTION" runat="server" Caption="VIEW_CONNECTION"
+                                                                            Width="100%" MaxLength="255">
+                                                                            <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
+                                                                        </dx:ASPxTextBox>
+                                                                    </dx:LayoutItemNestedControlContainer>
+                                                                </LayoutItemNestedControlCollection>
+                                                            </dx:LayoutItem>
+                                                            <dx:LayoutItem ShowCaption="False">
+                                                                <LayoutItemNestedControlCollection>
+                                                                    <dx:LayoutItemNestedControlContainer>
+
+
+                                                                        <dx:ASPxButton ID="btnSaveData"
+                                                                            ClientInstanceName="btnSaveData"
+                                                                            runat="server" Text="บันทึก"
+                                                                            AutoPostBack="false">
+                                                                            <ClientSideEvents Click="function(s,e) {
+                                                                            if(ASPxClientEdit.AreEditorsValid()) {
+                                                                                LoadingPanel.Show();
+                                                                                cbSaveData.PerformCallback('');
+                                                                            }
+                                                                        }" />
+                                                                        </dx:ASPxButton>
+
+                                                                        <dx:ASPxCallback ID="cbSaveData" runat="server" ClientInstanceName="cbSaveData">
+                                                                            <ClientSideEvents
+                                                                                CallbackComplete="function(s, e) {
+                                                                                         LoadingPanel.Hide(); 
+                                             
+                                                                                        if(e.result == 'saved')
+                                                                                        {
+                                                                                                
+                                                                                        }    
+                                                                                        else
+                                                                                        {
+                                                                                                alert(e.result);
+                                                                                        }                                                              
+                                                                                }" />
+                                                                        </dx:ASPxCallback>
+
+                                                                        <dx:ASPxButton ID="btnGenFields" CausesValidation="false" Visible="false"
+                                                                            ClientInstanceName="btnGenFields"
+                                                                            runat="server" Text="GenFields"
+                                                                            AutoPostBack="false">
+                                                                            <ClientSideEvents Click="function(s,e) {
+                                                                               LoadingPanel.Show();
+                                                                               cbGenFields.PerformCallback('');
+                                                                        }" />
+                                                                        </dx:ASPxButton>
+                                                                        <dx:ASPxCallback ID="cbGenFields" runat="server" ClientInstanceName="cbGenFields">
+                                                                            <ClientSideEvents
+                                                                                CallbackComplete="function(s, e) {
+                                                                                         LoadingPanel.Hide(); 
+                                                                                         gridFields.Refresh();
+                                                                                         alert(e.result);                                                            
+                                                                                }" />
+                                                                        </dx:ASPxCallback>
+                                                                    </dx:LayoutItemNestedControlContainer>
+                                                                </LayoutItemNestedControlCollection>
+                                                            </dx:LayoutItem>
+                                                            <dx:LayoutItem ShowCaption="False">
+                                                                <LayoutItemNestedControlCollection>
+                                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer1" runat="server">
+
+
+
+                                                                        <dx:ASPxGridView ID="gridFields" ClientInstanceName="gridFields" runat="server"
+                                                                            DataSourceID="SqlDataSource_Fields"
+                                                                            KeyFieldName="FIELD_ID" SettingsPager-PageSizeItemSettings-ShowAllItem="true"
+                                                                            AutoGenerateColumns="False" Width="100%">
+                                                                            <SettingsPager Mode="ShowAllRecords" />
+                                                                            <SettingsEditing Mode="EditFormAndDisplayRow" EditFormColumnCount="1" />
+
+
+
+                                                                            <SettingsPopup>
+                                                                                <EditForm Modal="true" Width="300" HorizontalAlign="Center" VerticalAlign="Middle" />
+                                                                            </SettingsPopup>
+
+
+                                                                            <Columns>
+
+                                                                                <dx:GridViewCommandColumn Width="100" CellStyle-Wrap="False" ShowEditButton="true" />
+
+                                                                                <dx:GridViewDataTextColumn FieldName="FIELD_CAPTION" Caption="Caption">
+                                                                                    <PropertiesTextEdit>
+                                                                                        <ValidationSettings Display="Dynamic">
+                                                                                            <RequiredField IsRequired="true" />
+                                                                                        </ValidationSettings>
+                                                                                    </PropertiesTextEdit>
+                                                                                    <EditFormSettings Visible="False" />
+                                                                                </dx:GridViewDataTextColumn>
+                                                                                <dx:GridViewDataTextColumn FieldName="FIELD_NAME" Caption="Name">
+                                                                                    <PropertiesTextEdit>
+                                                                                        <ValidationSettings Display="Dynamic">
+                                                                                            <RequiredField IsRequired="true" />
+                                                                                        </ValidationSettings>
+                                                                                    </PropertiesTextEdit>
+                                                                                    <EditFormSettings Visible="False" />
+                                                                                </dx:GridViewDataTextColumn>
+
+
+                                                                                <dx:GridViewDataComboBoxColumn FieldName="SummaryType" Caption="SumType">
+                                                                                    <PropertiesComboBox ValueField="Value" TextField="Name" Width="100" DataSourceID="SqlDataSource_PivotSummaryType">
+
+                                                                                        <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
+                                                                                    </PropertiesComboBox>
+                                                                                </dx:GridViewDataComboBoxColumn>
+
+
+
+                                                                                <dx:GridViewDataComboBoxColumn FieldName="CellFormat_FormatType" Caption="CellType">
+                                                                                    <PropertiesComboBox ValueField="Value" TextField="Name"  Width="100" DataSourceID="SqlDataSource_FormatType">
+
+                                                                                        <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
+                                                                                    </PropertiesComboBox>
+                                                                                </dx:GridViewDataComboBoxColumn>
+
+                                                                                <dx:GridViewDataTextColumn FieldName="CellFormat_FormatString" Caption="CellFormat">
+                                                                                    <PropertiesTextEdit  Width="100">
+                                                                                        <ValidationSettings Display="Dynamic">
+                                                                                            <RequiredField IsRequired="true" />
+                                                                                        </ValidationSettings>
+                                                                                    </PropertiesTextEdit>
+                                                                                </dx:GridViewDataTextColumn>
+
+                                                                                <dx:GridViewDataComboBoxColumn FieldName="GrandTotalCellFormat_FormatType" Caption="GrandType">
+                                                                                    <PropertiesComboBox ValueField="Value" TextField="Name"  Width="100" DataSourceID="SqlDataSource_FormatType">
+
+                                                                                        <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
+                                                                                    </PropertiesComboBox>
+                                                                                </dx:GridViewDataComboBoxColumn>
+
+
+                                                                                <dx:GridViewDataTextColumn FieldName="GrandTotalCellFormat_FormatString" Caption="GrandFormat">
+                                                                                    <PropertiesTextEdit  Width="100">
+                                                                                        <ValidationSettings Display="Dynamic">
+                                                                                            <RequiredField IsRequired="true" />
+                                                                                        </ValidationSettings>
+                                                                                    </PropertiesTextEdit>
+                                                                                </dx:GridViewDataTextColumn>
+
+                                                                                <dx:GridViewDataComboBoxColumn FieldName="GroupInterval" Caption="GroupInterval">
+                                                                                    <PropertiesComboBox ValueField="Value" TextField="Name"  Width="100" DataSourceID="SqlDataSource_PivotGroupInterval">
+                                                                                        <Items>
+                                                                                            <dx:ListEditItem Text="Name" Value="Value" />
+                                                                                        </Items>
+                                                                                        <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
+                                                                                    </PropertiesComboBox>
+                                                                                </dx:GridViewDataComboBoxColumn>
+
+                                                                            </Columns>
+                                                                        </dx:ASPxGridView>
+
+
+
+
+                                                                    </dx:LayoutItemNestedControlContainer>
+                                                                </LayoutItemNestedControlCollection>
+                                                            </dx:LayoutItem>
+                                                        </Items>
+                                                    </dx:LayoutGroup>
+                                                </Items>
+                                            </dx:ASPxFormLayout>
+
+                                        </dx:PanelContent>
+                                    </PanelCollection>
+                                </dx:ASPxCallbackPanel>
+                            </dx:SplitterContentControl>
+                        </ContentCollection>
+                    </dx:SplitterPane>
+                </Panes>
+            </dx:ASPxSplitter>
+
+
+
+
+
+
+        </dx:PanelContent>
+    </PanelCollection>
+</dx:ASPxRoundPanel>
+
+<asp:SqlDataSource ID="SqlDataSource_Data" runat="server" ConnectionString="<%$ ConnectionStrings:LWTReportsConnectionString %>"
+    SelectCommand="select * from tblReport order by No "
+    UpdateCommand="update tblReport set VIEW_QUERY=@VIEW_QUERY, VIEW_CONNECTION=@VIEW_CONNECTION Where RID=@RID">
+
+    <UpdateParameters>
+        <asp:Parameter Name="VIEW_QUERY" DbType="String" />
+        <asp:Parameter Name="VIEW_CONNECTION" DbType="String" />
+        <asp:Parameter Name="RID" DbType="Int32" />
+    </UpdateParameters>
+
+</asp:SqlDataSource>
+
+
+<asp:SqlDataSource ID="SqlDataSource_Fields" runat="server" ConnectionString="<%$ ConnectionStrings:LWTReportsConnectionString %>"
+    SelectCommand="select * from tblReport_Field Where RID=@RID order by FIELD_NAME"
+    UpdateCommand="update tblReport set VIEW_QUERY=@VIEW_QUERY, VIEW_CONNECTION=@VIEW_CONNECTION Where RID=@RID">
+
+    <UpdateParameters>
+        <asp:Parameter Name="VIEW_QUERY" DbType="String" />
+        <asp:Parameter Name="VIEW_CONNECTION" DbType="String" />
+        <asp:Parameter Name="RID" DbType="Int32" />
+    </UpdateParameters>
+    <SelectParameters>
+        <asp:SessionParameter Name="RID" SessionField="RID" />
+    </SelectParameters>
+
+</asp:SqlDataSource>
+
+
+
+<asp:SqlDataSource ID="SqlDataSource_PivotSummaryType" runat="server" ConnectionString="<%$ ConnectionStrings:LWTReportsConnectionString %>"
+    SelectCommand="select Value SummaryType,* from tblReport_MasterData where GroupName = 'PivotSummaryType' order by Name "></asp:SqlDataSource>
+
+<asp:SqlDataSource ID="SqlDataSource_FilterArea" runat="server" ConnectionString="<%$ ConnectionStrings:LWTReportsConnectionString %>"
+    SelectCommand="select * from tblReport_MasterData where GroupName = 'FilterArea' order by Name "></asp:SqlDataSource>
+
+<asp:SqlDataSource ID="SqlDataSource_FormatType" runat="server" ConnectionString="<%$ ConnectionStrings:LWTReportsConnectionString %>"
+    SelectCommand="select * from tblReport_MasterData where GroupName = 'FormatType' order by Name "></asp:SqlDataSource>
+
+<asp:SqlDataSource ID="SqlDataSource_PivotGroupInterval" runat="server" ConnectionString="<%$ ConnectionStrings:LWTReportsConnectionString %>"
+    SelectCommand="select * from tblReport_MasterData where GroupName = 'PivotGroupInterval' order by Name "></asp:SqlDataSource>

@@ -1,0 +1,116 @@
+﻿Imports Microsoft.VisualBasic
+Imports System
+Imports System.Collections
+Imports System.Collections.Generic
+Imports System.IO
+Imports System.Web.UI
+Imports DevExpress.Web
+Imports DevExpress.Web.ASPxTreeList
+
+Imports DevExpress.Web.Data
+Imports DevExpress.Web.DemoUtils
+
+
+
+
+Imports DevExpress.DataAccess.Excel
+Imports DevExpress.XtraPivotGrid
+
+
+Partial Class PivotExcel
+    Inherits System.Web.UI.Page
+    'Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+    '    'Dim filePath = Path.Combine(Server.MapPath("~/App_Data/Modules/eGlobal/RawData"), "eGlobal-SampleData.xlsx")
+    '    'Dim excelDataSource As New ExcelDataSource()
+    '    'excelDataSource.FileName = filePath
+    '    'Dim worksheetSettings As New ExcelWorksheetSettings("Details", "A1:J15")
+    '    'excelDataSource.SourceOptions = New ExcelSourceOptions(worksheetSettings)
+    '    'excelDataSource.Fill()
+    '    'ASPxPivotGrid1.DataSource = excelDataSource
+    '    'ASPxPivotGrid1.DataBind()
+
+
+    '    'If IsPostBack = False Then
+    '    '    ASPxPivotGrid1.BeginUpdate()
+    '    '    ASPxPivotGrid1.RetrieveFields(PivotArea.FilterArea, False)
+    '    '    ASPxPivotGrid1.EndUpdate()
+    '    'End If
+
+
+
+
+    'End Sub
+
+
+
+
+
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
+        If (Not IsPostBack) Then
+            ApplyFileManagerSettings()
+        End If
+    End Sub
+     
+
+    Private Sub ApplyFileManagerSettings()
+        fileManager.SettingsEditing.AllowMove = True
+        fileManager.SettingsEditing.AllowDelete = True
+        fileManager.SettingsEditing.AllowRename = True
+        fileManager.SettingsEditing.AllowCreate = True
+        fileManager.SettingsEditing.AllowCopy = True
+        fileManager.SettingsEditing.AllowDownload = True
+        fileManager.SettingsToolbar.ShowPath = True
+
+        fileManager.SettingsToolbar.ShowFilterBox = True
+        fileManager.SettingsFolders.ShowLockedFolderIcons = True
+        fileManager.SettingsFolders.ShowFolderIcons = True
+        fileManager.SettingsFolders.EnableCallBacks = True
+        fileManager.SettingsFolders.Visible = True
+        fileManager.SettingsUpload.Enabled = True
+        'fileManager.SettingsFileList.ShowFolders = True
+        'fileManager.SettingsFileList.ShowParentFolder = True
+        fileManager.SettingsBreadcrumbs.Visible = True
+        fileManager.SettingsBreadcrumbs.ShowParentFolderButton = True
+
+        ''fileManager.SettingsBreadcrumbs.Position = CType(System.Enum.Parse(GetType(BreadcrumbsPosition), cmbBreadcrumbsPosition.SelectedItem.Value.ToString()), BreadcrumbsPosition)
+
+        'fileManager.SettingsUpload.UseAdvancedUploadMode = True
+        'fileManager.SettingsUpload.AdvancedModeSettings.EnableMultiSelect = True
+
+
+        'fileManager.SettingsContextMenu.Enabled = False
+    End Sub
+
+
+
+
+
+
+
+
+
+    Protected Sub PopupControl_WindowCallback(ByVal source As Object, ByVal e As PopupWindowCallbackArgs) Handles PopupControl.WindowCallback
+        Select Case e.Parameter
+            Case "Files"
+                Dim file = fileManager.SelectedFile
+                Dim fileInfo = New FileInfo(MapPath(file.FullName))
+
+                PopupControl.JSProperties("cpHeaderText") = Path.GetFileNameWithoutExtension(fileInfo.FullName)
+                'Type.Text = ExtensionsDisplayName(file.Extension)
+                Size.Text = file.Length.ToString("#,#") & " bytes"
+                Created.Text = fileInfo.CreationTime.ToString("U")
+                Modified.Text = fileInfo.LastWriteTime.ToString("U")
+                Accessed.Text = fileInfo.LastAccessTime.ToString("U")
+                FormLayout.FindItemOrGroupByName("Contains").Visible = False
+              
+
+                PopupControl.JSProperties("cpHeaderText") &= " Properties"
+                Name.Text = file.Name
+                Location.Text = file.FullName
+                RelativeLocation.Text = file.RelativeName
+
+        End Select
+    End Sub
+  
+End Class

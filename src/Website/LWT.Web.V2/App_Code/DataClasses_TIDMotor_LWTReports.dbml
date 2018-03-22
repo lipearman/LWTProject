@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LWTReports" Class="DataClasses_TIDMotor_LWTReportsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LOCKTHBNK-DB04\APD;Initial Catalog=LWTReports;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LWTReportsConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.V_M1_Application" Member="V_M1_Applications">
+    <Type Name="V_M1_Application">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="REFNO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Motor" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="ClientCode" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="IDCARD" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ClientName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(767)" CanBeNull="true" />
+      <Column Name="PhoneNumber1" Type="System.String" DbType="VarChar(1051)" CanBeNull="true" />
+      <Column Name="ConTractName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(767)" CanBeNull="true" />
+      <Column Name="PhoneNumber2" Type="System.String" DbType="VarChar(1051)" CanBeNull="true" />
+      <Column Name="PolicyNo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="RNType" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PolicyType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Suminsured" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="Benefitialy" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(511)" CanBeNull="true" />
+      <Column Name="CarPlate" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CHASSIS" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CarEngine" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CMI_PolicyNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CMI_StickerNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CMI_StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CMI_EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Project" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Dealer" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="InsurerCode" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DriverName1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DriverOld1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DriverName2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DriverOld2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CarAccessories" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CMI_PaymentBy" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

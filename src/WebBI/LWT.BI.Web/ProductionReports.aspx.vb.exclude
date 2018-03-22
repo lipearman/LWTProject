@@ -1,0 +1,127 @@
+﻿Imports Portal.Components
+Imports DevExpress.Web.ASPxTreeList
+Imports DevExpress.Web
+Imports System.Data.SqlClient
+Imports System.Data
+Imports DevExpress.Web.ASPxPivotGrid
+Imports DevExpress.Data.Linq
+Imports System.Reflection
+Imports System.Linq.Expressions
+Imports System.Runtime.Remoting
+Imports DevExpress.XtraPivotGrid
+Imports DevExpress.XtraPrinting
+Imports DevExpress.Export
+Imports DevExpress.XtraCharts
+Imports DevExpress.Data.PivotGrid
+
+Partial Class ProductionReports
+    Inherits System.Web.UI.Page
+ 
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
+        'BindData(1)
+
+        'pivotGrid.OLAPDataProvider = OLAPDataProvider.OleDb
+        'pivotGrid.OLAPConnectionString = "provider=MSOLAP.5;data source=http://Lockhkhub-dmsdb/OLAP/msmdpump.dll;initial catalog=eGlobal;cube name=eGlobal"
+
+        ''pivotGrid.BeginUpdate()
+        ''pivotGrid.RetrieveFields(PivotArea.FilterArea, False)
+        ''pivotGrid.EndUpdate()
+        'pivotGrid.Fields.Add("[Measures].[PLY GROSS PREMIUM LC]", PivotArea.DataArea)
+
+        'pivotGrid.DataBind()
+
+    End Sub
+     
+    Private Sub BindData(ByVal _BID As Integer)
+        Using dc As New DataClasses_PortalBIDataContext()
+            pivotGrid.Caption = ""
+            pivotGrid.Fields.Clear()
+
+            Dim _BI = (From c In dc.tblBIs Where c.BID.Equals(_BID)).FirstOrDefault()
+            'pnEnquiry.HeaderText = String.Format("{0} - {1}", _BI.TITLE, _BI.DESCRIPTION)
+
+            Dim _OLAP = (From c In dc.V_Cubes Where c.CUBE_ID.Equals(_BI.CUBE_ID)).FirstOrDefault()
+
+            pivotGrid.OLAPConnectionString = _OLAP.CONNECTING
+
+            pivotGrid.OLAPDataProvider = OLAPDataProvider.OleDb
+            'pivotGrid.BeginUpdate()
+
+            Dim _Fields As New List(Of String)
+
+            '' Retrieves fields.
+            'pivotGrid.RetrieveFields(PivotArea.DataArea, False)
+
+            'pivotGrid.Fields("[Measures].[NET INCOME]").Area = PivotArea.DataArea
+            'pivotGrid.Fields("[Measures].[NET INCOME]").Visible = True
+
+
+
+            Dim _Attributes = (From c In dc.V_BIAttributes Where c.BID.Equals(_BI.BID) Order By c.AREA, c.AREAINDEX).ToList()
+            Dim i = -1
+            If _Attributes.Count > 0 Then
+                '========================== Measure/Attribute =========================
+                For Each _Attribute In _Attributes.Where(Function(c) c.Type.Equals("Measure")).ToList()
+
+                    Dim _NewField As New DevExpress.Web.ASPxPivotGrid.PivotGridField()
+                    With _NewField
+                        '======================= Field =========================
+                        .ID = _Attribute.ATTRIBUTE.Trim()
+                        .FieldName = _Attribute.FIELD.Trim()
+                        .Caption = _Attribute.ATTRIBUTE.Trim()
+                        .DisplayFolder = _Attribute.FOLDER.Trim()
+
+                        .AreaIndex = i + 1
+                        '======================= Area =========================
+                        If _Attribute.AREA < 0 Then
+                            .Visible = False
+                        Else
+                            .Visible = True
+                            .Area = _Attribute.AREA
+                        End If
+
+                        ''======================= Style =========================
+                        '.CellStyle.Wrap = DevExpress.Utils.DefaultBoolean.False
+                        '.ValueStyle.Wrap = DevExpress.Utils.DefaultBoolean.False
+                        '.HeaderStyle.Wrap = DevExpress.Utils.DefaultBoolean.False
+                        '.ValueTotalStyle.Wrap = DevExpress.Utils.DefaultBoolean.False
+
+                        ''======================= Format =========================
+                        '.ValueFormat.FormatString = _Attribute.FormatType
+                        '.ValueFormat.FormatType = DevExpress.Utils.FormatType.Custom
+                        '.CellFormat.FormatString = _Attribute.FormatType
+                        '.CellFormat.FormatType = DevExpress.Utils.FormatType.Custom
+                        '.TotalCellFormat.FormatString = _Attribute.FormatType
+                        '.TotalCellFormat.FormatType = DevExpress.Utils.FormatType.Custom
+                        '.TotalValueFormat.FormatString = _Attribute.FormatType
+                        '.TotalValueFormat.FormatType = DevExpress.Utils.FormatType.Custom
+                        '.GrandTotalCellFormat.FormatString = _Attribute.FormatType
+                        '.GrandTotalCellFormat.FormatType = DevExpress.Utils.FormatType.Custom
+
+                        '.UseNativeFormat = DevExpress.Utils.DefaultBoolean.False
+                        '.ExportBestFit = True
+
+                        '.EmptyValueText = 0.0
+                        '.EmptyCellText = 0.0
+
+
+
+                    End With
+                    pivotGrid.Fields.Add(_NewField)
+                Next
+      
+
+            End If
+
+
+ 
+            pivotGrid.DataBind()
+
+
+        
+        End Using
+
+
+    End Sub
+End Class

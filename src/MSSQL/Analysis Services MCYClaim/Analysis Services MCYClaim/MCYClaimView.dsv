@@ -1,0 +1,365 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="80127760-4e08-4b6b-9eea-2525c524936d" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>MCYClaimView</ID>
+  <Name>MCYClaimView</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:NameMatchingCriteria</Name>
+      <Value>1</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout>
+              <dds>
+                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="13" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3771" scrolltop="-6268" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="18918" y="14393" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                  <font>
+                    <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                  </font>
+                  <mouseicon>
+                    <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                  </mouseicon>
+                </diagram>
+                <layoutmanager>
+                  <ddsxmlobj />
+                </layoutmanager>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="ClaimMCYRawdata" left="4816" top="-2911" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="4815" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000cf12000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_ClaimMCYRawdata" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="V_dimClaimCategory" left="7676" top="2586" logicalid="8" controlid="8" masterid="0" hint1="0" hint2="0" width="3122" height="1455" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000320c0000af050000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_V_dimClaimCategory" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="V_dimMCYCarBrand" left="4188" top="2586" logicalid="9" controlid="9" masterid="0" hint1="0" hint2="0" width="3000" height="1455" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000b80b0000af050000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_V_dimMCYCarBrand" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="V_dimMCYDealer" left="-312" top="3313" logicalid="10" controlid="10" masterid="0" hint1="0" hint2="0" width="3000" height="1455" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000b80b0000af050000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_V_dimMCYDealer" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="V_dimMCYPlan" left="-1812" top="-2594" logicalid="11" controlid="11" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000b80b000057070000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_V_dimMCYPlan" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="V_dimMCYProject" left="10188" top="-2594" logicalid="12" controlid="12" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000b80b000057070000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_V_dimMCYProject" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+              </dds>
+</DiagramLayout>
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>-3771</DiagramViewPortLeft>
+            <DiagramViewPortTop>-6268</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>MCYClaimDS</DataSourceID>
+  <Schema>
+    <xs:schema id="MCYClaimView" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="MCYClaimView" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="940fa1b1-4a7f-4aa7-8eb4-18bb69041092">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_ClaimMCYRawdata" msprop:FriendlyName="ClaimMCYRawdata" msprop:DbSchemaName="dbo" msprop:DbTableName="ClaimMCYRawdata" msprop:design-time-name="575bfa8b-3c5a-49d1-9039-842349b5c94a" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ClaimID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="ClaimID" msprop:DbColumnName="ClaimID" msprop:design-time-name="eef278a4-a399-4294-b039-71b387740e18" type="xs:int" />
+                  <xs:element name="ProjectCode" msprop:FriendlyName="ProjectCode" msprop:DbColumnName="ProjectCode" msprop:design-time-name="d5964cfd-ba81-4e77-988c-7d844b9b0bcb" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DealerName" msprop:FriendlyName="DealerName" msprop:DbColumnName="DealerName" msprop:design-time-name="ad2af2f0-62a0-43c7-be2f-6454d0d9a39b" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="BranchName" msprop:FriendlyName="BranchName" msprop:DbColumnName="BranchName" msprop:design-time-name="4c5d22b3-6629-4959-832b-fd6e76811b08" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PlanCode" msprop:FriendlyName="PlanCode" msprop:DbColumnName="PlanCode" msprop:design-time-name="f102b222-b532-4b78-a44b-d6ad7bbb8cac" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PlanName" msprop:FriendlyName="PlanName" msprop:DbColumnName="PlanName" msprop:design-time-name="03f18ea8-0c55-472b-8335-dbff89a87e4c" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CancelType" msprop:FriendlyName="CancelType" msprop:DbColumnName="CancelType" msprop:design-time-name="f1f164cb-cc0c-4d59-8f86-d25e5d7f562e" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ProjectName" msprop:FriendlyName="ProjectName" msprop:DbColumnName="ProjectName" msprop:design-time-name="1540d4df-b0b8-4e17-867e-589279b5308e" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="250" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TempPolicyNo" msprop:FriendlyName="TempPolicyNo" msprop:DbColumnName="TempPolicyNo" msprop:design-time-name="ee35fdeb-ca57-4d22-b272-85ca0b177f06" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ClaimDate2" msprop:FriendlyName="ClaimDate2" msprop:DbColumnName="ClaimDate2" msprop:design-time-name="b7fdb407-f353-47dd-938b-81ed12aa0040" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="CFirstName" msprop:FriendlyName="CFirstName" msprop:DbColumnName="CFirstName" msprop:design-time-name="63398a01-8e41-4558-a8e1-9bb4df4ae08f" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CLastName" msprop:FriendlyName="CLastName" msprop:DbColumnName="CLastName" msprop:design-time-name="1d0a1903-9fb4-4b8a-b8e6-bd1ec64b0c57" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Cancel" msprop:FriendlyName="Cancel" msprop:DbColumnName="Cancel" msprop:design-time-name="f4878a12-4942-40ce-9a09-90143f8d6ad0" type="xs:boolean" minOccurs="0" />
+                  <xs:element name="DateSendDocToInsurer" msprop:FriendlyName="DateSendDocToInsurer" msprop:DbColumnName="DateSendDocToInsurer" msprop:design-time-name="28fff5a8-60ee-47c6-be22-a230ce32ecfa" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="ClaimSuminsure" msprop:FriendlyName="ClaimSuminsure" msprop:DbColumnName="ClaimSuminsure" msprop:design-time-name="32ca084a-228c-4e1b-a489-4601b5ca6ecd" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="DateReceivedDocFromClient" msprop:FriendlyName="DateReceivedDocFromClient" msprop:DbColumnName="DateReceivedDocFromClient" msprop:design-time-name="b2c29ae4-813a-41fa-ac07-3e86474e8376" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="ChequeNo" msprop:FriendlyName="ChequeNo" msprop:DbColumnName="ChequeNo" msprop:design-time-name="1ce9a8dc-5f60-4f9f-ab54-dbe11c8a9e84" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="8" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DateReceivedCheque" msprop:FriendlyName="DateReceivedCheque" msprop:DbColumnName="DateReceivedCheque" msprop:design-time-name="d4edfa3a-860a-4004-bb89-429020c546a2" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="DateSendCheque" msprop:FriendlyName="DateSendCheque" msprop:DbColumnName="DateSendCheque" msprop:design-time-name="3a238f12-1d13-4d46-ba2c-ff266410eeac" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="Amount" msprop:FriendlyName="Amount" msprop:DbColumnName="Amount" msprop:design-time-name="dd854fc7-0d5c-474b-a963-a54bbb681e2c" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Pay" msprop:FriendlyName="Pay" msprop:DbColumnName="Pay" msprop:design-time-name="fbd447ba-3144-4025-aa2c-a3c9412791f3" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="250" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="BrandCode" msprop:FriendlyName="BrandCode" msprop:DbColumnName="BrandCode" msprop:design-time-name="dae31e79-20e4-4ed5-ac10-c123a63c9c01" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ClaimTypeName" msprop:FriendlyName="ClaimTypeName" msprop:DbColumnName="ClaimTypeName" msprop:design-time-name="8b094506-833e-4501-8cda-6a7925ff5899" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CategoryName" msprop:FriendlyName="CategoryName" msprop:DbColumnName="CategoryName" msprop:design-time-name="821725f5-eca6-4ec0-860d-3861266aad3d" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="250" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ModelCode" msprop:FriendlyName="ModelCode" msprop:DbColumnName="ModelCode" msprop:design-time-name="87ef3dcd-e374-4773-a1f4-003d49db1e99" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PoliceStation" msprop:FriendlyName="PoliceStation" msprop:DbColumnName="PoliceStation" msprop:design-time-name="4bd71087-47d7-4ff8-a9eb-d37da58c0c38" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Province" msprop:FriendlyName="Province" msprop:DbColumnName="Province" msprop:design-time-name="3e041685-34d5-4d17-9a0b-5aafc7a205c8" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Suminsure1" msprop:FriendlyName="Suminsure1" msprop:DbColumnName="Suminsure1" msprop:design-time-name="d8fd4ae7-2df4-4557-9b12-9584ff77df80" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Suminsure2" msprop:FriendlyName="Suminsure2" msprop:DbColumnName="Suminsure2" msprop:design-time-name="9e208731-f678-4d40-81d3-b5d34815e22c" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Suminsure3" msprop:FriendlyName="Suminsure3" msprop:DbColumnName="Suminsure3" msprop:design-time-name="9e23834a-880e-4af3-b045-3c2f822db546" type="xs:decimal" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_V_dimClaimCategory" msprop:FriendlyName="V_dimClaimCategory" msprop:DbSchemaName="dbo" msprop:DbTableName="V_dimClaimCategory" msprop:design-time-name="5f683db6-c80e-4a5d-9aa3-fd8d629365f0" msprop:TableType="View">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="CategoryName" msprop:FriendlyName="CategoryName" msprop:DbColumnName="CategoryName" msprop:design-time-name="c9178faa-de4b-4759-a9c8-d6f8c906a8d0" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="250" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_V_dimMCYCarBrand" msprop:FriendlyName="V_dimMCYCarBrand" msprop:DbSchemaName="dbo" msprop:DbTableName="V_dimMCYCarBrand" msprop:design-time-name="f8812a33-502f-4bfe-ba7c-ca97c411a663" msprop:TableType="View">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="BrandCode" msprop:FriendlyName="BrandCode" msprop:DbColumnName="BrandCode" msprop:design-time-name="0468e5d3-ab6e-4a58-ad51-58b6a20e9fad" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_V_dimMCYDealer" msprop:FriendlyName="V_dimMCYDealer" msprop:DbSchemaName="dbo" msprop:DbTableName="V_dimMCYDealer" msprop:design-time-name="cf681fe7-57fa-48fd-84e8-f6c77234a248" msprop:TableType="View">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DealerName" msprop:FriendlyName="DealerName" msprop:DbColumnName="DealerName" msprop:design-time-name="399c93f8-5b42-4f0c-bfd4-19a005d97d20" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_V_dimMCYPlan" msprop:FriendlyName="V_dimMCYPlan" msprop:DbSchemaName="dbo" msprop:DbTableName="V_dimMCYPlan" msprop:design-time-name="a0631616-7ef8-4119-add1-e82616e2e48a" msprop:TableType="View">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="PlanCode" msprop:FriendlyName="PlanCode" msprop:DbColumnName="PlanCode" msprop:design-time-name="d2443db8-6f03-4b56-b383-55a86588c908" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PlanName" msprop:FriendlyName="PlanName" msprop:DbColumnName="PlanName" msprop:design-time-name="3010bb9e-40a6-4e52-bdea-5024ece1ba16" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_V_dimMCYProject" msprop:FriendlyName="V_dimMCYProject" msprop:DbSchemaName="dbo" msprop:DbTableName="V_dimMCYProject" msprop:design-time-name="5280b711-b1a5-4358-b08f-907e3140d5b4" msprop:TableType="View">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ProjectCode" msprop:FriendlyName="ProjectCode" msprop:DbColumnName="ProjectCode" msprop:design-time-name="ae5fd674-948d-404b-a012-8c14916d9a74" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ProjectName" msprop:FriendlyName="ProjectName" msprop:DbColumnName="ProjectName" msprop:design-time-name="3c3e7a19-8142-40cb-b064-2729da375d57" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="250" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_ClaimMCYRawdata" />
+          <xs:field xpath="ClaimID" />
+        </xs:unique>
+      </xs:element>
+    </xs:schema>
+    <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1" />
+  </Schema>
+</DataSourceView>

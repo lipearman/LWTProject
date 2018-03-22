@@ -1,0 +1,250 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="09dd6eb4-efe5-4a4e-9337-22aab679f018" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Raw Data</ID>
+  <Name>Raw Data</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-602" scrolltop="-1508" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="6615" y="8467" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="RawData" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4921" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000800003913000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_RawData" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-602</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-1508</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="06b88743-3a59-4b8a-a919-cdb918983210">
+    <DataSourceViewID>DV_eGlobal</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="def273a6-5ea4-40ac-aaf8-3fdb89af5ba4">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="bb942832-7a2d-4049-ad2a-4b22eb8d98d6">
+      <ID>ID</ID>
+      <Name>ID</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e4286037-d493-42f5-b78b-13317da194c5">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0eb35af5-2aa3-4369-8645-03cd6851f533">
+            <TableID>dbo_RawData</TableID>
+            <ColumnID>ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="ce3caada-ba3c-4ebf-9ee9-0571b62394a9">
+          <AttributeID>PLY REGION</AttributeID>
+          <Name>PLY REGION</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8ae9609b-f50b-4219-8b5a-5d69fcde0ab2">
+          <AttributeID>PLY COUNTRY</AttributeID>
+          <Name>PLY COUNTRY</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2357c485-a139-4f38-aabb-b72e1d0526a6">
+          <AttributeID>PLY COVER NO</AttributeID>
+          <Name>PLY COVER NO</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e1591920-8056-45de-97d0-f0527be4b354">
+          <AttributeID>PLY VER NO</AttributeID>
+          <Name>PLY VER NO</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="65b39f97-a78f-476a-bc5d-80f8160fa076">
+          <AttributeID>PLY TRANSACTION TYPE</AttributeID>
+          <Name>PLY TRANSACTION TYPE</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="95c0e720-b72f-4d4c-afaf-78e13cbe422e">
+          <AttributeID>PLY EFF DATE</AttributeID>
+          <Name>PLY EFF DATE</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a63364c9-22fe-438d-9673-f0132def06cc">
+          <AttributeID>PLY REN DATE</AttributeID>
+          <Name>PLY REN DATE</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5559c630-698a-4bbd-b5e1-d0cba7740d1b">
+          <AttributeID>PLY STATUS</AttributeID>
+          <Name>PLY STATUS</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c3cd3768-7e65-4f55-bdc3-6512ee723342">
+      <ID>PLY REGION</ID>
+      <Name>PLY REGION</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2a697302-ee3e-49c5-904c-015a163544b7">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="74d33a5e-08d7-4ebd-8e28-b21f6d107543">
+            <TableID>dbo_RawData</TableID>
+            <ColumnID>PLY_REGION</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bfdc8df3-389d-4099-9a66-f6139c9c1e5f">
+      <ID>PLY COUNTRY</ID>
+      <Name>PLY COUNTRY</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b685b533-0260-46e2-a0b3-587f5ab0242b">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="11396f21-0b27-484f-aac5-3dd5cbb40661">
+            <TableID>dbo_RawData</TableID>
+            <ColumnID>PLY_COUNTRY</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="cf163eb1-8ee2-41bd-90bc-72f4b6d6f42f">
+      <ID>PLY COVER NO</ID>
+      <Name>PLY COVER NO</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f63e9e8a-7038-4dd5-bac7-77bf23a98115">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2a34f71c-d14f-4ac6-95cc-854dd841ab59">
+            <TableID>dbo_RawData</TableID>
+            <ColumnID>PLY_COVER_NO</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a3fd7e30-600a-4c7c-abcc-daf6b24c7d75">
+      <ID>PLY VER NO</ID>
+      <Name>PLY VER NO</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3e9e0532-0ab3-4b58-87b0-6778bc7667a8">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b1363ca5-1d63-4cba-b567-7b45270d5e14">
+            <TableID>dbo_RawData</TableID>
+            <ColumnID>PLY_VER_NO</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="54d783f5-6490-4e01-ab47-09701e9651f9">
+      <ID>PLY TRANSACTION TYPE</ID>
+      <Name>PLY TRANSACTION TYPE</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6335737a-db72-4a32-9d91-7bce558c6283">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="30a8170c-9dbc-4d29-b37f-5086949a85c2">
+            <TableID>dbo_RawData</TableID>
+            <ColumnID>PLY_TRANSACTION_TYPE</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4508465a-1ea9-4487-a093-603c546a0e8b">
+      <ID>PLY EFF DATE</ID>
+      <Name>PLY EFF DATE</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="dd3aa3fe-620c-4471-9368-d62366692d69">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9b6162ef-196b-4bcc-a908-a00dc159d7ee">
+            <TableID>dbo_RawData</TableID>
+            <ColumnID>PLY_EFF_DATE</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4ffca222-63b6-4e93-9257-0f3a343f8184">
+      <ID>PLY REN DATE</ID>
+      <Name>PLY REN DATE</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0cde971a-1e39-4026-945f-ab0c517a7c5f">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b712db33-ab2f-42ce-aecc-9e28f9a32505">
+            <TableID>dbo_RawData</TableID>
+            <ColumnID>PLY_REN_DATE</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f7e8c061-c30b-4c2e-84b0-4fcacb33534e">
+      <ID>PLY STATUS</ID>
+      <Name>PLY STATUS</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="37efb00b-d3ae-4ad9-a665-8050eee4e305">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="67da4f2f-24ff-4c82-b280-2d2d833b979d">
+            <TableID>dbo_RawData</TableID>
+            <ColumnID>PLY_STATUS</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+  </Attributes>
+</Dimension>

@@ -1,0 +1,175 @@
+﻿Imports Portal.Components
+Imports DevExpress.Web.ASPxTreeList
+Imports DevExpress.Web
+Imports System.Data.SqlClient
+Imports System.Data
+'Imports Portal.Web.BI
+
+Partial Class Modules_ucDevxReportsFields
+    Inherits PortalModuleControl
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
+        If (Not IsPostBack) Then
+            '    treeList.DataBind()
+            '    Dim firstUnread As TreeListNode = treeList.FindNodeByFieldValue("IsNew", True)
+            '    firstUnread.Focus()
+            '    treeList.ExpandToLevel(2)
+            '    'messageLiteral.Text = GetEntryText(firstUnread)
+
+            Session("RID") = Nothing
+
+
+        End If
+
+
+
+    End Sub
+
+
+    Protected Sub gridFields_InitNewRow(ByVal sender As Object, ByVal e As DevExpress.Web.Data.ASPxDataInitNewRowEventArgs) Handles gridFields.InitNewRow
+  
+        e.NewValues("SummaryType") = 0
+
+        e.NewValues("CellFormat_FormatType") = 1
+        e.NewValues("CellFormat_FormatString") = "{0:N2}"
+
+        e.NewValues("UnboundExpressionMode") = 0
+        e.NewValues("UnboundColumnType") = 0
+
+        e.NewValues("GroupInterval") = 0
+ 
+    End Sub
+
+
+    Protected Sub callbackPanel_view_Callback(ByVal source As Object, ByVal e As DevExpress.Web.CallbackEventArgsBase) Handles callbackPanel_view.Callback
+
+        Dim _RID = e.Parameter.ToString()
+        Session("RID") = _RID
+        Using dc As New DataClasses_LWTReportsExt()
+            Dim _data = (From c In dc.tblReports Where c.RID.Equals(_RID)).FirstOrDefault()
+
+            formLayout.Visible = False
+            ASPxTokenFields.Items.Clear()
+
+            If _data IsNot Nothing Then
+                If _data.VIEW_ID Is Nothing Then
+                    formLayout.Visible = False
+
+                Else
+                    formLayout.Visible = True
+
+                    Dim _v = (From c In dc.tblReport_VIEWs Where c.VIEW_ID = _data.VIEW_ID).FirstOrDefault()
+                    Using objConn As New SqlConnection(_v.VIEW_CONNECTION)
+                        Dim daAuthors As New SqlDataAdapter(_v.VIEW_QUERY, objConn)
+                        Dim dsPubs As New DataSet("MAIN")
+                        daAuthors.FillSchema(dsPubs, SchemaType.Source, "VIEW")
+                        For Each item As System.Data.DataColumn In dsPubs.Tables("VIEW").Columns
+                            'Dim _Field As New tblReport_Field
+                            'With _Field
+                            '    _Field.FIELD_CAPTION = item.Caption
+                            '    _Field.FIELD_NAME = item.Caption
+                            '    _Field.RID = Convert.ToInt32(_RID)
+                            'End With
+                            'itemList.Add(_Field)
+
+                            ASPxTokenFields.Items.Add(item.Caption)
+                        Next
+                    End Using
+
+                End If
+
+
+            End If
+
+
+
+        End Using
+
+        gridFields.DataBind()
+    End Sub
+
+
+    'Protected Sub cbSaveData_Callback(ByVal sender As Object, ByVal e As CallbackEventArgs) Handles cbSaveData.Callback
+    '    Try
+    '        Using dc As New DataClasses_LWTReportsExt()
+    '            Dim _RID = Session("RID")
+
+    '            Dim _data = (From c In dc.tblReports Where c.RID.Equals(_RID)).FirstOrDefault()
+
+
+    '            If _data IsNot Nothing Then
+    '                '_data.VIEW_QUERY = VIEW_QUERY.Text
+    '                '_data.VIEW_CONNECTION = VIEW_CONNECTION.Text
+
+    '                dc.SubmitChanges()
+
+    '                e.Result = "Save"
+
+    '                btnGenFields.Visible = False
+    '            Else
+    '                e.Result = "No Report"
+    '                btnGenFields.Visible = True
+    '            End If
+
+
+    '        End Using
+
+    '    Catch ex As Exception
+    '        e.Result = ex.Message
+    '        btnGenFields.Visible = True
+    '    End Try
+
+
+
+    'End Sub
+
+    Protected Sub cbAddFields_Callback(ByVal sender As Object, ByVal e As CallbackEventArgs) Handles cbAddFields.Callback
+
+        Try
+            If Not String.IsNullOrEmpty(e.Parameter) Then
+                Dim _RID = Session("RID")
+                Dim _Fields = e.Parameter.Split(",")
+
+
+                Using dc As New DataClasses_LWTReportsExt()
+                    Dim itemList As New List(Of tblReport_Field)
+
+                    For Each item As String In _Fields
+                        Dim _Field As New tblReport_Field
+                        With _Field
+                            .FIELD_CAPTION = item
+                            .FIELD_NAME = item
+                            .RID = Convert.ToInt32(_RID)
+
+
+                            .SummaryType = 0
+                            .CellFormat_FormatType = 1
+                            .CellFormat_FormatString = "{0:N2}"
+
+                            .UnboundColumnType = 0
+                            .UnboundExpressionMode = 0
+                            .UnboundExpression = ""
+
+                            .GroupInterval = 0
+                        End With
+                        itemList.Add(_Field)
+                    Next
+
+                    dc.tblReport_Fields.InsertAllOnSubmit(itemList)
+
+                    dc.SubmitChanges()
+
+                    e.Result = "Done"
+
+                End Using
+            End If
+
+
+        Catch ex As Exception
+            e.Result = ex.Message
+        End Try
+
+    End Sub
+
+
+End Class

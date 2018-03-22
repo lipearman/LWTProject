@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.625, 21.375" name="DataClasses_SIBISDB">
+  <DataContextMoniker Name="/DataClasses_SIBISDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="73152de2-1cbb-43b7-a7d1-0abb6fcefe98" absoluteBounds="0.75, 0.75, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/DataClasses_SIBISDBDataContext/Agent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="00bd2165-1efb-4c50-9346-48fecbfd74be" absoluteBounds="0.765, 1.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d14a5483-eb3a-4ead-966a-5a2ce2b03ae1" absoluteBounds="0.75, 5.75, 2, 9.0783512369791666">
+      <DataClassMoniker Name="/DataClasses_SIBISDBDataContext/Client" />
+      <nestedChildShapes>
+        <elementListCompartment Id="46f28442-a920-4ea2-aaa7-2c5815dd0289" absoluteBounds="0.765, 6.21, 1.9700000000000002, 8.5183512369791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e0e6931c-e0b2-466e-995b-f4974a40f4c9" absoluteBounds="3.75, 5.75, 2, 5.4246240234374987">
+      <DataClassMoniker Name="/DataClasses_SIBISDBDataContext/ContactPerson" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9f0bbfe6-bcd9-4593-bd13-a8e61630da81" absoluteBounds="3.765, 6.21, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="822070a9-5304-4fab-87f8-6cb7ae256941" absoluteBounds="7.875, 7.625, 2, 13.5012841796875">
+      <DataClassMoniker Name="/DataClasses_SIBISDBDataContext/Policy" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cbb98bdc-088e-498d-ab8b-c749c98f5056" absoluteBounds="7.89, 8.085, 1.9700000000000002, 12.9412841796875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e6f1a099-88ae-4e14-8186-5e7f9fcb22aa" absoluteBounds="10.375, 6.75, 2, 6.0015283203124987">
+      <DataClassMoniker Name="/DataClasses_SIBISDBDataContext/Underwriter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4ddf49e6-c052-4c43-93f7-dda862ecea7e" absoluteBounds="10.39, 7.21, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4fbaf2ae-ca21-4435-9569-39046dae4e2c" absoluteBounds="5.875, 0.5, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/DataClasses_SIBISDBDataContext/AccountExecutive" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c2747821-acea-4394-8945-ce37ed844990" absoluteBounds="5.89, 0.96, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ef425975-f824-4522-8f73-1930e7b1665f" absoluteBounds="8.5, 1.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClasses_SIBISDBDataContext/ClassOfRisk" />
+      <nestedChildShapes>
+        <elementListCompartment Id="687bd61c-24a0-4d23-a91d-958c8ea8d85b" absoluteBounds="8.515, 1.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3070b855-eba9-4a37-91b8-40d78cfb1e58" absoluteBounds="8.625, 3.875, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/DataClasses_SIBISDBDataContext/AgentRiskComm" />
+      <nestedChildShapes>
+        <elementListCompartment Id="315b973a-7669-4f64-93cb-aff07c841e20" absoluteBounds="8.64, 4.335, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7c3a6010-9d64-462b-a474-cf33d1ce9475" absoluteBounds="6.625, 4.5, 2, 5.2323225911458326">
+      <DataClassMoniker Name="/DataClasses_SIBISDBDataContext/RiskUwriter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f3f110b9-4b76-4e61-bf59-b777780446e2" absoluteBounds="6.64, 4.96, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

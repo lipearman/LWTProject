@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LWTReports" Class="DataClasses_MCYDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LOCKTHBNK-DB01\APD;Initial Catalog=LWTReports;User ID=sa" SettingsObjectName="APDKawa2UWRenewVB.My.MySettings" SettingsPropertyName="LWTReportsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.V_KAWA2_UW_ASIA" Member="V_KAWA2_UW_ASIAs">
+    <Type Name="V_KAWA2_UW_ASIA">
+      <Column Name="C1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="C2" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="C3" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C4" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C5" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="C6" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="C7" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="C8" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="C9" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="C10" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="C11" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="C12" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C13" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C14" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C15" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C16" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C17" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="C18" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="C19" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="C20" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C21" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="C22" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="C23" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="C24" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C25" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C26" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C27" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C28" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C29" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C30" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="C31" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C32" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C33" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="C34" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C35" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C36" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C37" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C38" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C39" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="C40" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="C41" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="C42" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="C43" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C44" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="C45" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C46" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C47" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C48" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="C49" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C50" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C51" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C52" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C53" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C54" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C55" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C56" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C57" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C58" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C59" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C60" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C61" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C62" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C63" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C64" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C65" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C66" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C67" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C68" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C69" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C70" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C71" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C72" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C73" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C74" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C75" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C76" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C77" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C78" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C79" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C80" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C81" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C82" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C83" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C84" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C85" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C86" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C87" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C88" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C89" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C90" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C91" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C92" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C93" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="C94" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="C95" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="C96" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="C97" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="C98" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="C99" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C100" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C101" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C102" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C103" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C104" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C105" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C106" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C107" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C108" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C109" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C110" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C111" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C112" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C113" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C114" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C115" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C116" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C117" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C118" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C119" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C120" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C121" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C122" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C123" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C124" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C125" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C126" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C127" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C128" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C129" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C130" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C131" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C132" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C133" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C134" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C135" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C136" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="C137" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C138" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C139" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C140" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C141" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C142" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C143" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C144" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C145" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C146" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C147" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C148" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="C149" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C150" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="C151" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="C152" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="C153" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="C154" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="C155" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="C156" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="C157" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C158" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C159" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="UWCode" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="UWName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MailTo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MailCC" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PromotionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RenewYear" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="DateMakePolicy" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Renew" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_KAWA2_UW_Non_ASIA" Member="V_KAWA2_UW_Non_ASIAs">
+    <Type Name="V_KAWA2_UW_Non_ASIA">
+      <Column Name="Broker_Code" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="PlanCode" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="PlanName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="UWCode" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Fleet_Name" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Introducer_Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="[Client Code]" Member="Client_Code" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="cTitle" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Insured Name]" Member="Insured_Name" Type="System.String" DbType="VarChar(202)" CanBeNull="true" />
+      <Column Name="[ID Card]" Member="ID_Card" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Insured's Address]" Member="Insured_s_Address" Type="System.String" DbType="VarChar(1051)" CanBeNull="true" />
+      <Column Name="Beneficiary_Name" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="[License No]" Member="License_No" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Vehicle Code]" Member="Vehicle_Code" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Year" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Veh_ChassisNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[MVL Own Damage]" Member="MVL_Own_Damage" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[MVL Deductible]" Member="MVL_Deductible" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[MVL Driver]" Member="MVL_Driver" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[MVL Net Premium]" Member="MVL_Net_Premium" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="[MVL Stamp]" Member="MVL_Stamp" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="[MVL Vat]" Member="MVL_Vat" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="[MVL Total]" Member="MVL_Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="[MVL Effective]" Member="MVL_Effective" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="[MVL Expire]" Member="MVL_Expire" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Billing" Type="System.String" DbType="VarChar(402)" CanBeNull="true" />
+      <Column Name="TempPolicyNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PolicyNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateMakePolicy" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CIDCard" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContractNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cPhone" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Beneficiary" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="TPBIPerPerson" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TPBIPerTime" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TPPD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BLDriver" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BLPassenger" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MedicalFee" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BailDriver" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RenewYear" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="UWName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MailTo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MailCC" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Renew" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

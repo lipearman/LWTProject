@@ -1,0 +1,275 @@
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="DesktopDefault.aspx.vb" Inherits="DesktopDefault" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%=sitename%></title>
+    <link href="favicon.ico" rel="Lockton Wattana Insurance Brokers Thailand">
+    <script src="Scripts/bootstrap.min.js"></script>
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server">
+        <%--     <%: Styles.Render("~/bundles/styles-main") %>
+        <%: Scripts.Render("~/bundles/scripts-main") %>--%>
+
+
+        <script src="Scripts/jquery-3.1.1.js"></script>
+        <script src="Scripts/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="Scripts/jquery.parallax.min.js"></script>
+        <script src="Scripts/bootstrap.min.js"></script>
+        <script src="Scripts/common.js"></script>
+        <%--<script src="Scripts/search.js"></script>--%>
+        <script src="Scripts/landing.js"></script>
+
+
+        <link href="Content/demo-icons.css" rel="stylesheet" />
+        <link href="Content/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+        <link href="Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="Content/common.css" rel="stylesheet" />
+        <link href="Content/landing.css" rel="stylesheet" />
+        <link href="Content/font-awesome.min.css" rel="stylesheet" />
+
+
+    </asp:PlaceHolder>
+
+
+
+
+
+</head>
+<body>
+    <form id="Form1" runat="server">
+
+        <dx:ASPxLoadingPanel ID="LoadingPanel" runat="server"
+            ClientInstanceName="LoadingPanel" 
+            Modal="True">
+        </dx:ASPxLoadingPanel>
+  <dx:ASPxPopupControl ID="clientView" runat="server" ClientInstanceName="clientView"
+            Modal="True" Maximized="true"
+            PopupHorizontalAlign="WindowCenter"
+            PopupVerticalAlign="WindowCenter"
+            HeaderText="Business Intelligence"
+            AllowDragging="true"
+            AllowResize="True"
+            DragElement="Window"
+            EnableAnimation="true" 
+            CloseAction="CloseButton"
+            EnableCallbackAnimation="true"
+            EnableViewState="true"
+            ShowPageScrollbarWhenModal="true"
+            ScrollBars="Auto"
+            ShowMaximizeButton="true"
+            HeaderImage-IconID="businessobjects_botask_32x32"
+            HeaderStyle-BackColor="WindowFrame"
+            Width="800"
+            Height="680"
+            FooterText=""
+            ShowFooter="false">
+            <ClientSideEvents  Shown="function(s,e){ 
+                //window.setTimeout(function() {LoadingPanel.Hide();},2000);
+
+                LoadingPanel.Show();
+                }" />
+
+            <ContentCollection>
+                <dx:PopupControlContentControl ID="PopupControlContentControl5" runat="server">
+                </dx:PopupControlContentControl>
+            </ContentCollection>
+        </dx:ASPxPopupControl>
+
+
+        <nav class="navbar navbar-fixed-top" id="navbar">
+            <div class="container-fluid">
+
+                <button type="button" class="nav-button" id="collapse-button">
+                    <span class="sr-only">Toggle navigation
+                    </span>
+                   <%-- <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>--%>
+                     <img src="images/Lockton-Logo_250.png" width="64" />
+                </button>
+                <div class="logo">
+                    <h3><%=sitename%></h3>
+                    <h4>Powered By A&S</h4>
+                </div>
+
+                <ul class="nav nav-pills pull-right nav-header">
+                    <li role="presentation" class="hidden-xs">
+  
+                        <dx:ASPxButton ID="ASPxButton1" runat="server" Image-IconID="arrows_next_16x16office2013" AutoPostBack="false" RenderMode="Link" Text="Logout">
+                            
+                        </dx:ASPxButton>
+                    </li>
+                    <%--<li role="presentation" class="hidden-xs"><a href="#">Buy</a></li>--%>
+                  <%--  <li role="presentation"><a href="javascript:void(0);" id="settingsButton"><span class="icon icon-settings"></span></a></li>--%>
+
+
+                </ul>
+            </div>
+        </nav>
+
+
+<section id="sidebar">
+    <div class="sidebar-body">
+        <%--<demo:Search runat="server" ID="Search"></demo:Search>--%>
+        <dx:BootstrapTreeView runat="server" ID="navTreeView" ClientInstanceName="navTreeView"
+            ShowExpandButtons="false" ClientIDMode="Static" Target="_top">
+            <ClientSideEvents ExpandedChanging="dxbsDemo.preventExpandedChanging" NodeClick="dxbsDemo.onSideBarNodeClick" />
+        </dx:BootstrapTreeView>
+    </div>
+    <div class="sidebar-footer">
+        <ul class="nav nav-pills nav-stacked hidden-lg hidden-md hidden-sm" id="bottomNav">
+            <li role="presentation"><a href="javascript:BootstrapPopupControl1.Show();"><span class="image icon icon-download"></span><span>Logout</span></a></li>
+            <%--<li role="presentation"><a href="javascript:void(0);"><span class="image icon icon-buy"></span><span>Buy</span></a></li>--%>
+        </ul>
+    </div>
+</section>
+
+
+
+
+        <section class="screen screen-2">
+            <div class="container">
+                <br /><br /><br /><br />
+                <div runat="server" id="container" ></div>
+            </div>
+
+        </section>
+        <section class="screen screen-3"  >
+
+            <div class="container">
+                <footer>
+                    Copyright &copy; <%=Now.Year %> Lockton Wattana Insurance Brokers (Thailand) Ltd. All rights reserved.
+                    <br />
+                </footer>
+
+            </div>
+        </section>
+
+
+        <dx:BootstrapPopupControl ID="BootstrapPopupControl1"
+            ClientInstanceName="BootstrapPopupControl1"
+            runat="server"
+            PopupHorizontalAlign="WindowCenter"
+            PopupVerticalAlign="WindowCenter"
+            Width="300px"
+            CloseAction="OuterMouseClick"
+            Modal="true"
+            HeaderText="LOGIN">
+
+            <HeaderTemplate>
+                <a href="javascript:;" style="pointer-events: none; cursor: default;"><span class="image fa fa-user" aria-hidden="true"></span><span>&nbsp;Login</span></a>
+
+
+            </HeaderTemplate>
+
+            <ClientSideEvents Shown="function(s,e){
+                    ASPxClientEdit.ClearGroup('Validation');
+                    txtMessage.SetText(e.result);
+                }" />
+
+
+            <%--BeginCollapse--%>
+            <ContentCollection>
+                <dx:ContentControl>
+
+                    <dx:BootstrapFormLayout ID="BootstrapFormLayout1" runat="server">
+                        <Items>
+                            <dx:BootstrapLayoutItem Caption="User Name" ShowCaption="False" ColSpanSm="12">
+                                <ContentCollection>
+                                    <dx:ContentControl>
+                                        <dx:BootstrapTextBox ID="txtUserName" runat="server" NullText="User Name">
+                                            <ValidationSettings ValidationGroup="Validation">
+                                                <RequiredField IsRequired="true" />
+                                            </ValidationSettings>
+                                        </dx:BootstrapTextBox>
+                                    </dx:ContentControl>
+                                </ContentCollection>
+                            </dx:BootstrapLayoutItem>
+                            <dx:BootstrapLayoutItem Caption="Password" ShowCaption="False" ColSpanSm="12">
+                                <ContentCollection>
+                                    <dx:ContentControl>
+                                        <dx:BootstrapTextBox ID="txtPassword" Password="true" runat="server" NullText="Password">
+                                            <ValidationSettings ValidationGroup="Validation">
+                                                <RequiredField IsRequired="true" />
+                                            </ValidationSettings>
+                                        </dx:BootstrapTextBox>
+                                    </dx:ContentControl>
+                                </ContentCollection>
+                            </dx:BootstrapLayoutItem>
+
+                            <dx:BootstrapLayoutItem ShowCaption="False" HorizontalAlign="Left" ColSpanSm="12">
+                                <ContentCollection>
+                                    <dx:ContentControl>
+                                        <dx:BootstrapButton ID="BootstrapButton1" runat="server" Text="Submit"
+                                            SettingsBootstrap-RenderOption="Primary" AutoPostBack="false">
+                                            <ClientSideEvents Click="function(s, e) { 
+                                                     if(ASPxClientEdit.ValidateGroup('Validation'))
+                                                     {
+                                                        LoadingPanel.Show(); 
+                                                 
+                                                        cbLogin.PerformCallback();
+                                                   
+                                                        e.processOnServer = false;
+                                                     } 
+                                                 }" />
+                                        </dx:BootstrapButton>
+
+
+                                        <dx:BootstrapButton ID="BootstrapButton2" runat="server" Text="Close"
+                                            SettingsBootstrap-RenderOption="Default"
+                                            AutoPostBack="false">
+
+                                            <ClientSideEvents Click="function(s, e) { 
+                                                  //ASPxClientEdit.ClearGroup('Validation'); 
+                                                  BootstrapPopupControl1.Hide();
+                                                  }" />
+
+                                        </dx:BootstrapButton>
+
+
+
+                                    </dx:ContentControl>
+                                </ContentCollection>
+                            </dx:BootstrapLayoutItem>
+
+
+
+                            <dx:BootstrapLayoutItem Caption="Password" ShowCaption="False" ColSpanSm="12">
+                                <ContentCollection>
+                                    <dx:ContentControl>
+
+                                        <dx:ASPxLabel ID="ASPxLabel1" ClientInstanceName="txtMessage" runat="server" Text="" ForeColor="Red"></dx:ASPxLabel>
+
+
+                                    </dx:ContentControl>
+                                </ContentCollection>
+                            </dx:BootstrapLayoutItem>
+
+                        </Items>
+                    </dx:BootstrapFormLayout>
+
+                </dx:ContentControl>
+            </ContentCollection>
+            <%--EndCollapse--%>
+        </dx:BootstrapPopupControl>
+
+
+
+
+
+
+        <dx:ASPxCallback ID="cbLogin" runat="server" ClientInstanceName="cbLogin">
+            <ClientSideEvents CallbackComplete="function(s, e) {
+                    txtMessage.SetText(e.result);
+                  
+                    LoadingPanel.Hide();                                                  
+             }" />
+        </dx:ASPxCallback>
+
+    </form>
+</body>
+</html>

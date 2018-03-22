@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Portal" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LOCKTHBNK-DB07\NEWMOTOR;Initial Catalog=Portal;Persist Security Info=True;User ID=locksql" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PortalConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblInnovation" Member="tblInnovations">
+    <Type Name="tblInnovation">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="StartTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsStart" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPokemon" Member="tblPokemons">
+    <Type Name="tblPokemon">
+      <Column Name="PokeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Pokemon" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PokeHP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblInnovation_Result" Member="tblInnovation_Results">
+    <Type Name="tblInnovation_Result">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InnovationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AccountName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ResultDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Result1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Result2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Pokemon" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

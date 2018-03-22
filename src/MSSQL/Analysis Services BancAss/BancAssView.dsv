@@ -1,0 +1,207 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="1741fede-cd7b-43e3-adae-1089152eb6cc" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>BancAssView</ID>
+  <Name>BancAssView</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:NameMatchingCriteria</Name>
+      <Value>1</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout>
+              <dds>
+                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-7309" scrolltop="-5001" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="18918" y="15002" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                  <font>
+                    <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                  </font>
+                  <mouseicon>
+                    <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                  </mouseicon>
+                </diagram>
+                <layoutmanager>
+                  <ddsxmlobj />
+                </layoutmanager>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Actual" left="-2705" top="-1482" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4260" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000a410000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_Actual" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+              </dds>
+</DiagramLayout>
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>-7309</DiagramViewPortLeft>
+            <DiagramViewPortTop>-5001</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>BancAssDS</DataSourceID>
+  <Schema>
+    <xs:schema id="BancAssView" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="BancAssView" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="8a6caacf-734b-4a60-af53-b9b20c31e604">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_Actual" msprop:FriendlyName="Actual" msprop:DbSchemaName="dbo" msprop:DbTableName="Actual" msprop:design-time-name="3f6e3148-5701-46df-9d39-8fd119f134f3" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="ID" msprop:DbColumnName="ID" msprop:design-time-name="41e19544-1f6f-4985-85a9-e63681bcaa35" type="xs:int" />
+                  <xs:element name="Insurer" msprop:FriendlyName="Insurer" msprop:DbColumnName="Insurer" msprop:design-time-name="9086bf60-2b53-436f-ba32-46c95a4dafa9" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Product" msprop:FriendlyName="Product" msprop:DbColumnName="Product" msprop:design-time-name="b17448a8-78fe-41cb-9384-733bc66b5da8" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Type" msprop:FriendlyName="Type" msprop:DbColumnName="Type" msprop:design-time-name="0b1aa046-42ee-44db-9f08-86b00b48f609" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="InsuranceProduct" msprop:FriendlyName="InsuranceProduct" msprop:DbColumnName="InsuranceProduct" msprop:design-time-name="e5dacd57-6bad-49ba-a331-fc73d4b6af5a" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="MerchantNo" msprop:FriendlyName="MerchantNo" msprop:DbColumnName="MerchantNo" msprop:design-time-name="9e38dda0-ccd9-4ac2-840c-c5837f611eb4" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Mode" msprop:FriendlyName="Mode" msprop:DbColumnName="Mode" msprop:design-time-name="7d25c236-e903-4a2b-b495-ef8978f44a92" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Period" msprop:FriendlyName="Period" msprop:DbColumnName="Period" msprop:design-time-name="09f023a4-7222-454b-a188-e8038f07c7e8" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ServiceFeePercentage" msprop:FriendlyName="ServiceFeePercentage" msprop:DbColumnName="ServiceFeePercentage" msprop:design-time-name="86b90095-7a24-43e9-b68d-42ebb10c0d6b" type="xs:double" minOccurs="0" />
+                  <xs:element name="NoOfPolicy" msprop:FriendlyName="NoOfPolicy" msprop:DbColumnName="NoOfPolicy" msprop:design-time-name="8ccc07ba-7f33-4fd0-b17f-cafc4249a942" type="xs:double" minOccurs="0" />
+                  <xs:element name="GrossPremium" msprop:FriendlyName="GrossPremium" msprop:DbColumnName="GrossPremium" msprop:design-time-name="bc9f6bb0-eaee-4171-88ed-695085c3c1a8" type="xs:double" minOccurs="0" />
+                  <xs:element name="NETPremium" msprop:FriendlyName="NETPremium" msprop:DbColumnName="NETPremium" msprop:design-time-name="1a0ae464-a546-443a-94aa-b606536d1f6a" type="xs:double" minOccurs="0" />
+                  <xs:element name="NettoInsurance" msprop:FriendlyName="NettoInsurance" msprop:DbColumnName="NettoInsurance" msprop:design-time-name="ae0f660a-15e1-4228-8df5-fcc3df5bda6f" type="xs:double" minOccurs="0" />
+                  <xs:element name="ServiceFee" msprop:FriendlyName="ServiceFee" msprop:DbColumnName="ServiceFee" msprop:design-time-name="c3f189c1-cc80-4cf3-9a15-7ba6b521ddea" type="xs:double" minOccurs="0" />
+                  <xs:element name="Vat" msprop:FriendlyName="Vat" msprop:DbColumnName="Vat" msprop:design-time-name="f46e402b-c3ca-42ce-816e-c40a929defc7" type="xs:double" minOccurs="0" />
+                  <xs:element name="Net" msprop:FriendlyName="Net" msprop:DbColumnName="Net" msprop:design-time-name="b037cd67-f0a7-4755-a915-d748099c848d" type="xs:double" minOccurs="0" />
+                  <xs:element name="LWT" msprop:FriendlyName="LWT" msprop:DbColumnName="LWT" msprop:design-time-name="65290a92-e61b-49c3-80c9-5a5d8caa2ced" type="xs:double" minOccurs="0" />
+                  <xs:element name="CTB_Act" msprop:FriendlyName="CTB_Act" msprop:DbColumnName="CTB_Act" msprop:design-time-name="c75bf73e-2427-4413-86a4-4739d75df695" type="xs:double" minOccurs="0" />
+                  <xs:element name="ServiceFeePercentage2" msprop:FriendlyName="ServiceFeePercentage2" msprop:DbColumnName="ServiceFeePercentage2" msprop:design-time-name="f6b132a3-f788-4f00-9153-0fe0d9a6d04e" type="xs:double" minOccurs="0" />
+                  <xs:element name="LWT_Share" msprop:FriendlyName="LWT_Share" msprop:DbColumnName="LWT_Share" msprop:design-time-name="2081d83e-7063-42ef-b643-4bbd8c5a33b2" type="xs:double" minOccurs="0" />
+                  <xs:element name="REJ_ac" msprop:FriendlyName="REJ_ac" msprop:DbColumnName="REJ_ac" msprop:design-time-name="44bb6899-e709-481a-88b9-3b940bf9021e" type="xs:double" minOccurs="0" />
+                  <xs:element name="REJ_amt" msprop:FriendlyName="REJ_amt" msprop:DbColumnName="REJ_amt" msprop:design-time-name="3bf0b0b5-d059-492b-83e2-11e2722e46e8" type="xs:double" minOccurs="0" />
+                  <xs:element name="Pol_of_CB" msprop:FriendlyName="Pol_of_CB" msprop:DbColumnName="Pol_of_CB" msprop:design-time-name="1a2d91f9-29e8-40bc-8548-e17eb8ec33b3" type="xs:double" minOccurs="0" />
+                  <xs:element name="CB" msprop:FriendlyName="CB" msprop:DbColumnName="CB" msprop:design-time-name="4402c03f-42a6-43ff-a5a7-f177bf93a537" type="xs:double" minOccurs="0" />
+                  <xs:element name="Accrue" msprop:FriendlyName="Accrue" msprop:DbColumnName="Accrue" msprop:design-time-name="e04f0296-700c-42ae-be76-ee75ddbac601" type="xs:double" minOccurs="0" />
+                  <xs:element name="CTB_Acc" msprop:FriendlyName="CTB_Acc" msprop:DbColumnName="CTB_Acc" msprop:design-time-name="177d3a98-b25d-48bb-9501-801f4cf240e8" type="xs:double" minOccurs="0" />
+                  <xs:element name="CTB" msprop:FriendlyName="CTB" msprop:DbColumnName="CTB" msprop:design-time-name="3f5e96b4-6017-4664-b431-48c892e862da" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Service" msprop:FriendlyName="Service" msprop:DbColumnName="Service" msprop:design-time-name="b61cd030-8218-423d-b957-c01457fffe49" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Month" msprop:FriendlyName="Month" msprop:DbColumnName="Month" msprop:design-time-name="28cf4101-823e-4b12-aeed-268298363413" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Year" msprop:FriendlyName="Year" msprop:DbColumnName="Year" msprop:design-time-name="7d3bd073-f42c-4c57-9c70-229b73323251" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="No" msprop:FriendlyName="No" msprop:DbColumnName="No" msprop:design-time-name="5a04cc5d-8ced-4faf-9a6e-53aebbedace5" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="SFReject" msprop:FriendlyName="SFReject" msprop:DbColumnName="SFReject" msprop:design-time-name="0902771c-8917-49a9-8712-928f0089cc7a" type="xs:double" minOccurs="0" />
+                  <xs:element name="SFCB" msprop:FriendlyName="SFCB" msprop:DbColumnName="SFCB" msprop:design-time-name="a658159f-ccb1-4c63-9cc9-a05c5824989a" type="xs:double" minOccurs="0" />
+                  <xs:element name="typeofSF" msprop:FriendlyName="typeofSF" msprop:DbColumnName="typeofSF" msprop:design-time-name="59fb7262-58ea-45f1-9f81-786b3b9404dd" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PercentageRej" msprop:FriendlyName="PercentageRej" msprop:DbColumnName="PercentageRej" msprop:design-time-name="ab4eb730-e6e3-41c9-9c3e-39bb29cb9a4a" type="xs:double" minOccurs="0" />
+                  <xs:element name="PercentageCB" msprop:FriendlyName="PercentageCB" msprop:DbColumnName="PercentageCB" msprop:design-time-name="03f9d513-e850-4016-a2cd-f9142b0cc2c6" type="xs:double" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Actual" />
+          <xs:field xpath="ID" />
+        </xs:unique>
+      </xs:element>
+    </xs:schema>
+    <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1" />
+  </Schema>
+</DataSourceView>

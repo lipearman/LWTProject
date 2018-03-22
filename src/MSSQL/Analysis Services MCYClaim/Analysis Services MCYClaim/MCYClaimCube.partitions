@@ -1,0 +1,25 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="c044a8a9-fb8b-4ebf-83cf-902487af487c" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>MCYClaimCube</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Claim MCY Rawdata</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="96f8bc0a-b85f-40d8-bd15-a440f337730e">
+          <ID>Claim MCY Rawdata</ID>
+          <Name>Claim MCY Rawdata</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="ccff9dd9-d652-4f3d-9706-b3798e4a57f8">
+            <DataSourceViewID>MCYClaimView</DataSourceViewID>
+            <TableID>dbo_ClaimMCYRawdata</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

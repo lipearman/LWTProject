@@ -1,0 +1,140 @@
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="DesktopDefault.aspx.vb" Inherits="DesktopDefault" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%=sitename%></title>
+    <link href="favicon.ico" rel="Lockton Wattana Insurance Brokers Thailand">
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+ 
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server">
+        <script src="Scripts/jquery-3.1.1.js"></script>
+        <script src="Scripts/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="Scripts/jquery.qrcode.min.js"></script>
+        <script src="Scripts/URI.js"></script>
+        <script src="Scripts/highlight.pack.js"></script>
+        <script src="Scripts/clipboard.min.js"></script>
+        <script src="Scripts/bootstrap.min.js"></script>
+        <script src="Scripts/common.js"></script>
+        <script src="Scripts/search.js"></script>
+        <script src="Scripts/pages.js"></script>
+        <%--<script src="Scripts/landing.js"></script>--%>
+         
+        <link href="Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="Content/demo-icons.css" rel="stylesheet" />
+        <link href="Content/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+        <link href="Content/font-awesome.min.css" rel="stylesheet" />
+        <link href="Content/highlightjs.default.css" rel="stylesheet" />
+        <link href="Content/common.css" rel="stylesheet" />
+        <link href="Content/themes.css" rel="stylesheet" />
+        <link href="Content/pages.css" rel="stylesheet" />
+        <link href="Content/demos.css" rel="stylesheet" />
+
+            
+        <%--<link href="Content/landing.css" rel="stylesheet" />--%> 
+    </asp:PlaceHolder>
+
+
+
+        <style>
+            #sidebar #navTreeView a {
+    font-family: 'overpass';
+    font-weight: 500;
+    color: #999999;
+    font-size: 14px;
+}
+    </style>
+
+
+</head>
+<body runat="server" id="body">
+
+
+          <dx:ASPxLoadingPanel ID="LoadingPanel" runat="server" 
+           ClientInstanceName="LoadingPanel" 
+           Modal="True">
+        </dx:ASPxLoadingPanel>
+
+
+
+
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-fixed-top" id="navbar">
+            <div class="container-fluid">
+                <button type="button" class="nav-button" id="collapse-button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <img src="images/Lockton-Logo_250.png" width="64" />
+                </button>
+                <div class="logo">
+                     <h3><%=sitename%></h3>
+                    <h4>Powered By A&S</h4>
+                </div>
+                <ul class="nav nav-pills pull-right nav-header">
+                <%--    <li role="presentation" class="hidden-xs"><a href="<%= DemoUtils.TryUrl %>">Free Trial</a></li>
+                    <li role="presentation" class="hidden-xs"><a href="<%= DemoUtils.BuyUrl %>">Buy</a></li>--%>
+                    <%--<li role="presentation"><a href="javascript:void(0);" id="settingsButton"><span class="icon icon-settings"></span></a></li>
+                --%>
+                <li role="presentation"><a href="javascript:BootstrapPopupControl1.Show();"><span class="image icon icon-download"></span><span>Logout</span></a></li>
+           
+                </ul>
+            </div>
+        </nav>
+        <div class="main">
+<section id="sidebar">
+    <div class="sidebar-body">
+        <%--<demo:Search runat="server" ID="Search"></demo:Search>--%>
+        <dx:BootstrapTreeView runat="server" ID="navTreeView" ClientInstanceName="navTreeView"
+            ShowExpandButtons="false" ClientIDMode="Static" Target="_top">
+            <ClientSideEvents ExpandedChanging="dxbsDemo.preventExpandedChanging" NodeClick="dxbsDemo.onSideBarNodeClick" />
+        </dx:BootstrapTreeView>
+    </div>
+    <div class="sidebar-footer">
+        <ul class="nav nav-pills nav-stacked hidden-lg hidden-md hidden-sm" id="bottomNav">
+            <li role="presentation"><a href="javascript:BootstrapPopupControl1.Show();"><span class="image icon icon-download"></span><span>Logout</span></a></li>
+            <%--<li role="presentation"><a href="javascript:void(0);"><span class="image icon icon-buy"></span><span>Buy</span></a></li>--%>
+        </ul>
+    </div>
+
+ 
+</section>
+            <section id="submenubar" class="hidden-sm hidden-xs" runat="server">
+                <dx:BootstrapMenu runat="server" ID="subMenu" Orientation="Vertical" ClientIDMode="Static" SyncSelectionMode="None" EnableClientSideAPI="true">
+                    <ItemTemplate>
+                        <a href="#<%# Container.Item.Name%>"><%# Container.Item.Text %></a>
+                    </ItemTemplate>
+                </dx:BootstrapMenu>
+            </section>
+            <section id="content">
+              <asp:PlaceHolder runat="server" id="container"  > </asp:PlaceHolder>
+
+                  <footer>
+                    Copyright &copy; <%=Now.Year %> Lockton Wattana Insurance Brokers (Thailand) Ltd. All rights reserved.
+                    <br />
+
+
+                    <%--    Copyright ? 2017 Developer Express Inc.<br />
+                    All trademarks or registered trademarks are property of their respective owners.--%>
+                </footer>
+
+            </section>
+        <%--    <section id="settingsbar">
+                <h5 runat="server" id="screenSizeLbl">Screen Size</h5>
+                <dx:BootstrapComboBox runat="server" ID="screenSizeCmb" ValueType="System.String">
+                    <ClientSideEvents ValueChanged="dxbsDemo.onScreenSizeValueChanged" />
+                </dx:BootstrapComboBox>
+                <h5>Color Themes</h5>
+                <dx:BootstrapMenu runat="server" ID="themesMenu" ClientIDMode="Static" AllowSelectItem="true">
+                    <ClientSideEvents ItemClick="dxbsDemo.onThemeMenuClick" />
+                </dx:BootstrapMenu>
+                <h5>Demo QR Code</h5>
+                <div id="qrLink"></div>
+            </section>--%>
+        </div>
+    </form>
+</body>
+</html>

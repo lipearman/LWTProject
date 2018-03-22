@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11" name="DataClasses_PortalBIRawdata">
+  <DataContextMoniker Name="/DataClasses_PortalBIRawdataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="afcd93cc-dfa4-46eb-ad4f-3f5a923e2427" absoluteBounds="3, 0.75, 2, 10.0398583984375">
+      <DataClassMoniker Name="/DataClasses_PortalBIRawdataDataContext/V_APDRenewal_RAWDATA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3cd7508f-ff25-4bd0-b3a6-be45d8df85f7" absoluteBounds="3.0149999999999997, 1.21, 1.9700000000000002, 9.4798583984375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MotorClaimDemo" Class="DataClasses_MotorClaimDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LOCKTHBNK-DB07;Initial Catalog=MotorClaimDemo;Persist Security Info=True;User ID=locksql" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MotorClaimConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Running" Member="Runnings">
+    <Type Name="Running">
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UWCode" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UWName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RunningCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="RunningPrefix" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="RunningPrefixYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RunningYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RunningNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RunningDigit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GUID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblGarage" Member="tblGarages">
+    <Type Name="tblGarage">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GarageCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GarageName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Province" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Zipcode" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TelCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TelNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FaxNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SalesArea" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GarageType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MailNotifications" Member="MailNotifications">
+    <Type Name="MailNotification">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="MailFrom" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MailTo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MailCC" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MailBcc" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MailSubject" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MailBody" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblNoticeDetail" Member="tblNoticeDetails">
+    <Type Name="tblNoticeDetail">
+      <Column Name="NoticeDataID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NoticeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="SendDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="f01" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f02" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f03" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f04" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f05" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f06" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f07" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f08" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f09" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f10" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f11" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f12" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f13" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f14" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f15" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f16" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f17" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f18" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f19" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="f20" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TRID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblNoticeHeader_tblNoticeDetail" Member="tblNoticeHeader" ThisKey="NoticeID" OtherKey="NoticeID" Type="tblNoticeHeader" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblNoticeHeader" Member="tblNoticeHeaders">
+    <Type Name="tblNoticeHeader">
+      <Column Name="NoticeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NoticeTitle" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="NoticeCode" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="NoticeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SendBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SendDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReSendBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ReSendDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblNoticeHeader_tblNoticeDetail" Member="tblNoticeDetails" ThisKey="NoticeID" OtherKey="NoticeID" Type="tblNoticeDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_ClaimDailyNotification" Member="V_ClaimDailyNotifications">
+    <Type Name="V_ClaimDailyNotification">
+      <Column Name="NoticeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ShowRoomCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ShowRoomName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Records" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_NissanDailyClaim_Details" Member="V_NissanDailyClaim_Details">
+    <Type Name="V_NissanDailyClaim_Detail">
+      <Column Name="TRID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRNo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="App_TempPolicyNo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FullCustomerName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ChassisNo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CarLicense" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="PolicyNo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ClaimNo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="AccidentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AccidentPlace" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="InsurerName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="InsurerCode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ShowRoomCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ShowRoomName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DealerCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsPost" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Beneficiary" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NoticeName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="NoticeTel" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblClaimTransaction_Result" Member="tblClaimTransaction_Results">
+    <Type Name="tblClaimTransaction_Result">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TRID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GUID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ResultNo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ResultCode" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ResultMessage" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="SubmitDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblClaimTransaction_Data_tblClaimTransaction_Result" Member="tblClaimTransaction_Data" ThisKey="TRID" OtherKey="TRID" Type="tblClaimTransaction_Data" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Portal_Users" Member="Portal_Users">
+    <Type Name="Portal_User">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PasswordQuestion" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="PasswordAnswer" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="IsApproved" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LastActivityDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastLoginDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastPasswordChangedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsLocked" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LastLockOutDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FailedPasswordAttemptCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FailedPasswordAttemptWindowStart" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FailedPasswordAnswerAttemptCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FailedPasswordAnswerAttemptWindowStart" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiredDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblShowRoom" Member="tblShowRooms">
+    <Type Name="tblShowRoom">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShowRoomCode" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DealerCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BranchCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PartsOrderCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ShowRoomName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BranchName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Province" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Zipcode" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TelCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TelNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FaxNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ShowRoomNameEN" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BranchNameEN" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AddressEN" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ProvinceEN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SalesArea" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="BP" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SPDeptCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ShowroomID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblShowRoomCode" Member="tblShowRoomCodes">
+    <Type Name="tblShowRoomCode">
+      <Column Name="ShowRoomCode" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ShowroomID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblClaimTransaction_Data" Member="tblClaimTransaction_Datas">
+    <Type Name="tblClaimTransaction_Data">
+      <Column Name="TRID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TRNo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ClaimStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TempPolicy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RefNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Version" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PolicyNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PolicyYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClaimNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TransactionDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Unwriter" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="InsuredName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Beneficiary" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CarBrand" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarModel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CarLicense" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarYear" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ChassisNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ShowRoomName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ShowRoomCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ClaimNoticeDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ClaimNoticeTime" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ClaimDetails" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ClaimType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClaimResult" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClaimDamageDetails" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CallCenter" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AccidentDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AccidentTime" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AccidentPlace" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="AccidentTumbon" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="AccidentAmphur" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="AccidentProvince" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="AccidentZipcode" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="DriverName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DriverTel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NoticeName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="NoticeTel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="GarageType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GarageCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="GarageName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="GaragePlace" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GarageTumbon" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GarageAmphur" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GarageProvince" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GarageZipcode" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="CarRepairDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CarReceiveDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ConsentFormNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PartsDealerName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="PaymentDetails" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Amount1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Amount2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Amount3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FileUpload" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GUID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="SubmitDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsPost" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tblClaimTransaction_Data_tblClaimTransaction_Result" Member="tblClaimTransaction_Results" ThisKey="TRID" OtherKey="TRID" Type="tblClaimTransaction_Result" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_ClaimTransactionData_Notice" Member="V_ClaimTransactionData_Notices">
+    <Type Name="V_ClaimTransactionData_Notice">
+      <Column Name="TRID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DealerName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DealerCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="InsuredName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ChassisNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PolicyNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ClaimNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AccidentDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AccidentTime" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AccidentPlace" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Beneficiary" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="UWName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ClaimNoticeDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ClaimNoticeTime" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_ClaimTransactionData" Member="V_ClaimTransactionDatas">
+    <Type Name="V_ClaimTransactionData">
+      <Column Name="TRID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TRNo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ClaimStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TempPolicy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RefNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Version" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PolicyNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PolicyYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClaimNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TransactionDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Unwriter" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="InsuredName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Beneficiary" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CarBrand" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarModel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CarLicense" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarYear" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ChassisNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DealerCode" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="ShowRoomName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ShowRoomCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ClaimNoticeDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ClaimNoticeTime" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ClaimDetails" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ClaimType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClaimResult" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClaimDamageDetails" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CallCenter" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AccidentDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AccidentTime" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AccidentPlace" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="AccidentTumbon" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="AccidentAmphur" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="AccidentProvince" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="AccidentZipcode" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="DriverName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DriverTel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NoticeName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="NoticeTel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="GarageType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GarageCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="GarageName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="GaragePlace" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GarageTumbon" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GarageAmphur" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GarageProvince" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GarageZipcode" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="CarRepairDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CarReceiveDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ConsentFormNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PartsDealerName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="PaymentDetails" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Amount1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Amount2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Amount3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FileUpload" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GUID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="SubmitDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsPost" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ResultMessage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RankNo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Running_GetByRunningCode" Method="Running_GetByRunningCode">
+    <Parameter Name="RunningCode" Parameter="runningCode" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="NewCode" Parameter="newCode" Type="System.String" DbType="VarChar(20)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

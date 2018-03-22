@@ -1,0 +1,74 @@
+﻿Imports Portal.Components
+Imports System.Data.SqlClient
+Imports System.Data
+Imports DevExpress.Web
+Imports DevExpress.XtraPivotGrid
+Imports DevExpress.Web.Data
+Imports System.Data.OleDb
+Imports System.IO
+
+Partial Class Modules_ucDevxEGlobalSimpleData
+    Inherits PortalModuleControl
+    'Protected Sub Page_Init(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Init
+    '    Dim fileName As String = Server.MapPath("~/App_Data/Modules/eGlobal/RawData/eGlobal-SampleData-20170609.xlsx")
+    '    gv.DataSource = OpenExcelFile(fileName)
+    '    gv.DataBind()
+    'End Sub
+
+    'Protected Function OpenExcelFile(ByVal fileName As String) As Object
+    '    Dim dataTable As New DataTable()
+    '    Dim connectionString As String = String.Format("Provider=Microsoft.Jet.OLEDB.4.0; data source={0}; Extended Properties=Excel 8.0;", fileName)
+    '    Dim adapter As New OleDbDataAdapter("SELECT * FROM [Details$]", connectionString)
+    '    adapter.Fill(dataTable)
+    '    Return dataTable
+    'End Function
+
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
+
+
+        If (Not IsPostBack) Then
+            LoadFile()
+        End If
+ 
+    End Sub
+
+
+
+
+    Protected Sub UploadControl_FileUploadComplete(ByVal sender As Object, ByVal e As FileUploadCompleteEventArgs) Handles UploadControl.FileUploadComplete
+ 
+        If (Not String.IsNullOrEmpty(e.UploadedFile.FileName)) AndAlso e.IsValid Then
+            ASPxSpreadsheet1.WorkDirectory = Server.MapPath("~/App_Data/Modules/eGlobal/RawData")
+            ASPxSpreadsheet1.SettingsDocumentSelector.UploadSettings.Enabled = True
+            Dim filePath = Path.Combine(ASPxSpreadsheet1.WorkDirectory, "eGlobal-SampleData.xlsx")
+
+            e.UploadedFile.SaveAs(filePath)
+            e.CallbackData = "success"
+        End If
+    End Sub
+
+
+
+    Protected Sub btnProcess_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnProcess.Click
+        Using dc As New DataClasses_PortalBIExt()
+            pcResult.ShowOnPageLoad = True
+            gridResult.DataSource = dc.sp_ssis_eglobal()
+            gridResult.DataBind()
+        End Using
+
+    End Sub
+
+    Protected Sub Spreadsheet_Callback(ByVal source As Object, ByVal e As CallbackEventArgsBase) Handles ASPxSpreadsheet1.Callback
+        LoadFile()
+    End Sub
+
+    Private Sub LoadFile()
+        ASPxSpreadsheet1.WorkDirectory = Server.MapPath("~/App_Data/Modules/eGlobal/RawData")
+        Dim filePath = Path.Combine(ASPxSpreadsheet1.WorkDirectory, "eGlobal-SampleData.xlsx")
+        If File.Exists(filePath) Then
+            Dim documentID = Guid.NewGuid().ToString()
+            ASPxSpreadsheet1.Open(documentID, DevExpress.Spreadsheet.DocumentFormat.Xlsx, Function() System.IO.File.ReadAllBytes(filePath))
+        End If
+    End Sub
+End Class

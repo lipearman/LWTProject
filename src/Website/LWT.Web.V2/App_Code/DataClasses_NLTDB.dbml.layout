@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 29.75" name="DataClasses_NLTDB">
+  <DataContextMoniker Name="/DataClasses_NLTDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ba686f52-7781-494c-bfa4-16a7981e9037" absoluteBounds="0.75, 0.75, 2, 28.693097330729167">
+      <DataClassMoniker Name="/DataClasses_NLTDBDataContext/Application" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64b3cc0f-1037-4da1-9d2b-2cbaba34ddee" absoluteBounds="0.76499999999999968, 1.21, 1.9700000000000002, 28.133097330729164" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2ba36ee8-6b46-43ac-ae7b-45d427dadcd5" absoluteBounds="3.75, 0.75, 2, 4.8477197265624987">
+      <DataClassMoniker Name="/DataClasses_NLTDBDataContext/Showroom" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b5543b13-af20-4d61-8436-217454fc6324" absoluteBounds="3.765, 1.21, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3a0eab01-5db6-4e52-9ef7-bd53a671cb64" absoluteBounds="6.75, 0.75, 2, 5.4246240234374987">
+      <DataClassMoniker Name="/DataClasses_NLTDBDataContext/HeadOffice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e41606da-7e97-4d27-bd14-dfa0d4ace982" absoluteBounds="6.7650000000000006, 1.21, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aeee84d6-736f-4a21-a455-d10431563b1d" absoluteBounds="3.75, 7.75, 2, 4.8477197265624987">
+      <DataClassMoniker Name="/DataClasses_NLTDBDataContext/InsurerUnique" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4e7addee-4a7f-48cc-b5a7-8dac63d8ee9b" absoluteBounds="3.765, 8.21, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="87501e62-1f51-4513-870d-c37ed59f5e71" absoluteBounds="6.75, 7.75, 2, 5.8092268880208318">
+      <DataClassMoniker Name="/DataClasses_NLTDBDataContext/Insurer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="451eb7cf-22cb-4db9-81c1-b0ae6db08cd4" absoluteBounds="6.7650000000000006, 8.21, 1.9700000000000002, 5.249226888020833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c7c82caf-c45d-4d79-a935-112cfc82203c" absoluteBounds="3.25, 1.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClasses_NLTDBDataContext/V_Model" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8a79496-0b4c-4b8e-a7d7-d4eca27bd2a1" absoluteBounds="3.265, 2.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

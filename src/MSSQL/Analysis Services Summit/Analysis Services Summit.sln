@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "Analysis Services Summit", "Analysis Services Summit\Analysis Services Summit.dwproj", "{600A12F3-502E-48D9-8C68-5F709FF351D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{600A12F3-502E-48D9-8C68-5F709FF351D1}.Development|Default.ActiveCfg = Development
+		{600A12F3-502E-48D9-8C68-5F709FF351D1}.Development|Default.Build.0 = Development
+		{600A12F3-502E-48D9-8C68-5F709FF351D1}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

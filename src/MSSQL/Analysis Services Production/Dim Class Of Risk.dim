@@ -1,0 +1,217 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="1c8b275b-bef1-42d2-b446-97b5b3e960b2" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Production Dim Class Of Risk</ID>
+  <Name>Dim Class Of Risk</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1621" scrolltop="-2024" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="7038" y="8493" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Production_Dim_ClassOfRisk" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3307" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000eb0c00009b0f0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Production_Dim_ClassOfRisk" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1621</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-2024</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="67196047-0928-45d9-a8e2-7149a747a013">
+    <DataSourceViewID>LWTProductionView</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="e481a93b-8609-4984-a4fe-43eea362f3d7">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="c094460c-d570-4ded-ad37-c3bf03d8b32a">
+      <ID>Risk</ID>
+      <Name>Risk</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7aee2ce5-caf9-4bad-948c-5bd227da58ad">
+          <NullProcessing>UnknownMember</NullProcessing>
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4ac61bc5-93d9-4645-a9bb-6ed3ff9f0123">
+            <TableID>dbo_Production_Dim_ClassOfRisk</TableID>
+            <ColumnID>Risk</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="16f26f9e-0869-47f0-b21a-d8d99eb87330">
+          <AttributeID>Risk Description</AttributeID>
+          <Name>Risk Description</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="052a7dd7-9fed-48f4-a404-8908a2d918d1">
+          <AttributeID>Risk Group I</AttributeID>
+          <Name>Risk Group I</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3482452c-f459-4345-870a-7ee8b9046cf1">
+          <AttributeID>Risk Group II</AttributeID>
+          <Name>Risk Group II</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3b8026c3-8c8d-4c77-85b6-666591b60092">
+          <AttributeID>Risk Short Desc</AttributeID>
+          <Name>Risk Short Desc</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4bf373a6-d2e7-4efb-a857-96b1fe95a7ed">
+          <AttributeID>Risk Government</AttributeID>
+          <Name>Risk Government</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="323cbb6b-734e-47d2-ae20-54a802242673">
+          <AttributeID>Department</AttributeID>
+          <Name>Department</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="39695f8f-f593-4844-b623-44b87d25dd20">
+      <ID>Risk Description</ID>
+      <Name>Risk Description</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="bd37b88b-e890-4006-99a9-a92acb818881">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6b86a1ef-f5a4-474b-be33-7e06033fe36b">
+            <TableID>dbo_Production_Dim_ClassOfRisk</TableID>
+            <ColumnID>RiskDescription</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="58002ca0-679a-4b93-99af-327873f39de2">
+      <ID>Risk Group I</ID>
+      <Name>Risk Group I</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="55e49903-4af9-454f-a430-75f5949fe0dc">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="064b5809-2707-438d-8c1c-892194fd7a96">
+            <TableID>dbo_Production_Dim_ClassOfRisk</TableID>
+            <ColumnID>RiskGroupI</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="963f05f7-3ce7-44aa-a161-09e3dde87a62">
+      <ID>Risk Group II</ID>
+      <Name>Risk Group II</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="248534e7-6df0-4c38-ad7d-6638d5586724">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b139e6e6-9362-499f-929a-738999d6061f">
+            <TableID>dbo_Production_Dim_ClassOfRisk</TableID>
+            <ColumnID>RiskGroupII</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e2068089-5fb6-4058-b084-c106c0ccac45">
+      <ID>Risk Short Desc</ID>
+      <Name>Risk Short Desc</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="704ecd2d-9136-4011-b4e8-83a435d518b2">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e50bcc1b-184f-4972-956d-bbd599fdeb67">
+            <TableID>dbo_Production_Dim_ClassOfRisk</TableID>
+            <ColumnID>RiskShortDesc</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5389efa3-54fa-4fd1-a377-21cbdb83fcde">
+      <ID>Risk Government</ID>
+      <Name>Risk Government</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e71eb43f-ed5a-4796-8e4e-fd29b4f0d56f">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cc87861b-22c8-4ead-8bbd-5c22c6323c54">
+            <TableID>dbo_Production_Dim_ClassOfRisk</TableID>
+            <ColumnID>RiskGovernment</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3bb0f21c-9258-4ab0-8810-d1cce57a30e2">
+      <ID>Department</ID>
+      <Name>Department</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a5018cb7-8c43-4187-b00d-2266d1f8b5c5">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7ad0d9c1-d097-45aa-b129-206996d19e3e">
+            <TableID>dbo_Production_Dim_ClassOfRisk</TableID>
+            <ColumnID>Department</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+  </Attributes>
+</Dimension>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 14.25" name="DataClasses_MotorClaimDataExt">
+  <DataContextMoniker Name="/DataClasses_MotorClaimDataExtDataContext" />
+  <nestedChildShapes>
+    <classShape Id="061d8be6-6b7c-456b-aa47-fe2a3f419ec4" absoluteBounds="1.5, 0.75, 2, 13.308982747395833">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataExtDataContext/tblClaimTransaction_Data" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2b6ac27e-df60-4c02-9cc2-ceb54604e406" absoluteBounds="1.5149999999999997, 1.21, 1.9700000000000002, 12.748982747395832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Portal" Class="DataClasses_PortalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LOCKTHBNK-DB07\NEWMOTOR;Initial Catalog=Portal;Persist Security Info=True;User ID=locksql" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PortalConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[Mobile.Device.Profile]" Member="Mobile_Device_Profiles">
+    <Type Name="Mobile_Device_Profile">
+      <Column Name="IDCard" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DeviceId" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MobileNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Timestamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Version" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ShortVersion" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CurrentCulture" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IsBackgrounded" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ScreenHeight" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ScreenWidth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Manufacturer" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="OperatingSystem" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="OperatingSystemVersion" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IsSimulator" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsTablet" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="WhenBatteryPercentageChanged" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WhenPowerStatusChanged" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InternetReachability" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CellularNetworkCarrier" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IpAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="WifiSsid" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

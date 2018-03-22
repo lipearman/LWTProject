@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.375, 22.5" name="DataClasses_MotorClaim">
+  <DataContextMoniker Name="/DataClasses_MotorClaimDataContext" />
+  <nestedChildShapes>
+    <classShape Id="82e50383-80f7-48ca-a9f9-2562d98de5ff" absoluteBounds="0.75, 1.5, 2, 13.116681315104167">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/tblClaimTransaction_Data" />
+      <nestedChildShapes>
+        <elementListCompartment Id="83d98d26-b3c6-4510-9b6c-2e667eb67c3a" absoluteBounds="0.76499999999999968, 1.96, 1.9700000000000002, 12.556681315104166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2f11f190-09c4-4506-94aa-ed6d3fb07447" absoluteBounds="3.5, 7, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/tblClaimTransaction_Result" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1eae07b2-357f-4bd6-8967-7cecfeac3bb1" absoluteBounds="3.5150000000000006, 7.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c286a8e9-838d-408b-bbae-bc41b4dee2b1" absoluteBounds="6.75, 0.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/Running" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6755db0-2b56-43f3-8c6d-a0f8672eea11" absoluteBounds="6.7650000000000006, 1.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="929db127-940c-4bb7-a215-8d690aaddd84" absoluteBounds="6.75, 4.75, 2, 3.5016097005208309">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/tblGarage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff70fdb5-636e-4a62-a085-15af949abbf2" absoluteBounds="6.7650000000000006, 5.2100000000000009, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0e885c3a-eb38-4ca5-b1b4-0caa1cda4fb7" absoluteBounds="9.75, 0.75, 2, 6.7707340494791666">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/tblShowRoom" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0272cd30-74f9-48fb-8726-aa79e1076c2f" absoluteBounds="9.765, 1.2100000000000009, 1.9700000000000002, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b22d08a7-1a90-4ffe-bf0f-538018fe555d" absoluteBounds="6.75, 9.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/tblShowRoomCode" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5d84a8b4-a7bd-4b30-a6b6-2051c893db5b" absoluteBounds="6.7650000000000006, 10.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 8.07774983723958); (3.5 : 8.07774983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses_MotorClaimDataContext/tblClaimTransaction_Data/tblClaimTransaction_Data_tblClaimTransaction_Result" />
+      <nodes>
+        <classShapeMoniker Id="82e50383-80f7-48ca-a9f9-2562d98de5ff" />
+        <classShapeMoniker Id="2f11f190-09c4-4506-94aa-ed6d3fb07447" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="11752e66-f689-44a5-ad43-21d9474eed6d" absoluteBounds="9.75, 8.75, 2, 13.501284179687502">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/V_ClaimTransactionData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="02432e03-9401-474d-abb2-ffe6188c3e20" absoluteBounds="9.765, 9.21, 1.9700000000000002, 12.9412841796875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cf05e675-fab5-4f81-83b8-41a53184c1e5" absoluteBounds="3.25, 11.5, 2.5, 3.8862125651041666">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/V_ClaimTransactionData_Notice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9bb8b864-efc4-4fa8-882e-313e9beb658e" absoluteBounds="3.265, 11.96, 2.4699999999999998, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d625293b-77e0-45d1-a438-e52321c5f915" absoluteBounds="12.75, 0.75, 2, 5.0400211588541666">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/Portal_User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="651368ef-52a4-4cf8-9927-c666156c6cce" absoluteBounds="12.765, 1.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a8627070-9908-4e3b-83e5-fd7afba988fc" absoluteBounds="12.75, 6.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/V_ClaimDailyNotification" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2fea1087-c10b-43fc-8e7a-0583d13ca1a0" absoluteBounds="12.765, 7.2100000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="33c72e7c-857f-4f29-a3f7-7059833f5298" absoluteBounds="6.375, 11.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/V_NissanDailyClaim_Header" />
+      <nestedChildShapes>
+        <elementListCompartment Id="54457bf6-a2a1-44fe-8cb7-96888cf598af" absoluteBounds="6.39, 12.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="abc579df-cde6-46c6-b3fb-a8b7c7411031" absoluteBounds="15.125, 15.125, 2, 5.6169254557291666">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/tblClaimNoticeDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0c763724-71ca-4916-ae6d-91ae4f0f3860" absoluteBounds="15.14, 15.585, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1714abee-1f9f-46fb-91d7-286690cf2420" absoluteBounds="12.375, 16.25, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/tblClaimNoticeHeader" />
+      <nestedChildShapes>
+        <elementListCompartment Id="19571c3a-8488-4e2b-a6fd-810c9659bb31" absoluteBounds="12.39, 16.71, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14.375 : 17.9046541341146); (15.125 : 17.9046541341146)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses_MotorClaimDataContext/tblClaimNoticeHeader/tblClaimNoticeHeader_tblClaimNoticeDetail" />
+      <nodes>
+        <classShapeMoniker Id="1714abee-1f9f-46fb-91d7-286690cf2420" />
+        <classShapeMoniker Id="abc579df-cde6-46c6-b3fb-a8b7c7411031" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e7f7260b-5c38-47fb-b8e8-ae1fcacd734f" absoluteBounds="12.25, 10.125, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/V_NissanDailyClaim_Detail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ca37cff9-94b1-4eaa-87b1-1c63fe31344f" absoluteBounds="12.265, 10.585, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="74a7a515-1a19-4914-84f3-3fb9369f2b21" absoluteBounds="4.625, 2, 2, 3.1170068359375">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/MailNotification" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e7c515ac-5714-4e14-9f5e-93cabdd04fd3" absoluteBounds="4.64, 2.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1c51ab2b-23c2-431d-9d75-7dd86fe9ca19" absoluteBounds="4.25, 0.75, 2, 11.001365559895833">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/V_ClaimDaily_00_Notice_Daily" />
+      <nestedChildShapes>
+        <elementListCompartment Id="39ab034c-f3ef-427d-80d5-9c7923318a99" absoluteBounds="4.265, 1.21, 1.9700000000000002, 10.441365559895832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="795405cc-eb6a-4c31-9e07-9d42d1e0fde4" absoluteBounds="2.875, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/tblDealer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cd95d63a-bc4d-4a27-ad4e-50841849ca49" absoluteBounds="2.8899999999999997, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,37 @@
+﻿@charset "utf-8";
+/* Slide-to-Login style sheet*/
+
+#slidetl{
+	width:300px;
+	height:60px;
+	overflow:hidden;
+	background-image:url(../images/cont.png);
+}
+
+#slidetl #slider{
+	height:50px;
+	width:80px;
+	top:5px;
+	margin-left:3px;
+	background-image:url(../images/slider.png);
+}
+
+#slidetl #slider:hover{
+	cursor:pointer;
+}
+
+
+/* index page style */
+html,body{
+	padding:0px;
+	margin:0px;
+	font-family:"calibri","arial";
+	background-color:#000;
+	color:#FFF;
+}
+#container{
+	width:500px;
+	height:300px;
+	margin:0 auto;
+	position:relative;
+}

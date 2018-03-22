@@ -1,0 +1,403 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="1ed88833-a9bb-465d-b68b-ad19096df604" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Tbl BDMS Rawdata</ID>
+  <Name>Dim BDMS</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-456" scrolltop="-1521" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="6271" y="13679" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="tblBDMSRawdata" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4868" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000800000413000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_tblBDMSRawdata" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-456</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-1521</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="9267f67d-d36a-490e-aa3d-e2224c6755b1">
+    <DataSourceViewID>BDMSView</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="85099c21-81f4-40dc-9556-3a1ea5e93800">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="8c84c766-f419-4ef9-aed3-d488a34169e5">
+      <ID>ID</ID>
+      <Name>ID</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="32cd4f12-deca-4dd4-adf0-fe05a68c3ddc">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c798d330-fab0-44d9-a227-d1a78dbed0bd">
+            <TableID>dbo_tblBDMSRawdata</TableID>
+            <ColumnID>ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="9e28f328-736b-4eec-b044-ec9f74f6403c">
+          <AttributeID>Lot No</AttributeID>
+          <Name>Lot No</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="58b38e19-3a51-4f3f-8b5d-251730d86eaa">
+          <AttributeID>Claim Circumstance</AttributeID>
+          <Name>Claim Circumstance</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0443a2a2-0c71-4f09-beae-84980bf6e65b">
+          <AttributeID>Insured</AttributeID>
+          <Name>Insured</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2e789c0a-e240-4e13-b6bb-b16f53e3fe1d">
+          <AttributeID>Location</AttributeID>
+          <Name>Location</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="455f31e2-3010-4e3e-9ecf-0cb109704d58">
+          <AttributeID>Patient Age</AttributeID>
+          <Name>Patient Age</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="93e55c0c-4e78-4caa-ae04-2b0877514450">
+          <AttributeID>Sex</AttributeID>
+          <Name>Sex</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a896d9a3-a510-4909-8fbc-3c7ad9ab517c">
+          <AttributeID>Nationality</AttributeID>
+          <Name>Nationality</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ca963947-c8bb-48fa-a841-3d34c55e1a75">
+          <AttributeID>Cause Of Loss</AttributeID>
+          <Name>Cause Of Loss</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c6bde05a-a8b7-4b4e-b065-55c4dc883869">
+          <AttributeID>Category Of Medical Error</AttributeID>
+          <Name>Category Of Medical Error</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d372007b-cf7c-45af-a7ce-ffa077c14fc0">
+          <AttributeID>Related Doctors</AttributeID>
+          <Name>Related Doctors</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="20172dd6-814c-47fc-b48d-474411478d85">
+          <AttributeID>Medical Field</AttributeID>
+          <Name>Medical Field</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3f817638-5af3-4bd2-8b72-3c05f5be92f5">
+          <AttributeID>Full Part Time</AttributeID>
+          <Name>Full Part Time</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f735f385-b915-451f-9b9f-ee69c90076b0">
+          <AttributeID>Comment On Policy Liability</AttributeID>
+          <Name>Comment On Policy Liability</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="039210fd-9fd5-4925-98cd-af069c11eb5c">
+          <AttributeID>Present Status</AttributeID>
+          <Name>Present Status</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="52f1bd5a-ab69-46ad-b45c-0f31a9a7d693">
+          <AttributeID>Pending Closed Status</AttributeID>
+          <Name>Pending Closed Status</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="732f692d-7991-4250-8f51-0d51f9124c7b">
+          <AttributeID>Age</AttributeID>
+          <Name>Age</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7a36acba-4dfe-4c0a-b1d1-29e795a68fb5">
+      <ID>Lot No</ID>
+      <Name>Lot No</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="98d2a283-946c-4e9a-8da7-69adb3136abe">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="337a44e9-55ea-44ca-97dc-c1bf43aac83a">
+            <TableID>dbo_tblBDMSRawdata</TableID>
+            <ColumnID>LotNo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="52c97756-dfbc-4bec-9b68-f999b8ebc4a2">
+      <ID>Claim Circumstance</ID>
+      <Name>Claim Circumstance</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f06d7e6c-6ce7-4124-86dc-b9e352fd4734">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9a98d299-945d-4895-8d0a-8c4286942f33">
+            <TableID>dbo_tblBDMSRawdata</TableID>
+            <ColumnID>Claim_Circumstance</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f4d9754c-f92a-4366-85d0-7d7e9c484e2f">
+      <ID>Insured</ID>
+      <Name>Insured</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="fe7196f1-4b86-43b1-9622-9192fa7fadfd">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8118607c-9af8-474e-a8db-ffdba1d1a296">
+            <TableID>dbo_tblBDMSRawdata</TableID>
+            <ColumnID>Insured</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d232d8f2-a4e7-48ca-9da7-f42e32b36834">
+      <ID>Location</ID>
+      <Name>Location</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="bfc4620c-3fd4-440a-81e8-0ed53883303b">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="46f277fd-ce7b-4d3b-8bc0-20915b5aa649">
+            <TableID>dbo_tblBDMSRawdata</TableID>
+            <ColumnID>Location</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b379018c-56b1-492e-87e5-41c5fc089a9c">
+      <ID>Patient Age</ID>
+      <Name>Patient Age</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9dd73955-c7cd-471b-b126-0cc4ef42b344">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8ed6e3b3-baa6-4e59-8129-2b26a5fd7d8c">
+            <TableID>dbo_tblBDMSRawdata</TableID>
+            <ColumnID>Patient_Age</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a7bc6b47-5859-44a5-828a-3ac91782f715">
+      <ID>Sex</ID>
+      <Name>Sex</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ca461c0c-07b0-49f4-9ecb-511bdfde8122">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="104c3fa1-3256-472c-9627-18dfaca9e674">
+            <TableID>dbo_tblBDMSRawdata</TableID>
+            <ColumnID>Sex</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="451d2286-3b07-461b-98cb-7fcf8e219db1">
+      <ID>Nationality</ID>
+      <Name>Nationality</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8c5c397d-6eb4-4389-a2ba-72bdd0bec3d5">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ca15e85d-cb34-4cea-8aa7-f7fcc3c6fc17">
+            <TableID>dbo_tblBDMSRawdata</TableID>
+            <ColumnID>Nationality</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="21fcff04-7a19-49d7-b859-5ca27c5f4664">
+      <ID>Cause Of Loss</ID>
+      <Name>Cause Of Loss</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e28e2a15-f06b-4dde-8e17-f969d83fc74a">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b326b469-3033-47cf-ab79-b25090ad581c">
+            <TableID>dbo_tblBDMSRawdata</TableID>
+            <ColumnID>Cause_Of_Loss</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="65861e0c-b8a2-4312-8670-9b21a920b8a5">
+      <ID>Category Of Medical Error</ID>
+      <Name>Category Of Medical Error</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b3ace999-e94c-4abc-9b20-0f663d8af42a">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5d1b617d-9cd2-4aba-84e6-ed20277a14f6">
+            <TableID>dbo_tblBDMSRawdata</TableID>
+            <ColumnID>Category_Of_Medical_Error</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="fa0664bd-5b9b-4ec9-9b51-82a5512f34d8">
+      <ID>Related Doctors</ID>
+      <Name>Related Doctors</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="12722bcc-2e86-47f0-8e64-e39aaa0f7014">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="69cc592a-c870-4f8c-871f-6c5ad655f83a">
+            <TableID>dbo_tblBDMSRawdata</TableID>
+            <ColumnID>Related_Doctors</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e00a9db1-e88f-418b-8761-6b7f751bdd9e">
+      <ID>Medical Field</ID>
+      <Name>Medical Field</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b144eb15-9dc9-4517-a2fb-4301ffb46e4f">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="923a6fae-dfef-4133-a075-347317c0feba">
+            <TableID>dbo_tblBDMSRawdata</TableID>
+            <ColumnID>Medical_Field</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="69f53098-d4be-40ac-832e-635785f61452">
+      <ID>Full Part Time</ID>
+      <Name>Full Part Time</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="42cfa026-2f4d-4a5c-82fe-51ead892cdb6">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d8ab4cc9-79de-4208-b8c3-af98cc00b8a0">
+            <TableID>dbo_tblBDMSRawdata</TableID>
+            <ColumnID>Full_PartTime</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="991858e0-5915-4e40-a8d0-4314d104e2c6">
+      <ID>Comment On Policy Liability</ID>
+      <Name>Comment On Policy Liability</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d557461d-9a88-43ce-a422-b25dee473bf4">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9989fb56-c2ed-4b06-906a-fa3b0edb8ba5">
+            <TableID>dbo_tblBDMSRawdata</TableID>
+            <ColumnID>Comment_On_Policy_Liability</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c886d869-7d75-45f7-a7ab-86a565e83907">
+      <ID>Present Status</ID>
+      <Name>Present Status</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2f66f033-a76c-4dbb-8e6b-db780cb4b217">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="16711b05-b3a2-4c8a-9fcf-8e01e68cb2ef">
+            <TableID>dbo_tblBDMSRawdata</TableID>
+            <ColumnID>Present_Status</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4d5e90c8-2a0b-48a5-98fd-064253689dd4">
+      <ID>Pending Closed Status</ID>
+      <Name>Pending Closed Status</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a64c60ae-1799-42d5-9451-f6563ea8e4b5">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ed7b0f64-4349-4563-bace-b164ddcdb062">
+            <TableID>dbo_tblBDMSRawdata</TableID>
+            <ColumnID>Pending_Closed_Status</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f3195ef1-a654-4508-bdec-a257a02904bc">
+      <ID>Age</ID>
+      <Name>Age</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d47c7c79-59e7-42aa-9733-1d1c7ff15c65">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6e41af4d-aab0-4c5c-a1e6-4b86eed8b46b">
+            <TableID>dbo_tblBDMSRawdata</TableID>
+            <ColumnID>Age</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+  </Attributes>
+</Dimension>

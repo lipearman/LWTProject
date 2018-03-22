@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mainmenu>
+  <item Text="People">
+    <item Text="Engineers‎">
+      <item Text="Chemical engineers‎" />
+      <item Text="Electrical engineers‎" />
+      <item Text="Mining engineers" />
+      <item Text="Mechanical engineers" />
+      <item Text="Railroad engineers" />
+      <item Text="Software engineers‎" />
+    </item>
+    <item Text="Academics‎">
+      <item Text="Agronomists" />
+      <item Text="Biologists‎" />
+      <item Text="Computer scientists">
+        <item Text="Cryptographers‎" />
+        <item Text="Programmers‎" />
+      </item>
+      <item Text="Cosmologists‎" />
+      <item Text="Economists‎" />
+      <item Text="Mathematicians‎" />
+    </item>
+    <item Text="Physiologists‎" />
+    <item Text="Photographers" />
+  </item>
+  <item Text="Animals">
+    <item Text="Alpacas" />
+    <item Text="Camels" />
+    <item Text="Cats" />
+    <item Text="Dogs" />
+    <item Text="Horses" />
+    <item Text="Pigs" />
+    <item Text="Sheep" />
+  </item>
+  <item Text="Abstract">
+    <item Text="Abstract figurative" />
+    <item Text="Abstract floral" />
+    <item Text="Abstract landscapes" />
+    <item Text="Abstract maps" />
+  </item>
+  <item Text="Architecture">
+    <item Text="Architectural element" />
+    <item Text="Bridges" />
+    <item Text="Buildings" />
+    <item Text="Industrial" />
+    <item Text="Religious" />
+    <item Text="Sculpture" />
+    <item Text="World architecture" />
+  </item>
+  <item Text="Book illustration">
+    <item Text="Book covers" />
+    <item Text="Children's book" />
+  </item>
+  <item Text="Photography">
+    <item Text="Black and white" />
+    <item Text="Сolor" />
+    <item Text="Vintage" />
+    <item Text="Sepia-tone" />
+  </item>
+  <item Text="Dance">
+    <item Text="Dancers" />
+    <item Text="Famous dancers" />
+    <item Text="Ballet and dance" />
+  </item>
+  <item Text="Education">
+    <item Text="For preschoolers" />
+    <item Text="For elementary school" />
+    <item Text="For high school" />
+  </item>
+  <item Text="Fantasy">
+    <item Text="Horror" />
+    <item Text="Magical" />
+    <item Text="Space fiction" />
+  </item>
+</mainmenu>

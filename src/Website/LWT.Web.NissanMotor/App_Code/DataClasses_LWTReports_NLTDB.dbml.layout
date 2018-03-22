@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.125" name="DataClasses_LWTReports_NLTDB">
+  <DataContextMoniker Name="/DataClasses_LWTReports_NLTDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b6de2fb0-7f83-4bb6-9f0e-85ff3c10ce7f" absoluteBounds="4.125, 1, 2, 7.9245426432291648">
+      <DataClassMoniker Name="/DataClasses_LWTReports_NLTDBDataContext/V_TbClaimDataV2" />
+      <nestedChildShapes>
+        <elementListCompartment Id="edbc7256-60aa-44b4-a862-dbc3d0aa8699" absoluteBounds="4.14, 1.46, 1.9700000000000002, 7.3645426432291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4f4ccba1-5b56-41c8-94f3-43806665253b" absoluteBounds="1, 1, 2, 6.7707340494791657">
+      <DataClassMoniker Name="/DataClasses_LWTReports_NLTDBDataContext/TblClaimDaily" />
+      <nestedChildShapes>
+        <elementListCompartment Id="369b95de-edf1-498b-9ce1-90727b3ae37e" absoluteBounds="1.0150000000000001, 1.46, 1.9700000000000002, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

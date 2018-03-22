@@ -1,0 +1,143 @@
+﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="ucDevxAPDReportsUserTemplate.ascx.vb" Inherits="Modules_ucDevxAPDReportsUserTemplate" %>
+<%@ Register Assembly="DevExpress.Web.ASPxTreeList.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxTreeList" TagPrefix="dx" %>
+
+
+<script type="text/javascript">
+    function ShowDrillDown() {
+        var mainElement = pivotGrid.GetMainElement();
+        DrillDownWindow.ShowAtPos(ASPxClientUtils.GetAbsoluteX(mainElement), ASPxClientUtils.GetAbsoluteY(mainElement));
+    }
+
+
+    function ShowUserBIPopup(RID) {
+        LoadingPanel.Show();
+        cbPreview.PerformCallback(RID);
+    }
+</script>
+<dx:ASPxCallback ID="cbPreview" runat="server" ClientInstanceName="cbPreview">
+    <ClientSideEvents CallbackError="function(s, e) { 
+            //LoadingPanel.Hide(); 
+        }"
+        CallbackComplete="function(s, e) { 
+            //LoadingPanel.Hide(); 
+            clientViewBI.SetContentUrl('applications/BI/User/Preview.aspx');
+            clientViewBI.Show();            
+        }" />
+</dx:ASPxCallback>
+
+<dx:ASPxRoundPanel ID="pnMain" EnableAnimation="true" ShowCollapseButton="true" HeaderText="Report xxx" runat="server" Width="100%">
+    <PanelCollection>
+        <dx:PanelContent>
+
+<%-- SettingsBehavior-AutoExpandAllNodes="true"--%>
+            <dx:ASPxTreeList ID="treeList" runat="server" AutoGenerateColumns="false"
+                DataSourceID="SqlDataSource_Data"
+               
+                KeyFieldName="RID"
+                ParentFieldName="ParentID">
+
+
+                <Border BorderStyle="Solid" />
+                <Settings ShowTreeLines="False" SuppressOuterGridLines="true" />
+                <SettingsBehavior AllowFocusedNode="True" ExpandCollapseAction="NodeDblClick" AutoExpandAllNodes="true" />
+                <Columns>
+
+                    <dx:TreeListHyperLinkColumn
+                        FieldName="RID" Caption="Report" Width="400">
+                        <PropertiesHyperLink TextField="TITLE" NavigateUrlFormatString="javascript:ShowUserBIPopup({0});">
+                        </PropertiesHyperLink>
+                        <EditFormSettings Visible="False" />
+                    </dx:TreeListHyperLinkColumn>
+
+
+
+                    <%--                                        <dx:TreeListSpinEditColumn FieldName="No" Width="20" CellStyle-HorizontalAlign="Left">
+                                            <EditFormSettings Visible="False" />
+                                        </dx:TreeListSpinEditColumn>--%>
+
+
+
+                    <%--                                        <dx:TreeListTextColumn FieldName="TITLE" Caption="Report" CellStyle-Wrap="False">
+                                            <EditFormSettings Visible="False" />
+                                        </dx:TreeListTextColumn>--%>
+
+                    <%--                                        <dx:TreeListMemoColumn FieldName="DESCRIPTION" Caption="DESCRIPTION" Width="500" CellStyle-Wrap="True" >                                             
+                                        </dx:TreeListMemoColumn>--%>
+
+                    <%--   <dx:TreeListTextColumn>
+                                            <DataCellTemplate>
+                                                <%# PreviewBI(Eval("RID").ToString(), Eval("VIEW_ID").ToString())%>
+                                            </DataCellTemplate>
+                                        </dx:TreeListTextColumn>--%>
+                    <%--  <dx:TreeListTextColumn FieldName="RID"   CellStyle-Wrap="False">
+                                            
+                                        </dx:TreeListTextColumn>--%>
+                </Columns>
+
+            </dx:ASPxTreeList>
+
+
+
+
+        </dx:PanelContent>
+    </PanelCollection>
+</dx:ASPxRoundPanel>
+
+
+<%-- <dx:LinqServerModeDataSource ID="ObjectDataSource1" ContextTypeName="DataClasses_NissanMotorExt" TableName="tblReports" runat="server" />--%>
+
+<asp:SqlDataSource ID="SqlDataSource_Data" runat="server" ConnectionString="<%$ ConnectionStrings:NissanMotorConnectionString %>"
+    SelectCommand="select * from tblReport where REPORT_TYPE='BI' order by No "></asp:SqlDataSource>
+
+<%--<asp:SqlDataSource ID="SqlDataSource_Data" runat="server" ConnectionString="<%$ ConnectionStrings:NissanMotorConnectionString %>"
+    SelectCommand="
+     SELECT dbo.tblReport.RID
+        , dbo.tblReport.No
+        , dbo.tblReport.TITLE
+        , dbo.tblReport.DESCRIPTION
+        , dbo.tblReport.DEPARTMENT
+        , dbo.tblReport.ParentID
+        , dbo.tblReport.VIEW_ID
+        , dbo.tblReport.DB_ID
+        , dbo.tblReport.REPORT_TYPE
+        , dbo.tblReport_Assignment.UserName
+        , case when tblReport_Assignment.UserName IS not null then tblReport.RID end SelectRID
+        FROM  dbo.tblReport 
+        left JOIN dbo.tblReport_Assignment ON dbo.tblReport.RID = dbo.tblReport_Assignment.RID    
+        and UserName=@UserName
+        order by dbo.tblReport.No
+    ">
+
+     <SelectParameters>
+         <asp:Parameter Name="UserName" /> 
+    </SelectParameters>
+
+</asp:SqlDataSource>--%>
+
+
+
+
+<dx:ASPxPopupControl ID="clientViewBI" runat="server" ClientInstanceName="clientViewBI"
+    Modal="True"
+    PopupHorizontalAlign="WindowCenter"
+    PopupVerticalAlign="WindowCenter"
+    HeaderText="Business Intelligent"
+    AllowDragging="true"
+    AllowResize="True"
+    EnableAnimation="true"
+    CloseAction="CloseButton"
+    EnableCallbackAnimation="true"
+    EnableViewState="true"
+    ShowPageScrollbarWhenModal="true"
+    ShowMaximizeButton="true"
+    Width="900"
+    Height="790"
+    FooterText=""
+    ShowFooter="true">
+    <%--<ClientSideEvents Shown="function(s,e){ window.setTimeout(function() {LoadingPanel.Hide();},2000);}" />--%>
+
+    <ContentCollection>
+        <dx:PopupControlContentControl ID="PopupControlContentControl5" runat="server">
+        </dx:PopupControlContentControl>
+    </ContentCollection>
+</dx:ASPxPopupControl>

@@ -1,0 +1,533 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LWTReports" Class="DataClasses_LWTReportsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LOCKTHBNK-DB07\NEWMOTOR;Initial Catalog=LWTReports;User ID=locksql" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LWTReportsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.V_CustomDashBoard01" Member="V_CustomDashBoard01s">
+    <Type Name="V_CustomDashBoard01">
+      <Column Name="AccidentPlace_F" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Non_BP_C" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Non_BP_A" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Claims_Incured_NotPaid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Aftersales_Opportunity" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RawData_SummitBI_App" Member="RawData_SummitBI_Apps">
+    <Type Name="RawData_SummitBI_App">
+      <Column Name="AppID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CancelYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CancelMonth" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="PolPeriod" Type="System.String" DbType="VarChar(36)" CanBeNull="true" />
+      <Column Name="PolYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PolMonth" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="ClientCode" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CTitle" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CFirstName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CLastName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CGender" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CIDCard" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CAddress" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CDistrict" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CAmphur" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CProvince" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CPostal" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CPhone" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CFax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CEmail" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="CName2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="BranchCode" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="BrandCode" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="ModelCode" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="MColor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MCC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MChassisNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MEngineNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MYear" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="MYearRegister" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="MLicense" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MProvince" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="MType" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="CarUseTypeID" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="MRegisterType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MPurchaseType" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="ProjectID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PlanCode" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Period" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsuranceType" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PolicyNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TempPolicyNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MasterPolicyNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateMakePolicy" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PolicyYear" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DateBegin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Suminsure1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Suminsure2" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Suminsure3" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="NetPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Stamp" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Vat" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Premium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Beneficiary" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="BeneficiaryAddress" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="BeneficiaryRelationship" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="DateMakeContract" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ContractNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RenewYear" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RefID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Status1" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="StatusID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StatusCancel" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="StatusCancelEndorse" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cancel" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CancelType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CancelDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CancelBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PaymentBy" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="BillingType" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="StatementClose" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="LotNo" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="BatchNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BillingName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="BillingAddress" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="InputFormID" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="InsurerID" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="UWName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="WClassID" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CoverageID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModelFreeText" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="EmailSending" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EmailSendingBy" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="EmailSendingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cPersonType" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="cPersonCardType" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="cBranchNo" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="WarrantyType" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CProvinceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SalePrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="MPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="BranchName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DealerCode" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="DealerName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ProvinceName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ProvinceNameEng" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="PlanName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="pn_PeriodM" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="pn_ClassOfRisk" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PromotionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PromotionName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="pm_InsuranceType" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="pm_WarrantyType" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="pm_WClassID" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="pm_InsurerID" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="pm_MType" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="pm_UWCode" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="pm_Group" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ProjectCode" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="ProjectName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ProjectType" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="cn_ReNetPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="cn_ReStamp" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cn_ReVat" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="cn_RePremiumTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="cn_CancelClose" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="cn_LotNo" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="cn_EffectedDateCancel" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cn_AddedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cn_AddedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cn_StatusReturnPremium" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="cn_SaveRePremiumDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cn_ReceivedEndorseStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="cn_ReceivedEndorseDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="cn_Days" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PolStatus1" Type="System.String" DbType="VarChar(28)" CanBeNull="true" />
+      <Column Name="PolStatus2" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BillingStatus" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Column Name="MakeYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MakeMonth" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="ContractYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContractMonth" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RawData_SummitBI_AppEndorse05" Member="RawData_SummitBI_AppEndorse05s">
+    <Type Name="RawData_SummitBI_AppEndorse05">
+      <Column Name="เลขที่สัญญา" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[ชื่อ - นามสกุล]" Member="ชื่อ___นามสกุล" Type="System.String" DbType="VarChar(251)" CanBeNull="true" />
+      <Column Name="เลขที่อ้างอิง" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="เริ่มคุ้มครอง" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="สิ้นสุดความคุ้มครอง" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="เลขที่เครื่อง" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="เลขถัง" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="รายละเอียดที่แก้ไข" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ข้อมูลเก่า" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ข้อมูลใหม่" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="วันที่มีผลบังคับใช้" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="วันที่มีส่งเอกสารให้ลูกค้า" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="วันที่ตีคืน" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateMakeContract" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateMakePolicy" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateBegin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FieldsChange" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NotifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UWName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="pm_UWCode" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RawData_SummitBI_App01" Member="RawData_SummitBI_App01s">
+    <Type Name="RawData_SummitBI_App01">
+      <Column Name="BranchCode" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="CarType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PlanCode" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDCard" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Road" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="District" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Amphur" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Province" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Postal" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Name2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="SystemModelCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ColorName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChassisNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EngineNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="mRegisterYear" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="mLicense" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="mLicenseProvince" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="mUseType" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="mBuyType" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="ContractDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ContractNo" Type="System.String" DbType="VarChar(50)" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Period" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SumInsure1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Premium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Benefit" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Relation" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="BenefitAddress" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="BillingType" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="BillingName1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="BillingAddress1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="BillingPremiumTotal1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BillingName2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BillingAddress2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BillingPremiumTotal2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatementClose" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="CancelledDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="จำนวนวันยกเลิกนับจากวันที่คุ้มครอง" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PolicyStatus1" Type="System.String" DbType="VarChar(28)" CanBeNull="true" />
+      <Column Name="PolicyStatus2" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DateMakeContract" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateMakePolicy" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateBegin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RawData_SummitBI_App03" Member="RawData_SummitBI_App03s">
+    <Type Name="RawData_SummitBI_App03">
+      <Column Name="เลขที่สัญญา" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="เลขกรมธรรม์" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ผู้เช่าซื้อ" Type="System.String" DbType="VarChar(251)" CanBeNull="true" />
+      <Column Name="เลขตัวถัง" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ยี่ห้อ" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="รุ่น" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="ทะเบียน" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="วันคุ้มครอง" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="วันสิ้นสุด" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[วันที่ขาย / วันที่แจ้งยกเลิก]" Member="วันที่ขาย___วันที่แจ้งยกเลิก" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="จำนวนวัน" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="บริษัทประกันภัย" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="[Offset/No Offset]" Member="Offset_No_Offset" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Column Name="เบี้ยสุทธิ" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="[ภาษี / อากร]" Member="ภาษี___อากร" Type="System.Decimal" DbType="Decimal(11,2)" CanBeNull="true" />
+      <Column Name="เบี้ยรวม" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="[เบี้ยสุทธิ (คืน)]" Member="เบี้ยสุทธิ__คืน_" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="[ภาษี(คืน)]" Member="ภาษี_คืน_" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="[เบี้ยรวม(คืน)]" Member="เบี้ยรวม_คืน_" Type="System.Decimal" DbType="Decimal(19,2)" CanBeNull="true" />
+      <Column Name="DateMakeContract" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateMakePolicy" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateBegin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RawData_SummitBI_AppClaim" Member="RawData_SummitBI_AppClaims">
+    <Type Name="RawData_SummitBI_AppClaim">
+      <Column Name="ClaimID" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="AppID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TempPolicyNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MChassisNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MLicense" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MProvince" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IDCard" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ClaimNo" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ClaimDate1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClaimDate2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClaimTypeID" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ClaimTypeOther" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="ClaimSuminsure" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="AccidentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AccidentTime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AccidentPlaceGroup" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AccidentPlace" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AccidentAddress1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AccidentAddress2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PoliceStation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Province" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NotifyDate1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NotifyDate2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RemarkClaim" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DateReceivedDocFromClient" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateSendDocToClient" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateSendDocToInsurer" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BookRegistrationNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateSendBookRegistration" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DueDatePayment" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateReceivedCheque" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ChequeNo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ChequeBranchNo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ChequeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ChequeBank" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="DatePaidCheque" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UWCode" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="ReceivedAmount" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="RemarkLWT" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BatchNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ClaimStatus" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ClaimStatusCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DocComplete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DocCompleteDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Cancel" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CancelType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CancelReason" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CancelDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CancelBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Barcode" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="SecurityDataID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClaimCert" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsApprove" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="AppriveBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClaimTypeName" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Column Name="ContractNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CTitle" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CFirstName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CLastName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UWName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="pm_UWCode" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Suminsure1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Suminsure2" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Suminsure3" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DateMakeContract" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateMakePolicy" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateBegin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RawData_SummitBI_AppClaim06" Member="RawData_SummitBI_AppClaim06s">
+    <Type Name="RawData_SummitBI_AppClaim06">
+      <Column Name="[Note (เลขเคลม)]" Member="Note__เลขเคลม_" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="[Claim Status]" Member="Claim_Status" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="[Contract No.]" Member="Contract_No_" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CustomerName" Type="System.String" DbType="VarChar(251)" CanBeNull="true" />
+      <Column Name="[Insurance Company]" Member="Insurance_Company" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CertificateNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ทุนประกัน" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ChassisNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MLicense" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MProvince" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ClaimCause" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Column Name="เพิ่มเติม" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="วันที่เกิดเหตุ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PoliceStation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Province" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="วันที่แจ้งเปิดเคลม" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[วันที่รับ file scan / เอกสารเบื้องต้น]" Member="วันที่รับ_file_scan___เอกสารเบื้องต้น" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="วันที่อนุมัติ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ระยะเวลาพิจารณา" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ผลการพิจารณา" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="สาเหตุ" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="วันที่รับเอกสารครบถ้วน" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[วันที่จ่ายค่าสินไหม ( วันที่โอนเงินเข้าบริษัท )]" Member="วันที่จ่ายค่าสินไหม___วันที่โอนเงินเข้าบริษัท__" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ระยะเวลาการจ่ายสินไหม" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="วันที่ยกเลิกเคลม" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="เหตุผลที่ยกเลิกเคลม" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="แบบฟอร์มเรียกร้องค่าสินไหม" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="บันทึกประจำวันเบื้องต้น" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="บันทึกประจำวันระบุเลขคดีอาญา" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="สัญญาเช่าซื้อ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="สำเนาบัตรประชาชนผู้เอาประกันภัย" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ใบเสนอราคาค่าอะไหล่และค่าซ่อม" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="รูปถ่ายสภาพความเสียหาย" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="กุญแจรถจักรยานยนต์" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[คู่มือจดทะเบียนรถ (แจ้งหยุดใช้รถ)]" Member="คู่มือจดทะเบียนรถ__แจ้งหยุดใช้รถ_" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateMakeContract" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateMakePolicy" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateBegin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateSendDocToInsurer" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DatePaidCheque" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ChequeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RawData_SummitBI_AppClaim07" Member="RawData_SummitBI_AppClaim07s">
+    <Type Name="RawData_SummitBI_AppClaim07">
+      <Column Name="ClaimID" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="บริษัทประกัน" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="UWName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="เลขที่สัญญา" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ลูกค้า" Type="System.String" DbType="VarChar(251)" CanBeNull="true" />
+      <Column Name="ประเภทการเคลม" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Column Name="ทุนประกัน" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Suminsure1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="[วันที่ตั้งเบิก(scal ส่ง )]" Member="วันที่ตั้งเบิก_scal_ส่ง__" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[วันที่ บ. ประกันได้รับเอกสาร]" Member="วันที่_บ__ประกันได้รับเอกสาร" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="จำนวนวันที่ค้าง" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="หมายเหตุ" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DateReceivedDocFromClient" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateMakeContract" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateMakePolicy" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateBegin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AccidentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="วันที่อนุมัติ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RawData_SummitBI_AppEndorse" Member="RawData_SummitBI_AppEndorses">
+    <Type Name="RawData_SummitBI_AppEndorse">
+      <Column Name="AppID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EndorseNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDCard" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="District" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Amphur" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Province" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Postal" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ChassisNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EngineNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Premium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Suminsure1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Suminsure2" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Suminsure3" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DateBegin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Beneficiary" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="BeneficiaryRelation" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BeneficiaryAddress" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="FieldsChange" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="OldData" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NewData" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NotifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NotifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Informant" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ContractNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PolicyNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TempPolicyNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateMakeContract" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateMakePolicy" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UWName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="pm_UWCode" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RawDataProduction" Member="RawDataProductions">
+    <Type Name="RawDataProduction">
+      <Column Name="Client" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Class" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Folio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Version" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Underwriter" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AExec" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TransType" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Invoiceno" Type="System.Int32" DbType="Int" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Effective" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PeriodFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PeriodTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PolicyNo" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="BillingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Currency" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ExchangeRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SumInsuredTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PremiumTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="StampTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VATTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BrokerageTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ORInTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminFeeIn1THB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminFeeIn2THB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DiscountTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CommissionOutTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OROutTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminFeeOut1THB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminFeeOut2THB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BriefDescription" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="BriefII" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="BriefIII" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ReinsuranceInfo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PPWFromClient" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PPWToUW" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CoInsuranceNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RenewFlag" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="AEProduction" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ErrorFlag" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="UpfrontFlag" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="EntryBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AEName" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="AEGroupRunning" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AEGroupName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AESGroupRunning" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AESGroupName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Owner" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BusinessGroup" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ClassGroup" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupII" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGovernment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskShortDesc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BillingKey" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="AgentStaff" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AgentName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ClientName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SourceCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SourceName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GroupName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ClientType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IndustryEng" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IndustryThai" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TotalPremiumTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TotalIncome" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NetIncome" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UWName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UWNameEng" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="UWCrossRef" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Division" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

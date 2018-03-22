@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<!-- 
+  Visual Studio global web project settings.
+-->
+<VisualWebDeveloper>
+
+  <comReferences>
+    <reference Name="interop.msadomdclientsclib" ID="{BC8959CC-1B70-4CF9-AE20-5733741B0021}\1.0\0"/>
+  </comReferences>
+</VisualWebDeveloper>

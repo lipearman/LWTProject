@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.625" name="DataClasses_BDMS">
+  <DataContextMoniker Name="/DataClasses_BDMSDataContext" />
+  <nestedChildShapes>
+    <classShape Id="81c37371-5fea-4ff0-8d2a-67003e99f4a7" absoluteBounds="0.875, 0.5, 2, 7.7322412109375005">
+      <DataClassMoniker Name="/DataClasses_BDMSDataContext/tblClaim" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8fea07d0-a84c-45cb-b7c0-bb0c3ec37e70" absoluteBounds="0.88999999999999968, 0.96, 1.9700000000000002, 7.1722412109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ba80efca-e10d-423c-be4f-816233cb1f92" absoluteBounds="4.125, 0.625, 2, 7.7322412109375005">
+      <DataClassMoniker Name="/DataClasses_BDMSDataContext/V_ClaimDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0c981c29-d256-43d8-bab5-5e647add181d" absoluteBounds="4.14, 1.085, 1.9700000000000002, 7.1722412109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LWTReports" Class="DataClasses_LWTReports_NLTDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=afwnlt;Initial Catalog=LWTReports;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LWTReportsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.V_TbClaimDataV2" Member="V_TbClaimDataV2s">
+    <Type Name="V_TbClaimDataV2">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FullCustomerName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ChassisNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PolicyNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Insurance_ClaimNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GarageProvinceTH" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GarageProvinceEN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AccidentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Accident_Month" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClaimGroup" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IndemnityGroup" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="No_of_Claim" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ClaimCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IndemnityType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IndemnityType_E" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GarageName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GarageType1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GarageType2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="InsurerName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="InsurerCode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CustType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="App_StartingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Starting_Month" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Starting_Year" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="App_EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="App_ShowroomName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="App_Beneficiary" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="App_Beneficiary_Group" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="App_CarGroup" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="App_CarGroup_F" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="App_CarRegistryYear" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Claim_Paid_Month" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Claim_Paid_Year" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ClaimPaid" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Accdent_Province" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CarAge" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GarageRegionTH" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblClaimDaily" Member="TblClaimDailies">
+    <Type Name="TblClaimDaily">
+      <Column Name="AID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SurName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="YearOfCar" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PolicyNo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EngineNo" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="VIN" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CarNo" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="SumInsurance" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="StartingDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Voluntary_NetPremium" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TempID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClientCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ClosingDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ClaimTimes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="No_of_Claim" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="InsurerName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Authorize_Amt" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Insurance_Amt" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="[Parts ordered from shop Amt]" Member="Parts_ordered_from_shop_Amt" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="[BP Shop Amt]" Member="BP_Shop_Amt" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="[Consent Form Amt]" Member="Consent_Form_Amt" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="[Other Amt]" Member="Other_Amt" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Authorize" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Insurance" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="[Parts ordered from shop]" Member="Parts_ordered_from_shop" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="[BP Shop]" Member="BP_Shop" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="[Consent Form]" Member="Consent_Form" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Other" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

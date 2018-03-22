@@ -1,0 +1,255 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="66743f63-7117-4276-91ba-28c5a934e8c2" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Production Dim Clients</ID>
+  <Name>Dim Clients</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1774" scrolltop="-1812" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="7885" y="13653" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Production_Dim_Clients" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="4419" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b000043110000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Production_Dim_Clients" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1774</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-1812</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="b24ac579-4801-4249-9d49-d5196b1bd0e9">
+    <DataSourceViewID>LWTProductionView</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="6b13cd74-a198-4dd4-b1b4-c45585485fb3">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="24a464f3-392b-412d-9385-2d149debc438">
+      <ID>Client</ID>
+      <Name>Client</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4243cee2-b7fb-49f1-b548-05dbbcd2b419">
+          <NullProcessing>UnknownMember</NullProcessing>
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8e73305f-829e-4cb3-b3d4-cc9d5198c3b7">
+            <TableID>dbo_Production_Dim_Clients</TableID>
+            <ColumnID>Client</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="4066e3cb-b5d8-4706-88c2-06ce0d547f2a">
+          <AttributeID>Client Type</AttributeID>
+          <Name>Client Type</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="16ecffae-c31b-4f23-ac75-c8f602da6620">
+          <AttributeID>Client Name</AttributeID>
+          <Name>Client Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2cc89e99-eb5d-42e2-9181-3dfd69fdba71">
+          <AttributeID>Client Group</AttributeID>
+          <Name>Client Group</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0fc8f6a7-b640-43f8-8d2c-ab1dd72e1305">
+          <AttributeID>Source Code</AttributeID>
+          <Name>Source Code</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e7797261-2fa1-4e6b-a68d-9690625bb4d8">
+          <AttributeID>Source Name</AttributeID>
+          <Name>Source Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7bf8bfd8-2ec3-41c2-ad6e-9c97a47fb022">
+          <AttributeID>Industry Eng</AttributeID>
+          <Name>Industry Eng</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="dde70502-13d7-4e84-8d29-6e2fe9fd5243">
+          <AttributeID>Industry Thai</AttributeID>
+          <Name>Industry Thai</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="00c322ab-81f7-478b-b44d-41f287a36f29">
+          <AttributeID>Client Group Name</AttributeID>
+          <Name>Client Group Name</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="db987426-a03a-4052-8c81-0e95d97f3a2a">
+      <ID>Client Type</ID>
+      <Name>Client Type</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5d875a6a-a03c-4c5e-8075-8f6ac03c96df">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7b2768c7-2b4f-47aa-bbd3-71a707c250ae">
+            <TableID>dbo_Production_Dim_Clients</TableID>
+            <ColumnID>ClientType</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="dbd97dfa-a59b-4733-a061-a53820790040">
+      <ID>Client Name</ID>
+      <Name>Client Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="689e741d-c179-4ff2-9fb3-b84398cdcda4">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f893e844-13db-4ff2-9414-2b4287c2a50a">
+            <TableID>dbo_Production_Dim_Clients</TableID>
+            <ColumnID>ClientName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2d0a4ca8-fdb4-4199-9f50-0355c5308e5f">
+      <ID>Client Group</ID>
+      <Name>Client Group</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e5513e79-5e53-4ed8-b848-f98e54d1c232">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0a4be8b0-7371-4e3f-91a9-435a53d7cc34">
+            <TableID>dbo_Production_Dim_Clients</TableID>
+            <ColumnID>ClientGroup</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c39f2165-a682-4c0f-bb4d-f548ee8651cd">
+      <ID>Source Code</ID>
+      <Name>Source Code</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="baad2724-ea8f-4df7-abbc-659c12a1f0a9">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5fcb9018-69e7-45bf-a818-9552bb0490d8">
+            <TableID>dbo_Production_Dim_Clients</TableID>
+            <ColumnID>SourceCode</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="11f63bc1-1e0a-41d6-a5f1-7d5e7e0b85d9">
+      <ID>Source Name</ID>
+      <Name>Source Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a24a1c6e-1e98-4854-9efa-1247090b8495">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a967322b-a967-430e-b1eb-da4c5a7bcb11">
+            <TableID>dbo_Production_Dim_Clients</TableID>
+            <ColumnID>SourceName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="35836796-028e-44b4-9392-395294a3cb77">
+      <ID>Industry Eng</ID>
+      <Name>Industry Eng</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a5a69f2d-9366-49d6-af0e-ce5b6fb75035">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b3533faf-1a20-44bd-b004-4e4036780ee3">
+            <TableID>dbo_Production_Dim_Clients</TableID>
+            <ColumnID>IndustryEng</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="6d96a561-1898-49a2-a32d-74528fde9ab1">
+      <ID>Industry Thai</ID>
+      <Name>Industry Thai</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="79a9905a-2ce5-4f6c-aa7d-3502e88dfe26">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="41c93060-cc14-48e7-a4b5-b276a979b042">
+            <TableID>dbo_Production_Dim_Clients</TableID>
+            <ColumnID>IndustryThai</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="19e6cd86-204c-45b1-8af8-28cf30c1ddb2">
+      <ID>Client Group Name</ID>
+      <Name>Client Group Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3ff30b70-596c-4c59-ba08-cf50d2735f3b">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2d0d51b0-8b68-46ac-a8c2-e5894dd438c3">
+            <TableID>dbo_Production_Dim_Clients</TableID>
+            <ColumnID>ClientGroupName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+  </Attributes>
+</Dimension>

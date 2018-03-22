@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 18, 28.5" name="DataClasses_LWTReports">
+  <DataContextMoniker Name="/DataClasses_LWTReportsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="976d8d3a-8e8f-4498-970f-bf392697afce" absoluteBounds="0.75, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClasses_LWTReportsDataContext/V_CustomDashBoard01" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3cda311e-c6e4-4e09-bd04-b68bd1385ee0" absoluteBounds="0.76499999999999968, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="942c1029-17e5-44d1-8b38-06fbf1d99a49" absoluteBounds="3.75, 0.75, 2, 27.539288736979167">
+      <DataClassMoniker Name="/DataClasses_LWTReportsDataContext/RawData_SummitBI_App" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ab5d6016-16f0-4a26-bb67-3b1670c09c59" absoluteBounds="3.765, 1.21, 1.9700000000000002, 26.979288736979164" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d68c9a81-183f-4f68-a1a9-f7fe2ebe08c4" absoluteBounds="6.75, 0.75, 2, 5.0400211588541666">
+      <DataClassMoniker Name="/DataClasses_LWTReportsDataContext/RawData_SummitBI_AppEndorse05" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e83fbfba-f2cc-492d-8beb-375422f03ba9" absoluteBounds="6.7650000000000006, 1.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7644d9ab-e1bd-47f2-a8b9-ea16bf1b9d46" absoluteBounds="6.75, 6.75, 2, 10.809064127604167">
+      <DataClassMoniker Name="/DataClasses_LWTReportsDataContext/RawData_SummitBI_App01" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7731a68e-7b5a-4046-aa70-b24b04149879" absoluteBounds="6.765, 7.21, 1.9700000000000002, 10.249064127604166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a042106f-aeb7-47f3-b390-f0b08e86bcb4" absoluteBounds="9.75, 0.75, 2, 5.2323225911458326">
+      <DataClassMoniker Name="/DataClasses_LWTReportsDataContext/RawData_SummitBI_App03" />
+      <nestedChildShapes>
+        <elementListCompartment Id="681a6d05-0d9d-40fa-bfd3-d56983378cbf" absoluteBounds="9.765, 1.21, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cf422c0c-1a01-4a21-80ce-e4675f22cf00" absoluteBounds="9.75, 6.75, 2, 14.462791341145831">
+      <DataClassMoniker Name="/DataClasses_LWTReportsDataContext/RawData_SummitBI_AppClaim" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9ac2cf05-9e50-4d2f-a643-7ec5bb5e6811" absoluteBounds="9.765, 7.21, 1.9700000000000002, 13.902791341145832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="888a18c8-6179-4730-8b21-00c0df22c00b" absoluteBounds="12.75, 0.75, 2, 8.8860498046875">
+      <DataClassMoniker Name="/DataClasses_LWTReportsDataContext/RawData_SummitBI_AppClaim06" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac2a2690-14b2-4151-8b0e-e5eb4b715979" absoluteBounds="12.765, 1.21, 1.9700000000000002, 8.3260498046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="da3253a0-5964-4953-aebe-ddd99f943c72" absoluteBounds="12.75, 10.75, 2, 4.6554182942708309">
+      <DataClassMoniker Name="/DataClasses_LWTReportsDataContext/RawData_SummitBI_AppClaim07" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a9e9557b-8fd3-4abe-ba47-a063d28a217c" absoluteBounds="12.765, 11.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c8f0508b-c393-474c-8d6f-4f65d5dc52e2" absoluteBounds="15.75, 0.75, 2, 8.5014469401041666">
+      <DataClassMoniker Name="/DataClasses_LWTReportsDataContext/RawData_SummitBI_AppEndorse" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fecb6ac9-a63d-4863-b2ca-44a68d5f32af" absoluteBounds="15.765, 1.21, 1.9700000000000002, 7.941446940104167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e20873e-e8a6-4512-8719-5514b791fbc2" absoluteBounds="15.75, 10.75, 2, 15.039695638020831">
+      <DataClassMoniker Name="/DataClasses_LWTReportsDataContext/RawDataProduction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e57e99b7-b8a8-4e59-ac8f-7ae1d0e4cecc" absoluteBounds="15.765, 11.21, 1.9700000000000002, 14.479695638020832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

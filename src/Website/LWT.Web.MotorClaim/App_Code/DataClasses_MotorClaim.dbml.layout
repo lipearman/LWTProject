@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 18, 19.875" name="DataClasses_MotorClaim">
+  <DataContextMoniker Name="/DataClasses_MotorClaimDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e4dd91cc-5009-4690-8b39-410ffb4a0163" absoluteBounds="6.75, 7.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/Running" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f197c372-0567-413e-9eb4-a3553c64c5d0" absoluteBounds="6.765, 8.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3b410db3-3b1d-479a-ba33-f085776bcfe8" absoluteBounds="9.75, 7.75, 2, 3.5016097005208309">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/tblGarage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f95d872-305e-4b6c-a304-da42c6ba71ff" absoluteBounds="9.765, 8.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9723afa8-a778-4552-9fd6-15a5adbc7e58" absoluteBounds="3.75, 11.75, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/MailNotification" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cd91bdc2-c7c0-45b9-b477-375b897ca9aa" absoluteBounds="3.7650000000000006, 12.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="08fbda09-3527-4991-ba19-7421ac3ff7e7" absoluteBounds="9.5, 1.125, 2, 5.6169254557291666">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/tblNoticeDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7bbdacaa-26de-44e9-b47d-9be06d53fb0a" absoluteBounds="9.5150000005960464, 1.5850000008940697, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b70cc62a-e851-4f3f-8849-a0798a1f5d92" absoluteBounds="6.75, 2.25, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/tblNoticeHeader" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ae13bb87-7a25-4a31-a3a7-6a69b774d0c3" absoluteBounds="6.7650000005960464, 2.7100000008940697, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.75 : 3.90465413411458); (9.5 : 3.90465413411458)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses_MotorClaimDataContext/tblNoticeHeader/tblNoticeHeader_tblNoticeDetail" />
+      <nodes>
+        <classShapeMoniker Id="b70cc62a-e851-4f3f-8849-a0798a1f5d92" />
+        <classShapeMoniker Id="08fbda09-3527-4991-ba19-7421ac3ff7e7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a3a4f235-3c20-4e4e-a19a-a1daf58be7cd" absoluteBounds="12.75, 0.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/V_ClaimDailyNotification" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8155dac-3497-4280-87ab-98a4a48444f2" absoluteBounds="12.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a19cf13e-c761-4f80-8c68-72bded629282" absoluteBounds="12.75, 3.75, 2, 4.6554182942708309">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/V_NissanDailyClaim_Detail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2d9bf20b-1062-40a9-b5d2-5e56dab3972d" absoluteBounds="12.765, 4.2100000000000009, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d0e46a99-de77-401a-9766-156b5c33f09a" absoluteBounds="3.5, 6.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/tblClaimTransaction_Result" />
+      <nestedChildShapes>
+        <elementListCompartment Id="40585412-6dcf-4b95-a788-107f320e8d66" absoluteBounds="3.5150000005960464, 7.33500000089407, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="12e62fff-2ce3-47ef-b3d5-81df9eb16852" absoluteBounds="6.75, 12.75, 2, 4.6554182942708309">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/Portal_User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f647379-853d-41f7-ac93-6c6a941a5e28" absoluteBounds="6.7650000000000006, 13.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a537d170-f7d5-4eb1-90ba-fe3e5ce9acec" absoluteBounds="12.75, 9.75, 2, 5.8092268880208309">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/tblShowRoom" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0619017f-e418-4859-825c-7ce3ec25f30e" absoluteBounds="12.765, 10.21, 1.9700000000000002, 5.249226888020833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="01a3c049-dfe8-4a95-9582-218494db2526" absoluteBounds="15.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/tblShowRoomCode" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d253bfec-370c-4dcd-86b1-9171724aaac6" absoluteBounds="15.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="22b3674b-7d61-4b42-af3c-3071751269bd" absoluteBounds="0.75, 1.5, 2, 12.924379882812502">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/tblClaimTransaction_Data" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b84f6d15-90dd-4d88-b464-c9cfbe804583" absoluteBounds="0.76500000059604645, 1.9600000008940697, 1.9700000000000002, 12.3643798828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 7.95274983723958); (3.5 : 7.95274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses_MotorClaimDataContext/tblClaimTransaction_Data/tblClaimTransaction_Data_tblClaimTransaction_Result" />
+      <nodes>
+        <classShapeMoniker Id="22b3674b-7d61-4b42-af3c-3071751269bd" />
+        <classShapeMoniker Id="d0e46a99-de77-401a-9766-156b5c33f09a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1c5bde25-d623-4b80-a024-9158b42a9c54" absoluteBounds="0.75, 15.75, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/V_ClaimTransactionData_Notice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7544ccad-831b-43d1-b516-7db9d6dfc3e4" absoluteBounds="0.76499999999999968, 16.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="abebfbfe-f462-4362-b49d-86cb1d0b9f78" absoluteBounds="15.75, 2.75, 2, 13.501284179687502">
+      <DataClassMoniker Name="/DataClasses_MotorClaimDataContext/V_ClaimTransactionData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a769f888-5f58-4570-976e-2254ce4ab978" absoluteBounds="15.765, 3.2100000000000009, 1.9700000000000002, 12.9412841796875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

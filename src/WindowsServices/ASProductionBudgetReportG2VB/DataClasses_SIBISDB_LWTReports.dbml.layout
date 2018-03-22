@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses_SIBISDB_LWTReports">
+  <DataContextMoniker Name="/DataClasses_SIBISDB_LWTReportsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="57820b18-dcd6-4319-b61e-424302833d9a" absoluteBounds="3.375, 1.25, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DataClasses_SIBISDB_LWTReportsDataContext/V_Production_APD_Budget_Monthly_Report" />
+      <nestedChildShapes>
+        <elementListCompartment Id="68e471d8-01e6-4b71-b116-de86e3627f4a" absoluteBounds="3.3899999999999997, 1.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

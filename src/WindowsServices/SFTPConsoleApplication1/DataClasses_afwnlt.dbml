@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="nltdb" Class="DataClasses_afwnltDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=afwnlt;Initial Catalog=nltdb;User ID=sa" SettingsObjectName="SFTPConsoleApplication1.Properties.Settings" SettingsPropertyName="nltdbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.vw_RetailSalesJP" Member="vw_RetailSalesJPs">
+    <Type Name="vw_RetailSalesJP">
+      <Column Name="AID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClosingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="FIRST_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LAST_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CUSTOMER_TYPE" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_CARD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TAX_ID_NO" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="MOBILE_NO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HOME_NO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OFFICE_NO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CONTACT_PERSON" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CONTACT_ADDRESS" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="POSTAL_ADDRESS" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="VIN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CLIENT_CODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CLOSING_DATE" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AFWMakeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

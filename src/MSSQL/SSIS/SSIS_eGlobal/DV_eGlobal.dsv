@@ -1,0 +1,111 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="1c58215f-2a94-49db-b85e-d868c592bf95" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DV_eGlobal</ID>
+  <Name>DV_eGlobal</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>DV_eGlobal</DataSourceID>
+  <Schema>
+    <xs:schema id="DV_eGlobal" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="DV_eGlobal" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="80701987-c561-4a09-a757-687e71d668a7">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_RawData" msprop:FriendlyName="RawData" msprop:DbSchemaName="dbo" msprop:DbTableName="RawData" msprop:design-time-name="403ce626-3074-4ad4-b71f-41385401f2d3" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="ID" msprop:DbColumnName="ID" msprop:design-time-name="2568ea63-3cfa-42e9-b62d-b4d4c939bc05" type="xs:int" />
+                  <xs:element name="PLY_REGION" msprop:FriendlyName="PLY_REGION" msprop:DbColumnName="PLY_REGION" msprop:design-time-name="abba5003-1e36-45da-ae40-c54d16f63968" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PLY_COUNTRY" msprop:FriendlyName="PLY_COUNTRY" msprop:DbColumnName="PLY_COUNTRY" msprop:design-time-name="fb7308e4-702f-4795-bf68-92376a7015ff" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PLY_COVER_NO" msprop:FriendlyName="PLY_COVER_NO" msprop:DbColumnName="PLY_COVER_NO" msprop:design-time-name="1b786ce3-2126-4fce-8d97-04933904fca2" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PLY_VER_NO" msprop:FriendlyName="PLY_VER_NO" msprop:DbColumnName="PLY_VER_NO" msprop:design-time-name="58bbd64d-0041-45c8-9491-e4ac82210f9d" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PLY_TRANSACTION_TYPE" msprop:FriendlyName="PLY_TRANSACTION_TYPE" msprop:DbColumnName="PLY_TRANSACTION_TYPE" msprop:design-time-name="d5afe897-e9dd-4e6a-83b2-d9500ffca3ac" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PLY_EFF_DATE" msprop:FriendlyName="PLY_EFF_DATE" msprop:DbColumnName="PLY_EFF_DATE" msprop:design-time-name="17dee05a-752f-478f-9466-158c474fb27a" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="PLY_REN_DATE" msprop:FriendlyName="PLY_REN_DATE" msprop:DbColumnName="PLY_REN_DATE" msprop:design-time-name="ed9adf4b-8a69-49f9-825e-91b613feff1e" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="PLY_GROSS_PREMIUM_LC" msprop:FriendlyName="PLY_GROSS_PREMIUM_LC" msprop:DbColumnName="PLY_GROSS_PREMIUM_LC" msprop:design-time-name="5e24191e-51ab-47a2-9424-45f640daa720" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="PLY_NET_INCOME_LC" msprop:FriendlyName="PLY_NET_INCOME_LC" msprop:DbColumnName="PLY_NET_INCOME_LC" msprop:design-time-name="14ba73f7-9889-4c2f-8d3a-b67cf888b40b" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="PLY_STATUS" msprop:FriendlyName="PLY_STATUS" msprop:DbColumnName="PLY_STATUS" msprop:design-time-name="9fbde776-eb65-42b3-b8f0-c99dbb703dc4" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_RawData" />
+          <xs:field xpath="ID" />
+        </xs:unique>
+      </xs:element>
+    </xs:schema>
+    <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1" />
+  </Schema>
+</DataSourceView>

@@ -1,0 +1,150 @@
+﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="ucDevxBIUser.ascx.vb" Inherits="Modules_ucDevxBIUser" %>
+
+<script type="text/javascript">
+    function ShowMasterBIPopup(BID) {
+        //LoadingPanel.Show();
+        cbPreview.PerformCallback(BID);
+    }
+</script>
+
+<dx:ASPxCallback ID="cbPreview" runat="server" ClientInstanceName="cbPreview">
+    <ClientSideEvents CallbackError="function(s, e) { 
+            //LoadingPanel.Hide(); 
+        }"
+        CallbackComplete="function(s, e) { 
+            //LoadingPanel.Hide(); 
+            window.top.clientView.SetContentUrl('applications/BI/User/Preview.aspx');
+            window.top.clientView.Show();            
+        }" />
+</dx:ASPxCallback>
+
+
+
+<dx:ASPxRoundPanel ID="pnMain" EnableAnimation="true" ShowCollapseButton="true" HeaderText="" runat="server" EnableAdaptivity="true" Width="100%" HeaderImage-IconID="support_feature_16x16office2013" >
+    <PanelCollection>
+        <dx:PanelContent>
+
+
+            <dx:ASPxTreeList ID="treeList"
+                ClientInstanceName="treeList"
+                runat="server"
+                AutoGenerateColumns="false"
+                DataSourceID="SqlDataSource_Data"
+                Settings-ShowRoot="true" Width="100%"
+                SettingsBehavior-AutoExpandAllNodes="true"
+                SettingsEditing-EditFormColumnCount="1"
+                SettingsEditing-ConfirmDelete="true"
+                SettingsEditing-AllowRecursiveDelete="true"
+                KeyFieldName="BID" Settings-ShowTreeLines="true"
+                SettingsText-ConfirmDelete="Confirm Delete?"
+                ParentFieldName="ParentID">
+
+                <SettingsEditing Mode="PopupEditForm"
+                    AllowRecursiveDelete="true"
+                    ConfirmDelete="true" />
+                <SettingsPopupEditForm Width="100"
+                    Modal="true"
+                    HorizontalAlign="WindowCenter"
+                    VerticalAlign="WindowCenter" />
+
+
+                <SettingsBehavior ColumnResizeMode="NextColumn" AllowEllipsisInText="True" />
+                <Styles>
+                    <AlternatingNode Enabled="true" />
+                </Styles>
+                <Columns>
+
+
+                    <dx:TreeListHyperLinkColumn FieldName="BID" Caption="TITLE">
+                        <PropertiesHyperLink TextField="TITLE" NavigateUrlFormatString="javascript:ShowMasterBIPopup({0});">
+                        </PropertiesHyperLink>
+
+                        <EditFormSettings Visible="False" />
+                    </dx:TreeListHyperLinkColumn>
+
+
+                    <dx:TreeListSpinEditColumn FieldName="No" Visible="false" Caption="No" Width="80" CellStyle-HorizontalAlign="Center">
+                        <EditFormSettings Visible="True" VisibleIndex="0" />
+                        <PropertiesSpinEdit Width="100" Increment="1" LargeIncrement="1">
+                            <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
+                        </PropertiesSpinEdit>
+                    </dx:TreeListSpinEditColumn>
+
+
+
+                    <dx:TreeListTextColumn FieldName="TITLE" Visible="false" Caption="TITLE" CellStyle-Wrap="False">
+                        <PropertiesTextEdit Width="400">
+                            <ValidationSettings Display="Dynamic">
+                                <RequiredField IsRequired="true" />
+                            </ValidationSettings>
+                        </PropertiesTextEdit>
+                        <EditFormSettings Visible="True" VisibleIndex="1" />
+                    </dx:TreeListTextColumn>
+
+                    <dx:TreeListTextColumn FieldName="DESCRIPTION" Caption="DESCRIPTION" CellStyle-Wrap="False">
+                        <PropertiesTextEdit Width="400">
+                            <ValidationSettings Display="Dynamic">
+                                <RequiredField IsRequired="true" />
+                            </ValidationSettings>
+                        </PropertiesTextEdit>
+                        <EditFormSettings Visible="True" VisibleIndex="2" />
+                    </dx:TreeListTextColumn>
+
+
+
+                </Columns>
+
+            </dx:ASPxTreeList>
+
+
+        </dx:PanelContent>
+    </PanelCollection>
+</dx:ASPxRoundPanel>
+
+<asp:SqlDataSource ID="SqlDataSource_Data" runat="server" ConnectionString="<%$ ConnectionStrings:PortalBIConnection %>"
+    SelectCommand="
+     select tblBI.[BID]
+    ,tblBI.[No]
+    ,tblBI.[TITLE]
+    ,tblBI.[DESCRIPTION]
+    ,tblBI.[ParentID]
+    ,tblCube.BASE_CUBE_NAME as CUBE
+    ,tblBI.[CREATEDATE]
+    ,tblBI.[CREATEBY]
+    ,tblBI.[MODIFYDATE]
+    ,tblBI.[MODIFYBY] 
+    from tblBI 
+    left join tblCube on tblBI.CUBE_ID = tblCube.CUBE_ID
+    inner JOIN dbo.tblBIAssignment ON tblBI.BID = tblBIAssignment.BID
+    and tblBIAssignment.UserName=@UserName    
+    Order By [No]    
+    ">
+    <SelectParameters>
+        <asp:Parameter Name="UserName" />
+    </SelectParameters>
+</asp:SqlDataSource>
+
+
+<dx:ASPxPopupControl ID="clientViewBI" runat="server" ClientInstanceName="clientViewBI"
+    Modal="True" Maximized="true"
+    PopupHorizontalAlign="WindowCenter"
+    PopupVerticalAlign="WindowCenter"
+    HeaderText="Business Intelligence"
+    AllowDragging="true"
+    AllowResize="True"
+    EnableAnimation="true"
+    CloseAction="CloseButton"
+    EnableCallbackAnimation="true"
+    EnableViewState="true"
+    ShowPageScrollbarWhenModal="true"
+    ShowMaximizeButton="true"
+    Width="900"
+    Height="790"
+    FooterText="" 
+    ShowFooter="true">
+
+    <ContentCollection>
+        <dx:PopupControlContentControl ID="PopupControlContentControl5" runat="server">
+        </dx:PopupControlContentControl>
+    </ContentCollection>
+</dx:ASPxPopupControl>

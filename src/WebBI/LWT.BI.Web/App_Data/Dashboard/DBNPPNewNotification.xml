@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="th-TH">
+  <Title Text="Dashboard" />
+  <DataSources>
+    <SqlDataSource ComponentName="dashboardSqlDataSource1">
+      <Name>SQL Data Source 1</Name>
+      <Connection Name="localhost_LWTReports_Connection" ProviderKey="MSSqlServer">
+        <Parameters>
+          <Parameter Name="server" Value="localhost" />
+          <Parameter Name="database" Value="LWTReports" />
+          <Parameter Name="useIntegratedSecurity" Value="False" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="userid" Value="sa" />
+          <Parameter Name="password" Value="rsa" />
+        </Parameters>
+      </Connection>
+      <Query Type="TableQuery" Name="tblNPPNewNotification">
+        <Table Name="tblNPPNewNotification">
+          <Column Name="ID" />
+          <Column Name="ClientCode" />
+          <Column Name="ClientName" />
+          <Column Name="TempID" />
+          <Column Name="InsuranceType" />
+          <Column Name="SchemeCode" />
+          <Column Name="EFFECTIVE_DATE" />
+          <Column Name="EFF_Group" />
+          <Column Name="INSURER" />
+          <Column Name="INSURER_F" />
+          <Column Name="CHASSIS_NO" />
+          <Column Name="ENGINE_NO" />
+          <Column Name="Model" />
+          <Column Name="SumInsure" />
+          <Column Name="NetVoluntaryPremium" />
+          <Column Name="VMI" />
+          <Column Name="CMI" />
+          <Column Name="ContractNo" />
+          <Column Name="AppID" />
+          <Column Name="Status" />
+          <Column Name="Remark" />
+          <Column Name="VMIPolicyNo" />
+          <Column Name="CMIPolicyNo" />
+          <Column Name="Showroom" />
+          <Column Name="Beneficiary" />
+          <Column Name="ContactPerson" />
+          <Column Name="NotifigationDate" />
+          <Column Name="Mobile" />
+          <Column Name="OfficeTelephone" />
+          <Column Name="HomeTelephone" />
+          <Column Name="ClassOfRiskVMI" />
+          <Column Name="ClassOfRiskCMI" />
+          <Column Name="IDCard" />
+          <Column Name="HDCode" />
+          <Column Name="DealerName" />
+          <Column Name="ModelGroup" />
+          <Column Name="ModelF" />
+          <Column Name="BenefitGroup" />
+          <Column Name="CarRegisterYear" />
+          <Column Name="BNFGroup" />
+          <Column Name="CMIGross" />
+          <Column Name="ProductCode" />
+          <Column Name="UserClosing" />
+          <Column Name="ClosingDate" />
+          <Column Name="DealerEn" />
+          <Column Name="Province" />
+          <Column Name="Region" />
+          <Column Name="RegionF" />
+        </Table>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 1">
+          <View Name="tblNPPNewNotification">
+            <Field Name="ID" Type="Int32" />
+            <Field Name="ClientCode" Type="String" />
+            <Field Name="ClientName" Type="String" />
+            <Field Name="TempID" Type="String" />
+            <Field Name="InsuranceType" Type="String" />
+            <Field Name="SchemeCode" Type="String" />
+            <Field Name="EFFECTIVE_DATE" Type="DateTime" />
+            <Field Name="EFF_Group" Type="Double" />
+            <Field Name="INSURER" Type="String" />
+            <Field Name="INSURER_F" Type="String" />
+            <Field Name="CHASSIS_NO" Type="String" />
+            <Field Name="ENGINE_NO" Type="String" />
+            <Field Name="Model" Type="String" />
+            <Field Name="SumInsure" Type="Double" />
+            <Field Name="NetVoluntaryPremium" Type="Double" />
+            <Field Name="VMI" Type="Double" />
+            <Field Name="CMI" Type="Double" />
+            <Field Name="ContractNo" Type="String" />
+            <Field Name="AppID" Type="Int32" />
+            <Field Name="Status" Type="String" />
+            <Field Name="Remark" Type="String" />
+            <Field Name="VMIPolicyNo" Type="String" />
+            <Field Name="CMIPolicyNo" Type="String" />
+            <Field Name="Showroom" Type="String" />
+            <Field Name="Beneficiary" Type="String" />
+            <Field Name="ContactPerson" Type="String" />
+            <Field Name="NotifigationDate" Type="DateTime" />
+            <Field Name="Mobile" Type="String" />
+            <Field Name="OfficeTelephone" Type="String" />
+            <Field Name="HomeTelephone" Type="String" />
+            <Field Name="ClassOfRiskVMI" Type="String" />
+            <Field Name="ClassOfRiskCMI" Type="String" />
+            <Field Name="IDCard" Type="String" />
+            <Field Name="HDCode" Type="String" />
+            <Field Name="DealerName" Type="String" />
+            <Field Name="ModelGroup" Type="String" />
+            <Field Name="ModelF" Type="String" />
+            <Field Name="BenefitGroup" Type="String" />
+            <Field Name="CarRegisterYear" Type="Int32" />
+            <Field Name="BNFGroup" Type="String" />
+            <Field Name="CMIGross" Type="Double" />
+            <Field Name="ProductCode" Type="String" />
+            <Field Name="UserClosing" Type="String" />
+            <Field Name="ClosingDate" Type="DateTime" />
+            <Field Name="DealerEn" Type="String" />
+            <Field Name="Province" Type="String" />
+            <Field Name="Region" Type="String" />
+            <Field Name="RegionF" Type="String" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <CalculatedFields>
+        <CalculatedField Name="CarCount" Expression="[CHASSIS_NO][].Count()" DataType="Integer" DataMember="tblNPPNewNotification" />
+      </CalculatedFields>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Pie ComponentName="pieDashboardItem1" Name="By Insurer" DataSource="dashboardSqlDataSource1" DataMember="tblNPPNewNotification">
+      <InteractivityOptions MasterFilterMode="Multiple" />
+      <DataItems>
+        <Dimension DataMember="INSURER_F" UniqueName="DataItem0" />
+        <Measure DataMember="CHASSIS_NO" Name="Insurer" SummaryType="Count" UniqueName="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem0" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem1" />
+      </Values>
+    </Pie>
+    <Pie ComponentName="pieDashboardItem2" Name="By Region" DataSource="dashboardSqlDataSource1" DataMember="tblNPPNewNotification">
+      <InteractivityOptions MasterFilterMode="Multiple" />
+      <DataItems>
+        <Dimension DataMember="RegionF" UniqueName="DataItem0" />
+        <Measure DataMember="CHASSIS_NO" Name="Region" SummaryType="Count" UniqueName="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem0" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem1" />
+      </Values>
+    </Pie>
+    <Pie ComponentName="pieDashboardItem3" Name="By Model" DataSource="dashboardSqlDataSource1" DataMember="tblNPPNewNotification">
+      <InteractivityOptions MasterFilterMode="Multiple" />
+      <DataItems>
+        <Measure DataMember="CHASSIS_NO" Name="Model" SummaryType="Count" UniqueName="DataItem0" />
+        <Dimension DataMember="ModelF" UniqueName="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem1" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem0" />
+      </Values>
+    </Pie>
+    <Grid ComponentName="gridDashboardItem1" Name="Top 10 Dealer" DataSource="dashboardSqlDataSource1" DataMember="tblNPPNewNotification">
+      <DataItems>
+        <Dimension DataMember="DealerName" TopNEnabled="true" TopNCount="10" TopNMeasure="DataItem1" UniqueName="DataItem0" />
+        <Measure DataMember="CarCount" SummaryType="Count" UniqueName="DataItem1" />
+      </DataItems>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 1" DataItem="DataItem1">
+          <FormatConditionRangeGradient ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <AppearanceSettings AppearanceType="GradientBlue" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="10" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="20" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="30" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="40" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="50" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="60" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="70" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="80" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="90" />
+                  <AppearanceSettings AppearanceType="GradientRed" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeGradient>
+        </GridItemFormatRule>
+      </FormatRules>
+      <GridColumns>
+        <GridDimensionColumn Name="Name">
+          <Dimension UniqueName="DataItem0" />
+        </GridDimensionColumn>
+        <GridMeasureColumn Name="Volumn">
+          <Measure UniqueName="DataItem1" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <GridOptions />
+    </Grid>
+    <RangeFilter ComponentName="rangeFilterDashboardItem1" Name="Range Filter 1" DataSource="dashboardSqlDataSource1" DataMember="tblNPPNewNotification">
+      <DataItems>
+        <Dimension DataMember="EFFECTIVE_DATE" DateTimeGroupInterval="DayMonthYear" UniqueName="DataItem1" />
+        <Measure DataMember="CarCount" UniqueName="DataItem0" />
+      </DataItems>
+      <Argument UniqueName="DataItem1" />
+      <Series>
+        <Simple SeriesType="Area">
+          <Value UniqueName="DataItem0" />
+        </Simple>
+      </Series>
+    </RangeFilter>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical">
+      <LayoutItem DashboardItem="rangeFilterDashboardItem1" Weight="17.647058823529413" />
+      <LayoutGroup Weight="32.447817836812142">
+        <LayoutItem DashboardItem="pieDashboardItem1" Weight="50.053475935828878" />
+        <LayoutItem DashboardItem="pieDashboardItem2" Weight="49.946524064171122" />
+      </LayoutGroup>
+      <LayoutGroup Weight="49.905123339658445">
+        <LayoutItem DashboardItem="pieDashboardItem3" Weight="50.053475935828878" />
+        <LayoutItem DashboardItem="gridDashboardItem1" Weight="49.946524064171122" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

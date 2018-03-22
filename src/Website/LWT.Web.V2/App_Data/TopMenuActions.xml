@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Pages>
+  <mail>
+
+    <Item ToolTip="Back" Name="back" Text="กลับ"  SpriteClassName="Sprite_Back" />
+    <Item ToolTip="Import" Name="new" Text="นำเข้า"  SpriteClassName="Sprite_NewMail" />
+    <Item ToolTip="Send" Name="send" SpriteClassName="Sprite_SendMail" />
+    <Item ToolTip="Export to Excel" Name="save" SpriteClassName="Sprite_Save" />
+    <Item ToolTip="Reply" Name="reply" SpriteClassName="Sprite_Reply" />
+    <Item ToolTip="Delete" Name="delete" SpriteClassName="Sprite_RemoveLarge" />
+  </mail>  
+</Pages>

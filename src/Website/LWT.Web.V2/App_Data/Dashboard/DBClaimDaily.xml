@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="th-TH">
+  <Title Text="Dashboard" />
+  <DataSources>
+    <SqlDataSource ComponentName="dashboardSqlDataSource1">
+      <Name>SQL Data Source 1</Name>
+      <Connection Name="localhost_LWTReports_Connection" ProviderKey="MSSqlServer">
+        <Parameters>
+          <Parameter Name="server" Value="localhost" />
+          <Parameter Name="database" Value="LWTReports" />
+          <Parameter Name="useIntegratedSecurity" Value="False" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="userid" Value="sa" />
+          <Parameter Name="password" Value="rsa" />
+        </Parameters>
+      </Connection>
+      <Query Type="TableQuery" Name="TblClaimDaily">
+        <Table Name="TblClaimDaily">
+          <Column Name="AID" />
+          <Column Name="Name" />
+          <Column Name="SurName" />
+          <Column Name="YearOfCar" />
+          <Column Name="PolicyNo" />
+          <Column Name="EngineNo" />
+          <Column Name="VIN" />
+          <Column Name="CarNo" />
+          <Column Name="SumInsurance" />
+          <Column Name="StartingDate" />
+          <Column Name="Voluntary_NetPremium" />
+          <Column Name="TempID" />
+          <Column Name="Status" />
+          <Column Name="IsActive" />
+          <Column Name="ClientCode" />
+          <Column Name="ClosingDate" />
+          <Column Name="ClaimTimes" />
+          <Column Name="No_of_Claim" />
+          <Column Name="InsurerName" />
+          <Column Name="Authorize_Amt" />
+          <Column Name="Insurance_Amt" />
+          <Column Name="Parts ordered from shop Amt" />
+          <Column Name="BP Shop Amt" />
+          <Column Name="Consent Form Amt" />
+          <Column Name="Other Amt" />
+          <Column Name="Authorize" />
+          <Column Name="Insurance" />
+          <Column Name="Parts ordered from shop" />
+          <Column Name="BP Shop" />
+          <Column Name="Consent Form" />
+          <Column Name="Other" />
+        </Table>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 1">
+          <View Name="TblClaimDaily">
+            <Field Name="AID" Type="Int32" />
+            <Field Name="Name" Type="String" />
+            <Field Name="SurName" Type="String" />
+            <Field Name="YearOfCar" Type="Int32" />
+            <Field Name="PolicyNo" Type="String" />
+            <Field Name="EngineNo" Type="String" />
+            <Field Name="VIN" Type="String" />
+            <Field Name="CarNo" Type="String" />
+            <Field Name="SumInsurance" Type="Double" />
+            <Field Name="StartingDate" Type="DateTime" />
+            <Field Name="Voluntary_NetPremium" Type="Decimal" />
+            <Field Name="TempID" Type="String" />
+            <Field Name="Status" Type="Int32" />
+            <Field Name="IsActive" Type="Int32" />
+            <Field Name="ClientCode" Type="String" />
+            <Field Name="ClosingDate" Type="DateTime" />
+            <Field Name="ClaimTimes" Type="Int32" />
+            <Field Name="No_of_Claim" Type="Double" />
+            <Field Name="InsurerName" Type="String" />
+            <Field Name="Authorize_Amt" Type="Double" />
+            <Field Name="Insurance_Amt" Type="Double" />
+            <Field Name="Parts ordered from shop Amt" Type="Double" />
+            <Field Name="BP Shop Amt" Type="Double" />
+            <Field Name="Consent Form Amt" Type="Double" />
+            <Field Name="Other Amt" Type="Double" />
+            <Field Name="Authorize" Type="Double" />
+            <Field Name="Insurance" Type="Double" />
+            <Field Name="Parts ordered from shop" Type="Double" />
+            <Field Name="BP Shop" Type="Double" />
+            <Field Name="Consent Form" Type="Double" />
+            <Field Name="Other" Type="Double" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Pie ComponentName="pieDashboardItem1" Name="Closing Policy" ShowCaption="false" DataSource="dashboardSqlDataSource1" DataMember="TblClaimDaily">
+      <InteractivityOptions IgnoreMasterFilters="true" MasterFilterMode="Multiple" />
+      <DataItems>
+        <Measure DataMember="VIN" Name="Closing Policy by Insurer" SummaryType="Count" UniqueName="DataItem1">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+        <Dimension DataMember="InsurerName" UniqueName="DataItem0" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem0" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem1" />
+      </Values>
+    </Pie>
+    <Chart ComponentName="chartDashboardItem1" Name="Closing Policy By Insurer" DataSource="dashboardSqlDataSource1" DataMember="TblClaimDaily">
+      <DataItems>
+        <Measure DataMember="VIN" SummaryType="Count" UniqueName="DataItem0">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" />
+        </Measure>
+        <Dimension DataMember="InsurerName" UniqueName="DataItem2" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem2" />
+      </SeriesDimensions>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple>
+              <Value UniqueName="DataItem0" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Chart ComponentName="chartDashboardItem2" Name="Claim by Garage Type (Times)" DataSource="dashboardSqlDataSource1" DataMember="TblClaimDaily">
+      <DataItems>
+        <Measure DataMember="Authorize" UniqueName="DataItem1" />
+        <Measure DataMember="BP Shop" UniqueName="DataItem2" />
+        <Measure DataMember="Consent Form" UniqueName="DataItem3" />
+        <Measure DataMember="Insurance" UniqueName="DataItem4" />
+        <Measure DataMember="Other" UniqueName="DataItem5" />
+      </DataItems>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple Name="Authorize">
+              <Value UniqueName="DataItem1" />
+            </Simple>
+            <Simple Name="BP Shop">
+              <Value UniqueName="DataItem2" />
+            </Simple>
+            <Simple Name="Consent Form">
+              <Value UniqueName="DataItem3" />
+            </Simple>
+            <Simple Name="Insurance">
+              <Value UniqueName="DataItem4" />
+            </Simple>
+            <Simple Name="Other">
+              <Value UniqueName="DataItem5" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    
+    
+    <Chart ComponentName="chartDashboardItem3" Name="Claim by Garage Type (Amount)" DataSource="dashboardSqlDataSource1" DataMember="TblClaimDaily">
+      <DataItems>
+        <Measure DataMember="BP Shop Amt" UniqueName="DataItem0" />
+        <Measure DataMember="Consent Form Amt" UniqueName="DataItem2" />
+        <Measure DataMember="Insurance_Amt" UniqueName="DataItem3" />
+        <Measure DataMember="Authorize_Amt" UniqueName="DataItem4" />
+        <Measure DataMember="Other Amt" UniqueName="DataItem5" />
+      </DataItems>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple Name="Authorize_Amt">
+              <Value UniqueName="DataItem4" />
+            </Simple>
+            <Simple Name="BP Shop Amt">
+              <Value UniqueName="DataItem0" />
+            </Simple>
+            <Simple Name="Consent Form Amt">
+              <Value UniqueName="DataItem2" />
+            </Simple>
+            <Simple Name="Insurance_Amt">
+              <Value UniqueName="DataItem3" />
+            </Simple>
+            <Simple Name="Other Amt">
+              <Value UniqueName="DataItem5" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Chart ComponentName="chartDashboardItem4" Name="Claim Daily/Monthly" DataSource="dashboardSqlDataSource1" DataMember="TblClaimDaily">
+      <DataItems>
+        <Measure DataMember="VIN" SummaryType="Count" UniqueName="DataItem0" />
+        <Measure DataMember="ClaimTimes" UniqueName="DataItem1" />
+        <Measure DataMember="No_of_Claim" UniqueName="DataItem2" />
+      </DataItems>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple Name="Closing">
+              <Value UniqueName="DataItem0" />
+            </Simple>
+            <Simple Name="Daily">
+              <Value UniqueName="DataItem1" />
+            </Simple>
+            <Simple Name="Monthly">
+              <Value UniqueName="DataItem2" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    
+    
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical">
+      <LayoutGroup Weight="73.055028462998109">
+        <LayoutItem DashboardItem="pieDashboardItem1" Weight="50.053475935828878" />
+        <LayoutGroup Orientation="Vertical" Weight="49.946524064171122">
+          <LayoutItem DashboardItem="chartDashboardItem1" Weight="26.493506493506494" />
+          <LayoutItem DashboardItem="chartDashboardItem4" Weight="26.233766233766232" />
+        </LayoutGroup>
+      </LayoutGroup>
+      <LayoutGroup Weight="26.944971537001898">
+        <LayoutItem DashboardItem="chartDashboardItem2" Weight="50.053475935828878" />
+        <LayoutItem DashboardItem="chartDashboardItem3" Weight="49.946524064171122" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

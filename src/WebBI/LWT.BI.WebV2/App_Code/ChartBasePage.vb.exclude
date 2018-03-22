@@ -1,0 +1,34 @@
+﻿Imports Microsoft.VisualBasic
+Imports System
+Imports System.Web.UI
+Imports DevExpress.XtraCharts.Web
+
+Partial Public Class ChartBasePage
+    Inherits Page
+    Private Function GetContentHolder() As Control
+        Return Form.FindControl("ContentHolder")
+    End Function
+
+    Protected Overrides Sub OnInit(ByVal e As EventArgs)
+        MyBase.OnInit(e)
+        If FindWebChartControl() IsNot Nothing Then
+            Dim demoToolbar As Control = LoadControl("~/UserControls/ChartDemoToolbar.ascx")
+            If demoToolbar IsNot Nothing Then
+                Dim phContent As Control = GetContentHolder()
+                If phContent IsNot Nothing Then
+                    phContent.Controls.AddAt(0, demoToolbar)
+                End If
+            End If
+        End If
+    End Sub
+    Public Overridable Function FindWebChartControl() As WebChartControl
+        Dim phContent As Control = GetContentHolder()
+        If phContent Is Nothing Then
+            Return Nothing
+        End If
+        Return TryCast(phContent.FindControl("WebChartControl1"), WebChartControl)
+    End Function
+    Public Overridable Function ShowPaletteComboBox() As Boolean
+        Return True
+    End Function
+End Class

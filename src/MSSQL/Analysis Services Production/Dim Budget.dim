@@ -1,0 +1,323 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="95eb7dd3-b99f-4c0f-92ea-6122b3dda1ee" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Budget</ID>
+  <Name>Dim Budget</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4981" scrolltop="-4326" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="13520" y="13653" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Production_Dim_Budget" left="-2996" top="-1164" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3519" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000bf0d000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Production_Dim_Budget" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-4981</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-4326</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-2996</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-1164</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="144">
+            <Shape Id="Budget Key" Expanded="true">
+              <Attributes>
+                <Attribute Id="Budget Key" />
+                <Attribute Id="Account Executive" />
+                <Attribute Id="Actual Amount" />
+                <Attribute Id="Budget Amount" />
+                <Attribute Id="Budget Date" />
+                <Attribute Id="Budget Month" />
+                <Attribute Id="Budget Year" />
+                <Attribute Id="Date Budget" />
+                <Attribute Id="Extra Amount" />
+                <Attribute Id="Forcast Amount" />
+                <Attribute Id="Remark" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="70e5ff68-a716-4a3b-a763-9337978d454a">
+    <DataSourceViewID>LWTProductionView</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="badd4e8b-427b-4396-9c5f-37b92be957da">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="0a11a0ff-f140-4d4c-9b2a-5565c9f19779">
+      <ID>Budget Key</ID>
+      <Name>Budget Key</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="29bc145a-8cb8-4318-9f68-94b832039cca">
+          <NullProcessing>UnknownMember</NullProcessing>
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1bba253e-4530-4ed1-8122-3ca1590af253">
+            <TableID>dbo_Production_Dim_Budget</TableID>
+            <ColumnID>BudgetKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="723555ac-7dfd-4d0b-93a3-6101950fc3fb">
+          <AttributeID>Budget Date</AttributeID>
+          <Name>Budget Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3093587f-19b4-4520-ae92-76096f8930cc">
+          <AttributeID>Account Executive</AttributeID>
+          <Name>Account Executive</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3bc42723-f3b9-49e0-aa64-762e3c3602a3">
+          <AttributeID>Date Budget</AttributeID>
+          <Name>Date Budget</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="caa4f9a6-e97f-45fd-8874-70edfa97d059">
+          <AttributeID>Budget Amount</AttributeID>
+          <Name>Budget Amount</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="707348df-1ce9-4c27-8d6e-eb0f6bc3121c">
+          <AttributeID>Forcast Amount</AttributeID>
+          <Name>Forcast Amount</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="011a9346-f56d-4ac9-a0f6-f8c21dd135aa">
+          <AttributeID>Actual Amount</AttributeID>
+          <Name>Actual Amount</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e31b386d-21ed-48f2-b8c6-36f30b485d2d">
+          <AttributeID>Remark</AttributeID>
+          <Name>Remark</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a5b418a4-1ba7-4e47-a1ee-e4e6306755e0">
+          <AttributeID>Budget Year</AttributeID>
+          <Name>Budget Year</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="69f206ca-82e2-406a-b79c-f10f16ef9653">
+          <AttributeID>Budget Month</AttributeID>
+          <Name>Budget Month</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="72d2171b-8749-4540-a21c-263a023d431b">
+          <AttributeID>Extra Amount</AttributeID>
+          <Name>Extra Amount</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1ea5dcc1-d203-4810-9398-22666e3a6560">
+      <ID>Budget Date</ID>
+      <Name>Budget Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c94a71bd-fb29-4938-b522-780343afffc4">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="dbce23dd-a691-4d5c-a545-fbf9fd972b89">
+            <TableID>dbo_Production_Dim_Budget</TableID>
+            <ColumnID>BudgetDate</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="cbb9b02a-911f-48f7-9f8c-9cccbc08acac">
+      <ID>Account Executive</ID>
+      <Name>Account Executive</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c512ff70-d882-4f56-9b2d-a52965ee50e7">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f18c3af0-67d9-43ff-b7b5-c033691e5228">
+            <TableID>dbo_Production_Dim_Budget</TableID>
+            <ColumnID>AccountExecutive</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5d31d326-a236-4404-8f17-e2cbdde03e71">
+      <ID>Date Budget</ID>
+      <Name>Date Budget</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="84d99fcf-8bf1-47f0-bb4d-ff33e4dcaee6">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4ffb7335-94e4-4342-a83b-513d9996048e">
+            <TableID>dbo_Production_Dim_Budget</TableID>
+            <ColumnID>DateBudget</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f0b0faca-cfc5-4e32-82ed-cbaeeae9e27c">
+      <ID>Budget Amount</ID>
+      <Name>Budget Amount</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e28b7976-9173-411d-a514-df6ff48f1cf7">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="db52abcd-7db4-4ee0-bada-c84e310aa423">
+            <TableID>dbo_Production_Dim_Budget</TableID>
+            <ColumnID>BudgetAmount</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f76d1b9f-5d41-4682-bfc8-bbbc5d39f17e">
+      <ID>Forcast Amount</ID>
+      <Name>Forcast Amount</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7637e048-ccb1-4558-ab16-1e77a8f4d847">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4cb69a2d-fdf7-4624-84f6-eef60af49de1">
+            <TableID>dbo_Production_Dim_Budget</TableID>
+            <ColumnID>ForcastAmount</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="29a41f0a-1902-4e3d-8009-898ce26066d6">
+      <ID>Actual Amount</ID>
+      <Name>Actual Amount</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="256e4687-283d-4125-ac92-9979a3d70066">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0039b5c2-c917-4f94-8c5e-2cb3408e7e57">
+            <TableID>dbo_Production_Dim_Budget</TableID>
+            <ColumnID>ActualAmount</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="58e253be-9218-42a4-bcf6-b3a3505f12e2">
+      <ID>Remark</ID>
+      <Name>Remark</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="edbe2f35-c7b1-4c88-9649-3c3f2539a264">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7e6816c2-e0e9-4729-9b41-7801e29b7d99">
+            <TableID>dbo_Production_Dim_Budget</TableID>
+            <ColumnID>Remark</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0cf2e66c-63fb-48e9-a9a2-57f576370d60">
+      <ID>Budget Year</ID>
+      <Name>Budget Year</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c711ce11-bff1-46f7-8f35-893d817e282f">
+          <DataType>WChar</DataType>
+          <DataSize>4</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="09109ad6-f3e4-4600-81f1-c2b16bcc9cdb">
+            <TableID>dbo_Production_Dim_Budget</TableID>
+            <ColumnID>BudgetYear</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ee3ad712-1ed2-45ec-9ae6-4cb9964373fe">
+      <ID>Budget Month</ID>
+      <Name>Budget Month</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d0f108c6-6726-4fed-a464-55e03d9e5eee">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ca559bc4-70fd-40f9-8089-d7aa8167ae1c">
+            <TableID>dbo_Production_Dim_Budget</TableID>
+            <ColumnID>BudgetMonth</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f0466b8c-d718-4371-86ea-c2f0b27abf93">
+      <ID>Extra Amount</ID>
+      <Name>Extra Amount</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8b55fb76-993b-4515-b5b8-b0eb1d9b7021">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a68f9493-edec-425f-9b7d-2dbceb0d5a85">
+            <TableID>dbo_Production_Dim_Budget</TableID>
+            <ColumnID>ExtraAmount</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+  </Attributes>
+</Dimension>

@@ -1,0 +1,930 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LWTReports" Class="DataClasses_LWTReportsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LOCKTHBNK-DB07\NEWMOTOR;Initial Catalog=LWTReports;User ID=locksql" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LWTReportsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.V_CLAIM_MONTHLY_DATA" Member="V_CLAIM_MONTHLY_DATAs">
+    <Type Name="V_CLAIM_MONTHLY_DATA">
+      <Column Name="RecNo" AutoSync="Never" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FullCustomerName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CustomerName" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ClientCode" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="ChassisNo" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="CarLicence" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PolicyNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Insurance_ClaimNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GarageProvinceTH" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="GarageProvinceEN" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="AccidentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AccidentDateStr" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AccidentPlace" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ClaimGroup" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IndemnityGroup" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClaimCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IndemnityAmount" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IndemnityType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GarageName" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="GarageType1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GarageType2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InsurerName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="InsurerCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Remark1" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Remark2" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Remark3" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="LotNo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CustType" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.napd" Member="napds">
+    <Type Name="napd">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CODE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CLIENT" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CLIENTNAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[GROUP]" Member="GROUP" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="REFNO" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TYPE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BILL_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EFFDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXPDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DETAIL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AEGRP" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RISK" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RISKI" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RISKII" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RISKGOV" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ORIGI_AMT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CURRENCY" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="EXC_RATE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GLNO" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="UW_REF" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PREMIUM" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="STAMP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OTHER" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BROKERAGE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VAT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CCW_AMT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BALANCE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CO_REF" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TRNO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TR_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RV_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RVP_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TRCANCEL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PVNO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PV_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PV_PDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PVCANCEL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="COM_OUT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DISCOUNT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PREM_IN_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OLD_SA_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NET_SA_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DIS_IN_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BROK_IN_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NET_IR_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GROS_IN_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="JVNO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UWNAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GROUPNAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GGRP" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MGROUP" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MGNAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NETBROK" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VAT_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="STAMP_P" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ORIN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OROUT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ADMININ1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ADMININ2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ADMINOUT1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ADMINOUT2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SOURCE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SOURCENAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="INDUSTRY" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CHANNEL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NewFY13FY15NoCN" Member="NewFY13FY15NoCNs">
+    <Type Name="NewFY13FY15NoCN">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClientCode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ClientName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TempID" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="InsuranceType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SchemeCode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="EFFECTIVEDATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="INSURER" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CHASSISNO" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ENGINENO" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SumInsure" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NetVoluntaryPremium" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VMI" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CMI" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ContractNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AppID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="VMIPolicyNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CMIPolicyNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Showroom" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Beneficiary" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ContactPerson" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NotifigationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="OfficeTelephone" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HomeTelephone" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ClassOfRiskVMI" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ClassOfRiskCMI" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IDCard" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HDCode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ClosingDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DealerName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ModelGroup" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BenefitGroup" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CarRegisterYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BNFGroup" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ContractNo1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CMIGross" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ProductCode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="UserClosing" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ClosingDate1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DealerEn" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ShowroomType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Province" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ProvinceEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FYTD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="INSURERENG" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="InsurerEngGroup" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="VehicleType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BillingChannel" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FolioVMI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FolioCMI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VMIOriginalAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VMICCWCollectAmt" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VMIBalanceAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CMIOriginalAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CMICCWCollectAmt" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CMIBalanceAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TRVMI_NETTOTAL" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TRVMI_PAIDAMOUNT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TRVMI_BalanceAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TRCMI_NETTOTAL" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TRCMI_PAIDAMOUNT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TRCMI_BalanceAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NetIncomeVMI" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NetIncomeCMI" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NetTotal" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ASAT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SIBIS2015" Member="SIBIS2015s">
+    <Type Name="SIBIS2015">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="No" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DNNo" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Class" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ClientCode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ClientName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DivCode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AExec" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Source" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ClientGroup" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Trans" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Premium" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PremiumDN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PremiumCN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ComIn" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ORIn" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Admin1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Admin2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TotalIncome" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ComOut" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OROut" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminOut1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminOut2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NetIncome" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NetIncomeDN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NetIncomeCN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GroupDiv" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GroupSource" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GroupSourceSub1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GroupSourceSub2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GroupSourceSub" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GroupMaster" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BriefDesc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PeriodForm" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DNDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Expiry" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PolicyNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RiskGov" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RiskGroupII" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RiskShortDesc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="UWShort" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="UWName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Year" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TotalIncomeP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NetIncomeP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="RiskGov2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RiskGov3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Year2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Month" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReport" Member="tblReports">
+    <Type Name="tblReport">
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VIEW_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DB_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REPORT_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tblReport_tblReport_Assignment" Member="tblReport_Assignments" ThisKey="RID" OtherKey="RID" Type="tblReport_Assignment" />
+      <Association Name="tblReport_DashBoard_tblReport" Member="tblReport_DashBoard" ThisKey="DB_ID" OtherKey="DB_ID" Type="tblReport_DashBoard" IsForeignKey="true" />
+      <Association Name="tblReport_VIEW_tblReport" Member="tblReport_VIEW" ThisKey="VIEW_ID" OtherKey="VIEW_ID" Type="tblReport_VIEW" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReport_Assignment" Member="tblReport_Assignments">
+    <Type Name="tblReport_Assignment">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tblReport_tblReport_Assignment" Member="tblReport" ThisKey="RID" OtherKey="RID" Type="tblReport" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReport_DashBoard" Member="tblReport_DashBoards">
+    <Type Name="tblReport_DashBoard">
+      <Column Name="DB_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DB_TITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DB_XML" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="VIEW_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblReport_DashBoard_tblReport" Member="tblReports" ThisKey="DB_ID" OtherKey="DB_ID" Type="tblReport" />
+      <Association Name="tblReport_VIEW_tblReport_DashBoard" Member="tblReport_VIEW" ThisKey="VIEW_ID" OtherKey="VIEW_ID" Type="tblReport_VIEW" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReport_MasterData" Member="tblReport_MasterDatas">
+    <Type Name="tblReport_MasterData">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Value" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GroupName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReport_VIEWs" Member="tblReport_VIEWs">
+    <Type Name="tblReport_VIEW">
+      <Column Name="VIEW_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VIEW_TITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="VIEW_QUERY" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="VIEW_CONNECTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BIFile" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="tblReport_VIEW_tblReport" Member="tblReports" ThisKey="VIEW_ID" OtherKey="VIEW_ID" Type="tblReport" />
+      <Association Name="tblReport_VIEW_tblReport_DashBoard" Member="tblReport_DashBoards" ThisKey="VIEW_ID" OtherKey="VIEW_ID" Type="tblReport_DashBoard" />
+      <Association Name="tblReport_VIEW_tblReport_VIEWs_Field" Member="tblReport_VIEWs_Fields" ThisKey="VIEW_ID" OtherKey="VIEW_ID" Type="tblReport_VIEWs_Field" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReportMaster_Template" Member="tblReportMaster_Templates">
+    <Type Name="tblReportMaster_Template">
+      <Column Name="MASTER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FIELD_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AREA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORDERBY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblReportMaster_Template_tblReportMaster_FilterValue" Member="tblReportMaster_FilterValues" ThisKey="MASTER_ID" OtherKey="MASTER_ID" Type="tblReportMaster_FilterValue" />
+      <Association Name="tblReport_VIEWs_Field_tblReportMaster_Template" Member="tblReport_VIEWs_Field" ThisKey="FIELD_ID" OtherKey="FIELD_ID" Type="tblReport_VIEWs_Field" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReportUser_Template" Member="tblReportUser_Templates">
+    <Type Name="tblReportUser_Template">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FIELD_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AREA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OWNER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ORDERBY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblReportUser_Template_tblReportUser_FilterValue" Member="tblReportUser_FilterValues" ThisKey="ID" OtherKey="ID" Type="tblReportUser_FilterValue" />
+      <Association Name="tblReport_VIEWs_Field_tblReportUser_Template" Member="tblReport_VIEWs_Field" ThisKey="FIELD_ID" OtherKey="FIELD_ID" Type="tblReport_VIEWs_Field" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_REPORT_ASSIGNMENT" Member="V_REPORT_ASSIGNMENTs">
+    <Type Name="V_REPORT_ASSIGNMENT">
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VIEW_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DB_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REPORT_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SelectNode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_REPORT_BI" Member="V_REPORT_BIs">
+    <Type Name="V_REPORT_BI">
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REPORT_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VIEW_TITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="VIEW_QUERY" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="VIEW_CONNECTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="BIFile" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_REPORT_DB" Member="V_REPORT_DBs">
+    <Type Name="V_REPORT_DB">
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REPORT_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DB_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DB_TITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DB_XML" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="VIEW_QUERY" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="VIEW_CONNECTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_REPORT_MASTER_TEMPLATE" Member="V_REPORT_MASTER_TEMPLATEs">
+    <Type Name="V_REPORT_MASTER_TEMPLATE">
+      <Column Name="FIELD_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FIELD_CAPTION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FIELD_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SummaryType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CellFormat_FormatType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CellFormat_FormatString" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="UnboundExpressionMode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnboundExpression" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UnboundColumnType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GroupInterval" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MASTER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AREA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORDERBY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_REPORT_USER_TEMPLATE" Member="V_REPORT_USER_TEMPLATEs">
+    <Type Name="V_REPORT_USER_TEMPLATE">
+      <Column Name="FIELD_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TEMPLATE_CAPTION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TEMPLATE_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SummaryType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CellFormat_FormatType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CellFormat_FormatString" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="UnboundExpressionMode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnboundExpression" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UnboundColumnType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GroupInterval" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MASTER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TEMPLATE_AREA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TEMPLATE_ORDERBY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OWNER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AREA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ORDERBY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_NAPD_SUMMARY" Member="V_NAPD_SUMMARies">
+    <Type Name="V_NAPD_SUMMARY">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BillingYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BillingMonth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EffYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EffMonth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExpYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExpMonth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[GROUP]" Member="GROUP" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="AE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="AEGRP" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="RISKI" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="RISKII" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="RISKGOV" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CURRENCY" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="EXC_RATE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UWNAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GROUPNAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GGRP" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="MGROUP" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="MGNAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="SOURCE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="SOURCENAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="INDUSTRY" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CHANNEL" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ShortDesc" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GovtGroup" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="LWTGroup" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GroupClass" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="MiscClass" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ORIGI_AMT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PREM_IN_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OLD_SA_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NET_SA_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DIS_IN_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BROK_IN_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NET_IR_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GROS_IN_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NETBROK" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VAT_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="STAMP_P" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ORIN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OROUT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ADMININ1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ADMININ2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ADMINOUT1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ADMINOUT2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TRANS" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="COMMIN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NETBROK_P" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ORIN_P" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ADMININ1_P" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ADMININ2_P" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="COMMIN_P" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReportMaster_FilterValues" Member="tblReportMaster_FilterValues">
+    <Type Name="tblReportMaster_FilterValue">
+      <Column Name="FILTER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FILTER_VALUE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FILTER_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MASTER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblReportMaster_Template_tblReportMaster_FilterValue" Member="tblReportMaster_Template" ThisKey="MASTER_ID" OtherKey="MASTER_ID" Type="tblReportMaster_Template" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReportUser_FilterValues" Member="tblReportUser_FilterValues">
+    <Type Name="tblReportUser_FilterValue">
+      <Column Name="FILTER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FILTER_VALUE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FILTER_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblReportUser_Template_tblReportUser_FilterValue" Member="tblReportUser_Template" ThisKey="ID" OtherKey="ID" Type="tblReportUser_Template" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NAPD_SUMMARY" Member="NAPD_SUMMARies">
+    <Type Name="NAPD_SUMMARY">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BillingYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BillingMonth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EffYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EffMonth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExpYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExpMonth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[GROUP]" Member="GROUP" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="AE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="AEGRP" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="RISKI" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="RISKII" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="RISKGOV" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CURRENCY" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="EXC_RATE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UWNAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GROUPNAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GGRP" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="MGROUP" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="MGNAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="SOURCE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="SOURCENAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="INDUSTRY" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CHANNEL" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ShortDesc" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GovtGroup" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="LWTGroup" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GroupClass" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="MiscClass" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ORIGI_AMT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PREM_IN_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OLD_SA_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NET_SA_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DIS_IN_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BROK_IN_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NET_IR_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GROS_IN_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NETBROK" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VAT_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="STAMP_P" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ORIN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OROUT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ADMININ1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ADMININ2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ADMINOUT1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ADMINOUT2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TRANS" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NETBROK_P" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ORIN_P" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ADMININ1_P" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ADMININ2_P" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="COMMIN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="COMMIN_P" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ASAT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReport_VIEWs_Field" Member="tblReport_VIEWs_Fields">
+    <Type Name="tblReport_VIEWs_Field">
+      <Column Name="FIELD_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FIELD_CAPTION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FIELD_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SummaryType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CellFormat_FormatType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CellFormat_FormatString" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="GroupInterval" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VIEW_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UnboundExpressionMode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnboundExpression" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="UnboundColumnType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblReport_VIEWs_Field_tblReportMaster_Template" Member="tblReportMaster_Templates" ThisKey="FIELD_ID" OtherKey="FIELD_ID" Type="tblReportMaster_Template" />
+      <Association Name="tblReport_VIEWs_Field_tblReportUser_Template" Member="tblReportUser_Templates" ThisKey="FIELD_ID" OtherKey="FIELD_ID" Type="tblReportUser_Template" />
+      <Association Name="tblReport_VIEW_tblReport_VIEWs_Field" Member="tblReport_VIEW" ThisKey="VIEW_ID" OtherKey="VIEW_ID" Type="tblReport_VIEW" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_Nissan" Member="V_Nissans">
+    <Type Name="V_Nissan">
+      <Column Name="AppID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CusName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CusSurname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CusIDCard" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CusAddress1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CusAddress2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CusMobile" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CusHomePhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CusOfficePhone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CarEngineNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CarChassisNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CarPlantNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DateEffective" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateExpired" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateNotification" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AppStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AppIsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClientCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CmiBuying" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AppBeneficiary" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LeasingID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClosingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClosingMonth" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClosingDay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AppStatusRecived" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProjectID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NotifyName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CusTitle" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="CarGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CarGroupName" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="CarBrandName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="CarModelName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CarTypeName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CarTypeNameFull" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CarModelCode" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="CarGroupNameM2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DealerNameEn" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NLTDealerCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NLTArea" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InsurerNameTh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="InsurerCodeSibis" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InsurerNameEn" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="InsurerCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LeasID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LeasName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LeasNameAbbr" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LeasNameShort" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ModelNameM2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NLTBookingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SchemeCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VmiNetPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="VmiStamp" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="VmiVat" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="VmiTotalPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CmiNetPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CmiStamp" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CmiVat" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CmiTotalPremium" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ClassOfRiskVMI" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="ClassOfRiskCMI" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="ShowroomID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShowroomName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="DealerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShorwoomNameEn" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CarTypeNameM2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TypeInsID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TypeInsName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TypeInsStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TypeInsReportToNLTH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TypeInsIsFree" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserAddedTel" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="UserAddedType" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBudget_APD_NetIncome" Member="tblBudget_APD_NetIncomes">
+    <Type Name="tblBudget_APD_NetIncome">
+      <Column Name="AccountExecutive" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BudgetDate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateBudget" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BudgetAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ForcastAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ActualAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="InvoiceNo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BusinessGroup" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ClassGroup" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AEGroupRunning" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AESGroupRunning" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AEGroupName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AESGroupName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="AExec" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Billing" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TransType" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Premium" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ExchangeRate" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Department" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AdminCostLevy" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="RiskGovernment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HeadingIII" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GroupTypeB" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GroupTypeC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AdminIn1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="AdminIn2" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="AdminOut1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="AdminOut2" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RealBrok" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="OROut" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ORIn" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CommOut" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PremiumTHB" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PremiumCN" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PremiumDN" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalIncome" Type="System.Decimal" DbType="Decimal(21,2)" CanBeNull="true" />
+      <Column Name="NetIncome" Type="System.Decimal" DbType="Decimal(26,2)" CanBeNull="true" />
+      <Column Name="NetIncomeCN" Type="System.Decimal" DbType="Decimal(26,2)" CanBeNull="true" />
+      <Column Name="NetIncomeDN" Type="System.Decimal" DbType="Decimal(26,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblMazdaClaim" Member="tblMazdaClaims">
+    <Type Name="tblMazdaClaim">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FullCustomerName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ChassisNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GarageProvinceEN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AccidentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AccidentDateStr" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AccidentYear" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="AccidentMonth" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="AccidentDay" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="IndemnityGroup" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClaimCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IndemnityType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GarageType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Insurer" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="LotNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ShowroomName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ModelGroup" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblMazdaNew" Member="tblMazdaNews">
+    <Type Name="tblMazdaNew">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClientCode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ClientName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CHASSISNO" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ENGINENO" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="EFFECTIVEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EFFYEAR" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="EFFMONTH" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="EFFDAY" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EFFECTIVEDay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsuranceType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ModelGroup" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="VehicleType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Beneficiary" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Dealer" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Province" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Insurer" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BillingChannel" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SumInsure" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GrossPremium" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TotalPremium" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SummitRawData" Member="SummitRawDatas">
+    <Type Name="SummitRawData">
+      <Column Name="SummitID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AgentCode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="InsureTypeCode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="InsureTypeName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CarBrand" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ClientCode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="InsuredName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IDCard" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Telephone" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DealerName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Insuerer" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CarModel" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CarBody" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Chassis" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CarPlate" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CarCode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CarRegYear" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Period" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CarPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Suminsured1Y" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Suminsured2Y" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Suminsured3Y" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GrossPremium" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Stamp" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VAT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NetPremium" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ClassOfRisk" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BuyType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ReceiveCode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CertificateNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PolicyNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Benefitialy" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Coverage" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Status1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Insuerer2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Benefitialy2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CreateYear" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreateMonth" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EffectiveYear" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EffectiveMonth" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblMazdaRawData" Member="tblMazdaRawDatas">
+    <Type Name="tblMazdaRawData">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="No_Of_Policy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CHASSIS_NO" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GarageProvince" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AccidentPlace" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GarageProvince2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AccidentPlace2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AccidentPlace3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Type_BP_Shop_Garage_Province2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Type_BP_Shop" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AccidentPlace_F" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RegionGarage" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RegionPlace" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RegionGarage2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RegionPlace2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AccidentDateStr" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="No_Of_Claims" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SpartPartCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LabourCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Claims_Incurred" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Labour" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Spare_Part" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Labour_F" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Spare_Part_F" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Claims_Paid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Claims_Paid_Count" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BP_Authorize" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Non_BP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BP_Only" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BP_Shop_Count" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Non_BP_2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BP_Only_A" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BP_Only_C" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Non_BP_A" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Non_BP_C" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GarageType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Insurer" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="LotNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Business_Type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DealerName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Dealer_Group" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Capacity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DealerGarage" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Gross_Premium" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Total_Premium" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Claim_Frequency_P" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BP_Utilization_PA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Loss_Ratio_P" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BP_Utilization_PC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Claims_Incured_NotPaid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Aftersales_Opportunity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Labour_P" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Spare_Part_P" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_CustomDashBoard01" Member="V_CustomDashBoard01s">
+    <Type Name="V_CustomDashBoard01">
+      <Column Name="AccidentPlace_F" Type="System.String" DbType="NVarChar(255)" IsPrimaryKey="true" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Non_BP_C" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Non_BP_A" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Claims_Incured_NotPaid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Aftersales_Opportunity" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RawDataProduction" Member="RawDataProductions">
+    <Type Name="RawDataProduction">
+      <Column Name="Client" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Class" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Folio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Version" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Underwriter" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AExec" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TransType" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Invoiceno" Type="System.Int32" DbType="Int" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Effective" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PeriodFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PeriodTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PolicyNo" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="BillingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Currency" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ExchangeRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SumInsuredTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PremiumTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="StampTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VATTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BrokerageTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ORInTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminFeeIn1THB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminFeeIn2THB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DiscountTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CommissionOutTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OROutTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminFeeOut1THB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AdminFeeOut2THB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BriefDescription" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="BriefII" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="BriefIII" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ReinsuranceInfo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PPWFromClient" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PPWToUW" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CoInsuranceNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RenewFlag" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="AEProduction" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ErrorFlag" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="UpfrontFlag" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="EntryBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AEName" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="AEGroupRunning" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AEGroupName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AESGroupRunning" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AESGroupName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Owner" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BusinessGroup" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ClassGroup" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGroupII" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskGovernment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RiskShortDesc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BillingKey" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="AgentStaff" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AgentName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ClientName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SourceCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SourceName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GroupName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ClientType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IndustryEng" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IndustryThai" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TotalPremiumTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TotalIncome" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NetIncome" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UWName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UWNameEng" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="UWCrossRef" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Division" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

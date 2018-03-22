@@ -1,0 +1,335 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+
+
+<asp:TextBox runat="server" BorderStyle="solid" BorderWidth="1px" />
+<asp:FileUpload runat="server" BorderStyle="solid" BorderWidth="1px"  />
+<asp:DropDownList runat="server" BorderStyle="solid" BorderWidth="1px"  />
+
+<asp:Label runat="server" SkinID="FeedbackOK" ForeColor="green" />
+<asp:Label runat="server" SkinID="FeedbackKO" ForeColor="red" />
+<asp:Label runat="server" SkinID="NotApproved" ForeColor="red" BackColor="yellow" Tooltip="Article waiting for approval" 
+Font-Size="small" />
+<asp:Label runat="server" SkinID="FieldView" ForeColor="Blue" BorderStyle="dashed" BorderWidth="1px" />
+
+--%>
+
+<asp:FileUpload runat="server" BorderStyle="solid" BorderWidth="1px"  />
+
+<asp:TextBox runat="server" BorderStyle="solid"  BorderWidth="1px" BorderColor="#666666" />
+<asp:TextBox runat="server" SkinID="Required" BorderStyle="solid"  
+BorderWidth="1px" BorderColor="#666666" BackColor="#FCDFEB"  />
+
+
+<asp:DropDownList runat="server" BorderStyle="solid" BorderWidth="1px"  />
+<asp:DropDownList runat="server" SkinID="Required" BorderStyle="solid"  
+BorderWidth="1px" BorderColor="#666666" BackColor="#FCDFEB"  />
+
+<asp:Label runat="server" SkinID="Data" CssClass="data"/>
+<asp:Label runat="server" SkinID="DataH1" CssClass="dataH1" />
+<asp:Label runat="server" SkinID="DataH2" CssClass="dataH2"/>
+<asp:Label runat="server" SkinID="DataH3" CssClass="dataH3"/>
+<asp:Label runat="server" SkinID="blur" ForeColor="silver" />
+
+<asp:Label runat="server" SkinID="DataS1" CssClass="dataS1" />
+<asp:Label runat="server" SkinID="DataS2" CssClass="dataS2"/>
+<asp:Label runat="server" SkinID="DataS3" CssClass="dataS3"/>
+<asp:Label runat="server" SkinID="DataSt1" CssClass="dataSt1" />
+<asp:Label runat="server" SkinID="DataSt2" CssClass="dataSt2"/>
+<asp:Label runat="server" SkinID="DataSt3" CssClass="dataSt3"/>
+
+<asp:Label runat="server" SkinID="Datar" CssClass="datar"/>
+<asp:Label runat="server" SkinID="FeedbackOK" ForeColor="green" />
+<asp:Label runat="server" SkinID="FeedbackError" ForeColor="red" />
+<asp:Label runat="server" SkinID="MessageError" ForeColor="red" />
+<asp:Label runat="server" SkinID="NotApproved" ForeColor="red" BackColor="yellow" Tooltip="Article waiting for approval" Font-Size="small" />
+<asp:Label runat="server" SkinID="FieldView" ForeColor="Blue" CssClass="FieldView"  />
+<asp:Label runat="server" SkinID="TitleGroupFieldView" ForeColor="Green" CssClass="TitleGroupFieldView"  />
+
+<asp:Label runat="server" SkinID="ProjectTitle" ForeColor="#FFFFFF"  />
+<asp:Label runat="server" SkinID="ModuleName" ForeColor="#b3d855"  />
+
+
+<asp:Label runat="server" SkinID="TitleForm"    ForeColor="#339900" Font-Bold="True" Font-Size="15px"   />
+<asp:Label runat="server" SkinID="TitleGroup"   ForeColor="#660000" Font-Bold="True" Font-Size="13px"   />
+<asp:Label runat="server" SkinID="TitleGroupR"   ForeColor="#660000" Font-Bold="True" Font-Size="13px" CssClass="aRight"    />
+<asp:Label runat="server" SkinID="TitleValue"   ForeColor="#333333" Font-Bold="False" Font-Size="13px"   />
+<asp:Label runat="server" SkinID="TitleDataL"    ForeColor="#333333" Font-Bold="False" Font-Size="13px" CssClass="aLeft"   />
+<asp:Label runat="server" SkinID="TitleDataR"    ForeColor="#333333" Font-Bold="False" Font-Size="13px" CssClass="aRight"   />
+<asp:Label runat="server" SkinID="LineDot"      ForeColor="#3333ff" BorderStyle="dotted" CssClass="line" />
+<asp:Label runat="server" SkinID="LineSolid"    ForeColor="#3333ff" BorderStyle="solid"  CssClass="line" />
+<asp:Label runat="server" SkinID="Notification" ForeColor="Red"   Font-Bold="True" Font-Size="14px"       />
+<asp:Label runat="server" SkinID="Error"        ForeColor="Red"     Font-Bold="False" Font-Size="13px"      />
+<asp:Label runat="server" SkinID="FormViewButton" CssClass="FormViewButton"      />
+<asp:Label runat="server" SkinID="TextLogin"   ForeColor="#0000CC" Font-Bold="True" Font-Size="14px"   />
+
+
+
+
+<asp:Label runat="server" SkinID="alignL" CssClass="aLeft"     />
+<asp:Label runat="server" SkinID="alignR" CssClass="aRight"     />
+<asp:Label runat="server" SkinID="alignC" CssClass="aCenter"      />
+<asp:Label runat="server" SkinID="TextBox" CssClass="labelTextBox"      />
+
+
+<asp:Label runat="server" SkinID="CoveTextBold" CssClass="textBold"/>
+<asp:Label runat="server" SkinID="CoveTextData" CssClass="textData"/>
+<asp:Label runat="server" SkinID="CoveTextDataR" CssClass="textDatar" />
+
+<asp:Label runat="server" SkinID="LabelAE" CssClass="labelAE" />
+
+
+<%-- Panel Skin --%>
+<asp:Panel runat="server" SkinID="PanelPW"  BackColor="#f5f5f5" HorizontalAlign="Left"  />
+<asp:Panel runat="server" SkinID="PanelA" Width="780px" CssClass="PanelA" />
+<asp:Panel runat="server" SkinID="PanelYellow" Width="780px" CssClass="PanelB" />
+<asp:Panel runat="server" SkinID="PanelBlue" CssClass="PanelBlue" />
+<asp:Panel runat="server" SkinID="PanelAE" ForeColor="#333333" BorderStyle="solid"  BorderWidth="1px" BorderColor="#CCCCCC"   />
+
+<asp:LoginName runat="server" Font-Bold="true" Font-Size="8pt" />
+
+<asp:SiteMapPath runat="server">
+   <PathSeparatorTemplate>
+      <asp:Image runat="server" ImageUrl="icons/bullet_arrow_right.gif" 
+         GenerateEmptyAlternateText="true"
+         style="margin-left: 4px; margin-right: 4px; vertical-align: middle;" />
+      </PathSeparatorTemplate>
+</asp:SiteMapPath>
+
+
+<%-- GridView Skin --%>
+
+<asp:GridView  runat="server"  CellPadding="4" ForeColor="#333333" GridLines="None" >
+   <FooterStyle Font-Bold="True" ForeColor="White" CssClass="gridvFooter"     />
+   <RowStyle BackColor="#f2f2f2" ForeColor="#333333" />
+   <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+   <SelectedRowStyle BackColor="#86b3dd" Font-Bold="True" ForeColor="Navy" />
+   <HeaderStyle  CssClass="gridvHeader"    Font-Bold="True" ForeColor="White" BackColor="#627aad"   />
+   <AlternatingRowStyle BackColor="White" />
+</asp:GridView>
+
+<asp:GridView SkinID="None" runat="server" Width="100%" GridLines="None" />
+
+
+<asp:GridView SkinID="Pink" runat="server" Width="100%" 
+CellPadding="3" CellSpacing="1" ForeColor="#333333" GridLines="None">
+   <FooterStyle CssClass="gvFooter-Pink" />
+   <RowStyle BackColor="#ffeeff" ForeColor="#333333" />
+   <PagerStyle CssClass="gvFooter-Pink" HorizontalAlign="Center" />
+   <SelectedRowStyle BackColor="#ffd4fd" Font-Bold="True" ForeColor="Navy" />
+   <HeaderStyle CssClass="gvHeader-Pink" Font-Bold="True" Height="22"  />
+   <AlternatingRowStyle BackColor="#f7f7f7" />
+</asp:GridView>
+
+<asp:GridView SkinID="Yellow" runat="server" Width="100%" 
+CellPadding="3" CellSpacing="1" ForeColor="#333333" GridLines="None">
+   <FooterStyle CssClass="gvFooter-Yellow" />
+   <RowStyle BackColor="#fcf8d3" ForeColor="#333333" />
+   <PagerStyle  CssClass="gvFooter-Yellow"  HorizontalAlign="Center" />
+   <SelectedRowStyle BackColor="#fbeaa5" Font-Bold="True" ForeColor="Navy" />
+   <HeaderStyle CssClass="gvHeader-Yellow" Font-Bold="True" Height="22"  />
+   <AlternatingRowStyle  BackColor="#f7f7f7" />
+</asp:GridView>
+
+<asp:GridView SkinID="Blue" runat="server" Width="100%" 
+CellPadding="3" CellSpacing="1" ForeColor="#333333" GridLines="None">
+   <FooterStyle CssClass="gvFooter-Blue" />
+   <RowStyle BackColor="#e6f4fd" ForeColor="#333333" />
+   <PagerStyle  CssClass="gvFooter-Blue" HorizontalAlign="Center" />
+   <SelectedRowStyle BackColor="#aedbfa" Font-Bold="True" ForeColor="Navy" />
+   <HeaderStyle CssClass="gvHeader-Blue"   Font-Bold="True" Height="22"  />
+   <AlternatingRowStyle  BackColor="#f7f7f7" />
+</asp:GridView>
+
+<asp:GridView SkinID="Green" runat="server" Width="100%" 
+CellPadding="3" CellSpacing="1" ForeColor="#333333" GridLines="None">
+   <FooterStyle CssClass="gvFooter-Green" />
+   <RowStyle BackColor="#e6ffe5" ForeColor="#333333" />
+   <PagerStyle CssClass="gvFooter-Green" HorizontalAlign="Center" />
+   <SelectedRowStyle BackColor="#b9f0b7" Font-Bold="True" ForeColor="Navy" />
+   <HeaderStyle CssClass="gvHeader-Green"   Font-Bold="True" Height="22"  />
+   <AlternatingRowStyle  BackColor="#f7f7f7" />
+</asp:GridView>
+
+<asp:GridView SkinID="Orange" runat="server" Width="100%" 
+CellPadding="3" CellSpacing="1" ForeColor="#333333" GridLines="None">
+   <FooterStyle CssClass="gvFooter-Orange" />
+   <RowStyle BackColor="#fdebd4" ForeColor="#333333" />
+   <PagerStyle CssClass="gvFooter-Orange" HorizontalAlign="Center" />
+   <SelectedRowStyle BackColor="#fbcdad" Font-Bold="True" ForeColor="Navy" />
+   <HeaderStyle CssClass="gvHeader-Orange"   Font-Bold="True" Height="22"  />
+   <AlternatingRowStyle  BackColor="#f7f7f7" />
+</asp:GridView>
+
+
+
+<asp:GridView  runat="server" SkinID="Claim"  CellPadding="4" ForeColor="#333333" GridLines="Vertical" 
+BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" >
+   <FooterStyle Font-Bold="True" ForeColor="White" CssClass="gridvFooter"     />
+   <RowStyle BackColor="#f2f2f2" ForeColor="#333333" />
+   <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+   <SelectedRowStyle BackColor="#86b3dd" Font-Bold="True" ForeColor="Navy" />
+   <HeaderStyle  CssClass="gridvHeader"    Font-Bold="True" ForeColor="White" BackColor="#627aad"   />
+   <AlternatingRowStyle BackColor="White" />
+</asp:GridView>
+
+<asp:GridView SkinID="Posts" runat="server"  CellPadding="0" ForeColor="#333333" GridLines="None">
+   <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+   <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+   <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+   <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+   <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+   <AlternatingRowStyle BackColor="White" />
+</asp:GridView>
+
+
+<asp:GridView runat="server"  SkinID="Articles" CellPadding="3" CellSpacing="2" ForeColor="#333333" GridLines="None" ShowHeader="false">
+   <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+   <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+   <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+</asp:GridView>
+
+
+
+
+<asp:GridView SkinID="Coverage"  runat="server"  
+CellPadding="4" ForeColor="#333333" GridLines="None"  >
+   <HeaderStyle CssClass="gridvHeader" ForeColor="White"  Font-Bold="True" BackColor="#627aad"   />
+   <FooterStyle CssClass="gridvFooter" ForeColor="White"  Font-Bold="True"    />
+   <RowStyle            BackColor="#f2f2f2" />
+   <AlternatingRowStyle BackColor="#f2f2f2" />   
+   <SelectedRowStyle    BackColor="#f2f2f2" ForeColor="Navy" Font-Bold="True" />   
+   <PagerStyle  BackColor="#f2f2f2" ForeColor="#333333" HorizontalAlign="Center" />
+</asp:GridView>
+
+
+
+<%-- DetailsView Skin --%>
+<asp:DetailsView runat="server" CellPadding="4"
+   ForeColor="#333333" GridLines="None" Height="50px" Width="100%">
+   <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+   <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />      
+   <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+   <AlternatingRowStyle BackColor="White" />
+   <CommandRowStyle BackColor="#fbfbd9" Font-Bold="True" HorizontalAlign="Right" />
+   <RowStyle BackColor="White" />
+   <FieldHeaderStyle BackColor="#fbfbd9" Font-Bold="True" />
+</asp:DetailsView>
+
+<%-- DataList Skin --%>
+<asp:DataList runat="server" Width="100%" CellPadding="4" ForeColor="#333333">
+   <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+   <SelectedItemStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+   <AlternatingItemStyle BackColor="White" />
+   <ItemStyle BackColor="#fdfde7" ForeColor="#333333" />
+</asp:DataList>
+
+
+<%-- WebPartZone Skin --%>
+<asp:WebPartZone runat="server" BorderColor="#CCCCCC" Font-Names="Verdana" Padding="0" PartChromeType="TitleOnly">
+   <PartTitleStyle CssClass="sectiontitle" />
+   <MenuLabelHoverStyle ForeColor="#FFCC66" />
+   <EmptyZoneTextStyle Font-Size="0.8em" />
+   <MenuLabelStyle ForeColor="White" />
+   <MenuVerbHoverStyle BackColor="#FFFBD6" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" ForeColor="#333333" />
+   <HeaderStyle Font-Bold="true" Font-Size="8pt" />
+   <MenuVerbStyle BorderColor="#990000" BorderStyle="Solid" BorderWidth="1px" ForeColor="White" />
+   <TitleBarVerbStyle Font-Size="0.6em" Font-Underline="False" ForeColor="White" />
+   <MenuPopupStyle BackColor="#990000" BorderColor="#CCCCCC" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.6em" />   
+   <MinimizeVerb ImageUrl="~/Images/GoDown.gif"></MinimizeVerb>
+   <RestoreVerb ImageUrl="~/Images/GoUp.gif"></RestoreVerb>
+   <EditVerb ImageUrl="~/Images/Edit.gif"></EditVerb>
+   <CloseVerb ImageUrl="~/Images/Close.gif"></CloseVerb>
+   <DeleteVerb ImageUrl="~/Images/Delete.gif" />   
+</asp:WebPartZone>
+
+
+<%-- EditorZone Skin --%>
+<asp:EditorZone runat="server" BackColor="#FFFBD6" BorderColor="#CCCCCC" BorderWidth="1px" Font-Names="Verdana" Padding="6">
+   <HeaderStyle BackColor="#FFCC66" Font-Bold="True" Font-Size="0.8em" ForeColor="#333333" />
+   <LabelStyle Font-Size="0.8em" ForeColor="#333333" />
+   <HeaderVerbStyle Font-Bold="False" Font-Size="0.8em" Font-Underline="False" ForeColor="#333333" />
+   <PartChromeStyle BorderColor="#FFCC66" BorderStyle="Solid" BorderWidth="1px" />
+   <PartStyle BorderColor="#FFFBD6" BorderWidth="5px" />
+   <FooterStyle BackColor="#FFCC66" HorizontalAlign="Right" />
+   <EditUIStyle Font-Names="Verdana" Font-Size="0.8em" ForeColor="#333333" />
+   <InstructionTextStyle Font-Size="0.8em" ForeColor="#333333" />
+   <ErrorStyle Font-Size="0.8em" />
+   <VerbStyle Font-Names="Verdana" Font-Size="0.8em" ForeColor="#333333" />
+   <EmptyZoneTextStyle Font-Size="0.8em" ForeColor="#333333" />
+   <PartTitleStyle Font-Bold="True" Font-Size="0.8em" ForeColor="#333333" />
+   <HeaderCloseVerb ImageUrl="~/Images/Close.gif" />
+</asp:EditorZone>
+
+
+<%-- CatalogZone Skin --%>
+<asp:CatalogZone runat="server" BackColor="#FFFBD6" BorderColor="#CCCCCC" BorderWidth="1px" Font-Names="Verdana" Padding="6">
+   <HeaderVerbStyle Font-Bold="False" Font-Size="0.8em" Font-Underline="False" ForeColor="#333333" />
+   <PartTitleStyle BackColor="#990000" Font-Bold="True" Font-Size="0.8em" ForeColor="White" />
+   <PartChromeStyle BorderColor="#FFCC66" BorderStyle="Solid" BorderWidth="1px" />
+   <InstructionTextStyle Font-Size="0.8em" ForeColor="#333333" />
+   <PartLinkStyle Font-Size="0.8em" />
+   <EmptyZoneTextStyle Font-Size="0.8em" ForeColor="#333333" />
+   <LabelStyle Font-Size="0.8em" ForeColor="#333333" />
+   <VerbStyle Font-Names="Verdana" Font-Size="0.8em" ForeColor="#333333" />
+   <PartStyle BorderColor="#FFFBD6" BorderWidth="5px" />
+   <SelectedPartLinkStyle Font-Size="0.8em" />
+   <FooterStyle BackColor="#FFCC66" HorizontalAlign="Right" />
+   <HeaderStyle BackColor="#FFCC66" Font-Bold="True" Font-Size="0.8em" ForeColor="#333333" />
+   <EditUIStyle Font-Names="Verdana" Font-Size="0.8em" ForeColor="#333333" />
+   <HeaderCloseVerb ImageUrl="~/Images/Close.gif" />
+</asp:CatalogZone>
+
+
+<%-- DataList Skin --%>
+<asp:FormView  runat="server" BackColor="#f6fce5" BorderColor="#85b23f" 
+BorderWidth="1px" CellPadding="2" ForeColor="#0359bc" Font-Bold="True" >
+    <FooterStyle BackColor="#EEEEEE" Font-Bold="True"  HorizontalAlign="Right" />
+    <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+    <HeaderStyle BackColor="#EEEEEE" Font-Bold="True"  HorizontalAlign="Right"/>
+    <EditRowStyle BackColor="#aed257" ForeColor="#0359bc" Font-Bold="True"  />    
+</asp:FormView>
+
+<asp:FormView  runat="server" SkinID="wucinfo" 
+HorizontalAlign="Center" ForeColor="#333"
+BackColor="#f6fce5" BorderColor="#85b23f" BorderWidth="1px" CellPadding="2"   >
+    <HeaderStyle BackColor="#EEEEEE" Font-Bold="True"  HorizontalAlign="Center"/>
+    <RowStyle ForeColor="#0359bc" Font-Bold="false"  HorizontalAlign="Left"  />
+    <EditRowStyle BackColor="#aed257" ForeColor="#0359bc" Font-Bold="True"  />        
+    <FooterStyle BackColor="#EEEEEE" Font-Bold="True"  HorizontalAlign="Right" />
+    <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+    <EmptyDataRowStyle ForeColor="red" Font-Bold="true" />
+</asp:FormView>
+
+
+
+
+<%-- Button  & Link --%>
+<asp:LinkButton SkinID="MainMenu" runat="server" CssClass="mainMenu" Width="150" />
+
+<asp:HyperLink SkinID="MainMenu" runat="server" CssClass="mainMenu" Width="150"  />
+<asp:HyperLink SkinID="MenuTop" runat="server" CssClass="MenuTop"  />
+
+
+<asp:RadioButtonList SkinID="Table" runat="server" 
+CellPadding="0" CellSpacing="0" RepeatDirection="Horizontal" CssClass="rbChoice1" />
+
+<asp:RadioButtonList SkinID="Flow" runat="server" 
+CellPadding="0" CellSpacing="0" CssClass="rbChoice2" />
+
+
+<asp:Button SkinID="Solid"  runat="server" BorderStyle="solid" BorderWidth="1px"  />
+<asp:Button SkinID="LoginButton"  runat="server" CssClass="ButtonLogin"     />
+<asp:TextBox runat="server" SkinID="LoginTextBox"  CssClass="TextBoxLogin"   BorderStyle="solid"  BorderWidth="1px" BorderColor="#666666" />

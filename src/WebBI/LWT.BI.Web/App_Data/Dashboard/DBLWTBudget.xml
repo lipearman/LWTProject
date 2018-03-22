@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="th-TH">
+  <Title Text="Dashboard" />
+  <DataSources>
+    <SqlDataSource ComponentName="dashboardSqlDataSource1">
+      <Name>SQL Data Source 1</Name>
+      <Connection Name="localhost_LWTReports_Connection" ProviderKey="MSSqlServer">
+        <Parameters>
+          <Parameter Name="server" Value="localhost" />
+          <Parameter Name="database" Value="LWTReports" />
+          <Parameter Name="useIntegratedSecurity" Value="False" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="userid" Value="sa" />
+          <Parameter Name="password" Value="rsa" />
+        </Parameters>
+      </Connection>
+      <Query Type="TableQuery" Name="tblBudget">
+        <Table Name="tblBudget">
+          <Column Name="Product" />
+          <Column Name="Department" />
+          <Column Name="CustomerType" />
+          <Column Name="AE" />
+          <Column Name="Model" />
+          <Column Name="Date" />
+          <Column Name="Budget" />
+        </Table>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 1">
+          <View Name="tblBudget">
+            <Field Name="Product" Type="String" />
+            <Field Name="Department" Type="String" />
+            <Field Name="CustomerType" Type="String" />
+            <Field Name="AE" Type="String" />
+            <Field Name="Model" Type="String" />
+            <Field Name="Date" Type="DateTime" />
+            <Field Name="Budget" Type="Double" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Pie ComponentName="pieDashboardItem1" Name="By Motor/Non Motor" DataSource="dashboardSqlDataSource1" DataMember="tblBudget">
+      <InteractivityOptions MasterFilterMode="Multiple" />
+      <DataItems>
+        <Measure DataMember="Budget" UniqueName="DataItem1" />
+        <Dimension DataMember="Product" UniqueName="DataItem0" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem0" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem1" />
+      </Values>
+    </Pie>
+    <Pie ComponentName="pieDashboardItem2" Name="By Department" DataSource="dashboardSqlDataSource1" DataMember="tblBudget">
+      <InteractivityOptions MasterFilterMode="Multiple" />
+      <DataItems>
+        <Measure DataMember="Budget" UniqueName="DataItem0" />
+        <Dimension DataMember="Department" UniqueName="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem1" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem0" />
+      </Values>
+    </Pie>
+    <Pie ComponentName="pieDashboardItem3" Name="By New/Renew" DataSource="dashboardSqlDataSource1" DataMember="tblBudget">
+      <InteractivityOptions MasterFilterMode="Multiple" />
+      <DataItems>
+        <Measure DataMember="Budget" UniqueName="DataItem0" />
+        <Dimension DataMember="CustomerType" UniqueName="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem1" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem0" />
+      </Values>
+    </Pie>
+    <Chart ComponentName="chartDashboardItem1" Name="By AE" DataSource="dashboardSqlDataSource1" DataMember="tblBudget">
+      <DataItems>
+        <Dimension DataMember="AE" UniqueName="DataItem0" />
+        <Measure DataMember="Budget" UniqueName="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem0" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple>
+              <Value UniqueName="DataItem1" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Chart ComponentName="chartDashboardItem2" Name="By Model" DataSource="dashboardSqlDataSource1" DataMember="tblBudget">
+      <DataItems>
+        <Dimension DataMember="Model" UniqueName="DataItem0" />
+        <Measure DataMember="Budget" UniqueName="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem0" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple>
+              <Value UniqueName="DataItem1" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Grid ComponentName="gridDashboardItem1" Name="Top 10 Model" DataSource="dashboardSqlDataSource1" DataMember="tblBudget">
+      <DataItems>
+        <Dimension DataMember="Model" TopNEnabled="true" TopNCount="10" TopNMeasure="DataItem1" UniqueName="DataItem0" />
+        <Measure DataMember="Budget" UniqueName="DataItem1" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension UniqueName="DataItem0" />
+        </GridDimensionColumn>
+        <GridMeasureColumn>
+          <Measure UniqueName="DataItem1" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <GridOptions />
+    </Grid>
+    <RangeFilter ComponentName="rangeFilterDashboardItem1" Name="Range Filter 1" DataSource="dashboardSqlDataSource1" DataMember="tblBudget">
+      <DataItems>
+        <Measure DataMember="Budget" UniqueName="DataItem0" />
+        <Dimension DataMember="Date" DateTimeGroupInterval="MonthYear" UniqueName="DataItem1" />
+      </DataItems>
+      <Argument UniqueName="DataItem1" />
+      <Series>
+        <Simple SeriesType="Line">
+          <Value UniqueName="DataItem0" />
+        </Simple>
+      </Series>
+    </RangeFilter>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical">
+      <LayoutItem DashboardItem="rangeFilterDashboardItem1" Weight="13.092979127134726" />
+      <LayoutGroup Weight="30.360531309297912">
+        <LayoutItem DashboardItem="pieDashboardItem1" Weight="49.946524064171122" />
+        <LayoutItem DashboardItem="pieDashboardItem2" Weight="50.053475935828878" />
+      </LayoutGroup>
+      <LayoutGroup Weight="31.499051233396585">
+        <LayoutItem DashboardItem="pieDashboardItem3" Weight="50.053475935828878" />
+        <LayoutItem DashboardItem="chartDashboardItem1" Weight="49.946524064171122" />
+      </LayoutGroup>
+      <LayoutGroup Weight="25.047438330170777">
+        <LayoutItem DashboardItem="chartDashboardItem2" Weight="50.053475935828878" />
+        <LayoutItem DashboardItem="gridDashboardItem1" Weight="49.946524064171122" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

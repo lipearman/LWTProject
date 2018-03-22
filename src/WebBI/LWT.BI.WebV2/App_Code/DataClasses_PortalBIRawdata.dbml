@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Portal.BI.RawData" Class="DataClasses_PortalBIRawdataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LOCKTHBNK-DB07\NEWMOTOR;Initial Catalog=Portal.BI.RawData;User ID=locksql" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PortalBIRawDataConnection" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.V_APDRenewal_RAWDATA" Member="V_APDRenewal_RAWDATAs">
+    <Type Name="V_APDRenewal_RAWDATA">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LOTNO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ExpiredDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Officer" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="OfficerForSort" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[AE Name]" Member="AE_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[AE Group Running]" Member="AE_Group_Running" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[AE Group Name II]" Member="AE_Group_Name_II" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[AES Group Running]" Member="AES_Group_Running" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[AES Group Name]" Member="AES_Group_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Business Group]" Member="Business_Group" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Business GroupF]" Member="Business_GroupF" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Class Group]" Member="Class_Group" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Division Code]" Member="Division_Code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Group]" Member="Group" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Insured" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Insurer" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PolicyNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SumInsured" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ExpiringPremium" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ReminderDate" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ResponseDate" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RenewalPremium" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RemarkFromPolicy" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="RemarkFromAE" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsMatch" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RenewFlag" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="TransType" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="RiskGroupI" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="[Class of Risk (Sibis)]" Member="Class_of_Risk__Sibis_" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="[New PolicyNo]" Member="New_PolicyNo" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="PeriodFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PeriodTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DNDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InvoiceNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Movement Status]" Member="Movement_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Premium" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="StampDuty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VAT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TotalPremiumTHB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TotalIncome" Type="System.Decimal" DbType="Decimal(21,2)" CanBeNull="true" />
+      <Column Name="NetIncome" Type="System.Decimal" DbType="Decimal(26,2)" CanBeNull="true" />
+      <Column Name="FiscalYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ClientCount" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

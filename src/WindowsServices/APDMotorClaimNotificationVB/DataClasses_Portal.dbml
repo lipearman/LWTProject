@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Portal" Class="DataClasses_PortalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LOCKTHBNK-DB07\NEWMOTOR;Initial Catalog=Portal;User ID=locksql" SettingsObjectName="APDMotorClaimNotificationVB.My.MySettings" SettingsPropertyName="PortalConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.v_ads_active" Member="v_ads_actives">
+    <Type Name="v_ads_active">
+      <Column Name="objectGUID" Type="System.Data.Linq.Binary" DbType="VarBinary(4000)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="lastLogon" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="accountExpires" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="givenname" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="physicalDeliveryOfficeName" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="department" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="facsimileTelephoneNumber" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="mobile" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="ou" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="mail" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="sAMAccountName" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="telephoneNumber" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="displayName" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="company" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="pager" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="streetaddress" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

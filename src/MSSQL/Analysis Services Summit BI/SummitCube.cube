@@ -1,0 +1,201 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="2d16777b-57bd-4249-b5fa-9f98d57efdd3" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>SummitCube</ID>
+  <Name>SummitCube</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-6449" scrolltop="-4326" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="18177" y="13653" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="V_SummitBI" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="5239" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000800007714000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_V_SummitBI" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-6449</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-4326</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="a7446fe1-5bc7-4475-baf0-cbf13d2eecfa">
+      <ID>V Summit BI</ID>
+      <Name>V Summit BI</Name>
+      <DimensionID>V Summit BI</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="8e4c53cc-ef61-409b-8eed-e01408e9f927">
+          <AttributeID>App ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1dd039ab-bb42-4aed-984f-af428888ffd3">
+          <AttributeID>Cancel Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="917fd81b-c5c5-49e5-a717-b05d5e777ac9">
+          <AttributeID>Cancel Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="01f72bbd-bf14-4389-a7c9-e92f9cf5b362">
+          <AttributeID>Period</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7c3eac35-9ea6-46b3-a9eb-bb3d06bc5807">
+          <AttributeID>Pol Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8253f0cd-75be-44a0-b549-b66fe3d18a0f">
+          <AttributeID>Pol Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="04a70563-c115-4936-884f-636bafe27797">
+          <AttributeID>Cancel</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a07a47ba-19e6-4f57-ba76-7843fb2e58cc">
+          <AttributeID>Cancel Type</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="faaf5158-cf24-4597-83cd-8b5bc94bbc0e">
+          <AttributeID>Plan Name</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="e5be55ec-9b9d-41ce-8d4c-664ecbfe2fda">
+      <ID>V Summit BI</ID>
+      <Name>Dim Summit</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="8ef51d70-57ae-4ed4-87a9-da027c46b1f3">
+          <ID>Net Premium</ID>
+          <Name>Net Premium</Name>
+          <Source dwd:design-time-name="42eaa920-c050-404a-9308-3745a0eb1b36">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b03e1815-c043-4b86-9925-eb13031e534d">
+              <TableID>dbo_V_SummitBI</TableID>
+              <ColumnID>NetPremium</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="ba67f4fd-1fec-4a09-b9c8-ec48349ed28a">
+          <ID>Premium</ID>
+          <Name>Premium</Name>
+          <Source dwd:design-time-name="5ceda31a-b5a4-4eac-b94e-e2cee32a8abc">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="7091e0a7-bd22-468e-be8e-d94738e20411">
+              <TableID>dbo_V_SummitBI</TableID>
+              <ColumnID>Premium</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="4bb8a261-e7d9-4f6c-be06-def8deb36124">
+          <ID>Claim Suminsure</ID>
+          <Name>Claim Suminsure</Name>
+          <Source dwd:design-time-name="0f63be26-b62d-4a0c-9b6f-809c597deaad">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="8fda3a4a-c7f3-4f36-9f95-7288f77677bc">
+              <TableID>dbo_V_SummitBI</TableID>
+              <ColumnID>ClaimSuminsure</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="353c26b2-57e0-45f8-9342-79171e63e402">
+          <ID>Cl Received Amount</ID>
+          <Name>Cl Received Amount</Name>
+          <Source dwd:design-time-name="1deea3cf-4950-4e2e-a25b-04c8df0848b4">
+            <DataType>Single</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="667bc7f6-b1e8-4151-9139-c0fa04c8f8f4">
+              <TableID>dbo_V_SummitBI</TableID>
+              <ColumnID>cl_ReceivedAmount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="318fc80f-2267-450a-bffe-c6aef2ed2047">
+          <ID>V Summit BI Count</ID>
+          <Name>V Summit BI Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="9b71c88d-db01-4a22-bbbf-7a0bcf0ea060">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="4a64b7d8-ae31-4ad4-91d9-b8327f026561">
+              <TableID>dbo_V_SummitBI</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="91a8d275-f693-486f-ba3c-e8108109cbbe">
+          <CubeDimensionID>V Summit BI</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="3b3250e2-9458-4e1f-8c6e-e83d28e32c6f">
+              <AttributeID>App ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="845571a4-42af-4b06-9b67-012faa83ee35">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="5c3660c1-3346-4e3c-9cf6-d8a7238d26b4">
+                    <TableID>dbo_V_SummitBI</TableID>
+                    <ColumnID>AppID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="5d2fc32b-807f-4768-be37-d329edf67cc8">
+    <DataSourceViewID>SummitView</DataSourceViewID>
+  </Source>
+</Cube>

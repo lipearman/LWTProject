@@ -1,0 +1,351 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="7999eca7-fc8f-4deb-bd51-cd188ad33636" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Production Dim Date</ID>
+  <Name>Production Dim Date</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2162" scrolltop="-5000" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8387" y="13070" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Production_Dim_Date" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4022" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b60f000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Production_Dim_Date" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-2162</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-5000</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="20db9f0d-c410-485b-b332-d577637be868">
+    <DataSourceViewID>ProductionDW DSV</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="a461bd5d-4984-4215-9cfc-c7794c300eb6">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="6186b62f-7e90-46c6-91d9-a53b63e8ea01">
+      <ID>Date Key</ID>
+      <Name>Date Key</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="85db7454-9285-4bc6-9e66-33da95134db0">
+          <DataType>WChar</DataType>
+          <DataSize>8</DataSize>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="45fa9983-7ffe-4a58-b3ae-c60876c1ec16">
+            <TableID>dbo_Production_Dim_Date</TableID>
+            <ColumnID>DateKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="b9046f01-d8d9-4aae-8259-8a6b36d83afa">
+          <AttributeID>Full Date Alternate Key</AttributeID>
+          <Name>Full Date Alternate Key</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="651e1ea9-6f67-474e-9523-bdaa97997045">
+          <AttributeID>Thai Day Nameof Week</AttributeID>
+          <Name>Thai Day Nameof Week</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ca1beec5-9c85-4bda-a77a-8e601dc80d74">
+          <AttributeID>Calendar Year</AttributeID>
+          <Name>Calendar Year</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="bcd448c9-38eb-46d6-aafe-e54350c10a15">
+          <AttributeID>Calendar Period</AttributeID>
+          <Name>Calendar Period</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="714b5e88-da33-44c4-a198-873bea4faf61">
+          <AttributeID>Eng Month Name</AttributeID>
+          <Name>Eng Month Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="534f9b21-42c0-4fdd-a347-f45d1bd53bc6">
+          <AttributeID>Thai Month Name</AttributeID>
+          <Name>Thai Month Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ccec826a-f249-47d5-a34e-eb0bf317d3f3">
+          <AttributeID>Fiscal Year</AttributeID>
+          <Name>Fiscal Year</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8d16a911-1198-45a3-b6eb-94cd5ab68466">
+          <AttributeID>Fiscal Period</AttributeID>
+          <Name>Fiscal Period</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="42d22213-2749-4df4-9c8b-5b070be57035">
+          <AttributeID>Fiscal Eng Month</AttributeID>
+          <Name>Fiscal Eng Month</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="94f1342a-62ec-4c48-be8e-7b5ffc67c9fd">
+          <AttributeID>Fiscal Thai Month</AttributeID>
+          <Name>Fiscal Thai Month</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="470e607b-b4e3-469e-9f72-84b85ebf26f3">
+      <ID>Full Date Alternate Key</ID>
+      <Name>Full Date Alternate Key</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c0d74488-db88-4078-bbf4-f3b04ab1ca83">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8e00c986-2a02-4dbd-82b8-983a1eb27034">
+            <TableID>dbo_Production_Dim_Date</TableID>
+            <ColumnID>FullDateAlternateKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b4822f04-de42-4bf0-a70d-a0aef6b889cb">
+      <ID>Thai Day Nameof Week</ID>
+      <Name>Thai Day Nameof Week</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f6116c53-e948-4349-aa65-ef97ab98d4ab">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b6f0940e-0172-4a36-88eb-ec3ea7f7d105">
+            <TableID>dbo_Production_Dim_Date</TableID>
+            <ColumnID>ThaiDayNameofWeek</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9397c599-0a06-499a-96b6-984d759cc959">
+      <ID>Calendar Year</ID>
+      <Name>Calendar Year</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e6636a47-1f7b-4fd3-a5b2-539009a990ba">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="465bf130-5449-4b26-839b-669c4d23b2db">
+            <TableID>dbo_Production_Dim_Date</TableID>
+            <ColumnID>CalendarYear</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="63f8948f-b814-44a7-a9a9-a30c65e32830">
+      <ID>Calendar Period</ID>
+      <Name>Calendar Period</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="744d4dba-e4de-4877-811e-4b6067c8368d">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7a5ccdfa-5175-40d4-a439-edaab710630f">
+            <TableID>dbo_Production_Dim_Date</TableID>
+            <ColumnID>CalendarPeriod</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d7877c96-851f-461f-8890-5ffde7d68107">
+      <ID>Eng Month Name</ID>
+      <Name>Eng Month Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a4c1aea1-0edc-4eb2-9cc4-53fec4e55db0">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b34aafb8-5718-42d8-8c4c-7fd3195b2b49">
+            <TableID>dbo_Production_Dim_Date</TableID>
+            <ColumnID>EngMonthName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5fb64515-2358-4867-a4a6-a3a8dea1570b">
+      <ID>Thai Month Name</ID>
+      <Name>Thai Month Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5e22ddb0-21f8-4b9e-9165-99b39dda90bd">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ad0fcd16-1208-4c37-8b5d-9b2c8e98286b">
+            <TableID>dbo_Production_Dim_Date</TableID>
+            <ColumnID>ThaiMonthName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="26fe7fbf-2312-4167-8e1f-619238ea94fe">
+      <ID>Fiscal Year</ID>
+      <Name>Fiscal Year</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b0127adb-f897-4134-9afe-c322ae16874a">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a0376303-fead-42e9-bc7e-a0721af48f34">
+            <TableID>dbo_Production_Dim_Date</TableID>
+            <ColumnID>FiscalYear</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5f12a5e4-ade5-4cbc-b887-3ab0dd4e9181">
+      <ID>Fiscal Period</ID>
+      <Name>Fiscal Period</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e30c4b08-07ea-4201-b44b-da56b967b489">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="07f69a07-c678-4b9b-b1ba-88aaf01930e4">
+            <TableID>dbo_Production_Dim_Date</TableID>
+            <ColumnID>FiscalPeriod</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="187ac1e8-c24d-4370-845b-3f64699944a6">
+      <ID>Fiscal Eng Month</ID>
+      <Name>Fiscal Eng Month</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b8589204-9252-4fee-80ba-1452da357a35">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="65686bb3-a49e-4dbb-9a86-968d85c37fee">
+            <TableID>dbo_Production_Dim_Date</TableID>
+            <ColumnID>FiscalEngMonth</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="45e43410-bc87-4b6b-9332-dd96af272469">
+      <ID>Fiscal Thai Month</ID>
+      <Name>Fiscal Thai Month</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7300398e-4c8f-4f5f-92ef-fe56e5278fca">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e5d4c3dc-2781-4da4-b80f-06ee177907c8">
+            <TableID>dbo_Production_Dim_Date</TableID>
+            <ColumnID>FiscalThaiMonth</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="3cc4bcaf-5186-4ece-a9fa-8a81668997dd">
+      <ID>Hierarchy</ID>
+      <Name>Hierarchy</Name>
+      <Levels>
+        <Level dwd:design-time-name="c5c16859-bf8f-47fd-9dcc-9dc9b20cccf4">
+          <ID>Thai Month Name</ID>
+          <Name>Thai Month Name</Name>
+          <SourceAttributeID>Thai Month Name</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="cdbd4f25-bd83-4994-99ef-cccd5e5443f1">
+          <ID>Calendar Year</ID>
+          <Name>Calendar Year</Name>
+          <SourceAttributeID>Calendar Year</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="cf86257b-1877-4375-8b4b-9afec298d20f">
+          <ID>Thai Day Nameof Week</ID>
+          <Name>Thai Day Nameof Week</Name>
+          <SourceAttributeID>Thai Day Nameof Week</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="6ffbc0f0-4323-4e6b-b62a-d259455053c9">
+          <ID>Calendar Period</ID>
+          <Name>Calendar Period</Name>
+          <SourceAttributeID>Calendar Period</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="c41b9206-84ad-4a5e-ac9e-320a732dd0ed">
+          <ID>Full Date Alternate Key</ID>
+          <Name>Full Date Alternate Key</Name>
+          <SourceAttributeID>Full Date Alternate Key</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="f8e2942b-e2d6-402c-b247-a1cc0e3122d4">
+          <ID>Date Key</ID>
+          <Name>Date Key</Name>
+          <SourceAttributeID>Date Key</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="dbacb2d4-ad94-4ba0-91ea-fe2140aa990d">
+          <ID>Fiscal Year</ID>
+          <Name>Fiscal Year</Name>
+          <SourceAttributeID>Fiscal Year</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="4df57fa3-4ed3-4929-9252-232983d0f59b">
+          <ID>Fiscal Thai Month</ID>
+          <Name>Fiscal Thai Month</Name>
+          <SourceAttributeID>Fiscal Thai Month</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="36ed4a43-f777-4b1e-8af7-0359247838f9">
+          <ID>Fiscal Period</ID>
+          <Name>Fiscal Period</Name>
+          <SourceAttributeID>Fiscal Period</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="9d22bb48-f8d9-4c73-b3e0-bba4f9e1d8a8">
+          <ID>Fiscal Eng Month</ID>
+          <Name>Fiscal Eng Month</Name>
+          <SourceAttributeID>Fiscal Eng Month</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="bf32367e-b46c-4c56-bcd2-cef762aed362">
+          <ID>Eng Month Name</ID>
+          <Name>Eng Month Name</Name>
+          <SourceAttributeID>Eng Month Name</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+</Dimension>

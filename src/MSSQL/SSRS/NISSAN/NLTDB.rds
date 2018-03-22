@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="NLTDB">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=afwnlt;Initial Catalog=LWTReports</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>86bf2c5c-eda3-4275-9543-fdb87008d542</DataSourceID>
+</RptDataSource>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses_Rawdata">
+  <DataContextMoniker Name="/DataClasses_RawdataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="cff32472-9239-4d0e-84d9-bdebd118a1f8" absoluteBounds="2.375, 0.875, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/DataClasses_RawdataDataContext/tblAPDRenewalList_SUMMARY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1e0b4179-b413-4870-89ff-11ee1fdcd948" absoluteBounds="2.3899999999999997, 1.335, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

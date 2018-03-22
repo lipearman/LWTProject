@@ -1,0 +1,177 @@
+﻿Imports Microsoft.VisualBasic
+Imports System
+Imports System.Collections.Generic
+Imports System.Linq
+Imports DevExpress.Web.ASPxSpreadsheet
+Imports DevExpress.Web
+
+Public NotInheritable Class DevxSpreadsheetUtils
+    Private Sub New()
+    End Sub
+    Private Shared ReadOnly Property grayColoredThemes() As List(Of String)
+        Get
+            Return New List(Of String) From {"iOS", "Material", "MaterialCompact", "Metropolis", "MetropolisBlue", "Moderno", "Mulberry"}
+        End Get
+    End Property
+
+    Public Shared Sub HideFileTab(ByVal spreadsheet As ASPxSpreadsheet)
+        spreadsheet.CreateDefaultRibbonTabs(True)
+        RemoveRibbonTab(spreadsheet, GetType(SRFileTab))
+    End Sub
+
+    Public Shared Sub CreateOverviewRibbon(ByVal spreadsheet As ASPxSpreadsheet)
+        spreadsheet.CreateDefaultRibbonTabs(True)
+        RemoveRibbonTab(spreadsheet, GetType(SRFileTab))
+        RemoveRibbonTab(spreadsheet, GetType(SRPageLayoutTab))
+    End Sub
+
+    Private Shared Sub RemoveRibbonTab(ByVal spreadsheet As ASPxSpreadsheet, ByVal tabTypeToRemove As Type)
+        For Each tab As RibbonTab In spreadsheet.RibbonTabs
+            If tab.GetType() Is tabTypeToRemove Then
+                spreadsheet.RibbonTabs.Remove(tab)
+                Exit For
+            End If
+        Next tab
+    End Sub
+
+    Public Shared Sub HideAllTabsExceptFileAndPageLayout(ByVal spreadsheet As ASPxSpreadsheet)
+        spreadsheet.CreateDefaultRibbonTabs(True)
+
+        ShowRibbonItemsOnly(spreadsheet, New Type() {GetType(SRFilePrintCommand), GetType(SRPageSetupMarginsCommand), GetType(SRPageSetupOrientationCommand), GetType(SRPageSetupPaperKindCommand), GetType(SRPrintGridlinesCommand), GetType(SRPrintHeadingsCommand)})
+    End Sub
+
+
+    Public Shared Sub HideAllTabsExceptOpenFileAndFullScreen(ByVal spreadsheet As ASPxSpreadsheet)
+        spreadsheet.CreateDefaultRibbonTabs(True)
+
+        ShowRibbonItemsOnly(spreadsheet, New Type() {GetType(SRFileOpenCommand), GetType(SRFullScreenCommand)})
+    End Sub
+
+    Public Shared Sub HideAllTabsExceptHomeAndView(ByVal spreadsheet As ASPxSpreadsheet)
+        HideAllTabsExceptTabs(spreadsheet, New Type() {GetType(SRHomeTab), GetType(SRViewTab)})
+    End Sub
+
+    Public Shared Sub HideAllTabsExceptHomeAndFormulas(ByVal spreadsheet As ASPxSpreadsheet)
+        HideAllTabsExceptTabs(spreadsheet, New Type() {GetType(SRHomeTab), GetType(SRFormulasTab)})
+    End Sub
+
+    Public Shared Sub HideAllTabsExceptReview(ByVal spreadsheet As ASPxSpreadsheet)
+        HideAllTabsExceptTabs(spreadsheet, New Type() {GetType(SRReviewTab)})
+    End Sub
+
+    Public Shared Sub HideAllTabsExceptTabs(ByVal spreadsheet As ASPxSpreadsheet, ByVal exceptTabs() As Type)
+        spreadsheet.CreateDefaultRibbonTabs(True)
+        Dim allTabs() As Type = {GetType(SRHomeTab), GetType(SRFileTab), GetType(SRInsertTab), GetType(SRPageLayoutTab), GetType(SRFormulasTab), GetType(SRDataTab), GetType(SRViewTab), GetType(SRReviewTab)}
+        For Each tabType In allTabs
+            If (Not exceptTabs.Contains(tabType)) Then
+                RemoveRibbonTab(spreadsheet, tabType)
+            End If
+        Next tabType
+    End Sub
+
+    Public Shared Sub HidePageLayoutTab(ByVal spreadsheet As ASPxSpreadsheet)
+        RemoveRibbonTab(spreadsheet, GetType(SRPageLayoutTab))
+    End Sub
+
+    Public Shared Sub HideFormulasTab(ByVal spreadsheet As ASPxSpreadsheet)
+        RemoveRibbonTab(spreadsheet, GetType(SRFormulasTab))
+    End Sub
+
+    Private Shared Sub HideRibbonItems(ByVal spreadsheet As ASPxSpreadsheet, ByVal itemTypes() As Type)
+        ProcessRibbonItems(spreadsheet, itemTypes, False)
+    End Sub
+    Private Shared Sub ShowRibbonItemsOnly(ByVal spreadsheet As ASPxSpreadsheet, ByVal itemTypes() As Type)
+        ProcessRibbonItems(spreadsheet, itemTypes, True)
+    End Sub
+    Private Shared Sub ProcessRibbonItems(ByVal spreadsheet As ASPxSpreadsheet, ByVal targetTypes() As Type, ByVal removeNotInList As Boolean)
+        Dim groups = New List(Of RibbonGroup)()
+        Dim items = New List(Of RibbonItemBase)()
+
+        Dim tabs As List(Of RibbonTab) = spreadsheet.RibbonTabs.ToList()
+        For Each tab As RibbonTab In tabs
+            groups.AddRange(tab.Groups)
+        Next tab
+        For Each group As RibbonGroup In groups
+            items.AddRange(group.Items)
+        Next group
+
+        RemoveItemsByTypes(items, targetTypes, removeNotInList)
+        RemoveEmptyGroups(groups)
+        RemoveEmptyTabs(spreadsheet, tabs)
+    End Sub
+
+    Private Shared Sub RemoveItemsByTypes(ByVal items As List(Of RibbonItemBase), ByVal targetTypes() As Type, ByVal removeNotInList As Boolean)
+        Dim targetItem = New List(Of RibbonItemBase)()
+        Dim itemsNotInList = New List(Of RibbonItemBase)()
+        GroupItemsByType(items, targetTypes, targetItem, itemsNotInList)
+
+        If removeNotInList Then
+            RemoveItems(itemsNotInList)
+        Else
+            RemoveItems(targetItem)
+        End If
+
+    End Sub
+
+    Private Shared Sub GroupItemsByType(ByVal items As List(Of RibbonItemBase), ByVal targetTypes() As Type, ByVal targetItem As List(Of RibbonItemBase), ByVal itemsNotInList As List(Of RibbonItemBase))
+        For Each item As RibbonItemBase In items
+            If targetTypes.Contains(item.GetType()) Then
+                targetItem.Add(item)
+            Else
+                itemsNotInList.Add(item)
+            End If
+        Next item
+    End Sub
+
+    Private Shared Sub RemoveItems(ByVal items As List(Of RibbonItemBase))
+        For Each item As RibbonItemBase In items
+            item.Group.Items.Remove(item)
+        Next item
+    End Sub
+    Private Shared Sub RemoveEmptyGroups(ByVal groups As List(Of RibbonGroup))
+        For Each group As RibbonGroup In groups
+            If group.Items.IsEmpty Then
+                group.Tab.Groups.Remove(group)
+            End If
+        Next group
+    End Sub
+    Private Shared Sub RemoveEmptyTabs(ByVal spreadsheet As ASPxSpreadsheet, ByVal tabs As List(Of RibbonTab))
+        For Each tab As RibbonTab In tabs
+            If tab.Groups.IsEmpty Then
+                spreadsheet.RibbonTabs.Remove(tab)
+            End If
+        Next tab
+    End Sub
+
+    Public Shared Sub ApplyCurrentThemeToCustomRibbonIcons(ByVal spreadsheet As ASPxSpreadsheet)
+        Dim customGroup As RibbonGroup = spreadsheet.RibbonTabs(0).Groups(3)
+        For Each item As RibbonItemBase In customGroup.Items
+            Dim buttonItem As RibbonButtonItem = TryCast(item, RibbonButtonItem)
+            If buttonItem IsNot Nothing Then
+                buttonItem.LargeImage.IconID = ProcessRibbonItemIcon(buttonItem, True)
+            End If
+            Dim dropDownItem As RibbonDropDownButtonItem = TryCast(item, RibbonDropDownButtonItem)
+            If dropDownItem IsNot Nothing Then
+                For Each childItem As RibbonButtonItem In dropDownItem.Items
+                    childItem.SmallImage.IconID = ProcessRibbonItemIcon(childItem, False)
+                Next childItem
+            End If
+        Next item
+    End Sub
+    Private Shared Function ProcessRibbonItemIcon(ByVal item As RibbonButtonItem, ByVal useLargeImage As Boolean) As String
+        Dim grayIconPostfix As String = "gray"
+        'Dim currentTheme As String = Utils.CurrentTheme
+        'Dim grayIconShouldBeApplied As Boolean = grayColoredThemes.Contains(currentTheme)
+        Dim itemIconId As String = If((useLargeImage), item.LargeImage.IconID, item.SmallImage.IconID)
+        Dim itemHasGrayIcon As Boolean = itemIconId.EndsWith(grayIconPostfix)
+        'If (Not String.IsNullOrEmpty(itemIconId)) AndAlso itemHasGrayIcon <> grayIconShouldBeApplied Then
+        If (Not String.IsNullOrEmpty(itemIconId)) Then
+            If itemHasGrayIcon Then
+                Return itemIconId.Substring(0, itemIconId.Length - grayIconPostfix.Length)
+            Else
+                Return itemIconId & grayIconPostfix
+            End If
+        End If
+        Return itemIconId
+    End Function
+End Class

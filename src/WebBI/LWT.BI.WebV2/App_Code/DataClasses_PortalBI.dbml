@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Portal.BI" Class="DataClasses_PortalBIDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LOCKTHBNK-DB07\NEWMOTOR;Initial Catalog=Portal.BI;User ID=Locksql" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PortalBIConnection" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblPivotGridViewOption" Member="tblPivotGridViewOptions">
+    <Type Name="tblPivotGridViewOption">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Value" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GroupName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBIAssignment" Member="tblBIAssignments">
+    <Type Name="tblBIAssignment">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="USERNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tblBI_tblBIAssignment" Member="tblBI" ThisKey="BID" OtherKey="BID" Type="tblBI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBIFilter" Member="tblBIFilters">
+    <Type Name="tblBIFilter">
+      <Column Name="FILTER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FIELD" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="BID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FILTER_VALUE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FILTER_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tblBIAttribute_tblBIFilter" Member="tblBIAttribute" ThisKey="FIELD,BID" OtherKey="FIELD,BID" Type="tblBIAttribute" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBIFilter_User" Member="tblBIFilter_Users">
+    <Type Name="tblBIFilter_User">
+      <Column Name="FILTER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FIELD" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="BUID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FILTER_VALUE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FILTER_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tblBIAttribute_User_tblBIFilter_User" Member="tblBIAttribute_User" ThisKey="FIELD,BUID" OtherKey="FIELD,BUID" Type="tblBIAttribute_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCube" Member="tblCubes">
+    <Type Name="tblCube">
+      <Column Name="CUBE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[DATABASE]" Member="DATABASE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CUBE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BASE_CUBE_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tblCube_tblAttribute" Member="tblAttributes" ThisKey="CUBE_ID" OtherKey="CUBE_ID" Type="tblAttribute" />
+      <Association Name="tblDataSource_tblCube" Member="tblDataSource" ThisKey="DATABASE" OtherKey="DATABASE" Type="tblDataSource" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCube_User" Member="tblCube_Users">
+    <Type Name="tblCube_User">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="USERNAME" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CUBE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDashBoard_Assignment" Member="tblDashBoard_Assignments">
+    <Type Name="tblDashBoard_Assignment">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DB_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDataSource" Member="tblDataSources">
+    <Type Name="tblDataSource">
+      <Column Name="[DATABASE]" Member="DATABASE" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CONNECTING" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="tblDataSource_tblCube" Member="tblCubes" ThisKey="DATABASE" OtherKey="DATABASE" Type="tblCube" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_Attribute" Member="V_Attributes">
+    <Type Name="V_Attribute">
+      <Column Name="CUBE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[DATABASE]" Member="DATABASE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CUBE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BASE_CUBE_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ATTRIBUTE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FIELD" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="VISIBLE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FormatType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FOLDER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_DMX_Measures" Member="V_DMX_Measures">
+    <Type Name="V_DMX_Measure">
+      <Column Name="CATALOG_NAME" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CUBE_NAME" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MEASUREGROUP_NAME" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MEASURE_CAPTION" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MEASURE_IS_VISIBLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_BIAttribute" Member="V_BIAttributes">
+    <Type Name="V_BIAttribute">
+      <Column Name="BID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FIELD" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="AREA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AREAINDEX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORDERBY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CUBE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[DATABASE]" Member="DATABASE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CUBE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BASE_CUBE_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ATTRIBUTE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FormatType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="FOLDER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_BIAttribute_User" Member="V_BIAttribute_Users">
+    <Type Name="V_BIAttribute_User">
+      <Column Name="BUID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FIELD" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="AREA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AREAINDEX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORDERBY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USERNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CUBE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[DATABASE]" Member="DATABASE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CUBE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BASE_CUBE_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ATTRIBUTE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FormatType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="FOLDER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_Cube" Member="V_Cubes">
+    <Type Name="V_Cube">
+      <Column Name="CUBE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[DATABASE]" Member="DATABASE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CUBE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BASE_CUBE_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CONNECTING" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_DMX_Attributes" Member="V_DMX_Attributes">
+    <Type Name="V_DMX_Attribute">
+      <Column Name="CATALOG_NAME" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CUBE_NAME" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HIERARCHY_DISPLAY_FOLDER" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DIMENSION_UNIQUE_NAME" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HIERARCHY_CAPTION" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HIERARCHY_IS_VISIBLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_DMX_Cubes" Member="V_DMX_Cubes">
+    <Type Name="V_DMX_Cube">
+      <Column Name="CATALOG_NAME" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CUBE_CAPTION" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BASE_CUBE_NAME" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_DMX_Dimensions" Member="V_DMX_Dimensions">
+    <Type Name="V_DMX_Dimension">
+      <Column Name="CATALOG_NAME" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DIMENSION_CAPTION" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CUBE_NAME" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_DMX_Hierarchies" Member="V_DMX_Hierarchies">
+    <Type Name="V_DMX_Hierarchy">
+      <Column Name="CATALOG_NAME" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CUBE_NAME" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HIERARCHY_DISPLAY_FOLDER" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DIMENSION_UNIQUE_NAME" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HIERARCHY_CAPTION" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HIERARCHY_IS_VISIBLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDataSourceBI_Field_Filter" Member="tblDataSourceBI_Field_Filters">
+    <Type Name="tblDataSourceBI_Field_Filter">
+      <Column Name="FILTER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FILTER_VALUE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FILTER_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FIELD_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDataSourceBI_Assignment" Member="tblDataSourceBI_Assignments">
+    <Type Name="tblDataSourceBI_Assignment">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="USERNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDataSourceBI_Field" Member="tblDataSourceBI_Fields">
+    <Type Name="tblDataSourceBI_Field">
+      <Column Name="FIELD" Type="System.String" DbType="VarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AREA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORDERBY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FIELDTYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AREAINDEX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SortBySummaryInfo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDataSourceFile_Field" Member="tblDataSourceFile_Fields">
+    <Type Name="tblDataSourceFile_Field">
+      <Column Name="FIELD_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DS_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FIELD_CAPTION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FIELD_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SummaryType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CellFormat_FormatType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CellFormat_FormatString" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="GroupInterval" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnboundExpressionMode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnboundExpression" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="UnboundColumnType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PivotSummaryDisplayType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AREA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORDERBY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AREAINDEX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dimension" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBI_User" Member="tblBI_Users">
+    <Type Name="tblBI_User">
+      <Column Name="BUID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ACTIVE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="USERNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CUBE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShowColumnGrandTotals" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowColumnTotals" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowRowGrandTotals" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowRowTotals" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowGrandTotalsForSingleValues" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowTotalsForSingleValues" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tblBI_User_tblBIAttribute_User" Member="tblBIAttribute_Users" ThisKey="BUID" OtherKey="BUID" Type="tblBIAttribute_User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBIAttribute_User" Member="tblBIAttribute_Users">
+    <Type Name="tblBIAttribute_User">
+      <Column Name="FIELD" Type="System.String" DbType="VarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BUID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AREA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORDERBY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FIELDTYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AREAINDEX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SortBySummaryInfo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tblBIAttribute_User_tblBIFilter_User" Member="tblBIFilter_Users" ThisKey="FIELD,BUID" OtherKey="FIELD,BUID" Type="tblBIFilter_User" />
+      <Association Name="tblBI_User_tblBIAttribute_User" Member="tblBI_User" ThisKey="BUID" OtherKey="BUID" Type="tblBI_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBIAttribute" Member="tblBIAttributes">
+    <Type Name="tblBIAttribute">
+      <Column Name="FIELD" Type="System.String" DbType="VarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AREA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORDERBY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FIELDTYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AREAINDEX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SortBySummaryInfo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tblBIAttribute_tblBIFilter" Member="tblBIFilters" ThisKey="FIELD,BID" OtherKey="FIELD,BID" Type="tblBIFilter" />
+      <Association Name="tblBI_tblBIAttribute" Member="tblBI" ThisKey="BID" OtherKey="BID" Type="tblBI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAttribute" Member="tblAttributes">
+    <Type Name="tblAttribute">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FOLDER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ATTRIBUTE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FIELD" Type="System.String" DbType="VarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VISIBLE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FormatType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CUBE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="tblCube_tblAttribute" Member="tblCube" ThisKey="CUBE_ID" OtherKey="CUBE_ID" Type="tblCube" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDashBoard_DataSource_Assignment" Member="tblDashBoard_DataSource_Assignments">
+    <Type Name="tblDashBoard_DataSource_Assignment">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDashBoard_DataSource" Member="tblDashBoard_DataSources">
+    <Type Name="tblDashBoard_DataSource">
+      <Column Name="DS_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CONN" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CONN_TYPE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PortalId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDataSourceFile" Member="tblDataSourceFiles">
+    <Type Name="tblDataSourceFile">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SourceFile" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SheetName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CellRange" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GUID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ASATDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Owner" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PortalId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDataSourceBI" Member="tblDataSourceBIs">
+    <Type Name="tblDataSourceBI">
+      <Column Name="BID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ACTIVE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GUID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShowColumnGrandTotals" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowColumnTotals" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowRowGrandTotals" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowRowTotals" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowGrandTotalsForSingleValues" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowTotalsForSingleValues" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Owner" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PortalId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_DataSourceBI_Assignment" Member="V_DataSourceBI_Assignments">
+    <Type Name="V_DataSourceBI_Assignment">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="USERNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PortalId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDashBoard" Member="tblDashBoards">
+    <Type Name="tblDashBoard">
+      <Column Name="DB_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CUBE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GUID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PortalId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_DataSource" Member="V_DataSources">
+    <Type Name="V_DataSource">
+      <Column Name="GUID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CONNTYPE" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="PortalId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBI" Member="tblBIs">
+    <Type Name="tblBI">
+      <Column Name="BID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ACTIVE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GUID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CUBE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShowColumnGrandTotals" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowColumnTotals" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowRowGrandTotals" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowRowTotals" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowGrandTotalsForSingleValues" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowTotalsForSingleValues" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PortalId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblBI_tblBIAssignment" Member="tblBIAssignments" ThisKey="BID" OtherKey="BID" Type="tblBIAssignment" />
+      <Association Name="tblBI_tblBIAttribute" Member="tblBIAttributes" ThisKey="BID" OtherKey="BID" Type="tblBIAttribute" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_Dashboard_Data" Member="V_Dashboard_Datas">
+    <Type Name="V_Dashboard_Data">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Caption" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Dashboard" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DB_GUID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DB_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PortalId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDashBoard_Data" Member="tblDashBoard_Datas">
+    <Type Name="tblDashBoard_Data">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Dashboard" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Caption" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DB_GUID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DB_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GUID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sp_ssis_eglobal" Method="sp_ssis_eglobal">
+    <ElementType Name="sp_ssis_eglobalResult">
+      <Column Name="RM" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

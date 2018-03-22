@@ -1,0 +1,129 @@
+﻿body {
+    margin-left: 0;
+    margin-right: 0;
+}
+.hide {
+    visibility: hidden;
+}
+.dxm-ltr {
+    position:relative;
+    z-index: 1;
+}
+.group:first-child {
+    margin-top: 20px;
+}
+.group {
+    clear: both;
+    padding: 0px;
+    margin: 0px;
+}
+.group:before,
+.group:after {
+    content: "";
+    display: table;
+}
+.group:after {
+    clear: both;
+}
+.column,
+.column > div {
+    min-height: 250px;
+}
+.column {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    width: 33.3%;
+}
+.column > div {
+    position: relative;
+    background-size: cover;
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+.group .column:last-child > div {
+    margin-right: 0;
+}
+.text {
+    font: 12px Tahoma, Geneva, sans-serif;
+    color: rgb(255, 255, 255);
+    position: relative;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.content-column,
+.center-column {
+    width: 990px;
+}
+.dxmLite_Office365 .dxm-main,
+.Office365 .left-column,
+.Office365 .right-column {
+    background-color: #f5f5f5;
+}
+.iOS .left-column,
+.iOS .right-column {
+    border: 1px solid #dcdcdc;
+    background-color: #fff;
+}
+.iOS .left-column {
+    border-right: none;
+}
+.Material .left-column,
+.Material .right-column,
+.MaterialCompact .left-column,
+.MaterialCompact .right-column {
+    background-color: #f1f1f1;
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+}
+.left-column,
+.right-column {
+    width: 50%;
+    height: 100%;
+    margin-left: -495px;
+    box-sizing: border-box;
+}
+.center-column {
+    float: left;
+}
+.content-column {
+    margin: 0 auto;
+}
+.left-column {
+    float: left;
+}
+.right-column {
+    float: right;
+}
+@media only screen and (max-width: 700px) {
+    .column {
+        width: 100%;
+    }
+    .column > div {
+        margin-right: 0;
+    }
+    body {
+        margin: 8px;
+    }
+    .column,
+    .column > div {
+        min-height: 400px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .left-column,
+    .right-column {
+        display: none;
+    }
+    .content-column,
+    .center-column {
+        width: auto;
+        float: none;
+    }
+}
