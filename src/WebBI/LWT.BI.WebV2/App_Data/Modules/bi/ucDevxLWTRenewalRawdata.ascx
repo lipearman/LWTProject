@@ -17,7 +17,21 @@
     }
 </style>
 <asp:SqlDataSource ID="SqlDataSource_RawData" runat="server" ConnectionString="<%$ ConnectionStrings:LWTReportsSIBISDBConnectionString %>"
-    SelectCommand="select * from tblLWTRenewalList order by FiscalYear,Lotno,ItemID "></asp:SqlDataSource>
+    SelectCommand="select top 100 * from tblLWTRenewalList order by FiscalYear,Lotno,ItemID "
+    UpdateCommand="
+    update tblLWTRenewalList
+    set RemarkFromAE=@RemarkFromAE
+
+    where ItemID=@ItemID
+
+    "
+    >
+ <UpdateParameters>
+      <asp:Parameter Name="RemarkFromAE" />
+      <asp:Parameter Name="ItemID" />
+ </UpdateParameters>
+
+</asp:SqlDataSource>
 
 <%--<dx:LinqServerModeDataSource ID="SqlDataSource_RawData" ContextTypeName="DataClasses_PortalBIRawdataExt" TableName="V_APDRenewal_RAWDATA" runat="server" />--%>
 
@@ -35,11 +49,12 @@
                 DataSourceID="SqlDataSource_RawData" SettingsPopup-EditForm-Modal="true"
                 SettingsBehavior-ColumnResizeMode="Control"
                 runat="server" AutoGenerateColumns="false">
+
                 <Styles>
                     <Cell Wrap="False"></Cell>
                 </Styles>
                 <Settings HorizontalScrollBarMode="Visible" ShowFooter="true" ShowFilterRowMenu="true" UseFixedTableLayout="true"></Settings>
-                <SettingsSearchPanel CustomEditorID="tbToolbarSearch" />
+                <SettingsSearchPanel Visible="true" />
                 <SettingsBehavior ColumnResizeMode="Control"></SettingsBehavior>
                 <SettingsCustomizationDialog Enabled="true" />
 
@@ -52,6 +67,10 @@
                 <SettingsDataSecurity AllowEdit="true" />
                 <SettingsEditing Mode="PopupEditForm"></SettingsEditing>
                 <SettingsPopup EditForm-HorizontalAlign="WindowCenter" EditForm-VerticalAlign="WindowCenter"></SettingsPopup>
+               
+                
+                 <Settings ShowGroupPanel="true" />
+
                 <Toolbars>
                     <dx:GridViewToolbar Position="Top" ItemAlign="Left">
                         <Items>
@@ -65,7 +84,7 @@
 
                             <dx:GridViewToolbarItem Command="ShowCustomizationDialog" BeginGroup="true" />
                             <dx:GridViewToolbarItem Command="Refresh" BeginGroup="true" />
-
+                              
                         </Items>
                     </dx:GridViewToolbar>
                 </Toolbars>
@@ -73,11 +92,20 @@
 
                 <Columns>
                     <dx:BootstrapGridViewCommandColumn ShowEditButton="true" />
-
+                    
                     <dx:GridViewDataTextColumn FieldName="ItemID" CellStyle-Wrap="False" ReadOnly="true"></dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="FiscalYear" CellStyle-Wrap="False" ReadOnly="true"></dx:GridViewDataTextColumn>
+                    <dx:GridViewDataTextColumn FieldName="FiscalYear"  CellStyle-Wrap="False" ReadOnly="true">
+                        <Settings AllowHeaderFilter="True" />
+                        <SettingsHeaderFilter Mode="CheckedList" >
+                            
+                        </SettingsHeaderFilter>
+                    </dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn FieldName="Lotno" CellStyle-Wrap="False" ReadOnly="true"></dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="ExpiryDate" CellStyle-Wrap="False" ReadOnly="true"></dx:GridViewDataTextColumn>
+                    <dx:GridViewDataDateColumn FieldName="ExpiryDate" CellStyle-Wrap="False" ReadOnly="true" PropertiesDateEdit-DisplayFormatString="{0:dd/MM/yyyy}" >
+                         <PropertiesDateEdit >
+                          <DropDownButton Visible="false"></DropDownButton>
+                      </PropertiesDateEdit>
+                    </dx:GridViewDataDateColumn>
                     <dx:GridViewDataTextColumn FieldName="AccountExecutive" CellStyle-Wrap="False" ReadOnly="true"></dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn FieldName="TypeofRisk" CellStyle-Wrap="False" ReadOnly="true"></dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn FieldName="Client" CellStyle-Wrap="False" ReadOnly="true"></dx:GridViewDataTextColumn>
@@ -87,15 +115,27 @@
                     <dx:GridViewDataTextColumn FieldName="EndorsementNo" CellStyle-Wrap="False" ReadOnly="true"></dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn FieldName="SumInsured" CellStyle-Wrap="False" ReadOnly="true"></dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn FieldName="Premium" CellStyle-Wrap="False" ReadOnly="true"></dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="Datereceived" CellStyle-Wrap="False" ReadOnly="true"></dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="EffectiveDate" CellStyle-Wrap="False" ReadOnly="true"></dx:GridViewDataTextColumn>
+                    <dx:GridViewDataDateColumn FieldName="Datereceived" CellStyle-Wrap="False" ReadOnly="true"  PropertiesDateEdit-DisplayFormatString="{0:dd/MM/yyyy}">
+                      <PropertiesDateEdit >
+                          <DropDownButton Visible="false"></DropDownButton>
+                      </PropertiesDateEdit>
+                    </dx:GridViewDataDateColumn>
+                    <dx:GridViewDataDateColumn FieldName="EffectiveDate" CellStyle-Wrap="False" ReadOnly="true"  PropertiesDateEdit-DisplayFormatString="{0:dd/MM/yyyy}">
+                         <PropertiesDateEdit >
+                          <DropDownButton Visible="false"></DropDownButton>
+                      </PropertiesDateEdit>
+                    </dx:GridViewDataDateColumn>
                     <dx:GridViewDataTextColumn FieldName="Remark" CellStyle-Wrap="False" ReadOnly="true"></dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn FieldName="ClientGroup" CellStyle-Wrap="False" ReadOnly="true"></dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn FieldName="GroupName" CellStyle-Wrap="False" ReadOnly="true"></dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn FieldName="Underwriter" CellStyle-Wrap="False" ReadOnly="true"></dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn FieldName="InvRefNo" CellStyle-Wrap="False" ReadOnly="true"></dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn FieldName="Complusary" CellStyle-Wrap="False" ReadOnly="true"></dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="LastUpdate" CellStyle-Wrap="False" ReadOnly="true"></dx:GridViewDataTextColumn>
+                    <dx:GridViewDataDateColumn FieldName="LastUpdate" CellStyle-Wrap="False" PropertiesDateEdit-DisplayFormatString="{0:dd/MM/yyyy}">
+                         <PropertiesDateEdit >
+                          <DropDownButton Visible="false"></DropDownButton>
+                      </PropertiesDateEdit>
+                    </dx:GridViewDataDateColumn>
                     <dx:GridViewDataTextColumn FieldName="RemarkFromAE" CellStyle-Wrap="False" >
                         <PropertiesTextEdit>
                             <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
