@@ -116,25 +116,45 @@ Public Class ASRenewalList
         Dim logfile = logpath & "\" & JobDate & ".txt"
 
         If JobDate >= JobStart And JobDate <= JobEnd And IO.File.Exists(logfile) = False Then
-            Dim datacount As Integer = 0
+
+
+
+            Dim _data As New List(Of tblAPDRenewalList_SUMMARY)
             Using dc2 As New DataClasses_RawdataDataContext()
-                Dim _data = (From c In dc2.tblAPDRenewalList_SUMMARies).ToList()
-                datacount = _data.Count
+                _data = (From c In dc2.tblAPDRenewalList_SUMMARies).ToList()
             End Using
 
 
-            If datacount > 0 Then
-                Dim FileName = SaveToExcel()
+            If _data.Count > 0 Then
+                'Dim _files As New List(Of String)
+                Dim _files As New Dictionary(Of String, Integer)
+
+                Dim _FiscalYears = (From c In _data
+                                    Group By FiscalYear = c.FiscalYear Into MyGroup = Group
+                                    Select FiscalYear Order By FiscalYear).ToList()
+                For Each FiscalYear In _FiscalYears
+
+                    Dim FileName = SaveToExcel(FiscalYear)
+                    _files.Add(FileName, FiscalYear)
+                Next
+
+
+
+
+
+                'Dim FileName = SaveToExcel()
                 Using writer As New StreamWriter(logfile, True)
-                    writer.WriteLine("FileName : " & FileName & " - " & DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"))
+                    writer.WriteLine("Files : " & _files.Count & " - " & DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"))
                     writer.Close()
                 End Using
-                If File.Exists(FileName) Then
-                    WH_genxls(FileName)
+
+                If (_files.Count > 0) Then
+                    WH_genxls(_files)
                 End If
+
             Else
-                Console.WriteLine("Data :" & datacount.ToString())
-                WriteToSysLog("Data :" & datacount.ToString(), False)
+                Console.WriteLine("Data :" & _data.Count.ToString())
+                WriteToSysLog("Data :" & _data.Count.ToString(), False)
             End If
 
         Else
@@ -178,7 +198,7 @@ Public Class ASRenewalList
 
 
 
-    Private Function SaveToExcel()
+    Private Function SaveToExcel(ByVal FiscalYear As Int32)
 
 
 
@@ -190,6 +210,9 @@ Public Class ASRenewalList
         viewer.ServerReport.ReportServerUrl = New Uri("http://lockthbnk-db07/ReportServer")
         viewer.ServerReport.ReportPath = "/Reports/rptAPDRenewalList"
 
+        Dim parameters As New List(Of ReportParameter)
+        parameters.Add(New ReportParameter("FiscalYear", FiscalYear, False))
+        viewer.ServerReport.SetParameters(parameters)
 
         'viewer.ServerReport.ReportServerCredentials = New ReportServerCredentials()
 
@@ -205,7 +228,7 @@ Public Class ASRenewalList
         Return SavePath
     End Function
 
-    Private Sub WH_genxls(ByVal File As String)
+    Private Sub WH_genxls(ByVal files As Dictionary(Of String, Integer))
         Dim _NoticeCode As String = "B0039"
 
         'Try
@@ -231,7 +254,11 @@ Public Class ASRenewalList
         Using dc_portal = New DataClasses_PortalDataContext()
 
             Using dc2 As New DataClasses_RawdataDataContext()
-                Dim _data = (From c In dc2.tblAPDRenewalList_SUMMARies).FirstOrDefault()
+                'Dim _data = (From c In dc2.tblAPDRenewalList_SUMMARies Order By c.FiscalYear).FirstOrDefault()
+
+                Dim _data = (From c In dc2.tblAPDRenewalList_SUMMARies
+                             Group By LotNo = c.LotNo Into MyGroup = Group
+                             Select LotNo Order By LotNo).ToList()
 
                 Dim _mailNotification = (From c In dc_portal.MailNotifications Where c.Code.Equals(_NoticeCode)).FirstOrDefault()
 
@@ -259,7 +286,7 @@ Public Class ASRenewalList
 
                 Dim _MailBody As String = HttpUtility.HtmlDecode(_mailNotification.MailBody)
 
-                _MailBody = _MailBody.Replace("{date}", String.Format("{0}", _data.FiscalYear))
+                _MailBody = _MailBody.Replace("{date}", String.Format("{0} - {1}", _data(0).Value, _data(_data.Count - 1).Value))
 
                 _MailBody = _MailBody.Replace("{displayName}", _displayName)
                 _MailBody = _MailBody.Replace("{title}", _title)
@@ -281,7 +308,7 @@ Public Class ASRenewalList
 
                 '===========================================================
                 Dim bodyHTML As String = "<html><body>" & strMessage.ToString() & "<span style='font-size:16.0pt;font-family:Angsana New,serif;color:green'><img src='cid:LOGO_IMAGE2' alt='Logo' /><i>Please consider the environment before printing this e-mail.</i></span></body></html>"
-                Dim alternateView As AlternateView = alternateView.CreateAlternateViewFromString(bodyHTML, Nothing, "text/html")
+                Dim alternateView As AlternateView = AlternateView.CreateAlternateViewFromString(bodyHTML, Nothing, "text/html")
 
                 'Dim path_to_the_image_file1 As String = String.Format("{0}\{1}", Server.MapPath("~/images"), "maillockton30.jpg")
                 Dim path_to_the_image_file2 As String = imgpath & "\mailsmallpicture.jpg"
@@ -332,20 +359,22 @@ Public Class ASRenewalList
                 msg.IsBodyHtml = True
                 msg.Priority = Net.Mail.MailPriority.High
 
+                For Each item In files
+                    '==============Add an Attachment=========================
+                    '1.A&S_ProductionNewStructure 20171020 
+                    '2.A&S_Budget VS Actual 20171020 
+                    Dim att_data1 = New Attachment(item.Key, "application/vnd.ms-excel")
+                    att_data1.Name = String.Format("{0}.xls", "A&S_RenewalList_FiscalYear_" & item.Value)
+                    'att_data.Name = "Kawasaki.xls"
+                    'att_data.Name = System.Web.HttpUtility.UrlDecode(System.Web.HttpUtility.UrlEncode(String.Format("{0}.xls", "สรุปยอดขายประจำเดือน Kawasaki"), System.Text.Encoding.UTF8))
+                    'att_data.Name = "สรุปยอดขายประจำเดือน.xls"
+                    'att_data.NameEncoding = Encoding.GetEncoding("windows-874")
 
-                '==============Add an Attachment=========================
-                '1.A&S_ProductionNewStructure 20171020 
-                '2.A&S_Budget VS Actual 20171020 
-                Dim att_data1 = New Attachment(File, "application/vnd.ms-excel")
-                att_data1.Name = String.Format("{0}.xls", "A&S_RenewalList " & Now.ToString("yyyyMMdd"))
-                'att_data.Name = "Kawasaki.xls"
-                'att_data.Name = System.Web.HttpUtility.UrlDecode(System.Web.HttpUtility.UrlEncode(String.Format("{0}.xls", "สรุปยอดขายประจำเดือน Kawasaki"), System.Text.Encoding.UTF8))
-                'att_data.Name = "สรุปยอดขายประจำเดือน.xls"
-                'att_data.NameEncoding = Encoding.GetEncoding("windows-874")
+                    att_data1.TransferEncoding = System.Net.Mime.TransferEncoding.QuotedPrintable
 
-                att_data1.TransferEncoding = System.Net.Mime.TransferEncoding.QuotedPrintable
+                    msg.Attachments.Add(att_data1)
 
-                msg.Attachments.Add(att_data1)
+                Next
 
                 'Try
 

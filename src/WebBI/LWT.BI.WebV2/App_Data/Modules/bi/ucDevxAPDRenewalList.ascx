@@ -26,8 +26,6 @@
 <dx:ASPxGridViewExporter runat="server" ID="GridExporter" GridViewID="gridDetails" />
 
 
-
-
 <dx:ASPxRoundPanel ID="pnMain" EnableAnimation="true" ShowCollapseButton="true"
     HeaderText="" Font-Bold="true"
     runat="server" EnableAdaptivity="true" Width="100%" HeaderImage-IconID="businessobjects_bonote_32x32">
@@ -43,12 +41,17 @@
                     <Cell Wrap="False"></Cell>
                 </Styles>
                 <Settings ShowFooter="true" ShowFilterRowMenu="true" UseFixedTableLayout="true"  ></Settings>
-                <SettingsPager Mode="ShowAllRecords" Visible="false"></SettingsPager>
+               
                 <SettingsBehavior AllowDragDrop="True"
                     AllowFocusedRow="True"
                     EnableRowHotTrack="True"
                     ConfirmDelete="true"
                     ColumnResizeMode="Control" />
+
+
+                <SettingsPager Mode="ShowPager" Visible="true" PageSize="12" > 
+                </SettingsPager>
+
 
                 <ClientSideEvents
                     RowDblClick="function(s, e) {

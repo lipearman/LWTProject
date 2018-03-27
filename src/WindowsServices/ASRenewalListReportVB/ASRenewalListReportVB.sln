@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ASRenewalListReportVB", "ASRenewalListReportVB.vbproj", "{F6A6AD00-5C84-4526-8BB9-E4FE70E1B651}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6A6AD00-5C84-4526-8BB9-E4FE70E1B651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6A6AD00-5C84-4526-8BB9-E4FE70E1B651}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6A6AD00-5C84-4526-8BB9-E4FE70E1B651}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6A6AD00-5C84-4526-8BB9-E4FE70E1B651}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13422FD2-EB08-4CA5-AB2A-5FCA5C672844}
+	EndGlobalSection
+EndGlobal
