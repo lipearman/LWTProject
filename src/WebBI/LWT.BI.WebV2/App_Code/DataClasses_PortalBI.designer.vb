@@ -6885,7 +6885,7 @@ Partial Public Class V_Dashboard_Data
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Dashboard", DbType:="VarBinary(MAX)", UpdateCheck:=UpdateCheck.Never)>  _
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Dashboard", DbType:="VarBinary(MAX)", CanBeNull:=true, UpdateCheck:=UpdateCheck.Never)>  _
 	Public Property Dashboard() As System.Data.Linq.Binary
 		Get
 			Return Me._Dashboard
@@ -7056,7 +7056,7 @@ Partial Public Class tblDashBoard_Data
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Dashboard", DbType:="VarBinary(MAX)", UpdateCheck:=UpdateCheck.Never)>  _
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Dashboard", DbType:="VarBinary(MAX)", CanBeNull:=true, UpdateCheck:=UpdateCheck.Never)>  _
 	Public Property Dashboard() As System.Data.Linq.Binary
 		Get
 			Return Me._Dashboard

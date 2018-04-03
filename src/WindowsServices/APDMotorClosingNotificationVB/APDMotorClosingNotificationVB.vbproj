@@ -76,6 +76,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses_CPS.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DataClasses_CPS.vb">
+      <DependentUpon>DataClasses_CPS.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DataClasses_LWTReports.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

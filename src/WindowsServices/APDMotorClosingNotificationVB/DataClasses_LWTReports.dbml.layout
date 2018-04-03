@@ -8,16 +8,16 @@
         <elementListCompartment Id="25db4db4-8af9-4375-99ab-47d20562c1ac" absoluteBounds="0.765, 1.21, 1.9700000000000002, 10.6336669921875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ba886f15-6709-4dd2-9dee-eb8936270cc3" absoluteBounds="3.75, 0.75, 2, 10.424461263020833">
-      <DataClassMoniker Name="/DataClasses_LWTReportsDataContext/Rawdata_M2_Closing_Daily" />
-      <nestedChildShapes>
-        <elementListCompartment Id="9ca19ce1-ce50-4d5d-a3fe-b8175cb990e3" absoluteBounds="3.765, 1.21, 1.9700000000000002, 9.8644612630208321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="fdce9977-df75-4418-9013-a9e9672be626" absoluteBounds="6.75, 0.75, 2, 9.4629541015625">
+    <classShape Id="fdce9977-df75-4418-9013-a9e9672be626" absoluteBounds="6.375, 0.75, 2, 9.4629541015625">
       <DataClassMoniker Name="/DataClasses_LWTReportsDataContext/Rawdata_TATA_Closing_Daily" />
       <nestedChildShapes>
-        <elementListCompartment Id="2e13257b-f834-4cf3-800f-6448d7ad26ca" absoluteBounds="6.765, 1.21, 1.9700000000000002, 8.9029541015625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2e13257b-f834-4cf3-800f-6448d7ad26ca" absoluteBounds="6.39, 1.21, 1.9700000000000002, 8.9029541015625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1668e639-eba4-433c-b728-2bde052c3e36" absoluteBounds="3.375, 0.75, 2, 10.6167626953125">
+      <DataClassMoniker Name="/DataClasses_LWTReportsDataContext/Rawdata_M2_Closing_Daily" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f25e34a3-943c-4d44-8b4a-dfb06fe28d26" absoluteBounds="3.3899999999999997, 1.21, 1.9700000000000002, 10.0567626953125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

@@ -34,7 +34,7 @@ Partial Public Class DataClasses_LWTReportsDataContext
   #End Region
 	
 	Public Sub New()
-		MyBase.New(Global.APDMotorClosingNotificationVB.My.MySettings.Default.LWTReportsConnectionString3, mappingSource)
+		MyBase.New(Global.APDMotorClosingNotificationVB.My.MySettings.Default.LWTReportsConnectionString4, mappingSource)
 		OnCreated
 	End Sub
 	
@@ -64,15 +64,15 @@ Partial Public Class DataClasses_LWTReportsDataContext
 		End Get
 	End Property
 	
-	Public ReadOnly Property Rawdata_M2_Closing_Dailies() As System.Data.Linq.Table(Of Rawdata_M2_Closing_Daily)
-		Get
-			Return Me.GetTable(Of Rawdata_M2_Closing_Daily)
-		End Get
-	End Property
-	
 	Public ReadOnly Property Rawdata_TATA_Closing_Dailies() As System.Data.Linq.Table(Of Rawdata_TATA_Closing_Daily)
 		Get
 			Return Me.GetTable(Of Rawdata_TATA_Closing_Daily)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Rawdata_M2_Closing_Dailies() As System.Data.Linq.Table(Of Rawdata_M2_Closing_Daily)
+		Get
+			Return Me.GetTable(Of Rawdata_M2_Closing_Daily)
 		End Get
 	End Property
 End Class
@@ -841,714 +841,6 @@ Partial Public Class Rawdata_M1_Closing_Daily
 	End Property
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Rawdata_M2_Closing_Daily")>  _
-Partial Public Class Rawdata_M2_Closing_Daily
-	
-	Private _เลขรับแจ้ง As String
-	
-	Private _บริษัทประกันภัย As String
-	
-	Private _GroupOfInsurer As String
-	
-	Private _วันที่แจ้งประกันภัย As System.Nullable(Of Date)
-	
-	Private _คำนำหน้า As String
-	
-	Private _ชื่อผู้เอาประกันภัย As String
-	
-	Private _รหัสลูกค้า As String
-	
-	Private _ที่อยู่ผู้เอาประกันภัย As String
-	
-	Private _ยี่ห้อ___รุ่น As String
-	
-	Private _ทะเบียนรถ As String
-	
-	Private _ปีจดทะเบียน As System.Nullable(Of Integer)
-	
-	Private _เลขตัวถัง As String
-	
-	Private _เลขเครื่องยนต์ As String
-	
-	Private _ขนาดเครื่องยนต์ As System.Nullable(Of Integer)
-	
-	Private _ผู้รับผลประโยชน์ As String
-	
-	Private _ShowroomID As System.Nullable(Of Integer)
-	
-	Private _ชื่อผู้จำหน่ายรถยนต์นิสสัน As String
-	
-	Private _เครื่องหมาย_พรบ As String
-	
-	Private _กรมธรรม์_พรบ As String
-	
-	Private _ประเภทอู่ซ่อมรถ As String
-	
-	Private _ประเภทความคุ้มครอง As String
-	
-	Private _วันที่เริ่มคุ้มครอง As System.Nullable(Of Date)
-	
-	Private _ทุนประกันภัย As System.Nullable(Of Integer)
-	
-	Private _เบี้ยประกันภัยภาคสมัครใจ As System.Nullable(Of Decimal)
-	
-	Private _เบี้ยประกันภัยรวม_พรบ As System.Nullable(Of Decimal)
-	
-	Private _ความเสียหายส่วนแรก As String
-	
-	Private _ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อคน_ As System.Nullable(Of Double)
-	
-	Private _ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อครั้ง_ As System.Nullable(Of Double)
-	
-	Private _ความรับผิดต่อบุคคลภายนอก__ทรัพย์สิน_ต่อครั้ง_ As System.Nullable(Of Double)
-	
-	Private _ความเสียหายต่อรถยนต์ที่เอาประกันภัย_ความเสียหายต่อตัวรถ_ As System.Nullable(Of Integer)
-	
-	Private _ความเสียหายต่อรถยนต์ที่เอาประกันภัย_การสูญหายและไฟไหม้_ As System.Nullable(Of Integer)
-	
-	Private _ขยายความคุ้มครอง_การประกันอุบัติเหตุส่วนบุคคล_คนละ_ As System.Nullable(Of Double)
-	
-	Private _ขยายความคุ้มครอง_การประกันค่ารักษาพยาบาล_คนละ_ As System.Nullable(Of Double)
-	
-	Private _ขยายความคุ้มครอง_การประกันตัวผู้ขับขี่คดีอาญา_ As System.Nullable(Of Double)
-	
-	Private _ส่วนลดกลุ่ม As System.Nullable(Of Integer)
-	
-	Private _ส่วนลดประวัติดี As System.Nullable(Of Integer)
-	
-	Private _ส่วนลดอื่น_ๆ As System.Nullable(Of Integer)
-	
-	Private _จำนวนที่นั่ง As System.Nullable(Of Integer)
-	
-	Private _หมายเหตุ As String
-	
-	Private _ออกใบเสร็จในนาม1 As String
-	
-	Private _ที่อยู่ในใบเสร็จ1 As String
-	
-	Private _ออกใบเสร็จในนาม2 As String
-	
-	Private _ที่อยู่ในใบเสร็จ2 As String
-	
-	Private _Campaign As String
-	
-	Private _อุปกรณ์เสริม As String
-	
-	Private _รหัสรถ As String
-	
-	Private _IDCard As String
-	
-	Private _InsurerName As String
-	
-	Private _InsurerCode As String
-	
-	Private _ClosingDate As System.Nullable(Of Date)
-	
-	Public Sub New()
-		MyBase.New
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_เลขรับแจ้ง", DbType:="VarChar(50)")>  _
-	Public Property เลขรับแจ้ง() As String
-		Get
-			Return Me._เลขรับแจ้ง
-		End Get
-		Set
-			If (String.Equals(Me._เลขรับแจ้ง, value) = false) Then
-				Me._เลขรับแจ้ง = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_บริษัทประกันภัย", DbType:="NVarChar(255)")>  _
-	Public Property บริษัทประกันภัย() As String
-		Get
-			Return Me._บริษัทประกันภัย
-		End Get
-		Set
-			If (String.Equals(Me._บริษัทประกันภัย, value) = false) Then
-				Me._บริษัทประกันภัย = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_GroupOfInsurer", DbType:="NVarChar(255)")>  _
-	Public Property GroupOfInsurer() As String
-		Get
-			Return Me._GroupOfInsurer
-		End Get
-		Set
-			If (String.Equals(Me._GroupOfInsurer, value) = false) Then
-				Me._GroupOfInsurer = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_วันที่แจ้งประกันภัย", DbType:="DateTime")>  _
-	Public Property วันที่แจ้งประกันภัย() As System.Nullable(Of Date)
-		Get
-			Return Me._วันที่แจ้งประกันภัย
-		End Get
-		Set
-			If (Me._วันที่แจ้งประกันภัย.Equals(value) = false) Then
-				Me._วันที่แจ้งประกันภัย = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_คำนำหน้า", DbType:="VarChar(32)")>  _
-	Public Property คำนำหน้า() As String
-		Get
-			Return Me._คำนำหน้า
-		End Get
-		Set
-			If (String.Equals(Me._คำนำหน้า, value) = false) Then
-				Me._คำนำหน้า = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ชื่อผู้เอาประกันภัย", DbType:="VarChar(294)")>  _
-	Public Property ชื่อผู้เอาประกันภัย() As String
-		Get
-			Return Me._ชื่อผู้เอาประกันภัย
-		End Get
-		Set
-			If (String.Equals(Me._ชื่อผู้เอาประกันภัย, value) = false) Then
-				Me._ชื่อผู้เอาประกันภัย = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_รหัสลูกค้า", DbType:="NVarChar(50)")>  _
-	Public Property รหัสลูกค้า() As String
-		Get
-			Return Me._รหัสลูกค้า
-		End Get
-		Set
-			If (String.Equals(Me._รหัสลูกค้า, value) = false) Then
-				Me._รหัสลูกค้า = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ที่อยู่ผู้เอาประกันภัย", DbType:="NVarChar(255)")>  _
-	Public Property ที่อยู่ผู้เอาประกันภัย() As String
-		Get
-			Return Me._ที่อยู่ผู้เอาประกันภัย
-		End Get
-		Set
-			If (String.Equals(Me._ที่อยู่ผู้เอาประกันภัย, value) = false) Then
-				Me._ที่อยู่ผู้เอาประกันภัย = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[ยี่ห้อ / รุ่น]", Storage:="_ยี่ห้อ___รุ่น", DbType:="NVarChar(566)")>  _
-	Public Property ยี่ห้อ___รุ่น() As String
-		Get
-			Return Me._ยี่ห้อ___รุ่น
-		End Get
-		Set
-			If (String.Equals(Me._ยี่ห้อ___รุ่น, value) = false) Then
-				Me._ยี่ห้อ___รุ่น = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ทะเบียนรถ", DbType:="NVarChar(255)")>  _
-	Public Property ทะเบียนรถ() As String
-		Get
-			Return Me._ทะเบียนรถ
-		End Get
-		Set
-			If (String.Equals(Me._ทะเบียนรถ, value) = false) Then
-				Me._ทะเบียนรถ = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ปีจดทะเบียน", DbType:="Int")>  _
-	Public Property ปีจดทะเบียน() As System.Nullable(Of Integer)
-		Get
-			Return Me._ปีจดทะเบียน
-		End Get
-		Set
-			If (Me._ปีจดทะเบียน.Equals(value) = false) Then
-				Me._ปีจดทะเบียน = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_เลขตัวถัง", DbType:="VarChar(8000)")>  _
-	Public Property เลขตัวถัง() As String
-		Get
-			Return Me._เลขตัวถัง
-		End Get
-		Set
-			If (String.Equals(Me._เลขตัวถัง, value) = false) Then
-				Me._เลขตัวถัง = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_เลขเครื่องยนต์", DbType:="NVarChar(4000)")>  _
-	Public Property เลขเครื่องยนต์() As String
-		Get
-			Return Me._เลขเครื่องยนต์
-		End Get
-		Set
-			If (String.Equals(Me._เลขเครื่องยนต์, value) = false) Then
-				Me._เลขเครื่องยนต์ = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ขนาดเครื่องยนต์", DbType:="Int")>  _
-	Public Property ขนาดเครื่องยนต์() As System.Nullable(Of Integer)
-		Get
-			Return Me._ขนาดเครื่องยนต์
-		End Get
-		Set
-			If (Me._ขนาดเครื่องยนต์.Equals(value) = false) Then
-				Me._ขนาดเครื่องยนต์ = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ผู้รับผลประโยชน์", DbType:="NVarChar(294)")>  _
-	Public Property ผู้รับผลประโยชน์() As String
-		Get
-			Return Me._ผู้รับผลประโยชน์
-		End Get
-		Set
-			If (String.Equals(Me._ผู้รับผลประโยชน์, value) = false) Then
-				Me._ผู้รับผลประโยชน์ = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ShowroomID", DbType:="Int")>  _
-	Public Property ShowroomID() As System.Nullable(Of Integer)
-		Get
-			Return Me._ShowroomID
-		End Get
-		Set
-			If (Me._ShowroomID.Equals(value) = false) Then
-				Me._ShowroomID = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ชื่อผู้จำหน่ายรถยนต์นิสสัน", DbType:="VarChar(150)")>  _
-	Public Property ชื่อผู้จำหน่ายรถยนต์นิสสัน() As String
-		Get
-			Return Me._ชื่อผู้จำหน่ายรถยนต์นิสสัน
-		End Get
-		Set
-			If (String.Equals(Me._ชื่อผู้จำหน่ายรถยนต์นิสสัน, value) = false) Then
-				Me._ชื่อผู้จำหน่ายรถยนต์นิสสัน = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[เครื่องหมาย พรบ]", Storage:="_เครื่องหมาย_พรบ", DbType:="VarChar(50)")>  _
-	Public Property เครื่องหมาย_พรบ() As String
-		Get
-			Return Me._เครื่องหมาย_พรบ
-		End Get
-		Set
-			If (String.Equals(Me._เครื่องหมาย_พรบ, value) = false) Then
-				Me._เครื่องหมาย_พรบ = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[กรมธรรม์ พรบ]", Storage:="_กรมธรรม์_พรบ", DbType:="VarChar(50)")>  _
-	Public Property กรมธรรม์_พรบ() As String
-		Get
-			Return Me._กรมธรรม์_พรบ
-		End Get
-		Set
-			If (String.Equals(Me._กรมธรรม์_พรบ, value) = false) Then
-				Me._กรมธรรม์_พรบ = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ประเภทอู่ซ่อมรถ", DbType:="VarChar(7)")>  _
-	Public Property ประเภทอู่ซ่อมรถ() As String
-		Get
-			Return Me._ประเภทอู่ซ่อมรถ
-		End Get
-		Set
-			If (String.Equals(Me._ประเภทอู่ซ่อมรถ, value) = false) Then
-				Me._ประเภทอู่ซ่อมรถ = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ประเภทความคุ้มครอง", DbType:="VarChar(50)")>  _
-	Public Property ประเภทความคุ้มครอง() As String
-		Get
-			Return Me._ประเภทความคุ้มครอง
-		End Get
-		Set
-			If (String.Equals(Me._ประเภทความคุ้มครอง, value) = false) Then
-				Me._ประเภทความคุ้มครอง = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_วันที่เริ่มคุ้มครอง", DbType:="DateTime")>  _
-	Public Property วันที่เริ่มคุ้มครอง() As System.Nullable(Of Date)
-		Get
-			Return Me._วันที่เริ่มคุ้มครอง
-		End Get
-		Set
-			If (Me._วันที่เริ่มคุ้มครอง.Equals(value) = false) Then
-				Me._วันที่เริ่มคุ้มครอง = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ทุนประกันภัย", DbType:="Int")>  _
-	Public Property ทุนประกันภัย() As System.Nullable(Of Integer)
-		Get
-			Return Me._ทุนประกันภัย
-		End Get
-		Set
-			If (Me._ทุนประกันภัย.Equals(value) = false) Then
-				Me._ทุนประกันภัย = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_เบี้ยประกันภัยภาคสมัครใจ", DbType:="Decimal(18,2)")>  _
-	Public Property เบี้ยประกันภัยภาคสมัครใจ() As System.Nullable(Of Decimal)
-		Get
-			Return Me._เบี้ยประกันภัยภาคสมัครใจ
-		End Get
-		Set
-			If (Me._เบี้ยประกันภัยภาคสมัครใจ.Equals(value) = false) Then
-				Me._เบี้ยประกันภัยภาคสมัครใจ = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[เบี้ยประกันภัยรวม พรบ]", Storage:="_เบี้ยประกันภัยรวม_พรบ", DbType:="Decimal(19,2)")>  _
-	Public Property เบี้ยประกันภัยรวม_พรบ() As System.Nullable(Of Decimal)
-		Get
-			Return Me._เบี้ยประกันภัยรวม_พรบ
-		End Get
-		Set
-			If (Me._เบี้ยประกันภัยรวม_พรบ.Equals(value) = false) Then
-				Me._เบี้ยประกันภัยรวม_พรบ = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ความเสียหายส่วนแรก", DbType:="VarChar(5)")>  _
-	Public Property ความเสียหายส่วนแรก() As String
-		Get
-			Return Me._ความเสียหายส่วนแรก
-		End Get
-		Set
-			If (String.Equals(Me._ความเสียหายส่วนแรก, value) = false) Then
-				Me._ความเสียหายส่วนแรก = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[ความรับผิดต่อบุคคลภายนอก (บาดเจ็บหรือเสียชีวิต ต่อคน)]", Storage:="_ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อคน_", DbType:="Float")>  _
-	Public Property ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อคน_() As System.Nullable(Of Double)
-		Get
-			Return Me._ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อคน_
-		End Get
-		Set
-			If (Me._ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อคน_.Equals(value) = false) Then
-				Me._ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อคน_ = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[ความรับผิดต่อบุคคลภายนอก (บาดเจ็บหรือเสียชีวิต ต่อครั้ง)]", Storage:="_ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อครั้ง_", DbType:="Float")>  _
-	Public Property ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อครั้ง_() As System.Nullable(Of Double)
-		Get
-			Return Me._ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อครั้ง_
-		End Get
-		Set
-			If (Me._ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อครั้ง_.Equals(value) = false) Then
-				Me._ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อครั้ง_ = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[ความรับผิดต่อบุคคลภายนอก (ทรัพย์สิน ต่อครั้ง)]", Storage:="_ความรับผิดต่อบุคคลภายนอก__ทรัพย์สิน_ต่อครั้ง_", DbType:="Float")>  _
-	Public Property ความรับผิดต่อบุคคลภายนอก__ทรัพย์สิน_ต่อครั้ง_() As System.Nullable(Of Double)
-		Get
-			Return Me._ความรับผิดต่อบุคคลภายนอก__ทรัพย์สิน_ต่อครั้ง_
-		End Get
-		Set
-			If (Me._ความรับผิดต่อบุคคลภายนอก__ทรัพย์สิน_ต่อครั้ง_.Equals(value) = false) Then
-				Me._ความรับผิดต่อบุคคลภายนอก__ทรัพย์สิน_ต่อครั้ง_ = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[ความเสียหายต่อรถยนต์ที่เอาประกันภัย(ความเสียหายต่อตัวรถ)]", Storage:="_ความเสียหายต่อรถยนต์ที่เอาประกันภัย_ความเสียหายต่อตัวรถ_", DbType:="Int")>  _
-	Public Property ความเสียหายต่อรถยนต์ที่เอาประกันภัย_ความเสียหายต่อตัวรถ_() As System.Nullable(Of Integer)
-		Get
-			Return Me._ความเสียหายต่อรถยนต์ที่เอาประกันภัย_ความเสียหายต่อตัวรถ_
-		End Get
-		Set
-			If (Me._ความเสียหายต่อรถยนต์ที่เอาประกันภัย_ความเสียหายต่อตัวรถ_.Equals(value) = false) Then
-				Me._ความเสียหายต่อรถยนต์ที่เอาประกันภัย_ความเสียหายต่อตัวรถ_ = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[ความเสียหายต่อรถยนต์ที่เอาประกันภัย(การสูญหายและไฟไหม้)]", Storage:="_ความเสียหายต่อรถยนต์ที่เอาประกันภัย_การสูญหายและไฟไหม้_", DbType:="Int")>  _
-	Public Property ความเสียหายต่อรถยนต์ที่เอาประกันภัย_การสูญหายและไฟไหม้_() As System.Nullable(Of Integer)
-		Get
-			Return Me._ความเสียหายต่อรถยนต์ที่เอาประกันภัย_การสูญหายและไฟไหม้_
-		End Get
-		Set
-			If (Me._ความเสียหายต่อรถยนต์ที่เอาประกันภัย_การสูญหายและไฟไหม้_.Equals(value) = false) Then
-				Me._ความเสียหายต่อรถยนต์ที่เอาประกันภัย_การสูญหายและไฟไหม้_ = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[ขยายความคุ้มครอง(การประกันอุบัติเหตุส่วนบุคคล คนละ)]", Storage:="_ขยายความคุ้มครอง_การประกันอุบัติเหตุส่วนบุคคล_คนละ_", DbType:="Float")>  _
-	Public Property ขยายความคุ้มครอง_การประกันอุบัติเหตุส่วนบุคคล_คนละ_() As System.Nullable(Of Double)
-		Get
-			Return Me._ขยายความคุ้มครอง_การประกันอุบัติเหตุส่วนบุคคล_คนละ_
-		End Get
-		Set
-			If (Me._ขยายความคุ้มครอง_การประกันอุบัติเหตุส่วนบุคคล_คนละ_.Equals(value) = false) Then
-				Me._ขยายความคุ้มครอง_การประกันอุบัติเหตุส่วนบุคคล_คนละ_ = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[ขยายความคุ้มครอง(การประกันค่ารักษาพยาบาล คนละ)]", Storage:="_ขยายความคุ้มครอง_การประกันค่ารักษาพยาบาล_คนละ_", DbType:="Float")>  _
-	Public Property ขยายความคุ้มครอง_การประกันค่ารักษาพยาบาล_คนละ_() As System.Nullable(Of Double)
-		Get
-			Return Me._ขยายความคุ้มครอง_การประกันค่ารักษาพยาบาล_คนละ_
-		End Get
-		Set
-			If (Me._ขยายความคุ้มครอง_การประกันค่ารักษาพยาบาล_คนละ_.Equals(value) = false) Then
-				Me._ขยายความคุ้มครอง_การประกันค่ารักษาพยาบาล_คนละ_ = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[ขยายความคุ้มครอง(การประกันตัวผู้ขับขี่คดีอาญา)]", Storage:="_ขยายความคุ้มครอง_การประกันตัวผู้ขับขี่คดีอาญา_", DbType:="Float")>  _
-	Public Property ขยายความคุ้มครอง_การประกันตัวผู้ขับขี่คดีอาญา_() As System.Nullable(Of Double)
-		Get
-			Return Me._ขยายความคุ้มครอง_การประกันตัวผู้ขับขี่คดีอาญา_
-		End Get
-		Set
-			If (Me._ขยายความคุ้มครอง_การประกันตัวผู้ขับขี่คดีอาญา_.Equals(value) = false) Then
-				Me._ขยายความคุ้มครอง_การประกันตัวผู้ขับขี่คดีอาญา_ = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ส่วนลดกลุ่ม", DbType:="Int")>  _
-	Public Property ส่วนลดกลุ่ม() As System.Nullable(Of Integer)
-		Get
-			Return Me._ส่วนลดกลุ่ม
-		End Get
-		Set
-			If (Me._ส่วนลดกลุ่ม.Equals(value) = false) Then
-				Me._ส่วนลดกลุ่ม = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ส่วนลดประวัติดี", DbType:="Int")>  _
-	Public Property ส่วนลดประวัติดี() As System.Nullable(Of Integer)
-		Get
-			Return Me._ส่วนลดประวัติดี
-		End Get
-		Set
-			If (Me._ส่วนลดประวัติดี.Equals(value) = false) Then
-				Me._ส่วนลดประวัติดี = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[ส่วนลดอื่น ๆ]", Storage:="_ส่วนลดอื่น_ๆ", DbType:="Int")>  _
-	Public Property ส่วนลดอื่น_ๆ() As System.Nullable(Of Integer)
-		Get
-			Return Me._ส่วนลดอื่น_ๆ
-		End Get
-		Set
-			If (Me._ส่วนลดอื่น_ๆ.Equals(value) = false) Then
-				Me._ส่วนลดอื่น_ๆ = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_จำนวนที่นั่ง", DbType:="Int")>  _
-	Public Property จำนวนที่นั่ง() As System.Nullable(Of Integer)
-		Get
-			Return Me._จำนวนที่นั่ง
-		End Get
-		Set
-			If (Me._จำนวนที่นั่ง.Equals(value) = false) Then
-				Me._จำนวนที่นั่ง = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_หมายเหตุ", DbType:="NText", UpdateCheck:=UpdateCheck.Never)>  _
-	Public Property หมายเหตุ() As String
-		Get
-			Return Me._หมายเหตุ
-		End Get
-		Set
-			If (String.Equals(Me._หมายเหตุ, value) = false) Then
-				Me._หมายเหตุ = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ออกใบเสร็จในนาม1", DbType:="VarChar(150)")>  _
-	Public Property ออกใบเสร็จในนาม1() As String
-		Get
-			Return Me._ออกใบเสร็จในนาม1
-		End Get
-		Set
-			If (String.Equals(Me._ออกใบเสร็จในนาม1, value) = false) Then
-				Me._ออกใบเสร็จในนาม1 = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ที่อยู่ในใบเสร็จ1", DbType:="VarChar(255)")>  _
-	Public Property ที่อยู่ในใบเสร็จ1() As String
-		Get
-			Return Me._ที่อยู่ในใบเสร็จ1
-		End Get
-		Set
-			If (String.Equals(Me._ที่อยู่ในใบเสร็จ1, value) = false) Then
-				Me._ที่อยู่ในใบเสร็จ1 = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ออกใบเสร็จในนาม2", DbType:="VarChar(150)")>  _
-	Public Property ออกใบเสร็จในนาม2() As String
-		Get
-			Return Me._ออกใบเสร็จในนาม2
-		End Get
-		Set
-			If (String.Equals(Me._ออกใบเสร็จในนาม2, value) = false) Then
-				Me._ออกใบเสร็จในนาม2 = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ที่อยู่ในใบเสร็จ2", DbType:="VarChar(255)")>  _
-	Public Property ที่อยู่ในใบเสร็จ2() As String
-		Get
-			Return Me._ที่อยู่ในใบเสร็จ2
-		End Get
-		Set
-			If (String.Equals(Me._ที่อยู่ในใบเสร็จ2, value) = false) Then
-				Me._ที่อยู่ในใบเสร็จ2 = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Campaign", DbType:="NVarChar(100)")>  _
-	Public Property Campaign() As String
-		Get
-			Return Me._Campaign
-		End Get
-		Set
-			If (String.Equals(Me._Campaign, value) = false) Then
-				Me._Campaign = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_อุปกรณ์เสริม", DbType:="VarChar(250)")>  _
-	Public Property อุปกรณ์เสริม() As String
-		Get
-			Return Me._อุปกรณ์เสริม
-		End Get
-		Set
-			If (String.Equals(Me._อุปกรณ์เสริม, value) = false) Then
-				Me._อุปกรณ์เสริม = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_รหัสรถ", DbType:="VarChar(16)")>  _
-	Public Property รหัสรถ() As String
-		Get
-			Return Me._รหัสรถ
-		End Get
-		Set
-			If (String.Equals(Me._รหัสรถ, value) = false) Then
-				Me._รหัสรถ = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDCard", DbType:="VarChar(50)")>  _
-	Public Property IDCard() As String
-		Get
-			Return Me._IDCard
-		End Get
-		Set
-			If (String.Equals(Me._IDCard, value) = false) Then
-				Me._IDCard = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_InsurerName", DbType:="NVarChar(255)")>  _
-	Public Property InsurerName() As String
-		Get
-			Return Me._InsurerName
-		End Get
-		Set
-			If (String.Equals(Me._InsurerName, value) = false) Then
-				Me._InsurerName = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_InsurerCode", DbType:="VarChar(50)")>  _
-	Public Property InsurerCode() As String
-		Get
-			Return Me._InsurerCode
-		End Get
-		Set
-			If (String.Equals(Me._InsurerCode, value) = false) Then
-				Me._InsurerCode = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ClosingDate", DbType:="DateTime")>  _
-	Public Property ClosingDate() As System.Nullable(Of Date)
-		Get
-			Return Me._ClosingDate
-		End Get
-		Set
-			If (Me._ClosingDate.Equals(value) = false) Then
-				Me._ClosingDate = value
-			End If
-		End Set
-	End Property
-End Class
-
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Rawdata_TATA_Closing_Daily")>  _
 Partial Public Class Rawdata_TATA_Closing_Daily
 	
@@ -2182,6 +1474,728 @@ Partial Public Class Rawdata_TATA_Closing_Daily
 		Set
 			If (Me._ClosingDate.Equals(value) = false) Then
 				Me._ClosingDate = value
+			End If
+		End Set
+	End Property
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Rawdata_M2_Closing_Daily")>  _
+Partial Public Class Rawdata_M2_Closing_Daily
+	
+	Private _เลขรับแจ้ง As String
+	
+	Private _บริษัทประกันภัย As String
+	
+	Private _GroupOfInsurer As String
+	
+	Private _วันที่แจ้งประกันภัย As System.Nullable(Of Date)
+	
+	Private _คำนำหน้า As String
+	
+	Private _ชื่อผู้เอาประกันภัย As String
+	
+	Private _รหัสลูกค้า As String
+	
+	Private _ที่อยู่ผู้เอาประกันภัย As String
+	
+	Private _ยี่ห้อ___รุ่น As String
+	
+	Private _ทะเบียนรถ As String
+	
+	Private _ปีจดทะเบียน As System.Nullable(Of Integer)
+	
+	Private _เลขตัวถัง As String
+	
+	Private _เลขเครื่องยนต์ As String
+	
+	Private _ขนาดเครื่องยนต์ As System.Nullable(Of Integer)
+	
+	Private _ผู้รับผลประโยชน์ As String
+	
+	Private _ShowroomID As System.Nullable(Of Integer)
+	
+	Private _ชื่อผู้จำหน่ายรถยนต์นิสสัน As String
+	
+	Private _เครื่องหมาย_พรบ As String
+	
+	Private _กรมธรรม์_พรบ As String
+	
+	Private _ประเภทอู่ซ่อมรถ As String
+	
+	Private _ประเภทความคุ้มครอง As String
+	
+	Private _วันที่เริ่มคุ้มครอง As System.Nullable(Of Date)
+	
+	Private _ทุนประกันภัย As System.Nullable(Of Integer)
+	
+	Private _เบี้ยประกันภัยภาคสมัครใจ As System.Nullable(Of Decimal)
+	
+	Private _เบี้ยประกันภัยรวม_พรบ As System.Nullable(Of Decimal)
+	
+	Private _ความเสียหายส่วนแรก As String
+	
+	Private _ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อคน_ As System.Nullable(Of Double)
+	
+	Private _ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อครั้ง_ As System.Nullable(Of Double)
+	
+	Private _ความรับผิดต่อบุคคลภายนอก__ทรัพย์สิน_ต่อครั้ง_ As System.Nullable(Of Double)
+	
+	Private _ความเสียหายต่อรถยนต์ที่เอาประกันภัย_ความเสียหายต่อตัวรถ_ As System.Nullable(Of Integer)
+	
+	Private _ความเสียหายต่อรถยนต์ที่เอาประกันภัย_การสูญหายและไฟไหม้_ As System.Nullable(Of Integer)
+	
+	Private _ขยายความคุ้มครอง_การประกันอุบัติเหตุส่วนบุคคล_คนละ_ As System.Nullable(Of Double)
+	
+	Private _ขยายความคุ้มครอง_การประกันค่ารักษาพยาบาล_คนละ_ As System.Nullable(Of Double)
+	
+	Private _ขยายความคุ้มครอง_การประกันตัวผู้ขับขี่คดีอาญา_ As System.Nullable(Of Double)
+	
+	Private _ส่วนลดกลุ่ม As System.Nullable(Of Integer)
+	
+	Private _ส่วนลดประวัติดี As System.Nullable(Of Integer)
+	
+	Private _ส่วนลดอื่น_ๆ As System.Nullable(Of Integer)
+	
+	Private _จำนวนที่นั่ง As System.Nullable(Of Integer)
+	
+	Private _หมายเหตุ As String
+	
+	Private _ออกใบเสร็จในนาม1 As String
+	
+	Private _ที่อยู่ในใบเสร็จ1 As String
+	
+	Private _ออกใบเสร็จในนาม2 As String
+	
+	Private _ที่อยู่ในใบเสร็จ2 As String
+	
+	Private _Campaign As String
+	
+	Private _อุปกรณ์เสริม As String
+	
+	Private _รหัสรถ As String
+	
+	Private _IDCard As String
+	
+	Private _InsurerName As String
+	
+	Private _InsurerCode As String
+	
+	Private _ClosingDate As System.Nullable(Of Date)
+	
+	Private _เลขที่สัญญาเช่าซื้อ As String
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_เลขรับแจ้ง", DbType:="VarChar(50)")>  _
+	Public Property เลขรับแจ้ง() As String
+		Get
+			Return Me._เลขรับแจ้ง
+		End Get
+		Set
+			If (String.Equals(Me._เลขรับแจ้ง, value) = false) Then
+				Me._เลขรับแจ้ง = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_บริษัทประกันภัย", DbType:="NVarChar(255)")>  _
+	Public Property บริษัทประกันภัย() As String
+		Get
+			Return Me._บริษัทประกันภัย
+		End Get
+		Set
+			If (String.Equals(Me._บริษัทประกันภัย, value) = false) Then
+				Me._บริษัทประกันภัย = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_GroupOfInsurer", DbType:="NVarChar(255)")>  _
+	Public Property GroupOfInsurer() As String
+		Get
+			Return Me._GroupOfInsurer
+		End Get
+		Set
+			If (String.Equals(Me._GroupOfInsurer, value) = false) Then
+				Me._GroupOfInsurer = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_วันที่แจ้งประกันภัย", DbType:="DateTime")>  _
+	Public Property วันที่แจ้งประกันภัย() As System.Nullable(Of Date)
+		Get
+			Return Me._วันที่แจ้งประกันภัย
+		End Get
+		Set
+			If (Me._วันที่แจ้งประกันภัย.Equals(value) = false) Then
+				Me._วันที่แจ้งประกันภัย = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_คำนำหน้า", DbType:="VarChar(32)")>  _
+	Public Property คำนำหน้า() As String
+		Get
+			Return Me._คำนำหน้า
+		End Get
+		Set
+			If (String.Equals(Me._คำนำหน้า, value) = false) Then
+				Me._คำนำหน้า = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ชื่อผู้เอาประกันภัย", DbType:="VarChar(294)")>  _
+	Public Property ชื่อผู้เอาประกันภัย() As String
+		Get
+			Return Me._ชื่อผู้เอาประกันภัย
+		End Get
+		Set
+			If (String.Equals(Me._ชื่อผู้เอาประกันภัย, value) = false) Then
+				Me._ชื่อผู้เอาประกันภัย = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_รหัสลูกค้า", DbType:="NVarChar(50)")>  _
+	Public Property รหัสลูกค้า() As String
+		Get
+			Return Me._รหัสลูกค้า
+		End Get
+		Set
+			If (String.Equals(Me._รหัสลูกค้า, value) = false) Then
+				Me._รหัสลูกค้า = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ที่อยู่ผู้เอาประกันภัย", DbType:="NVarChar(255)")>  _
+	Public Property ที่อยู่ผู้เอาประกันภัย() As String
+		Get
+			Return Me._ที่อยู่ผู้เอาประกันภัย
+		End Get
+		Set
+			If (String.Equals(Me._ที่อยู่ผู้เอาประกันภัย, value) = false) Then
+				Me._ที่อยู่ผู้เอาประกันภัย = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[ยี่ห้อ / รุ่น]", Storage:="_ยี่ห้อ___รุ่น", DbType:="NVarChar(566)")>  _
+	Public Property ยี่ห้อ___รุ่น() As String
+		Get
+			Return Me._ยี่ห้อ___รุ่น
+		End Get
+		Set
+			If (String.Equals(Me._ยี่ห้อ___รุ่น, value) = false) Then
+				Me._ยี่ห้อ___รุ่น = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ทะเบียนรถ", DbType:="NVarChar(255)")>  _
+	Public Property ทะเบียนรถ() As String
+		Get
+			Return Me._ทะเบียนรถ
+		End Get
+		Set
+			If (String.Equals(Me._ทะเบียนรถ, value) = false) Then
+				Me._ทะเบียนรถ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ปีจดทะเบียน", DbType:="Int")>  _
+	Public Property ปีจดทะเบียน() As System.Nullable(Of Integer)
+		Get
+			Return Me._ปีจดทะเบียน
+		End Get
+		Set
+			If (Me._ปีจดทะเบียน.Equals(value) = false) Then
+				Me._ปีจดทะเบียน = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_เลขตัวถัง", DbType:="VarChar(8000)")>  _
+	Public Property เลขตัวถัง() As String
+		Get
+			Return Me._เลขตัวถัง
+		End Get
+		Set
+			If (String.Equals(Me._เลขตัวถัง, value) = false) Then
+				Me._เลขตัวถัง = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_เลขเครื่องยนต์", DbType:="NVarChar(4000)")>  _
+	Public Property เลขเครื่องยนต์() As String
+		Get
+			Return Me._เลขเครื่องยนต์
+		End Get
+		Set
+			If (String.Equals(Me._เลขเครื่องยนต์, value) = false) Then
+				Me._เลขเครื่องยนต์ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ขนาดเครื่องยนต์", DbType:="Int")>  _
+	Public Property ขนาดเครื่องยนต์() As System.Nullable(Of Integer)
+		Get
+			Return Me._ขนาดเครื่องยนต์
+		End Get
+		Set
+			If (Me._ขนาดเครื่องยนต์.Equals(value) = false) Then
+				Me._ขนาดเครื่องยนต์ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ผู้รับผลประโยชน์", DbType:="NVarChar(294)")>  _
+	Public Property ผู้รับผลประโยชน์() As String
+		Get
+			Return Me._ผู้รับผลประโยชน์
+		End Get
+		Set
+			If (String.Equals(Me._ผู้รับผลประโยชน์, value) = false) Then
+				Me._ผู้รับผลประโยชน์ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ShowroomID", DbType:="Int")>  _
+	Public Property ShowroomID() As System.Nullable(Of Integer)
+		Get
+			Return Me._ShowroomID
+		End Get
+		Set
+			If (Me._ShowroomID.Equals(value) = false) Then
+				Me._ShowroomID = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ชื่อผู้จำหน่ายรถยนต์นิสสัน", DbType:="VarChar(150)")>  _
+	Public Property ชื่อผู้จำหน่ายรถยนต์นิสสัน() As String
+		Get
+			Return Me._ชื่อผู้จำหน่ายรถยนต์นิสสัน
+		End Get
+		Set
+			If (String.Equals(Me._ชื่อผู้จำหน่ายรถยนต์นิสสัน, value) = false) Then
+				Me._ชื่อผู้จำหน่ายรถยนต์นิสสัน = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[เครื่องหมาย พรบ]", Storage:="_เครื่องหมาย_พรบ", DbType:="VarChar(50)")>  _
+	Public Property เครื่องหมาย_พรบ() As String
+		Get
+			Return Me._เครื่องหมาย_พรบ
+		End Get
+		Set
+			If (String.Equals(Me._เครื่องหมาย_พรบ, value) = false) Then
+				Me._เครื่องหมาย_พรบ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[กรมธรรม์ พรบ]", Storage:="_กรมธรรม์_พรบ", DbType:="VarChar(50)")>  _
+	Public Property กรมธรรม์_พรบ() As String
+		Get
+			Return Me._กรมธรรม์_พรบ
+		End Get
+		Set
+			If (String.Equals(Me._กรมธรรม์_พรบ, value) = false) Then
+				Me._กรมธรรม์_พรบ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ประเภทอู่ซ่อมรถ", DbType:="VarChar(7)")>  _
+	Public Property ประเภทอู่ซ่อมรถ() As String
+		Get
+			Return Me._ประเภทอู่ซ่อมรถ
+		End Get
+		Set
+			If (String.Equals(Me._ประเภทอู่ซ่อมรถ, value) = false) Then
+				Me._ประเภทอู่ซ่อมรถ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ประเภทความคุ้มครอง", DbType:="VarChar(50)")>  _
+	Public Property ประเภทความคุ้มครอง() As String
+		Get
+			Return Me._ประเภทความคุ้มครอง
+		End Get
+		Set
+			If (String.Equals(Me._ประเภทความคุ้มครอง, value) = false) Then
+				Me._ประเภทความคุ้มครอง = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_วันที่เริ่มคุ้มครอง", DbType:="DateTime")>  _
+	Public Property วันที่เริ่มคุ้มครอง() As System.Nullable(Of Date)
+		Get
+			Return Me._วันที่เริ่มคุ้มครอง
+		End Get
+		Set
+			If (Me._วันที่เริ่มคุ้มครอง.Equals(value) = false) Then
+				Me._วันที่เริ่มคุ้มครอง = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ทุนประกันภัย", DbType:="Int")>  _
+	Public Property ทุนประกันภัย() As System.Nullable(Of Integer)
+		Get
+			Return Me._ทุนประกันภัย
+		End Get
+		Set
+			If (Me._ทุนประกันภัย.Equals(value) = false) Then
+				Me._ทุนประกันภัย = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_เบี้ยประกันภัยภาคสมัครใจ", DbType:="Decimal(18,2)")>  _
+	Public Property เบี้ยประกันภัยภาคสมัครใจ() As System.Nullable(Of Decimal)
+		Get
+			Return Me._เบี้ยประกันภัยภาคสมัครใจ
+		End Get
+		Set
+			If (Me._เบี้ยประกันภัยภาคสมัครใจ.Equals(value) = false) Then
+				Me._เบี้ยประกันภัยภาคสมัครใจ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[เบี้ยประกันภัยรวม พรบ]", Storage:="_เบี้ยประกันภัยรวม_พรบ", DbType:="Decimal(19,2)")>  _
+	Public Property เบี้ยประกันภัยรวม_พรบ() As System.Nullable(Of Decimal)
+		Get
+			Return Me._เบี้ยประกันภัยรวม_พรบ
+		End Get
+		Set
+			If (Me._เบี้ยประกันภัยรวม_พรบ.Equals(value) = false) Then
+				Me._เบี้ยประกันภัยรวม_พรบ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ความเสียหายส่วนแรก", DbType:="VarChar(5)")>  _
+	Public Property ความเสียหายส่วนแรก() As String
+		Get
+			Return Me._ความเสียหายส่วนแรก
+		End Get
+		Set
+			If (String.Equals(Me._ความเสียหายส่วนแรก, value) = false) Then
+				Me._ความเสียหายส่วนแรก = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[ความรับผิดต่อบุคคลภายนอก (บาดเจ็บหรือเสียชีวิต ต่อคน)]", Storage:="_ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อคน_", DbType:="Float")>  _
+	Public Property ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อคน_() As System.Nullable(Of Double)
+		Get
+			Return Me._ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อคน_
+		End Get
+		Set
+			If (Me._ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อคน_.Equals(value) = false) Then
+				Me._ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อคน_ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[ความรับผิดต่อบุคคลภายนอก (บาดเจ็บหรือเสียชีวิต ต่อครั้ง)]", Storage:="_ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อครั้ง_", DbType:="Float")>  _
+	Public Property ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อครั้ง_() As System.Nullable(Of Double)
+		Get
+			Return Me._ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อครั้ง_
+		End Get
+		Set
+			If (Me._ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อครั้ง_.Equals(value) = false) Then
+				Me._ความรับผิดต่อบุคคลภายนอก__บาดเจ็บหรือเสียชีวิต_ต่อครั้ง_ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[ความรับผิดต่อบุคคลภายนอก (ทรัพย์สิน ต่อครั้ง)]", Storage:="_ความรับผิดต่อบุคคลภายนอก__ทรัพย์สิน_ต่อครั้ง_", DbType:="Float")>  _
+	Public Property ความรับผิดต่อบุคคลภายนอก__ทรัพย์สิน_ต่อครั้ง_() As System.Nullable(Of Double)
+		Get
+			Return Me._ความรับผิดต่อบุคคลภายนอก__ทรัพย์สิน_ต่อครั้ง_
+		End Get
+		Set
+			If (Me._ความรับผิดต่อบุคคลภายนอก__ทรัพย์สิน_ต่อครั้ง_.Equals(value) = false) Then
+				Me._ความรับผิดต่อบุคคลภายนอก__ทรัพย์สิน_ต่อครั้ง_ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[ความเสียหายต่อรถยนต์ที่เอาประกันภัย(ความเสียหายต่อตัวรถ)]", Storage:="_ความเสียหายต่อรถยนต์ที่เอาประกันภัย_ความเสียหายต่อตัวรถ_", DbType:="Int")>  _
+	Public Property ความเสียหายต่อรถยนต์ที่เอาประกันภัย_ความเสียหายต่อตัวรถ_() As System.Nullable(Of Integer)
+		Get
+			Return Me._ความเสียหายต่อรถยนต์ที่เอาประกันภัย_ความเสียหายต่อตัวรถ_
+		End Get
+		Set
+			If (Me._ความเสียหายต่อรถยนต์ที่เอาประกันภัย_ความเสียหายต่อตัวรถ_.Equals(value) = false) Then
+				Me._ความเสียหายต่อรถยนต์ที่เอาประกันภัย_ความเสียหายต่อตัวรถ_ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[ความเสียหายต่อรถยนต์ที่เอาประกันภัย(การสูญหายและไฟไหม้)]", Storage:="_ความเสียหายต่อรถยนต์ที่เอาประกันภัย_การสูญหายและไฟไหม้_", DbType:="Int")>  _
+	Public Property ความเสียหายต่อรถยนต์ที่เอาประกันภัย_การสูญหายและไฟไหม้_() As System.Nullable(Of Integer)
+		Get
+			Return Me._ความเสียหายต่อรถยนต์ที่เอาประกันภัย_การสูญหายและไฟไหม้_
+		End Get
+		Set
+			If (Me._ความเสียหายต่อรถยนต์ที่เอาประกันภัย_การสูญหายและไฟไหม้_.Equals(value) = false) Then
+				Me._ความเสียหายต่อรถยนต์ที่เอาประกันภัย_การสูญหายและไฟไหม้_ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[ขยายความคุ้มครอง(การประกันอุบัติเหตุส่วนบุคคล คนละ)]", Storage:="_ขยายความคุ้มครอง_การประกันอุบัติเหตุส่วนบุคคล_คนละ_", DbType:="Float")>  _
+	Public Property ขยายความคุ้มครอง_การประกันอุบัติเหตุส่วนบุคคล_คนละ_() As System.Nullable(Of Double)
+		Get
+			Return Me._ขยายความคุ้มครอง_การประกันอุบัติเหตุส่วนบุคคล_คนละ_
+		End Get
+		Set
+			If (Me._ขยายความคุ้มครอง_การประกันอุบัติเหตุส่วนบุคคล_คนละ_.Equals(value) = false) Then
+				Me._ขยายความคุ้มครอง_การประกันอุบัติเหตุส่วนบุคคล_คนละ_ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[ขยายความคุ้มครอง(การประกันค่ารักษาพยาบาล คนละ)]", Storage:="_ขยายความคุ้มครอง_การประกันค่ารักษาพยาบาล_คนละ_", DbType:="Float")>  _
+	Public Property ขยายความคุ้มครอง_การประกันค่ารักษาพยาบาล_คนละ_() As System.Nullable(Of Double)
+		Get
+			Return Me._ขยายความคุ้มครอง_การประกันค่ารักษาพยาบาล_คนละ_
+		End Get
+		Set
+			If (Me._ขยายความคุ้มครอง_การประกันค่ารักษาพยาบาล_คนละ_.Equals(value) = false) Then
+				Me._ขยายความคุ้มครอง_การประกันค่ารักษาพยาบาล_คนละ_ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[ขยายความคุ้มครอง(การประกันตัวผู้ขับขี่คดีอาญา)]", Storage:="_ขยายความคุ้มครอง_การประกันตัวผู้ขับขี่คดีอาญา_", DbType:="Float")>  _
+	Public Property ขยายความคุ้มครอง_การประกันตัวผู้ขับขี่คดีอาญา_() As System.Nullable(Of Double)
+		Get
+			Return Me._ขยายความคุ้มครอง_การประกันตัวผู้ขับขี่คดีอาญา_
+		End Get
+		Set
+			If (Me._ขยายความคุ้มครอง_การประกันตัวผู้ขับขี่คดีอาญา_.Equals(value) = false) Then
+				Me._ขยายความคุ้มครอง_การประกันตัวผู้ขับขี่คดีอาญา_ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ส่วนลดกลุ่ม", DbType:="Int")>  _
+	Public Property ส่วนลดกลุ่ม() As System.Nullable(Of Integer)
+		Get
+			Return Me._ส่วนลดกลุ่ม
+		End Get
+		Set
+			If (Me._ส่วนลดกลุ่ม.Equals(value) = false) Then
+				Me._ส่วนลดกลุ่ม = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ส่วนลดประวัติดี", DbType:="Int")>  _
+	Public Property ส่วนลดประวัติดี() As System.Nullable(Of Integer)
+		Get
+			Return Me._ส่วนลดประวัติดี
+		End Get
+		Set
+			If (Me._ส่วนลดประวัติดี.Equals(value) = false) Then
+				Me._ส่วนลดประวัติดี = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[ส่วนลดอื่น ๆ]", Storage:="_ส่วนลดอื่น_ๆ", DbType:="Int")>  _
+	Public Property ส่วนลดอื่น_ๆ() As System.Nullable(Of Integer)
+		Get
+			Return Me._ส่วนลดอื่น_ๆ
+		End Get
+		Set
+			If (Me._ส่วนลดอื่น_ๆ.Equals(value) = false) Then
+				Me._ส่วนลดอื่น_ๆ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_จำนวนที่นั่ง", DbType:="Int")>  _
+	Public Property จำนวนที่นั่ง() As System.Nullable(Of Integer)
+		Get
+			Return Me._จำนวนที่นั่ง
+		End Get
+		Set
+			If (Me._จำนวนที่นั่ง.Equals(value) = false) Then
+				Me._จำนวนที่นั่ง = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_หมายเหตุ", DbType:="NText", UpdateCheck:=UpdateCheck.Never)>  _
+	Public Property หมายเหตุ() As String
+		Get
+			Return Me._หมายเหตุ
+		End Get
+		Set
+			If (String.Equals(Me._หมายเหตุ, value) = false) Then
+				Me._หมายเหตุ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ออกใบเสร็จในนาม1", DbType:="VarChar(150)")>  _
+	Public Property ออกใบเสร็จในนาม1() As String
+		Get
+			Return Me._ออกใบเสร็จในนาม1
+		End Get
+		Set
+			If (String.Equals(Me._ออกใบเสร็จในนาม1, value) = false) Then
+				Me._ออกใบเสร็จในนาม1 = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ที่อยู่ในใบเสร็จ1", DbType:="VarChar(255)")>  _
+	Public Property ที่อยู่ในใบเสร็จ1() As String
+		Get
+			Return Me._ที่อยู่ในใบเสร็จ1
+		End Get
+		Set
+			If (String.Equals(Me._ที่อยู่ในใบเสร็จ1, value) = false) Then
+				Me._ที่อยู่ในใบเสร็จ1 = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ออกใบเสร็จในนาม2", DbType:="VarChar(150)")>  _
+	Public Property ออกใบเสร็จในนาม2() As String
+		Get
+			Return Me._ออกใบเสร็จในนาม2
+		End Get
+		Set
+			If (String.Equals(Me._ออกใบเสร็จในนาม2, value) = false) Then
+				Me._ออกใบเสร็จในนาม2 = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ที่อยู่ในใบเสร็จ2", DbType:="VarChar(255)")>  _
+	Public Property ที่อยู่ในใบเสร็จ2() As String
+		Get
+			Return Me._ที่อยู่ในใบเสร็จ2
+		End Get
+		Set
+			If (String.Equals(Me._ที่อยู่ในใบเสร็จ2, value) = false) Then
+				Me._ที่อยู่ในใบเสร็จ2 = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Campaign", DbType:="NVarChar(100)")>  _
+	Public Property Campaign() As String
+		Get
+			Return Me._Campaign
+		End Get
+		Set
+			If (String.Equals(Me._Campaign, value) = false) Then
+				Me._Campaign = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_อุปกรณ์เสริม", DbType:="VarChar(250)")>  _
+	Public Property อุปกรณ์เสริม() As String
+		Get
+			Return Me._อุปกรณ์เสริม
+		End Get
+		Set
+			If (String.Equals(Me._อุปกรณ์เสริม, value) = false) Then
+				Me._อุปกรณ์เสริม = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_รหัสรถ", DbType:="VarChar(16)")>  _
+	Public Property รหัสรถ() As String
+		Get
+			Return Me._รหัสรถ
+		End Get
+		Set
+			If (String.Equals(Me._รหัสรถ, value) = false) Then
+				Me._รหัสรถ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDCard", DbType:="VarChar(50)")>  _
+	Public Property IDCard() As String
+		Get
+			Return Me._IDCard
+		End Get
+		Set
+			If (String.Equals(Me._IDCard, value) = false) Then
+				Me._IDCard = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_InsurerName", DbType:="NVarChar(255)")>  _
+	Public Property InsurerName() As String
+		Get
+			Return Me._InsurerName
+		End Get
+		Set
+			If (String.Equals(Me._InsurerName, value) = false) Then
+				Me._InsurerName = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_InsurerCode", DbType:="VarChar(50)")>  _
+	Public Property InsurerCode() As String
+		Get
+			Return Me._InsurerCode
+		End Get
+		Set
+			If (String.Equals(Me._InsurerCode, value) = false) Then
+				Me._InsurerCode = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ClosingDate", DbType:="DateTime")>  _
+	Public Property ClosingDate() As System.Nullable(Of Date)
+		Get
+			Return Me._ClosingDate
+		End Get
+		Set
+			If (Me._ClosingDate.Equals(value) = false) Then
+				Me._ClosingDate = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_เลขที่สัญญาเช่าซื้อ", DbType:="VarChar(50)")>  _
+	Public Property เลขที่สัญญาเช่าซื้อ() As String
+		Get
+			Return Me._เลขที่สัญญาเช่าซื้อ
+		End Get
+		Set
+			If (String.Equals(Me._เลขที่สัญญาเช่าซื้อ, value) = false) Then
+				Me._เลขที่สัญญาเช่าซื้อ = value
 			End If
 		End Set
 	End Property

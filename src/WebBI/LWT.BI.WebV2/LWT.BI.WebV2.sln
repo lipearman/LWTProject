@@ -1,27 +1,26 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2036
+VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "LWT.BI.WebV2", ".", "{4D1C4812-2B47-4322-90C1-91C728955A8F}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_64565"
-		Debug.AspNetCompiler.PhysicalPath = "..\LWT.BI.WebV2\"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\Source\Repos\LWTProject\src\WebBI\LWT.BI.WebV2\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64565\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_64565"
-		Release.AspNetCompiler.PhysicalPath = "..\LWT.BI.WebV2\"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\Source\Repos\LWTProject\src\WebBI\LWT.BI.WebV2\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64565\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "64565"
-		SlnRelativePath = "..\LWT.BI.WebV2\"
 	EndProjectSection
 EndProject
 Global
@@ -36,6 +35,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F14D80D0-E9E3-4CA8-A13D-99B911A94C36}
+		SolutionGuid = {3C5A71F9-6B9E-4B2B-945C-85BF40DE9B50}
 	EndGlobalSection
 EndGlobal
