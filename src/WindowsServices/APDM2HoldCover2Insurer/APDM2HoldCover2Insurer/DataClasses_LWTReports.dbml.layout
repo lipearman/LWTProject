@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses_LWTReports">
+  <DataContextMoniker Name="/DataClasses_LWTReportsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="cb7157d4-296c-453d-9fdb-3f7dc0d048b0" absoluteBounds="2.375, 0.875, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/DataClasses_LWTReportsDataContext/Rawdata_M2_HoldCover_InsurerReport_Daily" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0192f64b-4f0e-4c39-ada4-3a9452474ea5" absoluteBounds="2.3899999999999997, 1.335, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

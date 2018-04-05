@@ -30,9 +30,24 @@ Partial Class Modules_ucDevxRawData
         End If
     End Sub
     Private Sub binddata()
+
+        Dim sb As New StringBuilder()
+        sb.Append("SELECT ROW_NUMBER() OVER(ORDER BY DateClosing) AS [RowNo]")
+        sb.Append(",CusTitle + CusName + ' ' + CusSurname as InsuredName")
+        sb.Append(",case when [AppStatus] = '1' then 'TN' ")
+        sb.Append(" when [AppStatus] = '2' then 'DC' ")
+        sb.Append(" when [AppStatus] = '3' then 'CL' ")
+        sb.Append(" when [AppStatus] = '4' then 'PN' ")
+        sb.Append(" when [AppStatus] = '7' then 'C'  ")
+        sb.Append(" end as [Status] ")
+        sb.Append(" ,  *  ")
+        sb.Append(" FROM vw_Bi111  ")
+        sb.AppendFormat(" where  convert(varchar," & FilterDateType.Value & ",112) between '{0}' and '{1}' ", DirectCast(DateFrom.Value, Date).ToString("yyyyMMdd"), DirectCast(DateTo.Value, Date).ToString("yyyyMMdd"))
+
+
         SqlDataSource_gridData.DataSourceMode = SqlDataSourceMode.DataReader
         '============ todo2=======================
-        SqlDataSource_gridData.SelectCommand = String.Format("SELECT ROW_NUMBER() OVER(ORDER BY DateClosing) AS [RowNo],CusTitle + CusName + ' ' + CusSurname as InsuredName,case when [AppStatus] = '1' then 'TN' when [AppStatus] = '2' then 'DC' when [AppStatus] = '3' then 'CL' when [AppStatus] = '4' then 'PN'when [AppStatus] = '7' then 'C' end as [Status],  * FROM vw_Bi111 where  convert(varchar," & FilterDateType.Value & ",112) between '{0}' and '{1}' ", DirectCast(DateFrom.Value, Date).ToString("yyyyMMdd"), DirectCast(DateTo.Value, Date).ToString("yyyyMMdd"))
+        SqlDataSource_gridData.SelectCommand = sb.ToString()
         SqlDataSource_gridData.DataBind()
 
         gridData.DataSourceID = "SqlDataSource_gridData"

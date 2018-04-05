@@ -125,6 +125,46 @@
             </ContentCollection>
         </dx:ASPxPopupControl>
 
+           <dx:ASPxPopupControl ID="clientView3" runat="server" ClientInstanceName="clientView3"
+            Modal="True" Maximized="true"
+            PopupHorizontalAlign="WindowCenter"
+            PopupVerticalAlign="WindowCenter"
+            HeaderText="XtraReports"
+            AllowDragging="true"
+            AllowResize="True"
+            DragElement="Window"
+            EnableAnimation="true"
+            CloseAction="CloseButton"
+            EnableCallbackAnimation="true"
+            EnableViewState="true"
+            ShowPageScrollbarWhenModal="true"
+            ScrollBars="Auto"
+            ShowMaximizeButton="true"
+            HeaderImage-IconID="businessobjects_botask_32x32"
+            HeaderStyle-BackColor="WindowFrame"
+            Width="800"
+            Height="680"
+            FooterText=""
+            ShowFooter="false">
+
+            <HeaderStyle BackColor="#4796CE" ForeColor="White" />
+
+            <ContentStyle>
+        <Paddings Padding="0px" />
+    </ContentStyle>
+
+            <ClientSideEvents Shown="function(s,e){ 
+                //window.setTimeout(function() {LoadingPanel.Hide();},2000);
+
+                LoadingPanel.Show();
+                }" />
+
+            <ContentCollection>
+                <dx:PopupControlContentControl ID="PopupControlContentControl2" runat="server">
+                </dx:PopupControlContentControl>
+            </ContentCollection>
+        </dx:ASPxPopupControl>
+
 
 
         <nav class="navbar navbar-fixed-top" id="navbar">

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses_CPS">
+  <DataContextMoniker Name="/DataClasses_CPSDataContext" />
+  <nestedChildShapes>
+    <classShape Id="345234f9-acf2-4238-8219-8ad558574a3b" absoluteBounds="2.875, 1.25, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/DataClasses_CPSDataContext/tblNoticeMailContact" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d4a6546d-aa24-4ef7-b77f-fb182c0a5557" absoluteBounds="2.8899999999999997, 1.71, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

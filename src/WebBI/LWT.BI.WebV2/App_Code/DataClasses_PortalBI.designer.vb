@@ -169,6 +169,12 @@ Partial Public Class DataClasses_PortalBIDataContext
     End Sub
   Partial Private Sub DeletetblDashBoard_Data(instance As tblDashBoard_Data)
     End Sub
+  Partial Private Sub InserttblXtraReport(instance As tblXtraReport)
+    End Sub
+  Partial Private Sub UpdatetblXtraReport(instance As tblXtraReport)
+    End Sub
+  Partial Private Sub DeletetblXtraReport(instance As tblXtraReport)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -403,6 +409,12 @@ Partial Public Class DataClasses_PortalBIDataContext
 	Public ReadOnly Property tblDashBoard_Datas() As System.Data.Linq.Table(Of tblDashBoard_Data)
 		Get
 			Return Me.GetTable(Of tblDashBoard_Data)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblXtraReports() As System.Data.Linq.Table(Of tblXtraReport)
+		Get
+			Return Me.GetTable(Of tblXtraReport)
 		End Get
 	End Property
 	
@@ -6885,7 +6897,7 @@ Partial Public Class V_Dashboard_Data
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Dashboard", DbType:="VarBinary(MAX)", CanBeNull:=true, UpdateCheck:=UpdateCheck.Never)>  _
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Dashboard", DbType:="VarBinary(MAX)", UpdateCheck:=UpdateCheck.Never)>  _
 	Public Property Dashboard() As System.Data.Linq.Binary
 		Get
 			Return Me._Dashboard
@@ -7056,7 +7068,7 @@ Partial Public Class tblDashBoard_Data
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Dashboard", DbType:="VarBinary(MAX)", CanBeNull:=true, UpdateCheck:=UpdateCheck.Never)>  _
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Dashboard", DbType:="VarBinary(MAX)", UpdateCheck:=UpdateCheck.Never)>  _
 	Public Property Dashboard() As System.Data.Linq.Binary
 		Get
 			Return Me._Dashboard
@@ -7121,6 +7133,222 @@ Partial Public Class tblDashBoard_Data
 	End Property
 	
 	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_GUID", DbType:="VarChar(255)")>  _
+	Public Property GUID() As String
+		Get
+			Return Me._GUID
+		End Get
+		Set
+			If (String.Equals(Me._GUID, value) = false) Then
+				Me.OnGUIDChanging(value)
+				Me.SendPropertyChanging
+				Me._GUID = value
+				Me.SendPropertyChanged("GUID")
+				Me.OnGUIDChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblXtraReports")>  _
+Partial Public Class tblXtraReport
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _ReportID As Integer
+	
+	Private _DisplayName As String
+	
+	Private _LayoutData As System.Data.Linq.Binary
+	
+	Private _Owner As String
+	
+	Private _CreateDate As System.Nullable(Of Date)
+	
+	Private _ModifyBy As String
+	
+	Private _ModifyDate As System.Nullable(Of Date)
+	
+	Private _GUID As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnReportIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnReportIDChanged()
+    End Sub
+    Partial Private Sub OnDisplayNameChanging(value As String)
+    End Sub
+    Partial Private Sub OnDisplayNameChanged()
+    End Sub
+    Partial Private Sub OnLayoutDataChanging(value As System.Data.Linq.Binary)
+    End Sub
+    Partial Private Sub OnLayoutDataChanged()
+    End Sub
+    Partial Private Sub OnOwnerChanging(value As String)
+    End Sub
+    Partial Private Sub OnOwnerChanged()
+    End Sub
+    Partial Private Sub OnCreateDateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnCreateDateChanged()
+    End Sub
+    Partial Private Sub OnModifyByChanging(value As String)
+    End Sub
+    Partial Private Sub OnModifyByChanged()
+    End Sub
+    Partial Private Sub OnModifyDateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnModifyDateChanged()
+    End Sub
+    Partial Private Sub OnGUIDChanging(value As String)
+    End Sub
+    Partial Private Sub OnGUIDChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ReportID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property ReportID() As Integer
+		Get
+			Return Me._ReportID
+		End Get
+		Set
+			If ((Me._ReportID = value)  _
+						= false) Then
+				Me.OnReportIDChanging(value)
+				Me.SendPropertyChanging
+				Me._ReportID = value
+				Me.SendPropertyChanged("ReportID")
+				Me.OnReportIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DisplayName", DbType:="NVarChar(255)")>  _
+	Public Property DisplayName() As String
+		Get
+			Return Me._DisplayName
+		End Get
+		Set
+			If (String.Equals(Me._DisplayName, value) = false) Then
+				Me.OnDisplayNameChanging(value)
+				Me.SendPropertyChanging
+				Me._DisplayName = value
+				Me.SendPropertyChanged("DisplayName")
+				Me.OnDisplayNameChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_LayoutData", DbType:="VarBinary(MAX)", UpdateCheck:=UpdateCheck.Never)>  _
+	Public Property LayoutData() As System.Data.Linq.Binary
+		Get
+			Return Me._LayoutData
+		End Get
+		Set
+			If (Object.Equals(Me._LayoutData, value) = false) Then
+				Me.OnLayoutDataChanging(value)
+				Me.SendPropertyChanging
+				Me._LayoutData = value
+				Me.SendPropertyChanged("LayoutData")
+				Me.OnLayoutDataChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Owner", DbType:="NVarChar(50)")>  _
+	Public Property Owner() As String
+		Get
+			Return Me._Owner
+		End Get
+		Set
+			If (String.Equals(Me._Owner, value) = false) Then
+				Me.OnOwnerChanging(value)
+				Me.SendPropertyChanging
+				Me._Owner = value
+				Me.SendPropertyChanged("Owner")
+				Me.OnOwnerChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CreateDate", DbType:="DateTime")>  _
+	Public Property CreateDate() As System.Nullable(Of Date)
+		Get
+			Return Me._CreateDate
+		End Get
+		Set
+			If (Me._CreateDate.Equals(value) = false) Then
+				Me.OnCreateDateChanging(value)
+				Me.SendPropertyChanging
+				Me._CreateDate = value
+				Me.SendPropertyChanged("CreateDate")
+				Me.OnCreateDateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ModifyBy", DbType:="NVarChar(50)")>  _
+	Public Property ModifyBy() As String
+		Get
+			Return Me._ModifyBy
+		End Get
+		Set
+			If (String.Equals(Me._ModifyBy, value) = false) Then
+				Me.OnModifyByChanging(value)
+				Me.SendPropertyChanging
+				Me._ModifyBy = value
+				Me.SendPropertyChanged("ModifyBy")
+				Me.OnModifyByChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ModifyDate", DbType:="DateTime")>  _
+	Public Property ModifyDate() As System.Nullable(Of Date)
+		Get
+			Return Me._ModifyDate
+		End Get
+		Set
+			If (Me._ModifyDate.Equals(value) = false) Then
+				Me.OnModifyDateChanging(value)
+				Me.SendPropertyChanging
+				Me._ModifyDate = value
+				Me.SendPropertyChanged("ModifyDate")
+				Me.OnModifyDateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_GUID", DbType:="NVarChar(255)")>  _
 	Public Property GUID() As String
 		Get
 			Return Me._GUID

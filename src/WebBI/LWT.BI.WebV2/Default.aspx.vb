@@ -17,8 +17,8 @@ Partial Class _Default
         sitename = portalSettings.PortalName
 
 
-        'FormsAuthentication.SetAuthCookie("apichart", True)
-        'Response.Redirect(String.Format("~/DesktopDefault.aspx?pageid={0}", webconfig._DefaultPageID), False)
+        FormsAuthentication.SetAuthCookie("dusit", True)
+        Response.Redirect(String.Format("~/DesktopDefault.aspx?pageid={0}", webconfig._DefaultPageID), False)
 
         'Using objConnection As New AdomdConnection("data source=http://172.16.40.234/OLAP/msmdpump.dll;initial catalog=LWTProduction;User Id=lockthbnk-db07\biuser;Password=Password123")
         '    Using objCommand As New AdomdCommand()

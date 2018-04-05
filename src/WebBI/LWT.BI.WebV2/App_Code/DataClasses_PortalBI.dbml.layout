@@ -261,5 +261,11 @@
         <elementListCompartment Id="ececb9a7-64c8-4099-9622-373355ff924f" absoluteBounds="18.265, 3.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="df0c094d-a39c-4e90-ad9d-881d2e6577e7" absoluteBounds="1.125, 12, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DataClasses_PortalBIDataContext/tblXtraReport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="73603619-80ce-4a1f-8aad-d081eb8b1aca" absoluteBounds="1.1400000000000001, 12.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

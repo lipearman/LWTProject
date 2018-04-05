@@ -427,6 +427,18 @@
       <Column Name="GUID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.tblXtraReports" Member="tblXtraReports">
+    <Type Name="tblXtraReport">
+      <Column Name="ReportID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="LayoutData" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Owner" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.sp_ssis_eglobal" Method="sp_ssis_eglobal">
     <ElementType Name="sp_ssis_eglobalResult">
       <Column Name="RM" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
