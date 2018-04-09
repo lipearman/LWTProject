@@ -36,8 +36,10 @@ Partial Class Applications_XtraReports_Master_Preview
 
                 'End Using
 
-
                 reportDesigner.OpenReport(reportGUID)
+                reportDesigner.SettingsWizard.UseMasterDetailWizard = False
+
+
 
                 'Dim storage As New CustomReportStorageWebExtension()
                 'storage.CanSetData(reportID)

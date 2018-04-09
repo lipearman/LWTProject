@@ -3,11 +3,11 @@ Imports DevExpress.DataAccess.ConnectionParameters
 Imports DevExpress.DataAccess.Native
 Imports DevExpress.DataAccess.Web
 Imports System.Data.SqlClient
-
+Imports DevExpress.DataAccess.Wizard.Services
 
 Public Class MyXtraReportsDataSourceWizardConnectionStringsProvider
     Implements IDataSourceWizardConnectionStringsProvider
-     
+
 
     Public Function GetConnectionDescriptions() As Dictionary(Of String, String) Implements IDataSourceWizardConnectionStringsProvider.GetConnectionDescriptions
         Dim connections As New Dictionary(Of String, String)()
@@ -69,3 +69,5 @@ Public Class MyXtraReportsDataSourceWizardConnectionStringsProvider
     End Function
 
 End Class
+
+
