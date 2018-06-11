@@ -124,7 +124,7 @@ Public Class APDKawa2UW
         Dim logfile = logpath & "\" & JobDate & ".txt"
 
         If JobDate >= JobStart And JobDate <= JobEnd And IO.File.Exists(logfile) = False Then
-            Using dc As New DataClasses_MCYDataContext(System.Configuration.ConfigurationManager.ConnectionStrings("APDKawa2UWVB.My.MySettings.LWTReportsConnectionString").ConnectionString)
+            Using dc As New DataClasses_MCYDataContext(Global.APDKawa2UWVB.My.MySettings.Default.LWTReportsConnectionString)
 
                 If Not Today.ToString("dddd").ToLower().Equals("saturday") And Not Today.ToString("dddd").ToLower().Equals("sunday") Then
 
@@ -138,9 +138,9 @@ Public Class APDKawa2UW
                     End Using
 
                     If _data.Count > 0 Then
-                        Dim _UWCodes = (From c In _data _
-                                  Group By UWCode = c.UWCode Into MyGroup = Group _
-                                  Select UWCode).ToList()
+                        Dim _UWCodes = (From c In _data
+                                        Group By UWCode = c.UWCode Into MyGroup = Group
+                                        Select UWCode).ToList()
                         For Each _UWCode In _UWCodes
                             WH_genxls(_UWCode, _data)
                         Next
@@ -153,6 +153,16 @@ Public Class APDKawa2UW
                     If _data_asia.Count > 0 Then
                         WH_genxls_ASIA("ASIA", _data_asia)
 
+                    End If
+
+
+                    '============================ VIRI New===========================
+                    Dim MyConn = Global.APDKawa2UWVB.My.MySettings.Default.LWTReportsConnectionString
+                    Dim ds As Data.DataSet = SqlHelper.ExecuteDataset(MyConn, "MCY_2010.dbo.sp_V_KAWA2_UW_VIRI", "0")
+                    Dim _insurer As Data.DataSet = SqlHelper.ExecuteDataset(MyConn, CommandType.Text, "select * from V_KAWA2_UW_EMAIL where UWCode='VIRI' and MailTo is not null")
+
+                    If ds.Tables(0).Rows.Count > 0 And _insurer.Tables(0).Rows.Count Then
+                        WH_genxls_VIRI("U00121", ds.Tables(0), _insurer.Tables(0).Rows(0))
                     End If
 
                 End If
@@ -1318,5 +1328,243 @@ Public Class APDKawa2UW
     End Sub
 
 
+    Private Sub WH_genxls_VIRI(ByVal _UWCode As String, ByVal _Data As Data.DataTable, ByVal _Insurer As Data.DataRow)
+        Dim _NoticeCode As String = "B0030"
+
+        Dim _InsurerName = _Data.Rows(0)("บริษัทประกันภัย").ToString()
+
+        Dim hssfworkbook As New HSSFWorkbook()
+
+        '=====================cell style ===================
+        Dim Header_Font = hssfworkbook.CreateFont()
+        With Header_Font
+            .FontName = "Calibri"
+            .FontHeightInPoints = 10
+            .Boldweight = FontBoldWeight.Bold
+            .Color = NPOI.HSSF.Util.HSSFColor.White.Index
+        End With
+        Dim Header_Style As ICellStyle = hssfworkbook.CreateCellStyle()
+        With Header_Style
+            .SetFont(Header_Font)
+            .Alignment = HorizontalAlignment.Center
+            .FillPattern = FillPattern.SparseDots
+            .FillForegroundColor = NPOI.HSSF.Util.HSSFColor.LightBlue.Index
+            .FillBackgroundColor = NPOI.HSSF.Util.HSSFColor.LightBlue.Index
+            .BorderBottom = BorderStyle.Thin
+            .BorderLeft = BorderStyle.Thin
+            .BorderRight = BorderStyle.Thin
+            .BorderTop = BorderStyle.Thin
+            .BottomBorderColor = HSSFColor.Black.Index
+            .LeftBorderColor = HSSFColor.Black.Index
+            .RightBorderColor = HSSFColor.Black.Index
+            .TopBorderColor = HSSFColor.Black.Index
+        End With
+
+        Dim Row_Font = hssfworkbook.CreateFont()
+        With Row_Font
+            .FontName = "Calibri"
+            .FontHeightInPoints = 10
+        End With
+
+        Dim Row_Style As ICellStyle = hssfworkbook.CreateCellStyle()
+        With Row_Style
+            .SetFont(Row_Font)
+            .BorderBottom = BorderStyle.Thin
+            .BorderLeft = BorderStyle.Thin
+            .BorderRight = BorderStyle.Thin
+            .BorderTop = BorderStyle.Thin
+            .BottomBorderColor = HSSFColor.Black.Index
+            .LeftBorderColor = HSSFColor.Black.Index
+            .RightBorderColor = HSSFColor.Black.Index
+            .TopBorderColor = HSSFColor.Black.Index
+        End With
+        '====================== data new sheet ====================
+        Dim sheet1 As ISheet = hssfworkbook.CreateSheet(_InsurerName)
+        '================== create column ===================
+        Dim frow As IRow = sheet1.CreateRow(0)
+        For i = 0 To _Data.Columns.Count - 1
+            Dim cell = frow.CreateCell(i)
+            cell.SetCellValue(_Data.Columns(i).ColumnName)
+            cell.CellStyle = Header_Style
+        Next
+        '================== create cell ===================
+        Dim j As Integer = 1
+        Dim _SheetData = _Data
+        For Each _item As Data.DataRow In _SheetData.Rows
+            Dim row As IRow = sheet1.CreateRow(j)
+            '========================== Create Row and Set Value=============================
+            For i = 0 To _SheetData.Columns.Count - 1
+                row.CreateCell(i).CellStyle = Row_Style
+                row.GetCell(i).SetCellValue(_item(i).ToString())
+            Next
+            j += 1
+        Next
+        For i = 0 To _SheetData.Columns.Count - 1
+            sheet1.AutoSizeColumn(i)
+        Next
+
+        Dim _filename = String.Format("{0}.xls", System.Guid.NewGuid())
+        Dim _fileDataPath = uploadpath & "\" & _filename
+
+        Dim fs As New FileStream(_fileDataPath, FileMode.Create)
+        hssfworkbook.Write(fs)
+        fs.Close()
+
+        'Try
+        Dim _displayName As String = ""
+        Dim _title As String = ""
+        Dim _department As String = ""
+        Dim _company As String = ""
+        Dim _streetAddress As String = ""
+        Dim _telephoneNumber As String = ""
+        Dim _facsimileTelephoneNumber As String = ""
+        Dim _mail As String = ""
+
+
+        Dim strMailFrom As String = ""
+        Dim strMailCC As String = ""
+        Dim strMailTo As String = ""
+        Dim strSubject As String = ""
+        Dim strMessage As New StringBuilder()
+
+
+        Dim DataDate As String
+        If Today.ToString("dddd").ToLower().Equals("monday") Then
+            DataDate = String.Format("{0} - {1}", MyUtils.GenThaiDate(Today.AddDays(-3), 2), MyUtils.GenThaiDate(Today.AddDays(-1), 2))
+        Else
+            DataDate = MyUtils.GenThaiDate(Today.AddDays(-1), 2)
+        End If
+
+
+
+        Using dc_portal = New DataClasses_PortalDataContext()
+            Dim _user = (From c In dc_portal.v_ads_actives Where c.sAMAccountName.Equals(System.Configuration.ConfigurationManager.AppSettings("sendername"))).FirstOrDefault()
+
+            With _user
+                _displayName = .displayName
+                _title = .title
+                _department = .department
+                _company = .company
+                _streetAddress = .streetaddress
+                _telephoneNumber = .telephoneNumber
+                _facsimileTelephoneNumber = .facsimileTelephoneNumber
+                _mail = .mail
+            End With
+
+
+
+
+            Dim _mailNotification = (From c In dc_portal.MailNotifications Where c.Code.Equals(_NoticeCode)).FirstOrDefault()
+            strSubject = _mailNotification.MailSubject.Replace("{name}", _InsurerName)
+            strSubject = strSubject.Replace("{date}", String.Format("{0}", DataDate))
+
+
+            Dim _MailBody As String = HttpUtility.HtmlDecode(_mailNotification.MailBody)
+
+            _MailBody = _MailBody.Replace("{name}", _InsurerName)
+            _MailBody = _MailBody.Replace("{date}", DataDate)
+            _MailBody = _MailBody.Replace("{itemno}", _SheetData.Rows.Count.ToString())
+
+
+            _MailBody = _MailBody.Replace("{displayName}", _displayName)
+            _MailBody = _MailBody.Replace("{title}", _title)
+            _MailBody = _MailBody.Replace("{department}", _department)
+            _MailBody = _MailBody.Replace("{company}", _company)
+            _MailBody = _MailBody.Replace("{streetAddress}", _streetAddress)
+            _MailBody = _MailBody.Replace("{telephoneNumber}", _telephoneNumber)
+            _MailBody = _MailBody.Replace("{facsimileTelephoneNumber}", _facsimileTelephoneNumber)
+            _MailBody = _MailBody.Replace("{mail}", _mail)
+
+            strMessage.AppendLine(_MailBody)
+
+            ''strMailFrom = _mailNotification.MailFrom
+            ''strMailCC = _mailNotification.MailCC
+            ''strMailTo = _agent.MailTo
+
+            'strMailFrom = _mail
+            ''strMailTo = System.Configuration.ConfigurationManager.AppSettings("mailto")
+            ''strMailCC = System.Configuration.ConfigurationManager.AppSettings("mailcc")
+
+            'strMailTo = _mailNotification.MailTo
+            'strMailCC = _mailNotification.MailCC
+
+            ''strMailTo = _Insurer.MailTo
+            ''strMailCC = IIf(String.IsNullOrEmpty(_Insurer.MailCC), "", _Insurer.MailCC & ";") & IIf(String.IsNullOrEmpty(_mailNotification.MailCC), "", _mailNotification.MailCC)
+
+
+            strMailFrom = _mail
+            strMailTo = _Insurer("MailTo").ToString()
+            strMailCC = IIf(String.IsNullOrEmpty(_Insurer("MailCC").ToString()), "", _Insurer("MailCC").ToString() & ";") & IIf(String.IsNullOrEmpty(_mailNotification.MailCC), "", _mailNotification.MailCC)
+
+        End Using
+
+
+        Dim MySmtpClient As New System.Net.Mail.SmtpClient(System.Configuration.ConfigurationManager.AppSettings("smtp").ToString())
+
+        Dim msg As New System.Net.Mail.MailMessage()
+
+        '===========================================================
+        Dim bodyHTML As String = "<html><body>" & strMessage.ToString() & "<span style='font-size:16.0pt;font-family:Angsana New,serif;color:green'><img src='cid:LOGO_IMAGE2' alt='Logo' /><i>Please consider the environment before printing this e-mail.</i></span></body></html>"
+        Dim alternateView As AlternateView = AlternateView.CreateAlternateViewFromString(bodyHTML, Nothing, "text/html")
+
+        'Dim path_to_the_image_file1 As String = String.Format("{0}\{1}", Server.MapPath("~/images"), "maillockton30.jpg")
+        Dim path_to_the_image_file2 As String = imgpath & "\mailsmallpicture.jpg"
+
+        ''Create the LinkedResource here
+        'Dim logo1 As New LinkedResource(path_to_the_image_file1, "image/jpeg")  'Content Type is set as image/jpeg
+        'logo1.ContentId = "LOGO_IMAGE1"
+        'logo1.TransferEncoding = Net.Mime.TransferEncoding.Base64
+        'alternateView.LinkedResources.Add(logo1)
+
+        Dim logo2 As New LinkedResource(path_to_the_image_file2, "image/jpeg")  'Content Type is set as image/jpeg
+        logo2.ContentId = "LOGO_IMAGE2"
+        logo2.TransferEncoding = Net.Mime.TransferEncoding.Base64
+        alternateView.LinkedResources.Add(logo2)
+        msg.AlternateViews.Add(alternateView)
+        '===========================================================
+
+        msg.Subject = strSubject 'Subject
+        msg.Body = Nothing 'Body
+
+        msg.From = New MailAddress(strMailFrom) 'Mail From
+
+        'Dim _MailTo = strMailTo 'Mail To
+        If Not String.IsNullOrEmpty(strMailTo) Then
+            For Each item In strMailTo.Split(";")
+                If Not String.IsNullOrEmpty(item.Trim()) Then msg.To.Add(item)
+            Next
+        End If
+
+
+        'Dim _MailCC = strMailCC 'Mail CC
+        If Not String.IsNullOrEmpty(strMailCC) Then
+            For Each item In strMailCC.Split(";")
+                If Not String.IsNullOrEmpty(item.Trim()) Then msg.CC.Add(item)
+            Next
+        End If
+
+        msg.BodyEncoding = Encoding.UTF8
+        msg.IsBodyHtml = True
+        msg.Priority = Net.Mail.MailPriority.High
+        '==============Add an Attachment=========================
+
+        Dim att_data = New Attachment(_fileDataPath)
+        att_data.Name = String.Format("สรุปงานวันที่ {0} {1}.xls", DataDate, _InsurerName)
+        msg.Attachments.Add(att_data)
+
+        Try
+
+            MySmtpClient.Send(msg)
+            Console.WriteLine("Send to : " & _InsurerName)
+
+
+        Catch ex As Exception
+            Console.WriteLine("Error Sent to : " & _InsurerName)
+            WriteToSysLog("Error Sent to : " & _InsurerName & ", Message" & ex.Message, True)
+        End Try
+
+
+
+    End Sub
 
 End Class

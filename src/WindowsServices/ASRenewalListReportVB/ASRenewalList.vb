@@ -256,9 +256,7 @@ Public Class ASRenewalList
             Using dc2 As New DataClasses_RawdataDataContext()
                 'Dim _data = (From c In dc2.tblAPDRenewalList_SUMMARies Order By c.FiscalYear).FirstOrDefault()
 
-                Dim _data = (From c In dc2.tblAPDRenewalList_SUMMARies
-                             Group By LotNo = c.LotNo Into MyGroup = Group
-                             Select LotNo Order By LotNo).ToList()
+
 
                 Dim _mailNotification = (From c In dc_portal.MailNotifications Where c.Code.Equals(_NoticeCode)).FirstOrDefault()
 
@@ -286,7 +284,39 @@ Public Class ASRenewalList
 
                 Dim _MailBody As String = HttpUtility.HtmlDecode(_mailNotification.MailBody)
 
-                _MailBody = _MailBody.Replace("{date}", String.Format("{0} - {1}", _data(0).Value, _data(_data.Count - 1).Value))
+                Dim _data = (From c In dc2.tblAPDRenewalList_SUMMARies
+                             Group By LotNo = c.LotNo Into MyGroup = Group
+                             Select LotNo Order By LotNo).ToList()
+                '_MailBody = _MailBody.Replace("{date}", String.Format("{0} - {1}", _data(0).Value, _data(_data.Count - 1).Value))
+
+
+
+                Dim _LotNo = (From c In dc2.tblAPDRenewalList_SUMMARies
+                              Group By LotNo = c.LotNo, FiscalYear = c.FiscalYear Into MyGroup = Group
+                              Select LotNo, FiscalYear Order By LotNo).ToList()
+                Dim _data_Year = (From c In _LotNo
+                                  Group By FiscalYear = c.FiscalYear Into MyGroup = Group
+                                  Select FiscalYear Order By FiscalYear).ToList()
+
+                Dim sb As New StringBuilder()
+                For Each item In _data_Year
+                    Dim _LotNoItem = (From c In _LotNo Where c.FiscalYear.Equals(item) Order By c.LotNo).ToList()
+                    Dim _LotNoMin = _LotNoItem.Min(Function(c) c.LotNo).Value
+                    Dim _LotNoMax = _LotNoItem.Max(Function(c) c.LotNo).Value
+                    'sb.AppendFormat("ปี {0} : ปัจจุบันนำเข้าข้อมูลทั้ง {1} เดือน <br>", item.ToString(), _LotNoItem.Count.ToString())
+                    'sb.AppendFormat("Enclosed Is A&S Renewal List Report, period: {0} - {1}, for your reference. <br><br>", _LotNoMin.ToString(), _LotNoMax.ToString())
+
+                    sb.AppendFormat("- FY{0}, the data were expired between {1} – {2} ({3} Months) <br><br>", item.ToString(), _LotNoMin.ToString(), _LotNoMax.ToString(), _LotNoItem.Count.ToString())
+
+                Next
+
+                'ปี FY17 / 18 : ปัจจุบันนำเข้าข้อมูลทั้ง 12 เดือนแล้ว 
+                'Enclosed Is A&S Renewal List Report, period: May 2017 - April 2018, for your reference. 
+
+                'ปี FY18 / 19 : ปัจจุบันนำเข้าข้อมูลถึง 518 
+                'Enclosed Is A&S Renewal List Report, period: May 2018 for your reference.
+
+                _MailBody = _MailBody.Replace("{period}", sb.ToString())
 
                 _MailBody = _MailBody.Replace("{displayName}", _displayName)
                 _MailBody = _MailBody.Replace("{title}", _title)

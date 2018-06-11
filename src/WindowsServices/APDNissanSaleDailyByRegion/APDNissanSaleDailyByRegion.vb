@@ -7,6 +7,7 @@ Imports System.Net.Mail
 Imports System.Text
 Imports System.Web
 Imports System.Net
+Imports Microsoft.Reporting.WebForms
 
 Public Class APDNissanSaleDailyByRegion
     Dim uploadpath As String = IO.Path.GetDirectoryName(Diagnostics.Process.GetCurrentProcess().MainModule.FileName) & "\uploadfiles"
@@ -111,29 +112,24 @@ Public Class APDNissanSaleDailyByRegion
         Dim JobDate = Today.ToString("yyyyMMdd")
         Dim logfile = logpath & "\" & JobDate & ".txt"
 
+        'If JobDate >= JobStart And JobDate <= JobEnd And IO.File.Exists(logfile) = False Then
         If JobDate >= JobStart And JobDate <= JobEnd And IO.File.Exists(logfile) = False And Day(Now) = JobDay Then
 
-            Dim FileName = "rptNissanSaleDailyByRegion" & Today.ToString("yyyy_MM_dd")
-            Dim fileEntries As String() = Directory.GetFiles(uploadpath, FileName & "*.xls")
-            ' Process the list of .txt files found in the directory. 
+            Dim FileName = SaveToExcel()
 
-            Using writer As New StreamWriter(logfile, True)
-                writer.WriteLine("FileName : " & FileName & "* (" & fileEntries.Count & ") - " & DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"))
-                writer.Close()
-            End Using
-
-            If fileEntries.Count > 0 Then
-                For Each item In fileEntries.ToList()
-                    If (System.IO.File.Exists(item)) Then
-                        WH_genxls(item)
-                        Exit For
-                    End If
-                Next
-            End If
+                Using writer As New StreamWriter(logfile, True)
+                    writer.WriteLine("FileName : " & FileName & " - " & DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"))
+                    writer.Close()
+                End Using
 
 
-        Else
-            Using writer As New StreamWriter(logfile, True)
+                If File.Exists(FileName) Then
+                    WH_genxls(FileName)
+                End If
+
+
+            Else
+                Using writer As New StreamWriter(logfile, True)
                 writer.WriteLine("Already Run - " & DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"))
                 writer.Close()
             End Using
@@ -236,6 +232,8 @@ Public Class APDNissanSaleDailyByRegion
             strMailCC = _mailNotification.MailCC
             strMailBCC = _mailNotification.MailBcc
 
+            'strMailTo = _mail
+            'strMailCC = _mail & ";dusit@asia.lockton.com;laddawan@asia.lockton.com"
         End Using
 
 
@@ -245,7 +243,7 @@ Public Class APDNissanSaleDailyByRegion
 
         '===========================================================
         Dim bodyHTML As String = "<html><body>" & strMessage.ToString() & "<span style='font-size:16.0pt;font-family:Angsana New,serif;color:green'><img src='cid:LOGO_IMAGE2' alt='Logo' /><i>Please consider the environment before printing this e-mail.</i></span></body></html>"
-        Dim alternateView As AlternateView = alternateView.CreateAlternateViewFromString(bodyHTML, Nothing, "text/html")
+        Dim alternateView As AlternateView = AlternateView.CreateAlternateViewFromString(bodyHTML, Nothing, "text/html")
 
         'Dim path_to_the_image_file1 As String = String.Format("{0}\{1}", Server.MapPath("~/images"), "maillockton30.jpg")
         Dim path_to_the_image_file2 As String = imgpath & "\mailsmallpicture.jpg"
@@ -320,6 +318,34 @@ Public Class APDNissanSaleDailyByRegion
 
 
     End Sub
+
+    Private Function SaveToExcel()
+
+        Dim _filename = String.Format("NissanSaleDailyByRegion_{0}.xls", Now.ToString("yyyyMMddHHmmss"))
+        Dim SavePath = uploadpath & "\" & _filename
+
+
+        Dim viewer As New ReportViewer()
+        viewer.ServerReport.ReportServerUrl = New Uri("http://lockthbnk-db07/ReportServer")
+        viewer.ServerReport.ReportPath = "/Reports/rptNissanSaleDailyByRegion2"
+
+        'Dim parameters As New List(Of ReportParameter)
+        'parameters.Add(New ReportParameter("UWCODE", "5", False))
+        'viewer.ServerReport.SetParameters(parameters)
+
+        'viewer.ServerReport.ReportServerCredentials = New ReportServerCredentials()
+
+
+
+        Dim Bytes() As Byte = viewer.ServerReport.Render("Excel", "", Nothing, Nothing, Nothing, Nothing, Nothing)
+
+        Using Stream As New FileStream(SavePath, FileMode.Create)
+            Stream.Write(Bytes, 0, Bytes.Length)
+        End Using
+
+
+        Return SavePath
+    End Function
 
 
 End Class

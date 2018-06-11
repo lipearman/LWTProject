@@ -271,12 +271,12 @@ Public Class APDM2HoldCover2Insurer
                 strSubject = _mailNotification.MailSubject.Replace("{date}", _ClosingDate).Replace("{insurer}", _Insurer.Name)
 
                 strMailFrom = _mailNotification.MailFrom
-                'strMailTo = _Insurer.MailTo
-                'strMailCC = IIf(String.IsNullOrEmpty(_Insurer.MailCC), "", _Insurer.MailCC & ";") & IIf(String.IsNullOrEmpty(_mailNotification.MailCC), "", _mailNotification.MailCC)
-                'strMailBCC = _mailNotification.MailBcc
+                strMailTo = _Insurer.MailTo
+                strMailCC = IIf(String.IsNullOrEmpty(_Insurer.MailCC), "", _Insurer.MailCC & ";") & IIf(String.IsNullOrEmpty(_mailNotification.MailCC), "", _mailNotification.MailCC)
+                strMailBCC = _mailNotification.MailBcc
 
-                strMailTo = _mailNotification.MailFrom
-                strMailCC = _mailNotification.MailCC
+                'strMailTo = _mailNotification.MailFrom
+                'strMailCC = _mailNotification.MailCC
 
                 Dim _user = (From c In dc_portal.v_ads_actives Where c.mail.Equals(strMailFrom)).FirstOrDefault()
 

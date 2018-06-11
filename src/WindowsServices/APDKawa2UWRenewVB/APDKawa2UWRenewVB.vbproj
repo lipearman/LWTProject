@@ -120,6 +120,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SQLHelper.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="APDKawa2UWRenew.resx">
